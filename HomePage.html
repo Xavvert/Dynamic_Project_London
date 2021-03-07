@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Cykel - Homepage</title>
+    <style type="text/css">
+        #layout {
+            border-style: outset;
+            border-style: bold;
+
+        }
+
+        #header {
+            background-color: whitesmoke;
+            text-align: center;
+            font-family: "Verdana";
+            height: 100px;
+        }
+
+        .grid-container {
+
+            display: grid;
+            background-color: #EEE8CD;
+            grid-template-columns: auto auto auto auto auto;
+            grid-gap: 5px;
+            border-top-size: 1em;
+            border-top-style: solid;
+        }
+
+        .item {
+            background-color: white;
+            margin: 30px 5px;
+            text-align: center;
+            font-size: 30px;
+            height: 280px;
+        }
+
+        .item:hover {
+            background-color: #EAFDE1;
+            border-style: outset;
+            border-width: 1px;
+        }
+    </style>
+    
+    <link rel='icon' href='Cykel.png' type='image/x-icon'/ >
+</head>
+
+
+<script type="text/javascript">
+    var lastPrice = 0;
+
+    function MyFunction(price) {
+
+        lastPrice = lastPrice + price;
+        document.getElementById("finalPrice").innerHTML = "Total : £" + lastPrice;
+    }
+
+    function reset() {
+        lastPrice = 0;
+        document.getElementById("finalPrice").innerHTML = "Total : £" + lastPrice;
+    }
+
+    function order() {
+        var name = prompt("Enter your name please", "");
+        alert("Okay " + name + ", you command your flowers for : £" + lastPrice);
+    }
+</script>
+
+<body>
+    <div id="layout">
+
+        <div id="header">
+            <center>
+                <img src="Cykel.png" alt="Cykel LOGO" style="width: 70px; height: 70px; margin-top: 10px;">
+            </center>
+
+            <img src="lateral_menu.png" style="width: 40px; height: 40px; position: relative; top: -60px; left: -600px">
+
+            <img src="cart.png" style="width: 40px; height: 40px; position: relative; top: -60px; left: 600px">
+
+        </div>
+
+        <div class="grid-container">
+            <div class="item" onclick="MyFunction(24)">
+                <img src="1.png" style="height: 150px width: 150px">
+                <p>
+                    £24
+                </p>
+            </div>
+            <div class="item" onclick="MyFunction(28)">
+                <img src="2.png" style="height: 150px width: 150px">
+                <p>
+                    £28
+                </p>
+            </div>
+            <div class="item" onclick="MyFunction(29)">
+                <img src="3.png" style="height: 150px width: 150px">
+                <p>
+                    £29
+                </p>
+            </div>
+            <div class="item" onclick="MyFunction(24)">
+                <img src="4.png" style="height: 150px width: 150px">
+                <p>
+                    £24
+                </p>
+            </div>
+            <div class="item" onclick="MyFunction(26)">
+                <img src="5.png" style="height: 150px width: 150px">
+                <p>
+                    £26
+                </p>
+            </div>
+            <div class="item" onclick="MyFunction(27)">
+                <img src="6.png" style="height: 150px width: 150px">
+                <p>
+                    £27
+                </p>
+            </div>
+            <div class="item" onclick="MyFunction(32)">
+                <img src="7.png" style="height: 150px width: 150px">
+                <p>
+                    £32
+                </p>
+            </div>
+            <div class="item" onclick="MyFunction(21)">
+                <img src="8.png" style="height: 150px width: 150px">
+                <p>
+                    £21
+                </p>
+            </div>
+            <div class="item" onclick="MyFunction(22)">
+                <img src="9.png" style="height: 150px width: 150px">
+                <p>
+                    £22.
+                </p>
+            </div>
+            <div class="item" onclick="MyFunction(35)">
+                <img src="10.png" style="height: 150px width: 150px">
+                <p>
+                    £35
+                </p>
+            </div>
+            <div class="item" onclick="MyFunction(29)">
+                <img src="11.png" style="height: 150px width: 150px">
+                <p>
+                    £29
+                </p>
+            </div>
+            <div class="item" onclick="MyFunction(24)">
+                <img src="12.png" style="height: 150px width: 150px">
+                <p>
+                    £24
+                </p>
+            </div>
+            <div class="item" onclick="MyFunction(28)">
+                <img src="13.png" style="height: 150px width: 150px">
+                <p>
+                    £28
+                </p>
+            </div>
+            <div class="item" onclick="MyFunction(32)">
+                <img src="14.png" style="height: 150px width: 150px">
+                <p>
+                    £32
+                </p>
+            </div>
+            <div class="item" onclick="MyFunction(34)">
+                <img src="15.png" style="height: 150px width: 150px">
+                <p>
+                    £34
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html></html>
