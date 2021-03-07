@@ -18,7 +18,6 @@
             height: 100px;
         }
 
-
         .sidenav {
             height: 100%;
             width: 0;
@@ -51,6 +50,32 @@
             right: 25px;
             font-size: 36px;
             margin-left: 50px;
+        }
+
+        .grid-container {
+
+        display: grid;
+        background-color:#EEE8CD;
+        padding-left: 300px;
+        padding-right: 300px;
+        grid-template-rows: auto auto auto;
+        grid-gap: 5px;
+        border-top-size:1em;
+        border-top-style:solid;
+        }
+
+        .item {
+            background-color: white;
+            margin: 30px 5px;
+            text-align: center;
+            font-size: 30px;
+            height: 280px;
+            border-radius: 1em;
+        }
+        .item:hover {
+            background-color: #d81717;
+            border-style: outset;
+            border-width: 2px; 
         }
     </style>
 
@@ -97,16 +122,28 @@
         </div>
     </div>
 
-    <h1>CATEGORIES</h1>
-    <p>
-        2 types of categories : 
-        <ul>
-            <li><a href="cards.html">Playing Cards</a></li>
-            <li><a href="watches.html">Connected Watches</a></li>
-            <li><a href="boardgames.html">Boardgames</a></li>
-        </ul>
-    </p>
+    <div class="grid-container">
 
+      <div class="item" onClick="location.href='cards.html'">
+        <img src="cards1.png" style="height: 280px; width: 200px; float: left;">
+        <p>
+            Playing Cards
+        </p>
+      </div>
+      <div class="item" onClick="location.href='watches.html'" >
+        <img src="2.png" style="height: 150px width: 150px">
+        <p>
+            Connected Watches
+        </p>
+      </div>
+      <div class="item" onClick="location.href='boardgames.html'">
+        <img src="3.png" style="height: 150px width: 150px">
+        <p>
+            Boardgames
+        </p>
+      </div>  
+
+  </div>
 </body>
 
 </html>
