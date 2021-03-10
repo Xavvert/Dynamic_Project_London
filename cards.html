@@ -52,6 +52,29 @@
             font-size: 36px;
             margin-left: 50px;
         }
+        
+        .grid-container {
+
+		display: grid;
+		background-color:#EEE8CD;
+		grid-template-columns: auto auto auto auto auto;
+		grid-gap: 5px;
+		border-top-size:1em;
+		border-top-style:solid;
+	}
+
+	.item {
+		background-color: white;
+		margin: 30px 5px;
+		text-align: center;
+		font-size: 30px;
+		height: 280px;
+	}
+	.item:hover {
+    	background-color: #EAFDE1;
+    	border-style: outset;
+    	border-width: 1px; 
+  	}
     </style>
 
     <link rel='icon' href='Cykel.png' type='image/x-icon' />
@@ -98,6 +121,15 @@
     </div>
 
 <h1>CARDS</h1>
+    
+    <div class="grid-container">
+	  <div class="item" onclick="MyFunction(24)">
+	  	<img src="cards1.png" style="height: 150px ;width: 150px;">
+	  	<p>
+	  		£24
+	  	</p>
+	  </div>
+        
     <p>
         2 types of categories : 
         <ul>
