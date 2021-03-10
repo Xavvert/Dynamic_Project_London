@@ -9,7 +9,7 @@
         #layout {
             border-style: outset;
             border-style: bold;
-            
+
 
         }
 
@@ -184,6 +184,29 @@
                 font-size: 11px
             }
         }
+        
+         .grid-container {
+
+		display: grid;
+		background-color:#EEE8CD;
+		grid-template-columns: auto auto auto auto auto;
+		grid-gap: 5px;
+		border-top-size:1em;
+		border-top-style:solid;
+	}
+
+	.item {
+		background-color: white;
+		margin: 30px 5px;
+		text-align: center;
+		font-size: 30px;
+		height: 280px;
+	}
+	.item:hover {
+    	background-color: #EAFDE1;
+    	border-style: outset;
+    	border-width: 1px; 
+  	}
 
     </style>
 
@@ -224,53 +247,63 @@
 
         </div>
     </div>
-    
+
     <div style="background-color: beige">
-    <center>
-        <h1>Welcome to Cykel</h1>
-    </center>
-    <h3>Here's our latest products</h3>
-<center>
-    <!-- For the slideshow -->
-    <div class="slideshow-container" style="">
+        <center>
+            <h1>Welcome to Cykel</h1>
+        </center>
+        <h3>Here's our latest products</h3>
+        <center>
+            <!-- For the slideshow -->
+            <div class="slideshow-container" style="">
 
-        <div class="mySlides fade">
-            <div class="numbertext">1 / 3</div>
-            <img src="cards1.png" style="width:200px; height: 200px;">
-            <div class="text">Playing Cards</div>
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 3</div>
+                    <img src="cards1.png" style="width:200px; height: 200px;">
+                    <div class="text">Playing Cards</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 3</div>
+                    <img src="watch1.png" style="width:200px; height: 200px;">
+                    <div class="text">Connected watches</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 3</div>
+                    <img src="ttr.jpg" style="width:200px; height: 200px;">
+                    <div class="text">Boardgames</div>
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+            </div>
+            <br>
+
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </center>
+
+        <h2> Here's the popular items </h2>
+        <div class="grid-container">
+            <div class="item" onclick="MyFunction(24)">
+                <img src="cards1.png" style="height: 150px ;width: 150px;">
+                <p>
+                    £24
+                </p>
+            </div>
         </div>
-
-        <div class="mySlides fade">
-            <div class="numbertext">2 / 3</div>
-            <img src="watch1.png" style="width:200px; height: 200px;">
-            <div class="text">Connected watches</div>
-        </div>
-
-        <div class="mySlides fade">
-            <div class="numbertext">3 / 3</div>
-            <img src="ttr.jpg" style="width:200px; height: 200px;">
-            <div class="text">Boardgames</div>
-        </div>
-
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
     </div>
-    <br>
-
-    <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-    </div>
-    </center>
-        </div>
 
 
 
 </body>
-    
-    <script type="text/javascript">
+
+<script type="text/javascript">
     function openNav() {
         document.getElementById("mySidenav").style.width = "250px";
     }
