@@ -106,8 +106,14 @@
     function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
     }
-
+    
+    
+function goBack() {
+  window.history.back();
+}
 </script>
+
+
 
 <body>
     <div id="layout">
@@ -137,6 +143,13 @@
         </div>
     </div>
     <div style="float: left;">
+        <button onclick="goBack()" style="float: left">Go Back</button>
+
+        <a href="HomePage.html" style="float: left; margin-left: 2px;"> -> Cykel </a>
+        
+        <a href="categories.html" style="float: left; margin-left: 2px;"> -> Categories </a>
+        <a href="cards.html" style="float: left;"> -> Playing Cards </a>
+        
         <center>
             <img src="card2.png" alt="surfboardV2" style="width: 500px; height:703px; margin-top: 10px; ">
 
