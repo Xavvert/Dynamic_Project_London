@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Cykel - Categories</title>
+    <style type="text/css">
+        #layout {
+            border-style: outset;
+            border-style: bold;
+
+        }
+
+        #header {
+            background-color: whitesmoke;
+            text-align: center;
+            font-family: "Verdana";
+            height: 100px;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        .grid-container {
+
+            display: grid;
+            background-color: #EEE8CD;
+            padding-left: 300px;
+            padding-right: 300px;
+            grid-template-rows: auto auto auto;
+            grid-gap: 5px;
+            border-top-size: 1em;
+            border-top-style: solid;
+        }
+
+        .item {
+            background-color: white;
+            margin: 30px 5px;
+            text-align: center;
+            font-size: 30px;
+            height: 280px;
+            border-radius: 1em;
+        }
+
+        .item:hover {
+            background-color: #d81717;
+            border-style: outset;
+            border-width: 2px;
+        }
+
+    </style>
+
+    <link rel='icon' href='Cykel.png' type='image/x-icon' />
+</head>
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        $("#buy").click(function() {
+            $("#bid").show("slow");
+            $("#imm").show("slow");
+            $(this).hide("slow");
+            $("#offer").show("slow");
+            
+        });
+   
+    });
+
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+
+</script>
+
+<body>
+    <div id="layout">
+
+        <div id="header">
+            <center>
+                <img src="Cykel.png" alt="Cykel LOGO" onClick="location.href='HomePage.html'" style="width: 70px; height: 70px; margin-top: 10px; cursor:pointer; ">
+
+            </center>
+
+            <!--  <img src="lateral_menu.png" style="width: 40px; height: 40px; position: relative; top: -60px; left: -600px"> -->
+
+            <span style="font-size:30px;cursor:pointer; position: relative; top: -60px; left: -600px" onclick="openNav()">&#9776;</span>
+
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="categories.html">CATEGORIES</a>
+                <a href="buying.html">BUYING</a>
+                <a href="sell.html">SELL</a>
+                <a href="youraccount.html">YOUR ACCOUNT</a>
+                <a href="cart.html">CART</a>
+                <a href="admin.html">ADMIN</a>
+            </div>
+
+            <img src="cart.png" onClick="location.href='cart.html'" style="width: 40px; height: 40px; position: relative; top: -60px; left: 600px; cursor:pointer;">
+
+        </div>
+    </div>
+    <div style="float: left;">
+        <center>
+            <img src="cards1.png" alt="surfboardV2" style="width: 500px; height:703px; margin-top: 10px; ">
+
+            <h2>Surfboard V2 - Sunset Session</h2>
+
+            <h4>10£</h4>
+
+            <button id="buy">BUY</button>
+            <button id="bid" style="display: none;" >Bid</button>
+            <button id="imm" style="display: none;">Buy Immediately</button>
+            <button id="offer" style="display: none;">Best Offer</button>
+            
+        </center>
+        <div style="float: left">
+            <p>
+                Are you missing the soft sands, fresh waves, and ocean breezes surrounding you? No matter where you are located, we are here to introduce you to a deck that can take you to the mesmerizing beaches and experience the ultimate calmness. Here is the second edition of the popular Surfboard Playing Cards - The Surfboard V2: Sunset Session.
+
+                The Surfboard V2 Sunset Session takes you on to a whole new beach experience. Normally, you would be surfing when the sun is up high and everything is filled with blue skies and clear waters, with this edition, the designer Dario Genuardi wants to show you the beauty of surfing under the sunset, reminding you to seize the wave before the sun goes down.
+
+                The Surfboard V2: Sunset Session is FULLY MARKED and is printed by the United States Playing Card Company. AIR CUSHION Finish with their legendary Bee Crushed Stock. Limited to 2500 Decks.
+            </p>
+        </div>
+        <div>
+            <img src="cards1multiple.PNG" alt="surfboardV2" style="width: 1000px; height:500px; margin-top: 10px; ">
+        </div>
+       
+    </div>
+
+
+
+</body>
+
+</html>
