@@ -186,30 +186,30 @@
                 font-size: 11px
             }
         }
-        
-         .grid-container {
 
-		display: grid;
-		background-color:#EEE8CD;
-		grid-template-columns: auto auto auto auto auto;
-		grid-gap: 5px;
-		border-top-size:1em;
-		border-top-style:solid;
-	}
+        .grid-container {
 
-	.item {
-		background-color: white;
-		margin: 30px 5px;
-		text-align: center;
-		font-size: 30px;
-		height: 280px;
-	}
-	.item:hover {
-    	background-color: #EAFDE1;
-    	border-style: outset;
-    	border-width: 1px; 
-  	}
+            display: grid;
+            background-color: #EEE8CD;
+            grid-template-columns: auto auto auto auto auto;
+            grid-gap: 5px;
+            border-top-size: 1em;
+            border-top-style: solid;
+        }
 
+        .item {
+            background-color: white;
+            margin: 30px 5px;
+            text-align: center;
+            font-size: 30px;
+            height: 280px;
+        }
+
+        .item:hover {
+            background-color: #EAFDE1;
+            border-style: outset;
+            border-width: 1px;
+        }
     </style>
 
     <link rel='icon' href='Cykel.png' type='image/x-icon' />
@@ -255,10 +255,10 @@
             <h1 style="color: brown;">Welcome to Cykel</h1>
             <h3>Here's our latest products</h3>
         </center>
-        
+
         <center>
             <!-- For the slideshow -->
-            <div class="slideshow-container" style="">
+            <div class="slideshow-container">
 
                 <div class="mySlides fade">
                     <div class="numbertext">1 / 3</div>
@@ -278,7 +278,7 @@
                     <div class="text">Boardgames</div>
                 </div>
 
-                
+
 
             </div>
             <br>
@@ -292,7 +292,7 @@
 
         <h2> Here's the popular items </h2>
         <div class="grid-container">
-            <div class="item" onclick="location.href='surfboardV2.html'" >
+            <div class="item" onclick="location.href='surfboardV2.html'">
                 <img src="cards1.png" style="height: 280px ;width: 200px; cursor: pointer;">
                 <p>
                     £24
@@ -315,37 +315,25 @@
     }
 
 
-    var slideIndex = 1;
-    showSlides(slideIndex);
+    var slideIndex = 0;
+    showSlides();
 
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
-
-    function currentSlide(n) {
-        showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
+    function showSlides() {
         var i;
         var slides = document.getElementsByClassName("mySlides");
         var dots = document.getElementsByClassName("dot");
-        if (n > slides.length) {
-            slideIndex = 1
-        }
-        if (n < 1) {
-            slideIndex = slides.length
-        }
         for (i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1
         }
         for (i = 0; i < dots.length; i++) {
             dots[i].className = dots[i].className.replace(" active", "");
         }
         slides[slideIndex - 1].style.display = "block";
         dots[slideIndex - 1].className += " active";
+        setTimeout(showSlides, 2000); // Change image every 2 seconds
     }
-
-</script>
-
-</html>
+</script></html>
