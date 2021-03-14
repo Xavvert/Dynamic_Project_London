@@ -2,8 +2,16 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+ 
     <title>Cykel - Cards</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+    
     <style type="text/css">
         #layout {
             border-style: outset;
@@ -54,29 +62,30 @@
             font-size: 36px;
             margin-left: 50px;
         }
-        
+
         .grid-container {
 
-		display: grid;
-		background-color:#EEE8CD;
-		grid-template-columns: auto auto auto auto auto;
-		grid-gap: 5px;
-		
-		border-top-style:solid;
-	}
+            display: grid;
+            background-color: #EEE8CD;
+            grid-template-columns: auto auto auto auto auto;
+            grid-gap: 5px;
+            border-top-style: solid;
+        }
 
-	.item {
-		background-color: white;
-		margin: 30px ;
-		text-align: center;
-		font-size: 30px;
-		height: 200px;
-	}
-	.item:hover {
-    	background-color: #EAFDE1;
-    	border-style: outset;
-    	border-width: 1px; 
-  	}
+        .item {
+            background-color: lightyellow;
+            margin: 30px;
+            text-align: center;
+            font-size: 30px;
+            height: auto width: auto;
+            margin-left: 20px;
+        }
+
+        .item:hover {
+            background-color: #EAFDE1;
+            border-style: outset;
+            border-width: 1px;
+        }
     </style>
 
     <link rel='icon' href='Cykel.png' type='image/x-icon' />
@@ -91,7 +100,6 @@
     function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
     }
-
 </script>
 
 <body>
@@ -123,23 +131,21 @@
     </div>
 
 
-    
+
     <div class="grid-container">
-	  <div class="item" onclick="location.href='surfboardV2.html'">
-	  	<img src="cards1.png" style="height: 200px ;width: 150px; cursor: pointer;">
-	  	<p style="margin-top: -11px">
-	  		£10
-	  	</p>
-	  </div>
+        <div class="item" onclick="location.href='surfboardV2.html'">
+            <img src="cards1.png" style="height: 200px ;width: 150px; cursor: pointer;">
+            <p style="margin-top: -11px">
+                £10
+            </p>
+        </div>
         <div class="item" onclick="location.href='snackersv3.html'">
-	  	<img src="card2.png" style="height: 200px ;width: 150px; cursor: pointer;">
-	  	<p style="margin-top: -11px">
-	  		£10
-	  	</p>
-	  </div>
+            <img src="card2.png" style="height: 200px ;width: 150px; cursor: pointer;">
+            <p style="margin-top: -11px">
+                £10
+            </p>
+        </div>
     </div>
-        
 
-</body>
 
-</html>
+</body></html>
