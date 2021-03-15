@@ -10,6 +10,9 @@
             font-family: "Verdana";
             height: 100px;
         }
+        .icon img:hover {
+  transform: scale(1.5); /* (150% zoom)*/
+}
 
 		/*#footer{
 			background-color: whitesmoke;
