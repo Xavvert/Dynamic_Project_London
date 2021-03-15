@@ -8,3 +8,8 @@ https://cssauthor.com/payment-method-credit-card-icon-set/
 
 https://github.com/muffinresearch/payment-icons
 
+OTHER :
+
+https://css-tricks.com/using-css-cursors/
+https://www.w3schools.com/howto/howto_js_slideshow.asp
+https://www.w3schools.com/howto/howto_js_sidenav.asp
