@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <title>Cykel - Homepage</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="header&footer.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="header&footer.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <style type="text/css">
-
         .sidenav {
             height: 100%;
             width: 0;
@@ -48,7 +48,6 @@
             font-size: 36px;
             margin-left: 50px;
         }
-
 
         /* For the slideshow */
         * {
@@ -202,156 +201,156 @@
             border-style: outset;
             border-width: 1px;
         }
-        
+
         #logo:hover {
-            
-           transform: rotate(360deg);
+
+            transform: rotate(360deg);
             transition: all 1s;
         }
+
     </style>
 
-    <link rel='icon' href='Cykel.png' type='image/x-icon' />
+    <link rel='icon' href='pictures/Cykel.png' type='image/x-icon' />
 </head>
 
 
 <body>
-    <div id="layout">
+    <div class="container-fluid">
+        <div id="layout">
+            <!-- header -->
+            <div id="header">
+                <center>
+                    <img id="logo" src="pictures/Cykel.png" alt="Cykel LOGO" onClick="location.href='HomePage.html'" style="width: 70px; height: 70px; margin-top: 10px; cursor:pointer; ">
 
-        <div id="header">
+                </center>
+
+                <span style="font-size:30px;cursor:pointer; position: relative; top: -60px; left: -580px" onclick="openNav()">&#9776;</span>
+
+                <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a href="categories.html">CATEGORIES</a>
+                    <a href="buying.html">BUYING</a>
+                    <a href="sell.html">SELL</a>
+                    <a href="youraccount.html">YOUR ACCOUNT</a>
+                    <a href="cart.html">CART</a>
+                    <a href="admin.html">ADMIN</a>
+                </div>
+
+                <div class="icon">
+                    <img name="icon" src="pictures/profile.png" onClick="location.href='youraccount2.html'" style="width: 25px; height: 25px; position: relative; top: -80px; left:580px; cursor:pointer;">
+
+                    <img src="pictures/notif.png" onClick="location.href='youraccount2.html'" style="width: 20px; height: 20px; position: relative; top: -80px; left:590px; cursor:pointer;">
+
+                    <img src="pictures/cart2.png" onClick="location.href='cart.html'" style="width: 20px; height: 20px; position: relative; top: -80px; left: 600px; cursor:pointer;">
+                </div>
+            </div>
+        </div>
+
+        <!-- body -->
+
+        <div style="background-color: beige">
             <center>
-                <img id="logo" src="Cykel.png" alt="Cykel LOGO" onClick="location.href='HomePage.html'" style="width: 70px; height: 70px; margin-top: 10px; cursor:pointer; ">
-
+                <h1 style="color: brown;">Welcome to Cykel</h1>
+                <h3>Here's our latest products</h3>
             </center>
 
-            <!--  <img src="lateral_menu.png" style="width: 40px; height: 40px; position: relative; top: -60px; left: -600px"> -->
+            <center>
+                <!-- For the slideshow -->
+                <div class="slideshow-container">
 
-            <span style="font-size:30px;cursor:pointer; position: relative; top: -60px; left: -580px" onclick="openNav()">&#9776;</span>
+                    <div class="mySlides fade">
+                        <div class="numbertext">1 / 3</div>
+                        <img src="pictures/cards1.png" style="width:210px; height: 300px;">
+                        <div class="text">🏄🏻Surfboard V2🏄🏻</div>
+                    </div>
 
-            <div id="mySidenav" class="sidenav">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <a href="categories.html">CATEGORIES</a>
-                <a href="buying.html">BUYING</a>
-                <a href="sell.html">SELL</a>
-                <a href="youraccount.html">YOUR ACCOUNT</a>
-                <a href="cart.html">CART</a>
-                <a href="admin.html">ADMIN</a>
+                    <div class="mySlides fade">
+                        <div class="numbertext">2 / 3</div>
+                        <img src="pictures/card2.PNG" style="width:210px; height: 300px;">
+                        <div class="text">Blueberry Snackers v3</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">3 / 3</div>
+                        <img src="pictures/ttr.jpg" style="width:300px; height: 300px;">
+                        <div class="text">Ticket To Ride (10th Anniversary Edition) </div>
+                    </div>
+
+                </div>
+                <br>
+
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+            </center>
+
+            <h2> Here's the popular items </h2>
+            <div class="grid-container">
+                <div class="item" onclick="location.href='surfboardV2.html'">
+                    <img src="pictures/cards1.png" style="height: 280px ;width: 200px; cursor: pointer;">
+                    <p>
+                        £24
+                    </p>
+                </div>
             </div>
-
-            <div class="icon">
-            <img name="icon" src="profile.png" onClick="location.href='youraccount.html'" style="width: 25px; height: 25px; position: relative; top: -80px; left:580px; cursor:pointer;">
-
-            <img src="notif.png" onClick="location.href='youraccount.html'" style="width: 20px; height: 20px; position: relative; top: -80px; left:590px; cursor:pointer;">
-
-            <img src="cart2.png" onClick="location.href='cart.html'" style="width: 20px; height: 20px; position: relative; top: -80px; left: 600px; cursor:pointer;">
-            </div>
-
         </div>
+
+
+
+        <!--footer-->
+
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <h4 class="title">Cykel</h4>
+                        <p>YourMarket project is to create an auction website similar to EBay.</p>
+                        <ul class="social-icon">
+                            <a href="#" class="social"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="#" class="social"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href="#" class="social"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            <a href="#" class="social"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                            <a href="#" class="social"><i class="fa fa-google" aria-hidden="true"></i></a>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3">
+                        <h4 class="title">My Account</h4>
+                        <span class="acount-icon">
+                            <a href="cart.html"><i class="fa fa-cart-plus" aria-hidden="true"></i> Cart</a>
+                            <a href="youraccount.html"><i class="fa fa-user" aria-hidden="true"></i> Profile</a>
+                        </span>
+                    </div>
+                    <div class="col-sm-3">
+                        <h4 class="title">Category</h4>
+                        <div class="category">
+                            <a href="cards.html">Playing Cards</a>
+                            <a href="watches.html">Connected Watches</a>
+                            <a href="boardgames.html">Boardgames</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <h4 class="title">Payment Methods</h4>
+                        <p>This website accept this payment methods.</p>
+                        <ul class="payment">
+                            <li><a href="javascript:void(0)"><i class="fa fa-cc-amex" aria-hidden="true"></i></a></li>
+                            <li><a href="javascript:void(0)"><i class="fa fa-credit-card" aria-hidden="true"></i></a></li>
+                            <li><a href="javascript:void(0)"><i class="fa fa-paypal" aria-hidden="true"></i></a></li>
+                            <li><a href="javascript:void(0)"><i class="fa fa-cc-visa" aria-hidden="true"></i></a></li>
+                            <li><a href="javascript:void(0)"><i class="fa fa-apple" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+
+                <div class="row text-center"> © 2021 Made with by Xavier Dandigna & Anthelme Charvet.</div>
+            </div>
+
+
+        </footer>
+
     </div>
-
-
-    <div style="background-color: beige">
-        <center>
-            <h1 style="color: brown;">Welcome to Cykel</h1>
-            <h3>Here's our latest products</h3>
-        </center>
-
-        <center>
-            <!-- For the slideshow -->
-            <div class="slideshow-container">
-
-                <div class="mySlides fade">
-                    <div class="numbertext">1 / 3</div>
-                    <img src="cards1.png" style="width:210px; height: 300px;">
-                    <div class="text">🏄🏻Surfboard V2🏄🏻</div>
-                </div>
-
-                <div class="mySlides fade">
-                    <div class="numbertext">2 / 3</div>
-                    <img src="card2.PNG" style="width:210px; height: 300px;">
-                    <div class="text">Blueberry Snackers v3</div>
-                </div>
-
-                <div class="mySlides fade">
-                    <div class="numbertext">3 / 3</div>
-                    <img src="ttr.jpg" style="width:300px; height: 300px;">
-                    <div class="text">Ticket To Ride (10th Anniversary Edition) </div>
-                </div>
-
-            </div>
-            <br>
-
-            <div style="text-align:center">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-            </div>
-        </center>
-
-        <h2> Here's the popular items </h2>
-        <div class="grid-container">
-            <div class="item" onclick="location.href='surfboardV2.html'">
-                <img src="cards1.png" style="height: 280px ;width: 200px; cursor: pointer;">
-                <p>
-                    £24
-                </p>
-            </div>
-        </div>
-    </div>
-
-
-
-<!--footer-->
-
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-        <div class="col-sm-3">
-            <h4 class="title">Cykel</h4>
-            <p>YourMarket project is to create an auction website similar to EBay.</p>
-            <ul class="social-icon">
-            <a href="#" class="social"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-            <a href="#" class="social"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-            <a href="#" class="social"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-            <a href="#" class="social"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
-            <a href="#" class="social"><i class="fa fa-google" aria-hidden="true"></i></a>
-            </ul>
-            </div>
-        <div class="col-sm-3">
-            <h4 class="title">My Account</h4>
-            <span class="acount-icon">          
-            <a href="cart.html"><i class="fa fa-cart-plus" aria-hidden="true"></i> Cart</a>
-            <a href="youraccount.html"><i class="fa fa-user" aria-hidden="true"></i> Profile</a>          
-          </span>
-            </div>
-        <div class="col-sm-3">
-            <h4 class="title">Category</h4>
-            <div class="category">
-            <a href="cards.html">Playing Cards</a>
-            <a href="watches.html">Connected Watches</a>
-            <a href="boardgames.html">Boardgames</a>          
-            </div>
-            </div>
-        <div class="col-sm-3">
-            <h4 class="title">Payment Methods</h4>
-            <p>This website accept this payment methods.</p>
-            <ul class="payment">
-            <li><a href="javascript:void(0)"><i class="fa fa-cc-amex" aria-hidden="true"></i></a></li>
-            <li><a href="javascript:void(0)"><i class="fa fa-credit-card" aria-hidden="true"></i></a></li>            
-            <li><a href="javascript:void(0)"><i class="fa fa-paypal" aria-hidden="true"></i></a></li>
-            <li><a href="javascript:void(0)"><i class="fa fa-cc-visa" aria-hidden="true"></i></a></li>
-            <li><a href="javascript:void(0)"><i class="fa fa-apple" aria-hidden="true"></i></a></li>
-            </ul>
-            </div>
-        </div>
-        <hr>
-        
-        <div class="row text-center"> © 2021 Made with by Xavier Dandigna & Anthelme Charvet.</div>
-        </div>
-        
-        
-    </footer>
-
-</div>
 
 </body>
 
@@ -386,4 +385,7 @@
         dots[slideIndex - 1].className += " active";
         setTimeout(showSlides, 2200); // Change image every 2.2 seconds
     }
-</script></html>
+
+</script>
+
+</html>

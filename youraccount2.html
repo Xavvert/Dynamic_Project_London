@@ -115,6 +115,11 @@
         .auctionForm {
             vertical-align: middle;
         }
+        #logo:hover {
+
+            transform: rotate(360deg);
+            transition: all 1s;
+        }
     </style>
 
     <link rel='icon' href='Cykel.png' type='image/x-icon' />
@@ -151,17 +156,15 @@ $("#adressBox").click(function(){
    });
 
 </script>
-
+<link rel='icon' href='pictures/Cykel.png' type='image/x-icon' />
 <body>
 <div id="layout">
 
         <div id="header">
             <center>
-                <img id="logo"  src="Cykel.png" alt="Cykel LOGO" onClick="location.href='HomePage.html'" style="width: 70px; height: 70px; margin-top: 10px; cursor:pointer; ">
+                <img id="logo"  src="pictures/Cykel.png" alt="Cykel LOGO" onClick="location.href='HomePage.html'" style="width: 70px; height: 70px; margin-top: 10px; cursor:pointer; ">
 
             </center>
-
-            <!--  <img src="lateral_menu.png" style="width: 40px; height: 40px; position: relative; top: -60px; left: -600px"> -->
 
             <span style="font-size:30px;cursor:pointer; position: relative; top: -60px; left: -580px" onclick="openNav()">&#9776;</span>
 
@@ -176,11 +179,11 @@ $("#adressBox").click(function(){
             </div>
 
             <div class="icon">
-            <img name="icon" src="profile.png" onClick="location.href='youraccount.html'" style="width: 25px; height: 25px; position: relative; top: -80px; left:580px; cursor:pointer;">
+            <img name="icon" src="pictures/profile.png" onClick="location.href='youraccount.html'" style="width: 25px; height: 25px; position: relative; top: -80px; left:580px; cursor:pointer;">
 
-            <img src="notif.png" onClick="location.href='youraccount.html'" style="width: 20px; height: 20px; position: relative; top: -80px; left:590px; cursor:pointer;">
+            <img src="pictures/notif.png" onClick="location.href='youraccount.html'" style="width: 20px; height: 20px; position: relative; top: -80px; left:590px; cursor:pointer;">
 
-            <img src="cart2.png" onClick="location.href='cart.html'" style="width: 20px; height: 20px; position: relative; top: -80px; left: 600px; cursor:pointer;">
+            <img src="cpictures/art2.png" onClick="location.href='cart.html'" style="width: 20px; height: 20px; position: relative; top: -80px; left: 600px; cursor:pointer;">
             </div>
 
         </div>
@@ -190,7 +193,7 @@ $("#adressBox").click(function(){
     
     <div class="corpus">
         <div class="accountHeader">
-            <img src="profilepictureB.png" name="profile picture" alt="/profile picture" style="width: 50px; height: 50px; margin-top: 10px; float: left; margin-left: 50px;">
+            <img src="pictures/profilepictureB.png" name="profile picture" alt="/profile picture" style="width: 50px; height: 50px; margin-top: 10px; float: left; margin-left: 50px;">
             <h2 style="margin-left: 200px;float: left;text-align: center;">Welcome Mister X !</h2>
             <p>Glad to see you back</p>
         </div>
@@ -198,22 +201,22 @@ $("#adressBox").click(function(){
     <div class="box-container">
 
         <div class="box" id="settingsBox" style="margin-top: 50px;">
-            <img src="settings.png" alt="/setting logo" style="width: 70px; height: 70px;margin-top: 20px; margin-left: 10px;float: left;">
+            <img src="pictures/settings.png" alt="/setting logo" style="width: 70px; height: 70px;margin-top: 20px; margin-left: 10px;float: left;">
             <h4 style="float: left; color: black; margin-left: 40px; margin-top: 50px;">MY INFORMATIONS</h4>
         </div>
         
         <div class="box" id="ordersBox" style="margin-top: 50px;">
-            <img src="orders.png" alt="/orders logo" style="width: 60px; height: 80px;margin-top: 20px; margin-left: 10px;float: left;">
+            <img src="pictures/orders.png" alt="/orders logo" style="width: 60px; height: 80px;margin-top: 20px; margin-left: 10px;float: left;">
             <h4 style="float: left; color: black; margin-left: 70px; margin-top: 50px;">MY ORDERS</h4>
         </div>
 
         <div class="box" id ="adressBox" style="margin-top: 50px;">
-            <img src="location.png" alt="/adress logo" style="width: 60px; height: 90px;margin-top: 10px; margin-left: 10px;float: left;">
+            <img src="pictures/location.png" alt="/adress logo" style="width: 60px; height: 90px;margin-top: 10px; margin-left: 10px;float: left;">
             <h4 style="float: left; color: black; margin-left: 50px; margin-top: 50px;">MY DELIVERY ADRESS</h4>
         </div>
 
         <div class="box" id="auctionBox" style="margin-top: 50px;">
-            <img src="auctions.png" alt="/auctions logo" style="width: 80px; height: 90px;margin-top: 10px; margin-left: 10px;float: left;">
+            <img src="pictures/auctions.png" alt="/auctions logo" style="width: 80px; height: 90px;margin-top: 10px; margin-left: 10px;float: left;">
             <h4 style="float: left; color: black; margin-left: 50px; margin-top: 50px;">MY AUCTIONS</h4>
         </div>
     </div>
