@@ -1,5 +1,5 @@
 <?php
-$server_name="localhost:3307";
+$server_name="localhost:3306";
 $username="root";
 $password="";
 $database_name="cykel";
@@ -17,6 +17,7 @@ if(isset($_POST['save']))
     $username=$_POST['username'];
     $password=$_POST['password'];
     $firstName=$_POST['firstName'];
+    $lastName=$_POST['lastName'];
     $adress=$_POST['adress'];
     $city=$_POST['city'];
     $zipCode=$_POST['zipCode'];
