@@ -23,7 +23,7 @@ if(isset($_POST['save']))
     $country=$_POST['country'];
     $phone=$_POST['phone'];
     
-    $sql_query = "INSERT INTO buyer (firstName,lastName,photo,legalContract, paymentMethod, adress, city, zipCode, country, phone, username, password) VALUES ('$first_name','$last_name','$gender','$email','$phone')";
+    $sql_query = "INSERT INTO buyer (firstName,lastName, adress, city, zipCode, country, phone, username, password) VALUES ('$firstName','$lastName','$adress','$city','$zipCode','$country','$phone','$username','$password')";
     
     if(mysqli_query($conn, $sql_query))
     {
