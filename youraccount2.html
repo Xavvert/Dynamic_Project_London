@@ -95,7 +95,24 @@
         .box:hover {
             background-color: #99adc1;
         }
-        .settings {
+        .settingsForm {
+            vertical-align: middle;
+        }
+        .adressForm {
+            vertical-align: middle;
+        }
+        .ordersForm {
+            vertical-align: middle;
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+        }
+        .orderTitle {
+
+        }
+        .orderRow {
+            
+        }
+        .auctionForm {
             vertical-align: middle;
         }
     </style>
@@ -116,18 +133,19 @@
 
 $(document).ready(function(){
 
-$("#settings").click(function(){
-    $("#settingsform").toggle(500);
-    $("#orders").toggle(500); 
-    $("#location").toggle(500);
-    $("#auctions").toggle(500);
+$("#settingsBox").click(function(){
+    $("#settingsForm").toggle(500);
+    $("#ordersBox").toggle(500); 
+    $("#adressBox").toggle(500);
+    $("#auctionBox").toggle(500);
 
   });
-$("#location").click(function(){
-    $("#adressesform").toggle(500);
-    $("#orders").toggle(500); 
-    $("#settings").toggle(500);
-    $("#auctions").toggle(500);
+
+$("#adressBox").click(function(){
+    $("#adressForm").toggle(500);
+    $("#ordersBox").toggle(500); 
+    $("#settingsBox").toggle(500);
+    $("#auctionBox").toggle(500);
 
   });
    });
@@ -179,31 +197,30 @@ $("#location").click(function(){
 
     <div class="box-container">
 
-        <div class="box" id="settings" style="margin-top: 50px;">
+        <div class="box" id="settingsBox" style="margin-top: 50px;">
             <img src="settings.png" alt="/setting logo" style="width: 70px; height: 70px;margin-top: 20px; margin-left: 10px;float: left;">
-            <h3 style="float: left; color: black; margin-left: 30px; margin-top: 50px;">MY INFORMATIONS</h3>
+            <h4 style="float: left; color: black; margin-left: 40px; margin-top: 50px;">MY INFORMATIONS</h4>
         </div>
         
-        <div class="box" id="orders" style="margin-top: 50px;">
+        <div class="box" id="ordersBox" style="margin-top: 50px;">
             <img src="orders.png" alt="/orders logo" style="width: 60px; height: 80px;margin-top: 20px; margin-left: 10px;float: left;">
-            <h3 style="float: left; color: black; margin-left: 50px; margin-top: 50px;">MY ORDERS</h3>
+            <h4 style="float: left; color: black; margin-left: 70px; margin-top: 50px;">MY ORDERS</h4>
         </div>
 
-        <div class="box" id ="location" style="margin-top: 50px;">
-            <img src="location.png" alt="/location logo" style="width: 60px; height: 90px;margin-top: 10px; margin-left: 10px;float: left;">
-            <h3 style="float: left; color: black; margin-left: 50px; margin-top: 50px;">MY ADRESSES</h3>
+        <div class="box" id ="adressBox" style="margin-top: 50px;">
+            <img src="location.png" alt="/adress logo" style="width: 60px; height: 90px;margin-top: 10px; margin-left: 10px;float: left;">
+            <h4 style="float: left; color: black; margin-left: 50px; margin-top: 50px;">MY DELIVERY ADRESS</h4>
         </div>
 
-        <div class="box" id="auctions" style="margin-top: 50px;">
+        <div class="box" id="auctionBox" style="margin-top: 50px;">
             <img src="auctions.png" alt="/auctions logo" style="width: 80px; height: 90px;margin-top: 10px; margin-left: 10px;float: left;">
-            <h3 style="float: left; color: black; margin-left: 50px; margin-top: 50px;">MY AUCTIONS</h3>
+            <h4 style="float: left; color: black; margin-left: 50px; margin-top: 50px;">MY AUCTIONS</h4>
         </div>
     </div>
 <br>
 
 <!--display none-->
-    <div class="settings" id="settingsform" style="display: none;">
-            
+    <div class="settingsForm" id="settingsForm" style="display: none;">
             <!--écrire par dessus les infos pour update-->
             <form action="registrationB.php" method="post" style="text-align: center; margin-top: -180px; margin-left: 220px;">
                 <h3>My personnal information</h3>
@@ -233,10 +250,10 @@ $("#location").click(function(){
             </form>
     </div>
 
-    <div class="adresses" id="adressesform" style="display: none;">
+    <div class="adressForm" id="adressForm" style="display: none;">
             <!--écrire par dessus les infos pour update-->
         <form action="blabla.php" method="post" style="text-align: center; margin-top: -180px; margin-left: 200px;">
-            <h3>My delivery preferences</h3>
+            <h3>My delivery Adress</h3>
             <label>Adress</label><br><input type="text" name="adress" value="DB adress">
             <br>
             <label>City</label><br><input type="text" name="city" value="DB city">
@@ -250,6 +267,10 @@ $("#location").click(function(){
             <br>
             <br>
         </form>
+    </div>
+
+    <div class="orders" id="ordersForm" style="display: none;">
+
     </div>
 
 
