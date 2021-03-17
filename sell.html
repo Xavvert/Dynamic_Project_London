@@ -3,7 +3,7 @@
 
 <head>
     <title>Cykel - Sell</title>
-    <meta charset="utf-8">
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="header&footer.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -48,8 +48,37 @@
             font-size: 36px;
             margin-left: 50px;
         }
-    </style>
+        
+        
+        .co{
+            width: 400px;
+            height: 300px;
+            margin-left: 300px;
+            background-color: #FEE6D4;
+            border-radius: 1em;
+            color: black;
+            text-align: center;
+            font-size:20px;
+            font-family: "Verdana";
 
+        }
+        .newco{
+            width: 400px;
+            height: 300px;
+            margin-left: 850px;
+            background-color: #FEE6D4;
+            border-radius: 1em;
+            color: black;
+            text-align: center;
+            font-size:20px;
+            font-family: "Verdana";
+
+        }
+        h5 {
+            font-size:30px;
+        }
+    </style>
+    
     <link rel='icon' href='Cykel.png' type='image/x-icon' />
 </head>
 
@@ -66,7 +95,7 @@
 </script>
 
 <body>
-    <div id="layout">
+<div id="layout">
 
         <div id="header">
             <center>
@@ -98,8 +127,39 @@
 
         </div>
     </div>
-<h1>SELL</h1>
-
+    <center>
+<h1>Hello Seller</h1>
+    
+    <p> Please log in if you already have an account</p>
+    
+    <p > If not, sign up <a href="signUpS.html" > here</a></p>
+    
+        </center>
+    
+    <div class="co">
+    <h5>Already an account?</h5>
+    <form action="blablabla.php" method="GET">
+        Username(email)<br><input type="text" name="user">
+        <br>
+        <br>
+        Password<br><input type="text" name="pw">
+        <br>
+        <br>
+        <button>Log In</button>
+    </form>
+</div>
+<div class="newco">
+    <h5>Create your account !</h5>
+    <form action="blablabla.php" method="GET">
+        Username(email)<br><input type="text" name="user">
+        <br>
+        <br>
+        Password<br><input type="text" name="pw">
+        <br>
+        <br>
+        <button>Sign Up</button>
+    </form>
+</div>
 
 <!--footer-->
 
@@ -136,11 +196,11 @@
             <h4 class="title">Payment Methods</h4>
             <p>This website accept this payment methods.</p>
             <ul class="payment">
-            <li><a href="javascript:void(0)"><i class="fa fa-cc-amex" aria-hidden="true"></i></a></li>
-            <li><a href="javascript:void(0)"><i class="fa fa-credit-card" aria-hidden="true"></i></a></li>            
-            <li><a href="javascript:void(0)"><i class="fa fa-paypal" aria-hidden="true"></i></a></li>
-            <li><a href="javascript:void(0)"><i class="fa fa-cc-visa" aria-hidden="true"></i></a></li>
-            <li><a href="javascript:void(0)"><i class="fa fa-apple" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-cc-amex" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-credit-card" aria-hidden="true"></i></a></li>            
+            <li><a href="#"><i class="fa fa-paypal" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-cc-visa" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-apple" aria-hidden="true"></i></a></li>
             </ul>
             </div>
         </div>
@@ -151,6 +211,7 @@
         
         
     </footer>
+
 </body>
 
 </html>
