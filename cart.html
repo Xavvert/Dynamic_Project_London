@@ -90,28 +90,24 @@
           table-layout: initial; /*auto ou fixed ou initial à voir comment ca évolue*/
           width: 100%;  
           text-align: center;
-          margin: 0 auto;
           border-collapse: collapse;
+          border-top-style: hidden;
+          border-spacing: 0.5rem;
         }
-
-        table th {
-          border: none; 
-        }
-
         table td {
           border: 5px; 
+        }   
+        td, th {
+          border: 1px solid #999;
+          padding: 0.5rem;
         }
-        table tr:first-child td {
-          border-top: 0;
-        }
-        table tr td:first-child {
-          border-left: 0;
-        }
-        table tr:last-child td {
-          border-bottom: 0;
-        }
-        table tr td:last-child {
-          border-right: 0;
+
+        .cartFooter {
+            width: 800px;
+            height: 100px;
+            position: relative;
+            background-color: #f2eae0;
+            border-radius: 0.6em;
         }
 
     </style>
@@ -139,7 +135,40 @@
         .close:after {
           transform: rotate(-45deg);
         }
+    </style>
+
+    <style type="text/css" caption="button order ">
         
+        .myButton {
+      box-shadow: 0px 10px 14px -7px #3e7327;
+      background-color:#77b55a;
+      border-radius:4px;
+      border:1px solid #4b8f29;
+      cursor:pointer;
+      color:#ffffff;
+      font-family:Verdana;
+      font-size:17px;
+      font-weight:bold;
+      padding:8px 15px;
+      text-shadow:0px 1px 0px #5b8a3c;
+      margin-left: 600px;
+      float:left;
+      margin-top: -50px;
+    }
+    .myButton:hover {
+      background-color:#72b352;
+    }
+    .myButton:active {
+      position:relative;
+      top:1px;
+    }
+
+    #info{
+      text-align: center;
+      padding-left: 500px;
+    }
+
+
     </style>
 
 
@@ -197,19 +226,19 @@
     <br>
     <div class="corpus">
         <div class="cartHeader">
-            <img id="logo"  src="Cykel.png" alt="Cykel LOGO" style="width: 50px; height: 50px; margin-top: 10px; cursor:pointer; float: left; margin-left: 50px;">
+            <img src="cart2.png"  style="width: 50px; height: 50px; margin-top: 10px; float: left; margin-left: 50px;">
             <h2 style="margin-left: 200px;float: left;text-align: center;">Shipping Cart</h2>
         </div>
 
         <div class="cartShipping">
             <table class="c" border="1">
-              <tr>
-                <th></th>
-                <th style="text-align: center;">Product</th>
+              <thead>
+                <th colspan="2" style="text-align: center;">Product</th>
                 <th style="text-align: center;">Price</th>
                 <th style="text-align: center;">Quantity</th>
                 <th style="text-align: center;">Subtotal</th>
-              </tr>
+              </thead>
+
               <tr>
                 <td><a href="#" class="close"></td>
                 <td>une image + une description</td>
@@ -217,6 +246,7 @@
                 <td>2</td>
                 <td>40£</td>
               </tr>
+
               <tr>
                 <td><a href="#" class="close"></td>
                 <td>une image + une description</td>
@@ -224,6 +254,7 @@
                 <td>3</td>
                 <td>60£</td>
               </tr> 
+
                <tr>
                 <td><a href="#" class="close"></td>
                 <td>une image + une description</td>
@@ -231,10 +262,32 @@
                 <td>1</td>
                 <td>20£</td>
               </tr>
+
+              <tr>
+                <td><a href="#" class="close"></td>
+                <td>une image + une description</td>
+                <td>20£</td>
+                <td>1</td>
+                <td>20£</td>
+              </tr>
+
+              <tr>
+                <td><a href="#" class="close"></td>
+                <td>une image + une description</td>
+                <td>20£</td>
+                <td>1</td>
+                <td>20£</td>
+              </tr>
+
             </table>
         </div>
-        <br>
 
+        <div class="cartFooter">
+            <h5 style="padding-top: 10px; margin-left: 100px; color:red;">Items: 2 + 3 + 1 + 1 + 1</h5>
+            <h3 style="margin-left: 100px; float: left; color:red;">Total : 40 + 60 + 20 + 20 + 20</h3>
+            <button class="myButton" type="submit"> ORDER</button>
+
+        </div>
     
     </div>
 
