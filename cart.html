@@ -57,11 +57,94 @@
         }
     </style>
 
-    
+    <style type="text/css">
+        
+        .cartContainer {
+            width: 1000px;
+            height: auto;
+            background-color: #E8DBCB;
+            box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
+            border-radius: 10px;
+            margin: 80px auto;
+        }
+        .corpus {
+            width: 800px;
+            height: auto;
+            margin-left: 100px;
+
+        }
+        .cartHeader {
+            width: 800px;
+            height: 70px;
+            position: relative;
+            background-color: #f2eae0;
+            border-top-right-radius: 0.6em;
+            border-top-left-radius: 0.6em;
+        }
+
+        .cartShipping {
+            width: 800px;
+            height: auto;
+        }
+        table.c {
+          table-layout: initial; /*auto ou fixed ou initial à voir comment ca évolue*/
+          width: 100%;  
+          text-align: center;
+          margin: 0 auto;
+          border-collapse: collapse;
+        }
+
+        table th {
+          border: none; 
+        }
+
+        table td {
+          border: 5px; 
+        }
+        table tr:first-child td {
+          border-top: 0;
+        }
+        table tr td:first-child {
+          border-left: 0;
+        }
+        table tr:last-child td {
+          border-bottom: 0;
+        }
+        table tr td:last-child {
+          border-right: 0;
+        }
+
+    </style>
+
+    <style type="text/css" caption="cross animation to delete an item">
+        .close {
+          position: center;
+          width: 20px;
+          height: 20px;
+          opacity: 0.3;
+        }
+        .close:hover {
+          opacity: 1;
+        }
+        .close:before, .close:after {
+          position: absolute;
+          content: ' ';
+          height: 20px;
+          width: 2px;
+          background-color: #333;
+        }
+        .close:before {
+          transform: rotate(45deg);
+        }
+        .close:after {
+          transform: rotate(-45deg);
+        }
+        
+    </style>
+
 
     <link rel='icon' href='Cykel.png' type='image/x-icon' />
 </head>
-
 
 <script type="text/javascript">
     function openNav() {
@@ -75,8 +158,9 @@
 </script>
 
 <body>
-<div id="layout">
 
+    <!--header-->
+<div id="layout">
         <div id="header">
             <center>
                 <img id="logo"  src="Cykel.png" alt="Cykel LOGO" onClick="location.href='HomePage.html'" style="width: 70px; height: 70px; margin-top: 10px; cursor:pointer; ">
@@ -107,6 +191,55 @@
 
         </div>
     </div>
+<!-------------------------------------------->
+
+<div class="cartContainer">
+    <br>
+    <div class="corpus">
+        <div class="cartHeader">
+            <img id="logo"  src="Cykel.png" alt="Cykel LOGO" style="width: 50px; height: 50px; margin-top: 10px; cursor:pointer; float: left; margin-left: 50px;">
+            <h2 style="margin-left: 200px;float: left;text-align: center;">Shipping Cart</h2>
+        </div>
+
+        <div class="cartShipping">
+            <table class="c" border="1">
+              <tr>
+                <th></th>
+                <th style="text-align: center;">Product</th>
+                <th style="text-align: center;">Price</th>
+                <th style="text-align: center;">Quantity</th>
+                <th style="text-align: center;">Subtotal</th>
+              </tr>
+              <tr>
+                <td><a href="#" class="close"></td>
+                <td>une image + une description</td>
+                <td>20£</td>
+                <td>2</td>
+                <td>40£</td>
+              </tr>
+              <tr>
+                <td><a href="#" class="close"></td>
+                <td>une image + une description</td>
+                <td>20£</td>
+                <td>3</td>
+                <td>60£</td>
+              </tr> 
+               <tr>
+                <td><a href="#" class="close"></td>
+                <td>une image + une description</td>
+                <td>20£</td>
+                <td>1</td>
+                <td>20£</td>
+              </tr>
+            </table>
+        </div>
+        <br>
+
+    
+    </div>
+
+</div>
+
 
 <!--footer-->
 
