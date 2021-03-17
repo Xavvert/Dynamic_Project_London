@@ -117,7 +117,18 @@
 $(document).ready(function(){
 
 $("#settings").click(function(){
-    $("#settingsform").toggle(500); 
+    $("#settingsform").toggle(500);
+    $("#orders").toggle(500); 
+    $("#location").toggle(500);
+    $("#auctions").toggle(500);
+
+  });
+$("#location").click(function(){
+    $("#adressesform").toggle(500);
+    $("#orders").toggle(500); 
+    $("#settings").toggle(500);
+    $("#auctions").toggle(500);
+
   });
    });
 
@@ -155,9 +166,10 @@ $("#settings").click(function(){
             </div>
 
         </div>
-    </div>
+</div>
 
 <div class="accountContainer">
+    
     <div class="corpus">
         <div class="accountHeader">
             <img src="profilepictureB.png" name="profile picture" alt="/profile picture" style="width: 50px; height: 50px; margin-top: 10px; float: left; margin-left: 50px;">
@@ -172,17 +184,17 @@ $("#settings").click(function(){
             <h3 style="float: left; color: black; margin-left: 30px; margin-top: 50px;">MY INFORMATIONS</h3>
         </div>
         
-        <div class="box" style="margin-top: 50px;">
+        <div class="box" id="orders" style="margin-top: 50px;">
             <img src="orders.png" alt="/orders logo" style="width: 60px; height: 80px;margin-top: 20px; margin-left: 10px;float: left;">
             <h3 style="float: left; color: black; margin-left: 50px; margin-top: 50px;">MY ORDERS</h3>
         </div>
 
-        <div class="box" style="margin-top: 50px;">
+        <div class="box" id ="location" style="margin-top: 50px;">
             <img src="location.png" alt="/location logo" style="width: 60px; height: 90px;margin-top: 10px; margin-left: 10px;float: left;">
             <h3 style="float: left; color: black; margin-left: 50px; margin-top: 50px;">MY ADRESSES</h3>
         </div>
 
-        <div class="box" style="margin-top: 50px;">
+        <div class="box" id="auctions" style="margin-top: 50px;">
             <img src="auctions.png" alt="/auctions logo" style="width: 80px; height: 90px;margin-top: 10px; margin-left: 10px;float: left;">
             <h3 style="float: left; color: black; margin-left: 50px; margin-top: 50px;">MY AUCTIONS</h3>
         </div>
@@ -191,14 +203,59 @@ $("#settings").click(function(){
 
 <!--display none-->
     <div class="settings" id="settingsform" style="display: none;">
-        <form>
-            Name :  <input type="text" name="name" value="DBname"> 
-        </form>
-        
+            
+            <!--écrire par dessus les infos pour update-->
+            <form action="registrationB.php" method="post" style="text-align: center; margin-top: -180px; margin-left: 220px;">
+                <h3>My personnal information</h3>
+                <label>Email(username)</label>
+                <br><input type="email" name="username" value="DB mail">
+                <br>
+                <label>Password</label><br><input type="password" name="password" value="DB pw"> 
+                <br>
+                <label>First Name</label><br><input type="text" name="firstName" value="DB firstname">
+                <br>
+                <label>Last Name</label><br><input type="text" name="lastName" value="DB lastName">
+                <br>
+                <label>Adress</label><br><input type="text" name="adress" value="DB adress">
+                <br>
+                <label>City</label><br><input type="text" name="city" value="DB city">
+                <br>
+                <label>Zip Code</label><br><input type="text" name="zipCode" value="DB zipCode">
+                <br>
+                <label>Country</label><br><input type="text" name="country" value="DB country">
+                <br>
+                <label>Phone Number</label><br><input type="text" name="phone" value="DB phone">
+                <br>
+                <br>
+                <input type="submit" name="save" value="Save Changes">
+                <br>
+                <br>
+            </form>
     </div>
+
+    <div class="adresses" id="adressesform" style="display: none;">
+            <!--écrire par dessus les infos pour update-->
+        <form action="blabla.php" method="post" style="text-align: center; margin-top: -180px; margin-left: 200px;">
+            <h3>My delivery preferences</h3>
+            <label>Adress</label><br><input type="text" name="adress" value="DB adress">
+            <br>
+            <label>City</label><br><input type="text" name="city" value="DB city">
+            <br>
+            <label>Zip Code</label><br><input type="text" name="zipCode" value="DB zipCode">
+            <br>
+            <label>Country</label><br><input type="text" name="country" value="DB country">
+            <br>
+            <br>
+            <input type="submit" name="save" value="Save Changes">
+            <br>
+            <br>
+        </form>
+    </div>
+
 
     </div>
 </div>
+
 
     
 
