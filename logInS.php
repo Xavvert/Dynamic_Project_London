@@ -1,3 +1,48 @@
+<?php
+session_start();
+$server_name="localhost:3306";
+$username="root";
+$password="";
+/*$password="root";*/
+$database_name="cykel";
+
+
+
+$conn=mysqli_connect($server_name,$username,$password,$database_name);
+
+if(!$conn)
+{
+    die("Connection Failed:".mysqli_connect_error());
+    
+}
+
+@$username=$_POST['username'];
+@$password=$_POST['password'];
+@$validation=$_POST["validation"];
+
+if(isset($validation)){
+    
+    $sql_query = mysqli_query($conn, "Select * from seller WHERE username = '$username' AND password = '$password'");
+    $rowCount = mysqli_num_rows($sql_query);
+    
+
+    if($rowCount > 0)
+    {
+        $_SESSION["authorize"]="yes";
+        $_SESSION["name"]=$username;
+        header("location:youraccountS.php");
+        echo ("OK");
+    }
+    else
+    {
+     echo ("Error : Wrong Password or Username");
+    }
+    mysqli_close($conn);
+
+}
+?>
+   
+ 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -99,7 +144,6 @@
 
 <body>
     <div id="layout">
-
         <div id="header">
             <center>
                 <img id="logo" src="pictures/Cykel.png" alt="Cykel LOGO" onClick="location.href='HomePage.html'" style="width: 70px; height: 70px; margin-top: 10px; cursor:pointer; ">
@@ -129,23 +173,24 @@
         </div>
     </div>
     <center>
-        <h1>Hello seller, Please enter all the informations for your Log IN </h1>
+        <h1>Hello seller, Please enter all the informations for LOG IN </h1>
 
-        <p> Please registrer if you don't have any account<a href="signUpS.html"> here</a></p>
 
+        <p> If you don't have any account, please register <a href="signUpS.html"> here</a></p>
 
     </center>
     <center>
         <div class="co">
 
-            <form action="logInS.php" method="post">
+            <form action="" method="post">
                 <label>Email(username)</label>
                 <br><input type="email" name="username">
                 <br>
                 <label>Password</label><br><input type="password" name="password">
                 <br>
-                <input type="submit" name="save" value="Submit">
+                <input type="submit" name="validation" value="Submit">
             </form>
+
         </div>
     </center>
 

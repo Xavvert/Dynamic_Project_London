@@ -1,8 +1,8 @@
 <?php
 $server_name="localhost:3306";
 $username="root";
-/*$password="";*/
-$password="root";
+$password="";
+/*$password="root";*/
 $database_name="cykel";
 
 $conn=mysqli_connect($server_name,$username,$password,$database_name);
@@ -25,6 +25,7 @@ if(isset($_POST['save']))
     if(mysqli_query($conn, $sql_query))
     {
         echo ("OK");
+        header("location:HomePage.html");
     }
     else
     {
