@@ -49,32 +49,39 @@
         }
 
         .grid-container {
-
-        display: grid;
-        background-color:#EEE8CD;
-        padding-left: 300px;
-        padding-right: 300px;
-        grid-template-rows: auto auto auto;
-        grid-gap: 5px;
-        border-top-size:1em;
-        border-top-style:solid;
+            display: grid;
+            background-color: #EEE8CD;
+            padding-left: 50px;
+            padding-right: 50px;
+            padding-bottom: 150px;
+            padding-top: 100px;
+            grid-template-columns: auto auto;
+            grid-gap: 30px;
+            border-top-size: 1em;
+            border-top-style: solid;
+            vertical-align: middle;
         }
 
         .item {
-            background-color: white;
-            margin: 30px 5px;
+            margin: 80px 150px;
+            width:200px;
             text-align: center;
-            font-size: 30px;
-            height: 280px;
+            font-size: 20px;
+            height: 300px;
             border-radius: 1em;
+            color: #0a255a;
         }
+
         .item:hover {
-            background-color: #d81717;
-            border-style: outset;
-            border-width: 2px; 
+            transform: scale(1.2); /* (120% zoom)*/
         }
-                #logo:hover {
-            
+        .item p {
+            font-size: 16px;
+            color: #335cae;
+            clear:both;
+        }
+
+        #logo:hover {
            transform: rotate(360deg);
             transition: all 1s;
         }
@@ -131,18 +138,39 @@
 
     <div class="grid-container">
 
-      <div class="item" onClick="location.href='cards.html'">
-        <img src="pictures/iphone.jpg" style="height: 280px; width: 450px; float: left; cursor: pointer;">
-        <p>
-            Smartphones
-        </p>
-      </div>
-      <div class="item" onClick="location.href='watches.html'" >
-        <img src="pictures/ipad.jpg" style="height: 280px; width: 450px; float: left; cursor: pointer;">
-        <p>
-            Touchscreen tablets
-        </p>
-      </div>
+        <div class="item" onClick="location.href='cards.html'">
+            <img src="pictures/bike1.png" style="height: 176px; width: 266px; float: left; cursor: pointer;">
+            Female City Bike
+            <p>
+                200£
+            </p>
+        </div>
+
+        <div class="item" onClick="location.href='cards.html'">
+            <img src="pictures/bike2.png" style="height: 180px; width: 280px; float: left; cursor: pointer;">
+            Race Sport Bike - Trek
+            <p>
+                500£
+            </p>
+        </div>
+
+        <div class="item" onClick="location.href='cards.html'">
+            <img src="pictures/bike3.png" style="height: 200px; width: 300px; float: left; cursor: pointer;">
+            Male City Bike
+            <p>
+                290£
+            </p>
+        </div>
+
+        <div class="item" onClick="location.href='cards.html'">
+            <img src="pictures/bike4.png" style="height: 200px; width: 280px; float: left; cursor: pointer;">
+            Mountain Bike - Trek
+            <p>
+                380£
+            </p>
+        </div>
+
+
  </div>
 
 
