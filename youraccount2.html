@@ -153,6 +153,22 @@ $("#adressBox").click(function(){
     $("#auctionBox").toggle(500);
 
   });
+
+$("#ordersBox").click(function(){
+    $("#ordersForm").toggle(500);
+    $("#adressBox").toggle(500); 
+    $("#settingsBox").toggle(500);
+    $("#auctionBox").toggle(500);
+
+  });
+
+$("#auctionBox").click(function(){
+    $("#auctionsForm").toggle(500);
+    $("#adressBox").toggle(500); 
+    $("#settingsBox").toggle(500);
+    $("#ordersBox").toggle(500);
+
+  });
    });
 
 </script>
@@ -222,7 +238,10 @@ $("#adressBox").click(function(){
     </div>
 <br>
 
-<!--display none-->
+            <!--display none-->
+
+<!--MY INFORMAtIONS-->
+
     <div class="settingsForm" id="settingsForm" style="display: none;">
             <!--écrire par dessus les infos pour update-->
             <form action="registrationB.php" method="post" style="text-align: center; margin-top: -180px; margin-left: 220px;">
@@ -253,6 +272,8 @@ $("#adressBox").click(function(){
             </form>
     </div>
 
+    <!--MY ADRESSES-->
+
     <div class="adressForm" id="adressForm" style="display: none;">
             <!--écrire par dessus les infos pour update-->
         <form action="blabla.php" method="post" style="text-align: center; margin-top: -180px; margin-left: 200px;">
@@ -272,7 +293,82 @@ $("#adressBox").click(function(){
         </form>
     </div>
 
+<!--MY ORDERS-->
+
     <div class="orders" id="ordersForm" style="display: none;">
+
+        <table border="1" style="width: 800px; text-align: center; color: black; font-size: 17px;">
+          
+          <tr>
+            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Order number</th>
+            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Delivery Adress</th>
+            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Price</th>
+            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Content</th>
+          </tr>
+
+          <tr>
+            <td>1</td>
+            <td>Bordeaux</td>
+            <td>50£</td>
+            <td>Playing cards</td>
+          </tr>
+
+          <tr>
+            <td>2</td>
+            <td>Paris</td>
+            <td>90£</td>
+            <td>Boardgames</td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+            <td>Marseille</td>
+            <td>150£</td>
+            <td>ITEquipment</td>
+          </tr>
+        </table>
+        <br>
+        <br>
+
+    </div>
+
+<!--MY AUCTIONS-->
+
+    <div class="auctions" id="auctionsForm" style="display: none;">
+
+        <table border="1" style="width: 800px; text-align: center; color: black; font-size: 17px;">
+          
+          <tr>
+            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Order number</th>
+            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Status</th>
+            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Price</th>
+            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Items</th>
+            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Informations</th>
+          </tr>
+
+          <tr>
+            <td>1</td>
+            <td style="color: green;">WIN</td>
+            <td>50£</td>
+            <td>V2cards</td>
+          </tr>
+
+          <tr>
+            <td>2</td>
+            <td style="color: red;">LOST</td>
+            <td>90£</td>
+            <td>Monopoly Collector</td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+            <td style="color: red;">LOST</td>
+            <td>150£</td>
+            <td>Remote</td>
+          </tr>
+        </table>
+        <br>
+        <br>
 
     </div>
 
