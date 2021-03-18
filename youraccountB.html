@@ -106,14 +106,16 @@
             display: grid;
             grid-template-columns: auto auto auto auto;
         }
-        .orderTitle {
-
-        }
-        .orderRow {
-            
-        }
         .auctionForm {
             vertical-align: middle;
+        }
+        
+        table tr {
+            padding:15px;
+        }
+        
+        table td {
+            padding:10px;
         }
         #logo:hover {
 
@@ -121,6 +123,42 @@
             transition: all 1s;
         }
     </style>
+
+    <style type="text/css" caption="form design">
+        * {
+          box-sizing: border-box;
+        }
+
+        input[type=text],input[type=email],input[type=password], select, textarea {
+          width: 200px;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          resize: vertical;
+          float: right;
+          margin-right: 500px;
+        }
+
+        label {
+          padding: 12px 12px 12px 0;
+          display: inline-block;
+        }
+
+        input[type=submit] {
+          background-color: #4CAF50;
+          color: white;
+          padding: 12px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          margin-left: 200px;
+        }
+
+        input[type=submit]:hover {
+          background-color: #45a049;
+        }
+
+</style>
 
     <link rel='icon' href='Cykel.png' type='image/x-icon' />
 </head>
@@ -243,26 +281,26 @@ $("#auctionBox").click(function(){
 
     <div class="settingsForm" id="settingsForm" style="display: none;">
             <!--écrire par dessus les infos pour update-->
-            <form action="registrationB.php" method="post" style="text-align: center; margin-top: -180px; margin-left: 220px;">
+            <form action="registrationB.php" method="post">
                 <h3>My personnal information</h3>
                 <label>Email(username)</label>
-                <br><input type="email" name="username" value="DB mail">
+                <input type="email" name="username" value="DB mail">
                 <br>
-                <label>Password</label><br><input type="password" name="password" value="DB pw"> 
+                <label>Password</label><input type="password" name="password" value="DB pw"> 
                 <br>
-                <label>First Name</label><br><input type="text" name="firstName" value="DB firstname">
+                <label>First Name</label><input type="text" name="firstName" value="DB firstname">
                 <br>
-                <label>Last Name</label><br><input type="text" name="lastName" value="DB lastName">
+                <label>Last Name</label><input type="text" name="lastName" value="DB lastName">
                 <br>
-                <label>Adress</label><br><input type="text" name="adress" value="DB adress">
+                <label>Adress</label><input type="text" name="adress" value="DB adress">
                 <br>
-                <label>City</label><br><input type="text" name="city" value="DB city">
+                <label>City</label><input type="text" name="city" value="DB city">
                 <br>
-                <label>Zip Code</label><br><input type="text" name="zipCode" value="DB zipCode">
+                <label>Zip Code</label><input type="text" name="zipCode" value="DB zipCode">
                 <br>
-                <label>Country</label><br><input type="text" name="country" value="DB country">
+                <label>Country</label><input type="text" name="country" value="DB country">
                 <br>
-                <label>Phone Number</label><br><input type="text" name="phone" value="DB phone">
+                <label>Phone Number</label><input type="text" name="phone" value="DB phone">
                 <br>
                 <br>
                 <input type="submit" name="save" value="Save Changes">
@@ -275,15 +313,15 @@ $("#auctionBox").click(function(){
 
     <div class="adressForm" id="adressForm" style="display: none;">
             <!--écrire par dessus les infos pour update-->
-        <form action="blabla.php" method="post" style="text-align: center; margin-top: -180px; margin-left: 200px;">
+        <form action="blabla.php" method="post">
             <h3>My delivery Adress</h3>
-            <label>Adress</label><br><input type="text" name="adress" value="DB adress">
+            <label>Adress</label><input type="text" name="adress" value="DB adress">
             <br>
-            <label>City</label><br><input type="text" name="city" value="DB city">
+            <label>City</label><input type="text" name="city" value="DB city">
             <br>
-            <label>Zip Code</label><br><input type="text" name="zipCode" value="DB zipCode">
+            <label>Zip Code</label><input type="text" name="zipCode" value="DB zipCode">
             <br>
-            <label>Country</label><br><input type="text" name="country" value="DB country">
+            <label>Country</label><input type="text" name="country" value="DB country">
             <br>
             <br>
             <input type="submit" name="save" value="Save Changes">
