@@ -35,7 +35,7 @@
 		    color: #757a78;
 		    font-family: "Verdana"
 		}
-		.footer .title{text-align: left;color:black;font-size:25px;}
+		.footer .title{text-align: left;color:red;font-size:25px;}
 		.footer .social-icon{padding:0px;margin:0px;}
 		.footer .social-icon a{display:inline-block;color:black;font-size:25px;padding:5px;}
 		.footer .acount-icon a{display:block;color:#878c94;font-size:18px;padding:5px;text-decoration:none;}
