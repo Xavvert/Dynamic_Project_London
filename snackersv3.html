@@ -208,6 +208,32 @@
         }
 
     </style>
+    <script type="text/javascript">
+    $(document).ready(function() {
+
+        $("#buy").click(function() {
+            $("#bid").show("slow");
+            $("#imm").show("slow");
+            $(this).hide("slow");
+            $("#offer").show("slow");
+
+        });
+
+    });
+
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+
+    function goBack() {
+        window.history.back();
+    }
+
+</script>
 
     <link rel='icon' href='pictures/Cykel.png' type='image/x-icon' />
 </head>
