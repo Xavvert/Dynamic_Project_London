@@ -179,31 +179,38 @@
         }
 
         .grid-container {
-
             display: grid;
             background-color: #EEE8CD;
-            grid-template-columns: auto auto auto auto auto;
-            grid-gap: 5px;
+            padding-left: 50px;
+            padding-right: 50px;
+            padding-bottom: 150px;
+            padding-top: 100px;
+            grid-template-columns: auto auto auto;
+            grid-gap: 30px;
             border-top-size: 1em;
             border-top-style: solid;
+            vertical-align: middle;
         }
 
         .item {
-            background-color: white;
-            margin: 30px 5px;
+            margin: 80px 150px;
             text-align: center;
-            font-size: 30px;
-            height: 280px;
+            font-size: 20px;
+            height: 230px;
+            border-radius: 1em;
+            color: #0a255a;
         }
 
         .item:hover {
-            background-color: #EAFDE1;
-            border-style: outset;
-            border-width: 1px;
+            transform: scale(1.2); /* (120% zoom)*/
+        }
+        .item p {
+            font-size: 16px;
+            color: #335cae;
         }
 
-        #logo:hover {
 
+        #logo:hover {
             transform: rotate(360deg);
             transition: all 1s;
         }
@@ -224,9 +231,8 @@
 
 
 <body>
-    <div class="container-fluid">
         <div id="layout">
-            <!-- header -->
+    <!-- header -->
             <div id="header">
                 <center>
                     <img id="logo" src="pictures/Cykel.png" alt="Cykel LOGO" onClick="location.href='HomePage.html'" style="width: 70px; height: 70px; margin-top: 10px; cursor:pointer; ">
@@ -260,18 +266,55 @@
 
     <div class="grid-container">
         <div class="item" onclick="location.href='surfboardV2.html'">
-            <img src="cards1.png" style="height: 200px ;width: 150px; cursor: pointer;">
-            <p style="margin-top: -11px">
-                £10
+            <img src="pictures/card1.png" style="height: 230px ;width: 150px; cursor: pointer;">
+            Surfboard V2
+            <p>
+                £14.00
             </p>
         </div>
         <div class="item" onclick="location.href='snackersv3.html'">
-            <img src="card2.png" style="height: 200px ;width: 150px; cursor: pointer;">
-            <p style="margin-top: -11px">
-                £10
+            <img src="pictures/card2.png" style="height: 230px ;width: 150px; cursor: pointer;">
+            SnakersV3
+            <p>
+                £12.00
             </p>
         </div>
+
+        <div class="item" onclick="location.href='snackersv3.html'">
+            <img src="pictures/card3.png" style="height: 230px ;width: 150px; cursor: pointer;">
+            Play Dead V2
+            <p>
+                £12.00
+            </p>
+        </div>
+
+        <div class="item" onclick="location.href='snackersv3.html'">
+            <img src="pictures/card4.png" style="height: 230px ;width: 150px; cursor: pointer;">
+            King Arthur Emerald Saga
+            <p>
+                £13.00
+            </p>
+        </div>
+
+        <div class="item" onclick="location.href='snackersv3.html'">
+            <img src="pictures/card5.png" style="height: 230px ;width: 150px; cursor: pointer;">
+            Hyper Neon
+            <p>
+                £14.00
+            </p>
+        </div>
+
+        <div class="item" onclick="location.href='snackersv3.html'">
+            <img src="pictures/card6.png" style="height: 230px ;width: 150px; cursor: pointer;">
+            Soundboard V3 Midnight
+            <p>
+                £10.00
+            </p>
+        </div>
+
     </div>
+
+
 
 <!--footer-->
 
