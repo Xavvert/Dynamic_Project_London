@@ -103,11 +103,29 @@
             display: grid;
             grid-template-columns: auto auto auto auto;
         }
-        table tr {
-            padding:15px;
+        table, tr {
+            padding:20px;
+            border-collapse: collapse;
+            border:none;
+            table-layout: auto;
         }
-        table td {
+        tr:nth-child(even) {
+            background-color: #eee;
+        }
+        tr:nth-child(odd) {
+            background-color: #fff;
+        }
+        td {
             padding:10px;
+        }
+        
+        th {
+          background-color: #FBA00E;
+          color: black;
+        }
+
+        button:hover {
+            background-color: #ff5353;
         }
 
         #logo:hover {
@@ -278,13 +296,13 @@ $("#manageBox").click(function(){
         <table border="1" style="width: 800px; text-align: center; color: black; font-size: 17px;">
           
           <tr>
-            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Order nb</th>
+            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Order</th>
             <th style="font-size: 20px;border: 1px solid black;text-align: center;">Date</th>
             <th style="font-size: 20px;border: 1px solid black;text-align: center;">Item</th>
             <th style="font-size: 20px;border: 1px solid black;text-align: center;">Price</th>
             <th style="font-size: 20px;border: 1px solid black;text-align: center;">Category</th>
             <th style="font-size: 20px;border: 1px solid black;text-align: center;">Description</th>
-            <th style="font-size: 20px;border: 1px solid black;text-align: center;">STATUS</th>
+            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Status</th>
             <th style="font-size: 20px;border: 1px solid black;text-align: center;">Remove item</th>
           </tr>
 

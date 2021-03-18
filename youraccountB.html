@@ -109,13 +109,25 @@
         .auctionForm {
             vertical-align: middle;
         }
-        
-        table tr {
-            padding:15px;
+        table, tr {
+            padding:20px;
+            border-collapse: collapse;
+            border:none;
+            table-layout: auto;
+        }
+        tr:nth-child(even) {
+            background-color: #eee;
+        }
+        tr:nth-child(odd) {
+            background-color: #fff;
+        }
+        td {
+            padding:10px;
         }
         
-        table td {
-            padding:10px;
+        th {
+          background-color: #FBA00E;
+          color: black;
         }
         #logo:hover {
 
