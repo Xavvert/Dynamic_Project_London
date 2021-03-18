@@ -174,6 +174,14 @@
           background-color: #45a049;
         }
 
+
+        input[name=delete] {
+          background-color: #ff5353;
+        }
+        input[name=delete]:hover {
+          background-color: red;
+        }
+
 </style>
 
     <link rel='icon' href='Cykel.png' type='image/x-icon' />
@@ -394,9 +402,64 @@ $("#databaseBox").click(function(){
             </form>
         <br>
     </div>
+   
+
+    <div class="userForm" id="userForm" style="display: none;">
+                <h3>Add a Buyer :</h3>
+                <a href="signUpB.html"><input type="submit" name="add" value="Add Buyer"></a>
+                <h3>Add a Seller :</h3>
+                <a href="signUpS.html"><input type="submit" name="add" value="Add Seller"></a>
+        <form action="deleteUser.php" method="post" style="">
+                <h3>Delete a User :</h3>
+                <label>User's email: </label>
+                <input type="email" name="user">
+                <input type="submit" name="delete" value="Delete User">
+                <br>
+                <br>
+            </form>
     </div>
 
+    <div class="databaseForm" id="databaseForm" style="display: none;">
 
+        <table border="1" style="width: 800px; text-align: center; color: black; font-size: 17px;">
+          
+          <tr>
+            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Email</th>
+            <th style="font-size: 20px;border: 1px solid black;text-align: center;">First Name</th>
+            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Last Name</th>
+            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Status</th>
+            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Type</th>
+          </tr>
+
+          <tr>
+            <td>myemail</td>
+            <td>myFName</td>
+            <td>myLName</td>
+            <td>LogIn</td>
+            <td>Seller</td>
+          </tr>
+
+        <tr>
+            <td>myemail</td>
+            <td>myFName</td>
+            <td>myLName</td>
+            <td>LogOut</td>
+            <td>Buyer</td>
+        </tr>
+
+        <tr>
+            <td>myemail</td>
+            <td>myFName</td>
+            <td>myLName</td>
+            <td>LogOut</td>
+            <td>Buyer</td>
+        </tr>
+        </table>
+        <br>
+        <br>
+    </div>
+
+ </div>
 
 
 
