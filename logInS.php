@@ -2,8 +2,8 @@
 session_start();
 $server_name="localhost:3306";
 $username="root";
-/*$password="";*/
-$password="root";
+$password="";
+/*$password="root";*/
 $database_name="cykel";
 
 
@@ -33,15 +33,20 @@ if(isset($validation)){
         $_SESSION["checkA"]=0;
         $_SESSION["checkB"]=0;
         $_SESSION["checkS"]=1;
-        header("location:youraccountS.php");
-        echo ("OK");
+
     }
     else
     {
      echo ("Error : Wrong Password or Username");
     }
-    mysqli_close($conn);
+    
+   $sql_query = mysqli_query($conn, "SELECT firstName from seller WHERE username='$username'"); 
+   $row = mysqli_fetch_array($sql_query);
 
+    $_SESSION["firstname"]=$row['firstName'];
+    header("location:youraccountS.php");
+    
+       mysqli_close($conn);
 }
 ?>
    
