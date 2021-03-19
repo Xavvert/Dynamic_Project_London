@@ -29,6 +29,11 @@ if(isset($validation)){
 if($sql_query)
 {
     $_SESSION["upS"]=1;
+    $_SESSION["username"]=$username;
+    $_SESSION["password"]=$password;
+    $_SESSION["firstname"]=$firstname;
+    $_SESSION["lastname"]=$lastname;
+    
     header("location:youraccountS.php");
 }
     
