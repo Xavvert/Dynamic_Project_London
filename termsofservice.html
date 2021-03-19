@@ -1,56 +1,8 @@
-<?php
-session_start();
-$server_name="localhost:3306";
-$username="root";
-/*$password="";*/
-$password="root";
-$database_name="cykel";
-
-
-
-$conn=mysqli_connect($server_name,$username,$password,$database_name);
-
-if(!$conn)
-{
-    die("Connection Failed:".mysqli_connect_error());
-    
-}
-
-@$username=$_POST['username'];
-@$password=$_POST['password'];
-@$validation=$_POST["validation"];
-
-if(isset($validation)){
-    
-    $sql_query = mysqli_query($conn, "Select * from seller WHERE username = '$username' AND password = '$password'");
-    $rowCount = mysqli_num_rows($sql_query);
-    
-
-    if($rowCount > 0)
-    {
-        $_SESSION["authorize"]="yes";
-        $_SESSION["name"]=$username;
-        $_SESSION["checkA"]=0;
-        $_SESSION["checkB"]=0;
-        $_SESSION["checkS"]=1;
-        header("location:youraccountS.php");
-        echo ("OK");
-    }
-    else
-    {
-     echo ("Error : Wrong Password or Username");
-    }
-    mysqli_close($conn);
-
-}
-?>
-   
- 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Cykel - Log In - Seller</title>
+    <title>Cykel - Terms Of Service</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="header&footer.css">
@@ -94,30 +46,20 @@ if(isset($validation)){
             font-size: 36px;
             margin-left: 50px;
         }
-
-        .co {
-            width: 400px;
-            height: 270px;
-            background-color: #FEE6D4;
-            border-radius: 1em;
-            color: black;
-            text-align: center;
-            font-size: 15x;
-            font-family: "Verdana";
-
+        .text {
+            padding: 50px;
+            background-color: whitesmoke;
+            font-family: Verdana;
         }
-
-        .newco {
-            width: 400px;
-            height: 300px;
-            margin-left: 850px;
-            background-color: #FEE6D4;
-            border-radius: 1em;
+        .text p {
+            font-size: 18px;
+            margin-left: 300px;
+            margin-right: 300px;
+            text-align: justify;
+        }
+        .text h3 {
+            margin-left: 300px;
             color: black;
-            text-align: center;
-            font-size: 20px;
-            font-family: "Verdana";
-
         }
 
         h5 {
@@ -147,6 +89,7 @@ if(isset($validation)){
 
 <body>
     <div id="layout">
+
         <div id="header">
             <center>
                 <img id="logo" src="pictures/Cykel.png" alt="Cykel LOGO" onClick="location.href='HomePage.html'" style="width: 70px; height: 70px; margin-top: 10px; cursor:pointer; ">
@@ -175,27 +118,44 @@ if(isset($validation)){
 
         </div>
     </div>
-    <center>
-        <h1>Hello seller, Please enter all the informations for LOG IN </h1>
 
+<!--content-->
 
-        <p> If you don't have any account, please register <a href="signUpS.html"> here</a></p>
-
-    </center>
-    <center>
-        <div class="co">
-
-            <form action="" method="post">
-                <label>Email(username)</label>
-                <br><input type="email" name="username">
-                <br>
-                <label>Password</label><br><input type="password" name="password">
-                <br>
-                <input type="submit" name="validation" value="Submit">
-            </form>
-
-        </div>
-    </center>
+    <div class="text">
+        <center>
+        <h1 style="color: black;"> Terms Of Service</h1>
+        <br>
+        <p>
+            By using our web site, you agree to these Terms of Use. We may change or update these terms so please check this page regularly.
+        </p>
+        <br>
+        <br>
+        <br>
+        </center>
+        <h3>COPYRIGHT</h3>
+        <br>
+        <p>
+            All content of our web site (including text, graphics, logos, button icons, images) is the property of Cykel. Any other use of our web site, including reproduction and internet links, is strictly prohibited without our prior written permission.
+        </p>
+        <br>
+        <br>
+        <br>
+        <h3>ERRORS AND INACCURACIES</h3>
+        <br>
+        <p>
+            We do not represent or warrant that the information on our web site is accurate, complete, or current. This includes pricing and availability information. We reserve the right to correct any errors or omissions, and to change or update information at any time without prior notice.
+        </p>
+        <br>
+        <br>
+        <br>
+        <h3>DISCLAIMER OF LIABILITY</h3>
+        <br>
+        <p>
+            We make no representations or warranties, express or implied, with respect to this web site. Its content, and the information and services available on or through it, are provided "as is." Except as otherwise provided under applicable laws, we and our affiliates will not be liable for any damages whatsoever arising out of or related to the use of this web site.
+        </p>
+        <br>
+        
+    </div>
 
     <!--footer-->
 
@@ -248,6 +208,4 @@ if(isset($validation)){
 
     </footer>
 
-</body>
-
-</html>
+</body></html>

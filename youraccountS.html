@@ -1,25 +1,3 @@
-<?php
-session_start();
-if(@$_SESSION["authorize"]!="yes"){
-    header("location:HomePage.html");
-    exit();
-    
-}
-
-    if($_SESSION["checkA"]!=1 && $_SESSION["checkB"]!=1 && $_SESSION["checkS"]==1)
-    {
-        header("location:youraccountS.php");
-        exit();
-    }
-
- if($_SESSION["checkA"]!=1 && $_SESSION["checkB"]==1 && $_SESSION["checkS"]!=1)
-    {
-        header("location:youraccountB.php");
-        exit();
-    }
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -122,14 +100,9 @@ if(@$_SESSION["authorize"]!="yes"){
         }
         .itemsForm {
             vertical-align: middle;
+            display: grid;
+            grid-template-columns: auto auto auto auto;
         }
-        .userForm {
-            vertical-align: middle;
-        }
-        .databaseForm {
-            vertical-align: middle;
-        }
-
         table, tr {
             padding:20px;
             border-collapse: collapse;
@@ -196,14 +169,6 @@ if(@$_SESSION["authorize"]!="yes"){
           background-color: #45a049;
         }
 
-
-        input[name=delete] {
-          background-color: #ff5353;
-        }
-        input[name=delete]:hover {
-          background-color: red;
-        }
-
 </style>
 
     <link rel='icon' href='Cykel.png' type='image/x-icon' />
@@ -224,33 +189,13 @@ $(document).ready(function(){
 
 $("#settingsBox").click(function(){
     $("#settingsForm").toggle(500);
-    $("#itemsBox").toggle(500); 
-    $("#userBox").toggle(500); 
-    $("#databaseBox").toggle(500); 
+    $("#manageBox").toggle(500); 
   });
 
-$("#itemsBox").click(function(){
+$("#manageBox").click(function(){
     $("#itemsForm").toggle(500);
     $("#settingsBox").toggle(500); 
-    $("#userBox").toggle(500); 
-    $("#databaseBox").toggle(500); 
   });
-
-$("#userBox").click(function(){
-    $("#userForm").toggle(500);
-    $("#settingsBox").toggle(500); 
-    $("#itemsBox").toggle(500); 
-    $("#databaseBox").toggle(500); 
-  });
-
-$("#databaseBox").click(function(){
-    $("#databaseForm").toggle(500);
-    $("#settingsBox").toggle(500); 
-    $("#userBox").toggle(500); 
-    $("#itemsBox").toggle(500); 
-  });
-
-
    });
 
 </script>
@@ -292,32 +237,22 @@ $("#databaseBox").click(function(){
     <div class="corpus">
         <div class="accountHeader">
             <img src="pictures/profilepictureB.png" name="profile picture" alt="/profile picture" style="width: 50px; height: 50px; margin-top: 10px; float: left; margin-left: 50px;">
-            <h2 style="margin-left: 200px;float: left;text-align: center;">Welcome <?php echo $_SESSION["name"]?></h2>
-              <h1> <a href="deconnexion.php"> Deco </a></h1>
+            <h2 style="margin-left: 200px;float: left;text-align: center;">Welcome Mister X !</h2>
         </div>
 
     <div class="box-container">
 
         <div class="box" id="settingsBox" style="margin-top: 50px;">
             <img src="pictures/settings.png" alt="/setting logo" style="width: 70px; height: 70px;margin-top: 20px; margin-left: 10px;float: left;">
-            <h4 style="float: left; color: black; margin-left: 60px; margin-top: 50px;">SETTINGS</h4>
+            <h4 style="float: left; color: black; margin-left: 40px; margin-top: 50px;">MY INFORMATIONS</h4>
         </div>
         
-        <div class="box" id="itemsBox" style="margin-top: 50px;">
+        <div class="box" id="manageBox" style="margin-top: 50px;">
             <img src="pictures/list.png" alt="/manageItems logo" style="width: 80px; height: 80px;margin-top: 20px; margin-left: 10px;float: left;">
             <h4 style="float: left; color: black; margin-left: 70px; margin-top: 50px;">MANAGE ITEMS</h4>
         </div>
-
-        <div class="box" id="userBox" style="margin-top: 50px;">
-            <img src="pictures/profile.png" alt="/manageUsers logo" style="width: 80px; height: 80px;margin-top: 20px; margin-left: 10px;float: left;">
-            <h4 style="float: left; color: black; margin-left: 50px; margin-top: 50px;">MANAGE USERS</h4>
-        </div>
-
-        <div class="box" id="databaseBox" style="margin-top: 50px;">
-            <img src="pictures/database.png" alt="/database logo" style="width: 70px; height: 80px;margin-top: 20px; margin-left: 30px;float: left;">
-            <h4 style="float: left; color: black; margin-left: 70px; margin-top: 50px;">DATABASE</h4>
-        </div>
     </div>
+    
 <br>
 
             <!--display none-->
@@ -328,7 +263,7 @@ $("#databaseBox").click(function(){
             <!--écrire par dessus les infos pour update-->
             <form action="registrationS.php" method="post" style="">
                 <h3>My personnal information</h3>
-                <label>Email</label>
+                <label>Email(username)</label>
                 <input type="email" name="username" value="DB mail">
                 <br>
                 <label>Password</label><input type="password" name="password" value="DB pw"> 
@@ -336,6 +271,16 @@ $("#databaseBox").click(function(){
                 <label>First Name</label><input type="text" name="firstName" value="DB firstname">
                 <br>
                 <label>Last Name</label><input type="text" name="lastName" value="DB lastName">
+                <br>
+                <label>Adress</label><input type="text" name="adress" value="DB adress">
+                <br>
+                <label>City</label><input type="text" name="city" value="DB city">
+                <br>
+                <label>Zip Code</label><input type="text" name="zipCode" value="DB zipCode">
+                <br>
+                <label>Country</label><input type="text" name="country" value="DB country">
+                <br>
+                <label>Phone Number</label><input type="text" name="phone" value="DB phone">
                 <br>
                 <br>
                 <input type="submit" name="save" value="Save Changes">
@@ -425,72 +370,7 @@ $("#databaseBox").click(function(){
             </form>
         <br>
     </div>
-   
-
-    <div class="userForm" id="userForm" style="display: none;">
-                <h3>Add a Buyer :</h3>
-                <a href="signUpB.html"><input type="submit" name="add" value="Add Buyer"></a>
-                <h3>Add a Seller :</h3>
-                <a href="signUpS.html"><input type="submit" name="add" value="Add Seller"></a>
-        <form action="deleteUser.php" method="post" style="">
-                <h3>Delete a User :</h3>
-                <label>User's email: </label>
-                <input type="email" name="user">
-                <input type="submit" name="delete" value="Delete User">
-                <br>
-                <br>
-            </form>
     </div>
-
-    <div class="databaseForm" id="databaseForm" style="display: none;">
-
-        <table border="1" style="width: 800px; text-align: center; color: black; font-size: 17px;">
-          
-          <tr>
-            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Email</th>
-            <th style="font-size: 20px;border: 1px solid black;text-align: center;">First Name</th>
-            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Last Name</th>
-            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Status</th>
-            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Type</th>
-          </tr>
-
-          <tr>
-            <td>myemail</td>
-            <td>myFName</td>
-            <td>myLName</td>
-            <td>LogIn</td>
-            <td>Seller</td>
-          </tr>
-
-        <tr>
-            <td>myemail</td>
-            <td>myFName</td>
-            <td>myLName</td>
-            <td>LogOut</td>
-            <td>Buyer</td>
-        </tr>
-
-        <tr>
-            <td>myemail</td>
-            <td>myFName</td>
-            <td>myLName</td>
-            <td>LogOut</td>
-            <td>Buyer</td>
-        </tr>
-        </table>
-        <br>
-        <br>
-    </div>
-
- </div>
-
-
-
-
-
-
-
-
 </div>
 
 <!--footer-->
@@ -542,10 +422,8 @@ $("#databaseBox").click(function(){
         
         <div class="row text-center" style="color: #000058;"> © 2021 Designed with by Xavier Dandigna & Anthelme Charvet.</div>
         </div>
-        
-        
     </footer>
-
+    
 </body>
 
 </html>

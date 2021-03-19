@@ -179,31 +179,40 @@
         }
 
         .grid-container {
-
             display: grid;
             background-color: #EEE8CD;
-            grid-template-columns: auto auto auto auto;
-            grid-gap: 5px;
+            padding-left: 50px;
+            padding-right: 50px;
+            padding-bottom: 150px;
+            padding-top: 100px;
+            grid-template-columns: auto auto auto;
+            grid-gap: 30px;
             border-top-size: 1em;
-            border-top-style: solid;
+            vertical-align: middle;
         }
 
         .item {
-            background-color: white;
-            margin: 30px 5px;
+            margin: 30px 0px;
             text-align: center;
-            font-size: 30px;
-            height: 280px;
+            font-size: 20px;
+            height: 300px;
+            border-radius: 1em;
+            color: #0a255a;
         }
 
         .item:hover {
-            background-color: #EAFDE1;
-            border-style: outset;
-            border-width: 1px;
+            background-color: #e5dfc0;
+        }
+        .item p {
+            font-size: 16px;
+            color: #335cae;
+        }
+        h3{
+            text-align: center;
         }
 
-        #logo:hover {
 
+        #logo:hover {
             transform: rotate(360deg);
             transition: all 1s;
         }
@@ -247,11 +256,14 @@
 
         <!-- body -->
 
-        <div style="background-color: beige">
+        <div style="background-color: #EEE8CD;">
             <center>
+                <br>
                 <h1 style="color: brown;">Welcome to Cykel</h1>
-                <h3>Here's our latest products</h3>
             </center>
+            <h3>Here's our latest products</h3>
+            <br>
+            <br>
 
             <center>
                 <!-- For the slideshow -->
@@ -285,70 +297,84 @@
                 </div>
             </center>
 
-            <h2> Here's the popular items </h2>
+            <br>
+            <br>
+            <h3> Here's the popular items </h3>
             <div class="grid-container">
                 <div class="item" onclick="location.href='surfboardV2.html'">
                     <img src="pictures/card1.png" style="height: 280px ;width: 200px; cursor: pointer;">
-                    <p>
-                        £24
-                    </p>
+                    <p>Surfcard V2</p>
+                </div>
+
+                <div class="item" onclick="location.href='subcatBike.html'">
+                    <img src="pictures/bike3.png" style="height: 200px; width: 300px; cursor: pointer;">
+                    <p>City Bike</p>
+                </div>
+
+                <div class="item" onclick="location.href='subcatboard.html'">
+                    <img src="pictures/card6.png" style="height: 280px ;width: 200px; cursor: pointer;">
+                    <p>Musicard</p>
                 </div>
             </div>
+
         </div>
+
 <h3> Who Are We?</h3>
     <p> We are a blablabla</p>
 
 
-        <!--footer-->
+<!--footer-->
 
-        <footer class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-3">
-                        <h4 class="title">Cykel</h4>
-                        <p>YourMarket project is to create an auction website similar to EBay.</p>
-                        <ul class="social-icon">
-                            <a href="#" class="social"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                            <a href="#" class="social"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                            <a href="#" class="social"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                            <a href="#" class="social"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
-                            <a href="#" class="social"><i class="fa fa-google" aria-hidden="true"></i></a>
-                        </ul>
-                    </div>
-                    <div class="col-sm-3">
-                        <h4 class="title">My Account</h4>
-                        <span class="acount-icon">
-                            <a href="cart.html"><i class="fa fa-cart-plus" aria-hidden="true"></i> Cart</a>
-                            <a href="youraccount.html"><i class="fa fa-user" aria-hidden="true"></i> Profile</a>
-                        </span>
-                    </div>
-                    <div class="col-sm-3">
-                        <h4 class="title">Category</h4>
-                        <div class="category">
-                            <a href="cards.html">Playing Cards</a>
-                            <a href="watches.html">Connected Watches</a>
-                            <a href="boardgames.html">Boardgames</a>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <h4 class="title">Payment Methods</h4>
-                        <p>This website accept this payment methods.</p>
-                        <ul class="payment">
-                            <li><a href="javascript:void(0)"><i class="fa fa-cc-amex" aria-hidden="true"></i></a></li>
-                            <li><a href="javascript:void(0)"><i class="fa fa-credit-card" aria-hidden="true"></i></a></li>
-                            <li><a href="javascript:void(0)"><i class="fa fa-paypal" aria-hidden="true"></i></a></li>
-                            <li><a href="javascript:void(0)"><i class="fa fa-cc-visa" aria-hidden="true"></i></a></li>
-                            <li><a href="javascript:void(0)"><i class="fa fa-apple" aria-hidden="true"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <hr>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+        <div class="col-sm-3">
+            <h4 class="title">Cykel</h4>
+            <p>Cykel market is an auction website similar to EBay created for the Dynamic Web Programming Project.</p>  
+            <p style="color: #000058;">INSEEC U London - Y3</p>
 
-                <div class="row text-center"> © 2021 Made with by Xavier Dandigna & Anthelme Charvet.</div>
+            <ul class="social-icon">
+            <a href="#" class="social"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="#" class="social"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a href="#" class="social"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="#" class="social"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+            <a href="#" class="social"><i class="fa fa-google" aria-hidden="true"></i></a>
+            </ul>
             </div>
-
-
-        </footer>
+        <div class="col-sm-3">
+            <h4 class="title">Policy</h4>
+            <span class="acount-icon">          
+            <a href="privacypolicy.html"><i class="fa fa-user" aria-hidden="true"></i> Privacy Policy</a>
+            <a href="termsofservice.html"><i class="fa fa-file" aria-hidden="true"></i> Terms Of Service</a>
+            <a href = "mailto: contact@cykel.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> Contact Us</a>       
+          </span>
+            </div>
+        <div class="col-sm-3">
+            <h4 class="title">Category</h4>
+            <div class="category">
+            <a href="subcatBike.html">All Bikes 🚲</a> 
+            <a href="subcatboard.html">All Boardgames 🎲</a>         
+            </div>
+            </div>
+        <div class="col-sm-3">
+            <h4 class="title">Payment Methods</h4>
+            <p>This website accept this payment methods.</p>
+            <ul class="payment">
+            <li><a href="#"><i class="fa fa-cc-amex" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-cc-mastercard" aria-hidden="true"></i></a></li>            
+            <li><a href="#"><i class="fa fa-paypal" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-cc-visa" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-apple" aria-hidden="true"></i></a></li>
+            </ul>
+            </div>
+        </div>
+        <hr>
+        
+        <div class="row text-center" style="color: #000058;"> © 2021 Designed with by Xavier Dandigna & Anthelme Charvet.</div>
+        </div>
+        
+        
+    </footer>
 
 </body>
 
