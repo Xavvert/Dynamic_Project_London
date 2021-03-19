@@ -1,19 +1,3 @@
-<?php
-
-
-if($_POST["message"]) {
-
-
-mail("NewsletterEmail", "Cykel Newsletter 1",
-
-
-$_POST["coucou"]. "From: anthelme.charvet@hotmail.fr");
-
-}
-
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -358,10 +342,12 @@ $_POST["coucou"]. "From: anthelme.charvet@hotmail.fr");
             <h1>About Us</h1>
             <p>Anthelme and Xavier are two students in engineering school. Both passionate about bikes and board games respectively, they decided to set up their auction site like eBay to meet a certain demand. Indeed, they started to work together since their second year of school and were able to find a coherence in their work which led them to realize many projects together. Solid tandem, they try as well as they can to create their own auction site with the aim of making known and transmitting their passion. They invite you to subscribe to their newsletter in order not to miss anything of activity and their news feed.</p>
 
-            <form method="post" action="Homepage.php" id="contact_form" accept-charset="UTF-8">
+            <form method="post" action="subscribe.php" id="contact_form" accept-charset="UTF-8">
                 <h4><label for="NewsletterEmail" >Sign up for our newsletter</label></h4>
-                <input type="email" value placeholder="My email address" name="contact[email]" id="NewsletterEmail">
-                <input type="submit" value="Ok" name="subscribe" id="Subscribe">
+
+                <input type="email" value placeholder="My email address" name="email" id="email">
+
+                <input type="submit" value="Ok" name="submit" id="submit">
             </form>
         </div>
         <br>
