@@ -2,8 +2,8 @@
 session_start();
 $server_name="localhost:3306";
 $username="root";
-/*$password="";*/
-$password="root";
+$password="";
+/*$password="root";*/
 $database_name="cykel";
 
 
@@ -30,9 +30,12 @@ if(isset($validation)){
     {
         $_SESSION["authorize"]="yes";
         $_SESSION["name"]=$username;
+        $_SESSION["password"]=$password;
         $_SESSION["checkA"]=0;
         $_SESSION["checkB"]=0;
         $_SESSION["checkS"]=1;
+        
+        $_SESSION["upS"]=0;
 
     }
     else
@@ -42,8 +45,12 @@ if(isset($validation)){
     
    $sql_query = mysqli_query($conn, "SELECT firstName from seller WHERE username='$username'"); 
    $row = mysqli_fetch_array($sql_query);
-
-    $_SESSION["firstname"]=$row['firstName'];
+   $_SESSION["firstname"]=$row['firstName'];
+    
+   $sql_query = mysqli_query($conn, "SELECT lastName from seller WHERE username='$username'"); 
+   $row = mysqli_fetch_array($sql_query);
+   $_SESSION["lastname"]=$row['lastName'];
+    
     header("location:youraccountS.php");
     
        mysqli_close($conn);
