@@ -94,6 +94,12 @@ if(@$_SESSION["authorize"]!="yes"){
             border-top-right-radius: 0.6em;
             border-top-left-radius: 0.6em;
         }
+        .accountHeader button {
+            font-size: 14px;
+            margin-left: 40px;
+            margin-top: 25px;
+
+        }
 
         .corpus {
             width: 900px;
@@ -293,7 +299,7 @@ $("#databaseBox").click(function(){
         <div class="accountHeader">
             <img src="pictures/profilepictureB.png" name="profile picture" alt="/profile picture" style="width: 50px; height: 50px; margin-top: 10px; float: left; margin-left: 50px;">
             <h2 style="margin-left: 200px;float: left;text-align: center;">Welcome <?php echo $_SESSION["name"]?></h2>
-              <h1> <a href="deconnexion.php"> Deco </a></h1>
+              <h1> <button onclick="location.href='deconnexion.php'"> Logout </button></h1>
         </div>
 
     <div class="box-container">
