@@ -1,12 +1,12 @@
 <?php 
 
-    $to = 'anthelme.charvet@hotmail.fr';
+    $to = 'xavier.dandigna@gmail.com';
     
     $subject = 'This is our test email';
     
     $message='<h1>Hi there.</h1> <p>Thanks for testing!</p>';
     
-    $headers = "From: The Sender Name <>\r\n";
+    $headers = "From: The Sender Name <xavier.dandigna@gmail.com>\r\n";
 
     $headers .= "Reply-To: anthelme.charvet@hotmail.fr\r\n";
 

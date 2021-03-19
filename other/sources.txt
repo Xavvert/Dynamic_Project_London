@@ -13,4 +13,8 @@ OTHER :
 https://css-tricks.com/using-css-cursors/
 https://www.w3schools.com/howto/howto_js_slideshow.asp
 https://www.w3schools.com/howto/howto_js_sidenav.asp
+
+DATABASE :
+
 https://stackoverflow.com/questions/26222549/php-mysql-check-if-username-and-password-are-in-the-database
+https://stackoverflow.com/questions/55601412/how-do-you-convert-a-mysqli-result-into-a-string
