@@ -5,6 +5,12 @@ if(@$_SESSION["authorize"]!="yes"){
     exit();
     
 }
+
+if($_SESSION["checkS"]!=1)
+{
+    header("location:logInS.php");
+    exit();
+}
 ?>
 
 <!DOCTYPE html>

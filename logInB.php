@@ -1,8 +1,56 @@
+<?php
+session_start();
+$server_name="localhost:3306";
+$username="root";
+$password="";
+/*$password="root";*/
+$database_name="cykel";
+
+
+
+$conn=mysqli_connect($server_name,$username,$password,$database_name);
+
+if(!$conn)
+{
+    die("Connection Failed:".mysqli_connect_error());
+    
+}
+
+@$username=$_POST['username'];
+@$password=$_POST['password'];
+@$validation=$_POST["validation"];
+
+if(isset($validation)){
+    
+    $sql_query = mysqli_query($conn, "Select * from buyer WHERE username = '$username' AND password = '$password'");
+    $rowCount = mysqli_num_rows($sql_query);
+    
+
+    if($rowCount > 0)
+    {
+        $_SESSION["authorize"]="yes";
+        $_SESSION["name"]=$username;
+        $_SESSION["checkB"]=1;
+        $_SESSION["checkA"]=0;
+        $_SESSION["checkS"]=0;
+        header("location:youraccountB.php");
+        echo ("OK");
+    }
+    else
+    {
+     echo ("Error : Wrong Password or Username");
+    }
+    mysqli_close($conn);
+
+}
+?>
+   
+ 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Cykel - Sign Up - Seller</title>
+    <title>Cykel - Log In - Buyer</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="header&footer.css">
@@ -128,27 +176,22 @@
         </div>
     </div>
     <center>
-        <h1>Hello seller, Please enter all the informations for your registration </h1>
+        <h1>Hello buyer, Please enter all the informations for LOG IN </h1>
 
-        <p> Please log in if you already have an account</p>
 
-        <p> If you have already an account, please log in <a href="logInS.php"> here</a></p>
+        <p> If you don't have any account, please register <a href="signUpB.html"> here</a></p>
 
     </center>
     <center>
         <div class="co">
 
-            <form action="registrationS.php" method="post">
+            <form action="" method="post">
                 <label>Email(username)</label>
                 <br><input type="email" name="username">
                 <br>
                 <label>Password</label><br><input type="password" name="password">
                 <br>
-                <label>First Name</label><br><input type="text" name="firstName">
-                <br>
-                <label>Last Name</label><br><input type="text" name="lastName">
-                <br>
-                <input type="submit" name="save" value="Submit">
+                <input type="submit" name="validation" value="Submit">
             </form>
 
         </div>

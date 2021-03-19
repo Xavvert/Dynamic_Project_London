@@ -1,3 +1,25 @@
+<?php
+session_start();
+if(@$_SESSION["authorize"]!="yes"){
+    header("location:HomePage.html");
+    exit();
+    
+}
+
+    if($_SESSION["checkA"]!=1 && $_SESSION["checkB"]!=1 && $_SESSION["checkS"]==1)
+    {
+        header("location:youraccountS.php");
+        exit();
+    }
+
+ if($_SESSION["checkA"]!=1 && $_SESSION["checkB"]==1 && $_SESSION["checkS"]!=1)
+    {
+        header("location:youraccountB.php");
+        exit();
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +33,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     
-    <style type="text/css">
+    <style type="text/css" caption="sidenav">
 
         .sidenav {
             height: 100%;
@@ -98,29 +120,91 @@
         .settingsForm {
             vertical-align: middle;
         }
-        .adressForm {
+        .itemsForm {
             vertical-align: middle;
         }
-        .ordersForm {
+        .userForm {
             vertical-align: middle;
-            display: grid;
-            grid-template-columns: auto auto auto auto;
         }
-        .orderTitle {
+        .databaseForm {
+            vertical-align: middle;
+        }
 
+        table, tr {
+            padding:20px;
+            border-collapse: collapse;
+            border:none;
+            table-layout: auto;
         }
-        .orderRow {
-            
+        tr:nth-child(even) {
+            background-color: #eee;
         }
-        .auctionForm {
-            vertical-align: middle;
+        tr:nth-child(odd) {
+            background-color: #fff;
         }
+        td {
+            padding:10px;
+        }
+        
+        th {
+          background-color: #FBA00E;
+          color: black;
+        }
+
+        button:hover {
+            background-color: #ff5353;
+        }
+
         #logo:hover {
 
             transform: rotate(360deg);
             transition: all 1s;
         }
     </style>
+
+    <style type="text/css" caption="form design">
+        * {
+          box-sizing: border-box;
+        }
+
+        input[type=text],input[type=email],input[type=password], select, textarea {
+          width: 200px;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          resize: vertical;
+          float: right;
+          margin-right: 500px;
+        }
+
+        label {
+          padding: 12px 12px 12px 0;
+          display: inline-block;
+        }
+
+        input[type=submit] {
+          background-color: #4CAF50;
+          color: white;
+          padding: 12px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          margin-left: 200px;
+        }
+
+        input[type=submit]:hover {
+          background-color: #45a049;
+        }
+
+
+        input[name=delete] {
+          background-color: #ff5353;
+        }
+        input[name=delete]:hover {
+          background-color: red;
+        }
+
+</style>
 
     <link rel='icon' href='Cykel.png' type='image/x-icon' />
 </head>
@@ -140,35 +224,33 @@ $(document).ready(function(){
 
 $("#settingsBox").click(function(){
     $("#settingsForm").toggle(500);
-    $("#ordersBox").toggle(500); 
-    $("#adressBox").toggle(500);
-    $("#auctionBox").toggle(500);
-
+    $("#itemsBox").toggle(500); 
+    $("#userBox").toggle(500); 
+    $("#databaseBox").toggle(500); 
   });
 
-$("#adressBox").click(function(){
-    $("#adressForm").toggle(500);
-    $("#ordersBox").toggle(500); 
-    $("#settingsBox").toggle(500);
-    $("#auctionBox").toggle(500);
-
+$("#itemsBox").click(function(){
+    $("#itemsForm").toggle(500);
+    $("#settingsBox").toggle(500); 
+    $("#userBox").toggle(500); 
+    $("#databaseBox").toggle(500); 
   });
 
-$("#ordersBox").click(function(){
-    $("#ordersForm").toggle(500);
-    $("#adressBox").toggle(500); 
-    $("#settingsBox").toggle(500);
-    $("#auctionBox").toggle(500);
-
+$("#userBox").click(function(){
+    $("#userForm").toggle(500);
+    $("#settingsBox").toggle(500); 
+    $("#itemsBox").toggle(500); 
+    $("#databaseBox").toggle(500); 
   });
 
-$("#auctionBox").click(function(){
-    $("#auctionsForm").toggle(500);
-    $("#adressBox").toggle(500); 
-    $("#settingsBox").toggle(500);
-    $("#ordersBox").toggle(500);
-
+$("#databaseBox").click(function(){
+    $("#databaseForm").toggle(500);
+    $("#settingsBox").toggle(500); 
+    $("#userBox").toggle(500); 
+    $("#itemsBox").toggle(500); 
   });
+
+
    });
 
 </script>
@@ -210,59 +292,50 @@ $("#auctionBox").click(function(){
     <div class="corpus">
         <div class="accountHeader">
             <img src="pictures/profilepictureB.png" name="profile picture" alt="/profile picture" style="width: 50px; height: 50px; margin-top: 10px; float: left; margin-left: 50px;">
-            <h2 style="margin-left: 200px;float: left;text-align: center;">Welcome Mister X !</h2>
+            <h2 style="margin-left: 200px;float: left;text-align: center;">Welcome <?php echo $_SESSION["name"]?></h2>
+              <h1> <a href="deconnexion.php"> Deco </a></h1>
         </div>
 
     <div class="box-container">
 
         <div class="box" id="settingsBox" style="margin-top: 50px;">
             <img src="pictures/settings.png" alt="/setting logo" style="width: 70px; height: 70px;margin-top: 20px; margin-left: 10px;float: left;">
-            <h4 style="float: left; color: black; margin-left: 40px; margin-top: 50px;">MY INFORMATIONS</h4>
+            <h4 style="float: left; color: black; margin-left: 60px; margin-top: 50px;">SETTINGS</h4>
         </div>
         
-        <div class="box" id="ordersBox" style="margin-top: 50px;">
-            <img src="pictures/orders.png" alt="/orders logo" style="width: 60px; height: 80px;margin-top: 20px; margin-left: 10px;float: left;">
-            <h4 style="float: left; color: black; margin-left: 70px; margin-top: 50px;">MY ORDERS</h4>
+        <div class="box" id="itemsBox" style="margin-top: 50px;">
+            <img src="pictures/list.png" alt="/manageItems logo" style="width: 80px; height: 80px;margin-top: 20px; margin-left: 10px;float: left;">
+            <h4 style="float: left; color: black; margin-left: 70px; margin-top: 50px;">MANAGE ITEMS</h4>
         </div>
 
-        <div class="box" id ="adressBox" style="margin-top: 50px;">
-            <img src="pictures/location.png" alt="/adress logo" style="width: 60px; height: 90px;margin-top: 10px; margin-left: 10px;float: left;">
-            <h4 style="float: left; color: black; margin-left: 50px; margin-top: 50px;">MY DELIVERY ADRESS</h4>
+        <div class="box" id="userBox" style="margin-top: 50px;">
+            <img src="pictures/profile.png" alt="/manageUsers logo" style="width: 80px; height: 80px;margin-top: 20px; margin-left: 10px;float: left;">
+            <h4 style="float: left; color: black; margin-left: 50px; margin-top: 50px;">MANAGE USERS</h4>
         </div>
 
-        <div class="box" id="auctionBox" style="margin-top: 50px;">
-            <img src="pictures/auctions.png" alt="/auctions logo" style="width: 80px; height: 90px;margin-top: 10px; margin-left: 10px;float: left;">
-            <h4 style="float: left; color: black; margin-left: 50px; margin-top: 50px;">MY AUCTIONS</h4>
+        <div class="box" id="databaseBox" style="margin-top: 50px;">
+            <img src="pictures/database.png" alt="/database logo" style="width: 70px; height: 80px;margin-top: 20px; margin-left: 30px;float: left;">
+            <h4 style="float: left; color: black; margin-left: 70px; margin-top: 50px;">DATABASE</h4>
         </div>
     </div>
 <br>
 
             <!--display none-->
 
-<!--MY INFORMAtIONS-->
+<!--MY INFORMATIONS-->
 
     <div class="settingsForm" id="settingsForm" style="display: none;">
             <!--écrire par dessus les infos pour update-->
-            <form action="registrationB.php" method="post" style="text-align: center; margin-top: -180px; margin-left: 220px;">
+            <form action="registrationS.php" method="post" style="">
                 <h3>My personnal information</h3>
-                <label>Email(username)</label>
-                <br><input type="email" name="username" value="DB mail">
+                <label>Email</label>
+                <input type="email" name="username" value="DB mail">
                 <br>
-                <label>Password</label><br><input type="password" name="password" value="DB pw"> 
+                <label>Password</label><input type="password" name="password" value="DB pw"> 
                 <br>
-                <label>First Name</label><br><input type="text" name="firstName" value="DB firstname">
+                <label>First Name</label><input type="text" name="firstName" value="DB firstname">
                 <br>
-                <label>Last Name</label><br><input type="text" name="lastName" value="DB lastName">
-                <br>
-                <label>Adress</label><br><input type="text" name="adress" value="DB adress">
-                <br>
-                <label>City</label><br><input type="text" name="city" value="DB city">
-                <br>
-                <label>Zip Code</label><br><input type="text" name="zipCode" value="DB zipCode">
-                <br>
-                <label>Country</label><br><input type="text" name="country" value="DB country">
-                <br>
-                <label>Phone Number</label><br><input type="text" name="phone" value="DB phone">
+                <label>Last Name</label><input type="text" name="lastName" value="DB lastName">
                 <br>
                 <br>
                 <input type="submit" name="save" value="Save Changes">
@@ -271,119 +344,153 @@ $("#auctionBox").click(function(){
             </form>
     </div>
 
-    <!--MY ADRESSES-->
+<!--MY ITEMS-->
 
-    <div class="adressForm" id="adressForm" style="display: none;">
-            <!--écrire par dessus les infos pour update-->
-        <form action="blabla.php" method="post" style="text-align: center; margin-top: -180px; margin-left: 200px;">
-            <h3>My delivery Adress</h3>
-            <label>Adress</label><br><input type="text" name="adress" value="DB adress">
-            <br>
-            <label>City</label><br><input type="text" name="city" value="DB city">
-            <br>
-            <label>Zip Code</label><br><input type="text" name="zipCode" value="DB zipCode">
-            <br>
-            <label>Country</label><br><input type="text" name="country" value="DB country">
-            <br>
-            <br>
-            <input type="submit" name="save" value="Save Changes">
-            <br>
-            <br>
-        </form>
-    </div>
-
-<!--MY ORDERS-->
-
-    <div class="orders" id="ordersForm" style="display: none;">
+    <div class="items" id="itemsForm" style="display: none;">
 
         <table border="1" style="width: 800px; text-align: center; color: black; font-size: 17px;">
           
           <tr>
-            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Order number</th>
+            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Order</th>
             <th style="font-size: 20px;border: 1px solid black;text-align: center;">Date</th>
-            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Delivery Adress</th>
+            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Item</th>
             <th style="font-size: 20px;border: 1px solid black;text-align: center;">Price</th>
-            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Content</th>
+            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Category</th>
+            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Description</th>
             <th style="font-size: 20px;border: 1px solid black;text-align: center;">Status</th>
+            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Remove item</th>
           </tr>
 
           <tr>
             <td>1</td>
             <td>20/12/2019</td>
-            <td>Bordeaux</td>
+            <td>Chess</td>
             <td>50£</td>
-            <td>Playing cards</td>
-            <td>Delivered ✅</td>
-          </tr>
-
-          <tr>
-            <td>2</td>
-            <td>04/04/2020</td>
-            <td>Paris</td>
-            <td>90£</td>
-            <td>Boardgames</td>
-            <td>Delivered ✅</td>
-          </tr>
-
-          <tr>
-            <td>3</td>
-            <td>18/03/2021</td>
-            <td>Marseille</td>
-            <td>150£</td>
-            <td>ITEquipment</td>
-            <td>In progress 🚚</td>
-          </tr>
-        </table>
-        <br>
-        <br>
-
-    </div>
-
-<!--MY AUCTIONS-->
-
-    <div class="auctions" id="auctionsForm" style="display: none;">
-
-        <table border="1" style="width: 800px; text-align: center; color: black; font-size: 17px;">
-          
-          <tr>
-            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Order number</th>
-            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Status</th>
-            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Price</th>
-            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Items</th>
-            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Informations</th>
+            <td>Boardgame</td>
+            <td>Nice chessboard</td>
+            <td>Sell</td>
+            <td><button type="submit" value="Remove" id="removeitem">Remove Item</button></td>
           </tr>
 
           <tr>
             <td>1</td>
-            <td style="color: green;">WIN</td>
+            <td>20/12/2019</td>
+            <td>Chess</td>
             <td>50£</td>
-            <td>V2cards</td>
-            <td>not register</td>
+            <td>Boardgame</td>
+            <td>Nice chessboard</td>
+            <td>Available</td>
+            <td><button type="submit" value="Remove" name="Remove"id="removeitem">Remove Item</button></td>
           </tr>
 
           <tr>
-            <td>2</td>
-            <td style="color: red;">LOST</td>
-            <td>90£</td>
-            <td>Monopoly Collector</td>
-            <td>not register</td>
-          </tr>
-
-          <tr>
-            <td>3</td>
-            <td style="color: red;">LOST</td>
-            <td>150£</td>
-            <td>Remote</td>
-            <td>not register</td>
+            <td>1</td>
+            <td>20/12/2019</td>
+            <td>Chess</td>
+            <td>50£</td>
+            <td>Boardgame</td>
+            <td>Nice chessboard</td>
+            <td>Bid</td>
+            <td><button type="submit" value="Remove" id="removeitem">Remove Item</button></td>
           </tr>
         </table>
         <br>
         <br>
 
+    <!--add an item-->
+    <h2>ADD AN ITEM</h2>
+
+        <form action="addItem.php" method="post" style="">
+                <h3>Item informations</h3>
+                <label>Item : </label>
+                <input type="text" name="item" value="">
+                <br>
+                <label>Price : </label><input type="text" name="price">
+                <br>
+                <label>Description :</label><input type="text" name="description" value="">
+                <br>
+                <label>Category : </label>
+                    <SELECT name="category">
+                        <option>Boardgames</option>
+                        <option>Cycle</option>
+                    </SELECT>
+                <br>
+                <label>Photo :</label>
+                <input type="file" id="myFile" name="photo" style="size: 20px;">
+                <br>
+                <br>
+                <input type="submit" name="save" value="Add Item">
+                <br>
+                <br>
+            </form>
+        <br>
+    </div>
+   
+
+    <div class="userForm" id="userForm" style="display: none;">
+                <h3>Add a Buyer :</h3>
+                <a href="signUpB.html"><input type="submit" name="add" value="Add Buyer"></a>
+                <h3>Add a Seller :</h3>
+                <a href="signUpS.html"><input type="submit" name="add" value="Add Seller"></a>
+        <form action="deleteUser.php" method="post" style="">
+                <h3>Delete a User :</h3>
+                <label>User's email: </label>
+                <input type="email" name="user">
+                <input type="submit" name="delete" value="Delete User">
+                <br>
+                <br>
+            </form>
     </div>
 
+    <div class="databaseForm" id="databaseForm" style="display: none;">
 
+        <table border="1" style="width: 800px; text-align: center; color: black; font-size: 17px;">
+          
+          <tr>
+            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Email</th>
+            <th style="font-size: 20px;border: 1px solid black;text-align: center;">First Name</th>
+            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Last Name</th>
+            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Status</th>
+            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Type</th>
+          </tr>
+
+          <tr>
+            <td>myemail</td>
+            <td>myFName</td>
+            <td>myLName</td>
+            <td>LogIn</td>
+            <td>Seller</td>
+          </tr>
+
+        <tr>
+            <td>myemail</td>
+            <td>myFName</td>
+            <td>myLName</td>
+            <td>LogOut</td>
+            <td>Buyer</td>
+        </tr>
+
+        <tr>
+            <td>myemail</td>
+            <td>myFName</td>
+            <td>myLName</td>
+            <td>LogOut</td>
+            <td>Buyer</td>
+        </tr>
+        </table>
+        <br>
+        <br>
     </div>
+
+ </div>
+
+
+
+
+
+
+
+
 </div>
 
 <!--footer-->

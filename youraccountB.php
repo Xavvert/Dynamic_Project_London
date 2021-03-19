@@ -1,3 +1,18 @@
+<?php
+session_start();
+if(@$_SESSION["authorize"]!="yes"){
+    header("location:logInB.php");
+    exit();
+    
+}
+
+    if($_SESSION["checkB"]!=1)
+    {
+        header("location:logInB.php");
+        exit();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +26,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     
-    <style type="text/css" caption="sidenav">
+    <style type="text/css">
 
         .sidenav {
             height: 100%;
@@ -98,10 +113,16 @@
         .settingsForm {
             vertical-align: middle;
         }
-        .itemsForm {
+        .adressForm {
+            vertical-align: middle;
+        }
+        .ordersForm {
             vertical-align: middle;
             display: grid;
             grid-template-columns: auto auto auto auto;
+        }
+        .auctionForm {
+            vertical-align: middle;
         }
         table, tr {
             padding:20px;
@@ -109,9 +130,11 @@
             border:none;
             table-layout: auto;
         }
+
         tr:nth-child(even) {
             background-color: #eee;
         }
+        
         tr:nth-child(odd) {
             background-color: #fff;
         }
@@ -123,11 +146,6 @@
           background-color: #FBA00E;
           color: black;
         }
-
-        button:hover {
-            background-color: #ff5353;
-        }
-
         #logo:hover {
 
             transform: rotate(360deg);
@@ -189,12 +207,34 @@ $(document).ready(function(){
 
 $("#settingsBox").click(function(){
     $("#settingsForm").toggle(500);
-    $("#manageBox").toggle(500); 
+    $("#ordersBox").toggle(500); 
+    $("#adressBox").toggle(500);
+    $("#auctionBox").toggle(500);
+
   });
 
-$("#manageBox").click(function(){
-    $("#itemsForm").toggle(500);
-    $("#settingsBox").toggle(500); 
+$("#adressBox").click(function(){
+    $("#adressForm").toggle(500);
+    $("#ordersBox").toggle(500); 
+    $("#settingsBox").toggle(500);
+    $("#auctionBox").toggle(500);
+
+  });
+
+$("#ordersBox").click(function(){
+    $("#ordersForm").toggle(500);
+    $("#adressBox").toggle(500); 
+    $("#settingsBox").toggle(500);
+    $("#auctionBox").toggle(500);
+
+  });
+
+$("#auctionBox").click(function(){
+    $("#auctionsForm").toggle(500);
+    $("#adressBox").toggle(500); 
+    $("#settingsBox").toggle(500);
+    $("#ordersBox").toggle(500);
+
   });
    });
 
@@ -237,7 +277,8 @@ $("#manageBox").click(function(){
     <div class="corpus">
         <div class="accountHeader">
             <img src="pictures/profilepictureB.png" name="profile picture" alt="/profile picture" style="width: 50px; height: 50px; margin-top: 10px; float: left; margin-left: 50px;">
-            <h2 style="margin-left: 200px;float: left;text-align: center;">Welcome Mister X !</h2>
+            <h2 style="margin-left: 200px;float: left;text-align: center;">Welcome <?php echo $_SESSION["name"]?></h2>
+              <h1> <a href="deconnexion.php"> Deco </a></h1>
         </div>
 
     <div class="box-container">
@@ -247,12 +288,21 @@ $("#manageBox").click(function(){
             <h4 style="float: left; color: black; margin-left: 40px; margin-top: 50px;">MY INFORMATIONS</h4>
         </div>
         
-        <div class="box" id="manageBox" style="margin-top: 50px;">
-            <img src="pictures/list.png" alt="/manageItems logo" style="width: 80px; height: 80px;margin-top: 20px; margin-left: 10px;float: left;">
-            <h4 style="float: left; color: black; margin-left: 70px; margin-top: 50px;">MANAGE ITEMS</h4>
+        <div class="box" id="ordersBox" style="margin-top: 50px;">
+            <img src="pictures/orders.png" alt="/orders logo" style="width: 60px; height: 80px;margin-top: 20px; margin-left: 10px;float: left;">
+            <h4 style="float: left; color: black; margin-left: 70px; margin-top: 50px;">MY ORDERS</h4>
+        </div>
+
+        <div class="box" id ="adressBox" style="margin-top: 50px;">
+            <img src="pictures/location.png" alt="/adress logo" style="width: 60px; height: 90px;margin-top: 10px; margin-left: 10px;float: left;">
+            <h4 style="float: left; color: black; margin-left: 50px; margin-top: 50px;">MY DELIVERY ADRESS</h4>
+        </div>
+
+        <div class="box" id="auctionBox" style="margin-top: 50px;">
+            <img src="pictures/auctions.png" alt="/auctions logo" style="width: 80px; height: 90px;margin-top: 10px; margin-left: 10px;float: left;">
+            <h4 style="float: left; color: black; margin-left: 50px; margin-top: 50px;">MY AUCTIONS</h4>
         </div>
     </div>
-    
 <br>
 
             <!--display none-->
@@ -261,7 +311,7 @@ $("#manageBox").click(function(){
 
     <div class="settingsForm" id="settingsForm" style="display: none;">
             <!--écrire par dessus les infos pour update-->
-            <form action="registrationS.php" method="post" style="">
+            <form action="registrationB.php" method="post">
                 <h3>My personnal information</h3>
                 <label>Email(username)</label>
                 <input type="email" name="username" value="DB mail">
@@ -289,87 +339,118 @@ $("#manageBox").click(function(){
             </form>
     </div>
 
-<!--MY ITEMS-->
+    <!--MY ADRESSES-->
 
-    <div class="items" id="itemsForm" style="display: none;">
+    <div class="adressForm" id="adressForm" style="display: none;">
+            <!--écrire par dessus les infos pour update-->
+        <form action="blabla.php" method="post">
+            <h3>My delivery Adress</h3>
+            <label>Adress</label><input type="text" name="adress" value="DB adress">
+            <br>
+            <label>City</label><input type="text" name="city" value="DB city">
+            <br>
+            <label>Zip Code</label><input type="text" name="zipCode" value="DB zipCode">
+            <br>
+            <label>Country</label><input type="text" name="country" value="DB country">
+            <br>
+            <br>
+            <input type="submit" name="save" value="Save Changes">
+            <br>
+            <br>
+        </form>
+    </div>
+
+<!--MY ORDERS-->
+
+    <div class="orders" id="ordersForm" style="display: none;">
 
         <table border="1" style="width: 800px; text-align: center; color: black; font-size: 17px;">
           
           <tr>
-            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Order</th>
+            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Order number</th>
             <th style="font-size: 20px;border: 1px solid black;text-align: center;">Date</th>
-            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Item</th>
+            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Delivery Adress</th>
             <th style="font-size: 20px;border: 1px solid black;text-align: center;">Price</th>
-            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Category</th>
-            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Description</th>
+            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Content</th>
             <th style="font-size: 20px;border: 1px solid black;text-align: center;">Status</th>
-            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Remove item</th>
           </tr>
 
           <tr>
             <td>1</td>
             <td>20/12/2019</td>
-            <td>Chess</td>
+            <td>Bordeaux</td>
             <td>50£</td>
-            <td>Boardgame</td>
-            <td>Nice chessboard</td>
-            <td>Sell</td>
-            <td><button type="submit" value="Remove" id="removeitem">Remove Item</button></td>
+            <td>Playing cards</td>
+            <td>Delivered ✅</td>
           </tr>
 
           <tr>
-            <td>1</td>
-            <td>20/12/2019</td>
-            <td>Chess</td>
-            <td>50£</td>
-            <td>Boardgame</td>
-            <td>Nice chessboard</td>
-            <td>Available</td>
-            <td><button type="submit" value="Remove" name="Remove"id="removeitem">Remove Item</button></td>
+            <td>2</td>
+            <td>04/04/2020</td>
+            <td>Paris</td>
+            <td>90£</td>
+            <td>Boardgames</td>
+            <td>Delivered ✅</td>
           </tr>
 
           <tr>
-            <td>1</td>
-            <td>20/12/2019</td>
-            <td>Chess</td>
-            <td>50£</td>
-            <td>Boardgame</td>
-            <td>Nice chessboard</td>
-            <td>Bid</td>
-            <td><button type="submit" value="Remove" id="removeitem">Remove Item</button></td>
+            <td>3</td>
+            <td>18/03/2021</td>
+            <td>Marseille</td>
+            <td>150£</td>
+            <td>ITEquipment</td>
+            <td>In progress 🚚</td>
           </tr>
         </table>
         <br>
         <br>
 
-    <!--add an item-->
-    <h2>ADD AN ITEM</h2>
-
-        <form action="addItem.php" method="post" style="">
-                <h3>Item informations</h3>
-                <label>Item : </label>
-                <input type="text" name="item" value="">
-                <br>
-                <label>Price : </label><input type="text" name="price">
-                <br>
-                <label>Description :</label><input type="text" name="description" value="">
-                <br>
-                <label>Category : </label>
-                    <SELECT name="category">
-                        <option>Boardgames</option>
-                        <option>Cycle</option>
-                    </SELECT>
-                <br>
-                <label>Photo :</label>
-                <input type="file" id="myFile" name="photo" style="size: 20px;">
-                <br>
-                <br>
-                <input type="submit" name="save" value="Add Item">
-                <br>
-                <br>
-            </form>
-        <br>
     </div>
+
+<!--MY AUCTIONS-->
+
+    <div class="auctions" id="auctionsForm" style="display: none;">
+
+        <table border="1" style="width: 800px; text-align: center; color: black; font-size: 17px;">
+          
+          <tr>
+            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Order number</th>
+            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Status</th>
+            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Price</th>
+            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Items</th>
+            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Informations</th>
+          </tr>
+
+          <tr>
+            <td>1</td>
+            <td style="color: green;">WIN</td>
+            <td>50£</td>
+            <td>V2cards</td>
+            <td>not register</td>
+          </tr>
+
+          <tr>
+            <td>2</td>
+            <td style="color: red;">LOST</td>
+            <td>90£</td>
+            <td>Monopoly Collector</td>
+            <td>not register</td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+            <td style="color: red;">LOST</td>
+            <td>150£</td>
+            <td>Remote</td>
+            <td>not register</td>
+          </tr>
+        </table>
+        <br>
+        <br>
+
+    </div>
+
+
     </div>
 </div>
 

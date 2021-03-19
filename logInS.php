@@ -30,6 +30,9 @@ if(isset($validation)){
     {
         $_SESSION["authorize"]="yes";
         $_SESSION["name"]=$username;
+        $_SESSION["checkA"]=0;
+        $_SESSION["checkB"]=0;
+        $_SESSION["checkS"]=1;
         header("location:youraccountS.php");
         echo ("OK");
     }
