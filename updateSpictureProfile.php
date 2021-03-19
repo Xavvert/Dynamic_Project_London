@@ -23,9 +23,9 @@ if(isset($validation)){
     @$user=$_SESSION["username"];
     $name=$_FILES['myfile']['name'];
     $type=$_FILES['myfile']['type'];
-    $data=file_get_contents($_FILES['myfile']['tmp_name']);
+    $image=file_get_contents($_FILES['myfile']['tmp_name']);
 
-$sql_query = mysqli_query($conn, "INSERT INTO seller (picture, Pname, Ptype) VALUES ('$data','$name','$type') WHERE username='$user'");
+$sql_query = mysqli_query($conn, "UPDATE seller SET picture = '$image' WHERE username='$username' VALUES ('$image')");
     
 if($sql_query)
 {

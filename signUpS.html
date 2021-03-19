@@ -138,7 +138,7 @@
     <center>
         <div class="co">
 
-            <form action="registrationS.php" method="post">
+            <form action="registrationS.php" method="post" enctype="multipart/form-data">
                 <label>Email(username)</label>
                 <br><input type="email" name="username">
                 <br>
@@ -148,6 +148,8 @@
                 <br>
                 <label>Last Name</label><br><input type="text" name="lastName">
                 <br>
+               <!-- <label>Profile Picture</label><input type="file" name="myfile">
+                <br> -->
                 <input type="submit" name="save" value="Submit">
             </form>
 
