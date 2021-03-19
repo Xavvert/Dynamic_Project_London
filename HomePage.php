@@ -1,3 +1,19 @@
+<?php
+
+
+if($_POST["message"]) {
+
+
+mail("NewsletterEmail", "Cykel Newsletter 1",
+
+
+$_POST["coucou"]. "From: anthelme.charvet@hotmail.fr");
+
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -211,6 +227,25 @@
             text-align: center;
         }
 
+        * {
+          box-sizing: border-box;
+        }
+
+        .about {
+          float: left;
+          width: 100%;
+          padding: 40px;
+          padding-left:150px;
+          padding-right: 150px;
+          height: 500px;
+          background-color: #EEE8CD;
+          line-height:2;
+          text-align: justify;
+        }
+        .about p {
+            font-size: 20px;
+            font-family: verdana;
+        }
 
         #logo:hover {
             transform: rotate(360deg);
@@ -237,17 +272,17 @@
                 <div id="mySidenav" class="sidenav">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                     <a href="categories.html">CATEGORIES</a>
-                    <a href="logInB.php">BUY</a>
-                    <a href="logInS.php">SELL</a>
-                    <a href="HomePage.html">YOUR ACCOUNT</a>
+                    <a href="buy.html">BUY</a>
+                    <a href="sell.html">SELL</a>
+                    <a href="youraccount.html">YOUR ACCOUNT</a>
                     <a href="cart.html">CART</a>
-                    <a href="logInA.php">ADMIN</a>
+                    <a href="admin.html">ADMIN</a>
                 </div>
 
                 <div class="icon">
-                    <img name="icon" src="pictures/profile.png" onClick="location.href='youraccountA.php'" style="width: 25px; height: 25px; position: relative; top: -80px; left:580px; cursor:pointer;">
+                    <img name="icon" src="pictures/profile.png" onClick="location.href='youraccountS.php'" style="width: 25px; height: 25px; position: relative; top: -80px; left:580px; cursor:pointer;">
 
-                    <img src="pictures/notif.png" onClick="location.href='youraccountA.php'" style="width: 20px; height: 20px; position: relative; top: -80px; left:590px; cursor:pointer;">
+                    <img src="pictures/notif.png" onClick="location.href='youraccount2.html'" style="width: 20px; height: 20px; position: relative; top: -80px; left:590px; cursor:pointer;">
 
                     <img src="pictures/cart2.png" onClick="location.href='cart.html'" style="width: 20px; height: 20px; position: relative; top: -80px; left: 600px; cursor:pointer;">
                 </div>
@@ -319,16 +354,29 @@
 
         </div>
 
-<h3> Who Are We?</h3>
-    <p> We are a blablabla</p>
+        <div class="about"><i class="fa fa-user" aria-hidden="true"></i>
+            <h1>About Us</h1>
+            <p>Anthelme and Xavier are two students in engineering school. Both passionate about bikes and board games respectively, they decided to set up their auction site like eBay to meet a certain demand. Indeed, they started to work together since their second year of school and were able to find a coherence in their work which led them to realize many projects together. Solid tandem, they try as well as they can to create their own auction site with the aim of making known and transmitting their passion. They invite you to subscribe to their newsletter in order not to miss anything of activity and their news feed.</p>
+
+            <form method="post" action="Homepage.php" id="contact_form" accept-charset="UTF-8">
+                <h4><label for="NewsletterEmail" >Sign up for our newsletter</label></h4>
+                <input type="email" value placeholder="My email address" name="contact[email]" id="NewsletterEmail">
+                <input type="submit" value="Ok" name="subscribe" id="Subscribe">
+            </form>
+        </div>
+        <br>
+
+        <br>
 
 
 <!--footer-->
 
 <footer class="footer">
+
     <div class="container">
         <div class="row">
         <div class="col-sm-3">
+            <br>
             <h4 class="title">Cykel</h4>
             <p>Cykel market is an auction website similar to EBay created for the Dynamic Web Programming Project.</p>  
             <p style="color: #000058;">INSEEC U London - Y3</p>
@@ -342,6 +390,7 @@
             </ul>
             </div>
         <div class="col-sm-3">
+            <br>
             <h4 class="title">Policy</h4>
             <span class="acount-icon">          
             <a href="privacypolicy.html"><i class="fa fa-user" aria-hidden="true"></i> Privacy Policy</a>
@@ -350,6 +399,7 @@
           </span>
             </div>
         <div class="col-sm-3">
+            <br>
             <h4 class="title">Category</h4>
             <div class="category">
             <a href="subcatBike.html">All Bikes 🚲</a> 
@@ -357,6 +407,7 @@
             </div>
             </div>
         <div class="col-sm-3">
+            <br>
             <h4 class="title">Payment Methods</h4>
             <p>This website accept this payment methods.</p>
             <ul class="payment">
