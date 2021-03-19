@@ -54,21 +54,29 @@
         }
         .item {
             float: left;
-            width: 800px;
+            width: 600px;
             height: 1000px;
+            padding: 80px;
         }
 
         .caption {
             float: right;
-            width: 500px;
+            width: 800px;
             height: 1000px;
+            padding:160px;
         }
 
-        .item:hover {
+        /*.item:hover {
             background: whitesmoke;
         }
         .caption:hover {
             background: whitesmoke;
+        }*/
+
+        .article {
+            float: left;
+            text-align: center;
+            margin-left: 100px;
         }
 
         #logo:hover {
@@ -185,18 +193,14 @@
 <div class="package">
     
     <div class="item">
-        <button onclick="goBack()" style="float: left">Go Back</button>
-        <a href="HomePage.html" style="float: left; margin-left: 2px;"> -> Cykel </a>
+        <button onclick="goBack()" style="float: left; margin-top: -70px; margin-left: -30px;">Go Back</button>
+        
+        <div class="article">
+            <img src="pictures/card1.png" alt="surfboardV2" style="width: 250px; height:350px; margin-top: 10px;">
 
-        <a href="categories.html" style="float: left; margin-left: 2px;"> -> Categories </a>
-        <a href="cards.html" style="float: left;"> -> Playing Cards </a>
+            <h2 class="title">🏄🏻Surfboard V2🏄🏻</h2>
 
-        <center>
-            <img src="pictures/card1.png" alt="surfboardV2" style="width: 250px; height:350px; margin-top: 10px; margin-left: -300px;">
-
-            <h2>🏄🏻Surfboard V2🏄🏻</h2>
-
-            <h4>10£</h4>
+            <h4 class="price">10£</h4>
 
             <button id="buy">BUY</button>
             <button id="bid" style="display: none;">Bid</button>
@@ -217,6 +221,8 @@
                 <br><input type="text" name="areaBid">
                 <input type="image" name="save" value="Submit" src="pictures/okOrange.jpg" style="width: 30px; height: 30px;">
             </form>
+        </div>
+            
         </div>
         
         <div class="caption">
