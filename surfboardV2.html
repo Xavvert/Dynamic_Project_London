@@ -48,31 +48,27 @@
             margin-left: 50px;
         }
 
-        .grid-container {
-
-            display: grid;
-            background-color: #EEE8CD;
-            padding-left: 300px;
-            padding-right: 300px;
-            grid-template-rows: auto auto auto;
-            grid-gap: 5px;
-            border-top-size: 1em;
-            border-top-style: solid;
+        .package {
+            width:100%;
+            height: auto;
+        }
+        .item {
+            float: left;
+            width: 800px;
+            height: 1000px;
         }
 
-        .item {
-            background-color: white;
-            margin: 30px 5px;
-            text-align: center;
-            font-size: 30px;
-            height: 280px;
-            border-radius: 1em;
+        .caption {
+            float: right;
+            width: 500px;
+            height: 1000px;
         }
 
         .item:hover {
-            background-color: #d81717;
-            border-style: outset;
-            border-width: 2px;
+            background: whitesmoke;
+        }
+        .caption:hover {
+            background: whitesmoke;
         }
 
         #logo:hover {
@@ -186,16 +182,17 @@
         </div>
     </div>
 
-    <div style="float: left;">
+<div class="package">
+    
+    <div class="item">
         <button onclick="goBack()" style="float: left">Go Back</button>
-
         <a href="HomePage.html" style="float: left; margin-left: 2px;"> -> Cykel </a>
 
         <a href="categories.html" style="float: left; margin-left: 2px;"> -> Categories </a>
         <a href="cards.html" style="float: left;"> -> Playing Cards </a>
 
         <center>
-            <img src="pictures/cards1.png" alt="surfboardV2" style="width: 500px; height:703px; margin-top: 10px; ">
+            <img src="pictures/card1.png" alt="surfboardV2" style="width: 250px; height:350px; margin-top: 10px; margin-left: -300px;">
 
             <h2>🏄🏻Surfboard V2🏄🏻</h2>
 
@@ -220,9 +217,9 @@
                 <br><input type="text" name="areaBid">
                 <input type="image" name="save" value="Submit" src="pictures/okOrange.jpg" style="width: 30px; height: 30px;">
             </form>
-            
-        </center>
-        <div style="float: left">
+        </div>
+        
+        <div class="caption">
             <p>
                 Are you missing the soft sands, fresh waves, and ocean breezes surrounding you? No matter where you are located, we are here to introduce you to a deck that can take you to the mesmerizing beaches and experience the ultimate calmness. Here is the second edition of the popular Surfboard Playing Cards - The Surfboard V2: Sunset Session.
 
@@ -232,11 +229,11 @@
             </p>
         </div>
         <div>
-            <img src="pictures/cards1multiple.PNG" alt="surfboardV2" style="width: 1000px; height:500px; margin-top: 10px; ">
+            <img src="pictures/card1multiple.PNG" alt="surfboardV2" style="width: 1000px; height:500px; margin-top: 10px; ">
         </div>
 
-    </div>
-
+    
+</div>
 <!--footer-->
 
 <footer class="footer">

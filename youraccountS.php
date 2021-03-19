@@ -95,6 +95,12 @@ if($_SESSION["upS"]==1)
             border-top-right-radius: 0.6em;
             border-top-left-radius: 0.6em;
         }
+        .accountHeader button {
+            font-size: 14px;
+            margin-left: 40px;
+            margin-top: 25px;
+
+        }
 
         .corpus {
             width: 900px;
@@ -260,8 +266,8 @@ $("#manageBox").click(function(){
     <div class="corpus">
         <div class="accountHeader">
             <img src="pictures/profilepictureB.png" name="profile picture" alt="/profile picture" style="width: 50px; height: 50px; margin-top: 10px; float: left; margin-left: 50px;">
-            <h2 style="margin-left: 200px;float: left;text-align: center;">Welcome <?php echo $_SESSION["firstname"]?> </h2>
-              <h1> <a href="deconnexion.php"> Deco </a></h1>
+            <h2 style="margin-left: 200px;float: left;text-align: center;">Welcome <?php echo $_SESSION["firstname"]?></h2>
+              <h1> <button onclick="location.href='deconnexion.php'"> Logout </button></h1>
         </div>
 
     <div class="box-container">
@@ -295,6 +301,17 @@ $("#manageBox").click(function(){
                 <label>First Name</label><input type="text" name="firstName" value=<?php echo $_SESSION['firstname'] ?> \>
                 <br>
                 <label>Last Name</label><input type="text" name="lastName" value=<?php echo $_SESSION['lastname'] ?> \>
+                <br>
+                <label>Adress</label><input type="text" name="adress" value="DB adress">
+                <br>
+                <label>City</label><input type="text" name="city" value="DB city">
+                <br>
+                <label>Zip Code</label><input type="text" name="zipCode" value="DB zipCode">
+                <br>
+                <label>Country</label><input type="text" name="country" value="DB country">
+                <br>
+                <label>Phone Number</label><input type="text" name="phone" value="DB phone">
+                <br>
                 <br>
                 <input type="submit" name="save" value="Save Changes">
                 <br>
