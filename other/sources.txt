@@ -18,3 +18,4 @@ DATABASE :
 
 https://stackoverflow.com/questions/26222549/php-mysql-check-if-username-and-password-are-in-the-database
 https://stackoverflow.com/questions/55601412/how-do-you-convert-a-mysqli-result-into-a-string
+https://stackoverflow.com/questions/20556773/php-display-image-blob-from-mysql

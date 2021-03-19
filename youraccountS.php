@@ -26,16 +26,15 @@ if($_SESSION["upS"]==1)
 
 <head>
     <title>Cykel - Your Account</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="header&footer.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    
-    <style type="text/css" caption="sidenav">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="header&footer.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+    <style type="text/css" caption="sidenav">
         .sidenav {
             height: 100%;
             width: 0;
@@ -71,22 +70,25 @@ if($_SESSION["upS"]==1)
             font-size: 36px;
             margin-left: 50px;
         }
-                #logo:hover {
-            
-           transform: rotate(360deg);
+
+        #logo:hover {
+
+            transform: rotate(360deg);
             transition: all 1s;
         }
+
     </style>
-    
+
     <style type="text/css">
         .accountContainer {
             width: 1000px;
             height: auto;
             background-color: #E8DBCB;
-            box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
+            box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.10);
             border-radius: 10px;
             margin: 80px auto;
         }
+
         .accountHeader {
             width: 800px;
             height: 70px;
@@ -95,6 +97,7 @@ if($_SESSION["upS"]==1)
             border-top-right-radius: 0.6em;
             border-top-left-radius: 0.6em;
         }
+
         .accountHeader button {
             font-size: 14px;
             margin-left: 40px;
@@ -121,36 +124,44 @@ if($_SESSION["upS"]==1)
             border-radius: 1em;
             cursor: pointer;
         }
+
         .box:hover {
             background-color: #99adc1;
         }
+
         .settingsForm {
             vertical-align: middle;
         }
+
         .itemsForm {
             vertical-align: middle;
             display: grid;
             grid-template-columns: auto auto auto auto;
         }
-        table, tr {
-            padding:20px;
+
+        table,
+        tr {
+            padding: 20px;
             border-collapse: collapse;
-            border:none;
+            border: none;
             table-layout: auto;
         }
+
         tr:nth-child(even) {
             background-color: #eee;
         }
+
         tr:nth-child(odd) {
             background-color: #fff;
         }
+
         td {
-            padding:10px;
+            padding: 10px;
         }
-        
+
         th {
-          background-color: #FBA00E;
-          color: black;
+            background-color: #FBA00E;
+            color: black;
         }
 
         button:hover {
@@ -162,43 +173,48 @@ if($_SESSION["upS"]==1)
             transform: rotate(360deg);
             transition: all 1s;
         }
+
     </style>
 
     <style type="text/css" caption="form design">
         * {
-          box-sizing: border-box;
+            box-sizing: border-box;
         }
 
-        input[type=text],input[type=email],input[type=password], select, textarea {
-          width: 200px;
-          padding: 10px;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-          resize: vertical;
-          float: right;
-          margin-right: 500px;
+        input[type=text],
+        input[type=email],
+        input[type=password],
+        select,
+        textarea {
+            width: 200px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+            float: right;
+            margin-right: 500px;
         }
 
         label {
-          padding: 12px 12px 12px 0;
-          display: inline-block;
+            padding: 12px 12px 12px 0;
+            display: inline-block;
         }
 
         input[type=submit] {
-          background-color: #4CAF50;
-          color: white;
-          padding: 12px 20px;
-          border: none;
-          border-radius: 4px;
-          cursor: pointer;
-          margin-left: 200px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 200px;
         }
 
         input[type=submit]:hover {
-          background-color: #45a049;
+            background-color: #45a049;
         }
 
-</style>
+    </style>
 
     <link rel='icon' href='Cykel.png' type='image/x-icon' />
 </head>
@@ -214,27 +230,28 @@ if($_SESSION["upS"]==1)
         document.getElementById("mySidenav").style.width = "0";
     }
 
-$(document).ready(function(){
+    $(document).ready(function() {
 
-$("#settingsBox").click(function(){
-    $("#settingsForm").toggle(500);
-    $("#manageBox").toggle(500); 
-  });
+        $("#settingsBox").click(function() {
+            $("#settingsForm").toggle(500);
+            $("#manageBox").toggle(500);
+        });
 
-$("#manageBox").click(function(){
-    $("#itemsForm").toggle(500);
-    $("#settingsBox").toggle(500); 
-  });
-   });
+        $("#manageBox").click(function() {
+            $("#itemsForm").toggle(500);
+            $("#settingsBox").toggle(500);
+        });
+    });
 
 </script>
 <link rel='icon' href='pictures/Cykel.png' type='image/x-icon' />
+
 <body>
-<div id="layout">
+    <div id="layout">
 
         <div id="header">
             <center>
-                <img id="logo"  src="pictures/Cykel.png" alt="Cykel LOGO" onClick="location.href='HomePage.html'" style="width: 70px; height: 70px; margin-top: 10px; cursor:pointer; ">
+                <img id="logo" src="pictures/Cykel.png" alt="Cykel LOGO" onClick="location.href='HomePage.html'" style="width: 70px; height: 70px; margin-top: 10px; cursor:pointer; ">
 
             </center>
 
@@ -251,200 +268,212 @@ $("#manageBox").click(function(){
             </div>
 
             <div class="icon">
-            <img name="icon" src="pictures/profile.png" onClick="location.href='youraccount2.html'" style="width: 25px; height: 25px; position: relative; top: -80px; left:580px; cursor:pointer;">
+                <img name="icon" src="pictures/profile.png" onClick="location.href='youraccount2.html'" style="width: 25px; height: 25px; position: relative; top: -80px; left:580px; cursor:pointer;">
 
-            <img src="pictures/notif.png" onClick="location.href='youraccount2.html'" style="width: 20px; height: 20px; position: relative; top: -80px; left:590px; cursor:pointer;">
+                <img src="pictures/notif.png" onClick="location.href='youraccount2.html'" style="width: 20px; height: 20px; position: relative; top: -80px; left:590px; cursor:pointer;">
 
-            <img src="pictures/cart2.png" onClick="location.href='cart.html'" style="width: 20px; height: 20px; position: relative; top: -80px; left: 600px; cursor:pointer;">
+                <img src="pictures/cart2.png" onClick="location.href='cart.html'" style="width: 20px; height: 20px; position: relative; top: -80px; left: 600px; cursor:pointer;">
             </div>
 
         </div>
-</div>
-
-<div class="accountContainer">
-    
-    <div class="corpus">
-        <div class="accountHeader">
-            <img src="pictures/profilepictureB.png" name="profile picture" alt="/profile picture" style="width: 50px; height: 50px; margin-top: 10px; float: left; margin-left: 50px;">
-            <h2 style="margin-left: 200px;float: left;text-align: center;">Welcome <?php echo $_SESSION["firstname"]?></h2>
-              <h1> <button onclick="location.href='deconnexion.php'"> Logout </button></h1>
-        </div>
-
-    <div class="box-container">
-
-        <div class="box" id="settingsBox" style="margin-top: 50px;">
-            <img src="pictures/settings.png" alt="/setting logo" style="width: 70px; height: 70px;margin-top: 20px; margin-left: 10px;float: left;">
-            <h4 style="float: left; color: black; margin-left: 40px; margin-top: 50px;">MY INFORMATIONS</h4>
-        </div>
-        
-        <div class="box" id="manageBox" style="margin-top: 50px;">
-            <img src="pictures/list.png" alt="/manageItems logo" style="width: 80px; height: 80px;margin-top: 20px; margin-left: 10px;float: left;">
-            <h4 style="float: left; color: black; margin-left: 70px; margin-top: 50px;">MANAGE ITEMS</h4>
-        </div>
     </div>
-    
-<br>
+
+    <div class="accountContainer">
+
+        <div class="corpus">
+
+
+            <div class="accountHeader">
+
+                <?php echo '<img name="profile picture" alt="/profile picture" style="width: 50px; height: 50px; margin-top: 10px; float: left; margin-left: 50px;" src="data:image/jpeg;base64,'.base64_encode( $_SESSION['picture'] ).'"/>' ?>
+
+                <h2 style="margin-left: 200px;float: left;text-align: center;">Welcome <?php echo $_SESSION["firstname"]?></h2>
+                <h1> <button onclick="location.href='deconnexion.php'"> Logout </button></h1>
+            </div>
+
+            <div class="box-container">
+
+                <div class="box" id="settingsBox" style="margin-top: 50px;">
+                    <img src="pictures/settings.png" alt="/setting logo" style="width: 70px; height: 70px;margin-top: 20px; margin-left: 10px;float: left;">
+                    <h4 style="float: left; color: black; margin-left: 40px; margin-top: 50px;">MY INFORMATIONS</h4>
+                </div>
+
+                <div class="box" id="manageBox" style="margin-top: 50px;">
+                    <img src="pictures/list.png" alt="/manageItems logo" style="width: 80px; height: 80px;margin-top: 20px; margin-left: 10px;float: left;">
+                    <h4 style="float: left; color: black; margin-left: 70px; margin-top: 50px;">MANAGE ITEMS</h4>
+                </div>
+            </div>
+
+            <br>
 
             <!--display none-->
- 
-<!--MY INFORMATIONS-->
 
-    <div class="settingsForm" id="settingsForm" style="display: none;">
-            <!--écrire par dessus les infos pour update-->
-            <form action="updateS.php" method="post" style="">
-                <h3>My personnal information - You can change your informations here :</h3>
-                <label>Email(username)</label>
-                <input type="email" name="username" value= <?php echo $_SESSION['name'] ?> \>
-                <br>
-                <label>Password</label><input type="text" name="password" value=<?php echo $_SESSION['password'] ?> \> 
-                <br>
-                <label>First Name</label><input type="text" name="firstName" value=<?php echo $_SESSION['firstname'] ?> \>
-                <br>
-                <label>Last Name</label><input type="text" name="lastName" value=<?php echo $_SESSION['lastname'] ?> \>
-                <br>
-                <input type="submit" name="save" value="Save Changes">
-                <br>
-                <br>
-            </form>
-    </div>
-        
-      
+            <!--MY INFORMATIONS-->
 
-<!--MY ITEMS-->
+            <div class="settingsForm" id="settingsForm" style="display: none;">
+                <!--écrire par dessus les infos pour update-->
+                <form action="updateS.php" method="post" style="">
+                    <h3>My personnal information - You can change your informations here :</h3>
+                    <label>Email(username)</label>
+                    <input type="email" name="username" value=<?php echo $_SESSION['name'] ?> \>
+                    <br>
+                    <label>Password</label><input type="text" name="password" value=<?php echo $_SESSION['password'] ?> \>
+                    <br>
+                    <label>First Name</label><input type="text" name="firstName" value=<?php echo $_SESSION['firstname'] ?> \>
+                    <br>
+                    <label>Last Name</label><input type="text" name="lastName" value=<?php echo $_SESSION['lastname'] ?> \>
+                    <br>
 
-    <div class="items" id="itemsForm" style="display: none;">
+                    <input type="submit" name="save" value="Save Changes">
+                    <br>
+                    <br>
+                </form>
+                
+                <form action="updateSpictureProfile.php" method="post" enctype="multipart/form-data" style="">
+                    <h3>You can change your profile picture here :</h3>
+                    <label>Profile Picture</label><input type="file" name="myfile">
+                    <input type="submit" name="save" value="Change File">
+                    <br>
+                </form>
+            </div>
 
-        <table border="1" style="width: 800px; text-align: center; color: black; font-size: 17px;">
-          
-          <tr>
-            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Order</th>
-            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Date</th>
-            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Item</th>
-            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Price</th>
-            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Category</th>
-            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Description</th>
-            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Status</th>
-            <th style="font-size: 20px;border: 1px solid black;text-align: center;">Remove item</th>
-          </tr>
 
-          <tr>
-            <td>1</td>
-            <td>20/12/2019</td>
-            <td>Chess</td>
-            <td>50£</td>
-            <td>Boardgame</td>
-            <td>Nice chessboard</td>
-            <td>Sell</td>
-            <td><button type="submit" value="Remove" id="removeitem">Remove Item</button></td>
-          </tr>
 
-          <tr>
-            <td>1</td>
-            <td>20/12/2019</td>
-            <td>Chess</td>
-            <td>50£</td>
-            <td>Boardgame</td>
-            <td>Nice chessboard</td>
-            <td>Available</td>
-            <td><button type="submit" value="Remove" name="Remove"id="removeitem">Remove Item</button></td>
-          </tr>
+            <!--MY ITEMS-->
 
-          <tr>
-            <td>1</td>
-            <td>20/12/2019</td>
-            <td>Chess</td>
-            <td>50£</td>
-            <td>Boardgame</td>
-            <td>Nice chessboard</td>
-            <td>Bid</td>
-            <td><button type="submit" value="Remove" id="removeitem">Remove Item</button></td>
-          </tr>
-        </table>
-        <br>
-        <br>
+            <div class="items" id="itemsForm" style="display: none;">
 
-    <!--add an item-->
-    <h2>ADD AN ITEM</h2>
+                <table border="1" style="width: 800px; text-align: center; color: black; font-size: 17px;">
 
-        <form action="addItem.php" method="post" style="">
-                <h3>Item informations</h3>
-                <label>Item : </label>
-                <input type="text" name="item" value="">
+                    <tr>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Order</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Date</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Item</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Price</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Category</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Description</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Status</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Remove item</th>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>20/12/2019</td>
+                        <td>Chess</td>
+                        <td>50£</td>
+                        <td>Boardgame</td>
+                        <td>Nice chessboard</td>
+                        <td>Sell</td>
+                        <td><button type="submit" value="Remove" id="removeitem">Remove Item</button></td>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>20/12/2019</td>
+                        <td>Chess</td>
+                        <td>50£</td>
+                        <td>Boardgame</td>
+                        <td>Nice chessboard</td>
+                        <td>Available</td>
+                        <td><button type="submit" value="Remove" name="Remove" id="removeitem">Remove Item</button></td>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>20/12/2019</td>
+                        <td>Chess</td>
+                        <td>50£</td>
+                        <td>Boardgame</td>
+                        <td>Nice chessboard</td>
+                        <td>Bid</td>
+                        <td><button type="submit" value="Remove" id="removeitem">Remove Item</button></td>
+                    </tr>
+                </table>
                 <br>
-                <label>Price : </label><input type="text" name="price">
                 <br>
-                <label>Description :</label><input type="text" name="description" value="">
-                <br>
-                <label>Category : </label>
+
+                <!--add an item-->
+                <h2>ADD AN ITEM</h2>
+
+                <form action="addItem.php" method="post" style="">
+                    <h3>Item informations</h3>
+                    <label>Item : </label>
+                    <input type="text" name="item" value="">
+                    <br>
+                    <label>Price : </label><input type="text" name="price">
+                    <br>
+                    <label>Description :</label><input type="text" name="description" value="">
+                    <br>
+                    <label>Category : </label>
                     <SELECT name="category">
                         <option>Boardgames</option>
                         <option>Cycle</option>
                     </SELECT>
+                    <br>
+                    <label>Photo :</label>
+                    <input type="file" id="myFile" name="photo" style="size: 20px;">
+                    <br>
+                    <br>
+                    <input type="submit" name="save" value="Add Item">
+                    <br>
+                    <br>
+                </form>
                 <br>
-                <label>Photo :</label>
-                <input type="file" id="myFile" name="photo" style="size: 20px;">
-                <br>
-                <br>
-                <input type="submit" name="save" value="Add Item">
-                <br>
-                <br>
-            </form>
-        <br>
-    </div>
-    </div>
-</div>
-
-<!--footer-->
-
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-        <div class="col-sm-3">
-            <h4 class="title">Cykel</h4>
-            <p>Cykel market is an auction website similar to EBay created for the Dynamic Web Programming Project.</p>  
-            <p style="color: #000058;">INSEEC U London - Y3</p>
-
-            <ul class="social-icon">
-            <a href="#" class="social"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-            <a href="#" class="social"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-            <a href="#" class="social"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-            <a href="#" class="social"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
-            <a href="#" class="social"><i class="fa fa-google" aria-hidden="true"></i></a>
-            </ul>
-            </div>
-        <div class="col-sm-3">
-            <h4 class="title">Policy</h4>
-            <span class="acount-icon">          
-            <a href="privacypolicy.html"><i class="fa fa-user" aria-hidden="true"></i> Privacy Policy</a>
-            <a href="termsofservice.html"><i class="fa fa-file" aria-hidden="true"></i> Terms Of Service</a>
-            <a href = "mailto: contact@cykel.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> Contact Us</a>       
-          </span>
-            </div>
-        <div class="col-sm-3">
-            <h4 class="title">Category</h4>
-            <div class="category">
-            <a href="subcatBike.html">All Bikes 🚲</a> 
-            <a href="subcatboard.html">All Boardgames 🎲</a>         
-            </div>
-            </div>
-        <div class="col-sm-3">
-            <h4 class="title">Payment Methods</h4>
-            <p>This website accept this payment methods.</p>
-            <ul class="payment">
-            <li><a href="#"><i class="fa fa-cc-amex" aria-hidden="true"></i></a></li>
-            <li><a href="#"><i class="fa fa-cc-mastercard" aria-hidden="true"></i></a></li>            
-            <li><a href="#"><i class="fa fa-paypal" aria-hidden="true"></i></a></li>
-            <li><a href="#"><i class="fa fa-cc-visa" aria-hidden="true"></i></a></li>
-            <li><a href="#"><i class="fa fa-apple" aria-hidden="true"></i></a></li>
-            </ul>
             </div>
         </div>
-        <hr>
-        
-        <div class="row text-center" style="color: #000058;"> © 2021 Designed with by Xavier Dandigna & Anthelme Charvet.</div>
+    </div>
+
+    <!--footer-->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h4 class="title">Cykel</h4>
+                    <p>Cykel market is an auction website similar to EBay created for the Dynamic Web Programming Project.</p>
+                    <p style="color: #000058;">INSEEC U London - Y3</p>
+
+                    <ul class="social-icon">
+                        <a href="#" class="social"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" class="social"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#" class="social"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" class="social"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                        <a href="#" class="social"><i class="fa fa-google" aria-hidden="true"></i></a>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h4 class="title">Policy</h4>
+                    <span class="acount-icon">
+                        <a href="privacypolicy.html"><i class="fa fa-user" aria-hidden="true"></i> Privacy Policy</a>
+                        <a href="termsofservice.html"><i class="fa fa-file" aria-hidden="true"></i> Terms Of Service</a>
+                        <a href="mailto: contact@cykel.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> Contact Us</a>
+                    </span>
+                </div>
+                <div class="col-sm-3">
+                    <h4 class="title">Category</h4>
+                    <div class="category">
+                        <a href="subcatBike.html">All Bikes 🚲</a>
+                        <a href="subcatboard.html">All Boardgames 🎲</a>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <h4 class="title">Payment Methods</h4>
+                    <p>This website accept this payment methods.</p>
+                    <ul class="payment">
+                        <li><a href="#"><i class="fa fa-cc-amex" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-cc-mastercard" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-paypal" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-cc-visa" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-apple" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+
+            <div class="row text-center" style="color: #000058;"> © 2021 Designed with by Xavier Dandigna & Anthelme Charvet.</div>
         </div>
-        
-        
+
+
     </footer>
 </body>
 
