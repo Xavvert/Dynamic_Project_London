@@ -302,17 +302,6 @@ $("#manageBox").click(function(){
                 <br>
                 <label>Last Name</label><input type="text" name="lastName" value=<?php echo $_SESSION['lastname'] ?> \>
                 <br>
-                <label>Adress</label><input type="text" name="adress" value="DB adress">
-                <br>
-                <label>City</label><input type="text" name="city" value="DB city">
-                <br>
-                <label>Zip Code</label><input type="text" name="zipCode" value="DB zipCode">
-                <br>
-                <label>Country</label><input type="text" name="country" value="DB country">
-                <br>
-                <label>Phone Number</label><input type="text" name="phone" value="DB phone">
-                <br>
-                <br>
                 <input type="submit" name="save" value="Save Changes">
                 <br>
                 <br>
