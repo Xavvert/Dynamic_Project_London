@@ -31,6 +31,7 @@ if(isset($validation)){
         $_SESSION["authorize"]="yes";
         $_SESSION["name"]=$username;
         $_SESSION["password"]=$password;
+        
         $_SESSION["checkA"]=0;
         $_SESSION["checkB"]=0;
         $_SESSION["checkS"]=1;
@@ -51,7 +52,7 @@ if(isset($validation)){
    $row = mysqli_fetch_array($sql_query);
    $_SESSION["lastname"]=$row['lastName'];
     
-    $sql_query = mysqli_query($conn, "SELECT picture from seller WHERE username='$username'"); 
+   $sql_query = mysqli_query($conn, "SELECT picture from seller WHERE username='$username'"); 
    $row = mysqli_fetch_array($sql_query);
    $_SESSION["picture"]=$row['picture'];
     

@@ -11,6 +11,10 @@ if(@$_SESSION["authorize"]!="yes"){
         header("location:logInB.php");
         exit();
     }
+if($_SESSION["upS"]==1)
+{
+    echo ("Informations changed");
+}
 ?>
 
 <!DOCTYPE html>
@@ -322,26 +326,26 @@ $("#auctionBox").click(function(){
 
     <div class="settingsForm" id="settingsForm" style="display: none;">
             <!--écrire par dessus les infos pour update-->
-            <form action="registrationB.php" method="post">
-                <h3>My personnal information</h3>
+            <form action="updateB.php" method="post">
+              <h3>My personnal information - You can change your informations here :</h3>
                 <label>Email(username)</label>
-                <input type="email" name="username" value="DB mail">
+                <input type="email" name="username" value=<?php echo $_SESSION['name'] ?>>
                 <br>
-                <label>Password</label><input type="password" name="password" value="DB pw"> 
+                <label>Password</label><input type="text" name="password" value=<?php echo $_SESSION['password'] ?>> 
                 <br>
-                <label>First Name</label><input type="text" name="firstName" value="DB firstname">
+                <label>First Name</label><input type="text" name="firstName" value=<?php echo $_SESSION['firstname'] ?>> 
                 <br>
-                <label>Last Name</label><input type="text" name="lastName" value="DB lastName">
+                <label>Last Name</label><input type="text" name="lastName" value=<?php echo $_SESSION['lastname'] ?>> 
                 <br>
-                <label>Adress</label><input type="text" name="adress" value="DB adress">
+                <label>Adress</label><input type="text" name="adress" value='<?php echo $_SESSION['adress'] ?>'> 
                 <br>
-                <label>City</label><input type="text" name="city" value="DB city">
+                <label>City</label><input type="text" name="city" value=<?php echo $_SESSION['city'] ?>> 
                 <br>
-                <label>Zip Code</label><input type="text" name="zipCode" value="DB zipCode">
+                <label>Zip Code</label><input type="text" name="zipCode" value='<?php echo $_SESSION['zipCode'] ?>'> 
                 <br>
-                <label>Country</label><input type="text" name="country" value="DB country">
+                <label>Country</label><input type="text" name="country" value=<?php echo $_SESSION['country'] ?>> 
                 <br>
-                <label>Phone Number</label><input type="text" name="phone" value="DB phone">
+                <label>Phone Number</label><input type="text" name="phone" value=<?php echo $_SESSION['phone'] ?>> 
                 <br>
                 <br>
                 <input type="submit" name="save" value="Save Changes">

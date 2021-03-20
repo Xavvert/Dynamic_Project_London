@@ -2,8 +2,8 @@
 session_start();
 $server_name="localhost:3306";
 $username="root";
-/*$password="";*/
-$password="root";
+$password="";
+//$password="root";
 $database_name="cykel";
 
 
@@ -30,19 +30,48 @@ if(isset($validation)){
     {
         $_SESSION["authorize"]="yes";
         $_SESSION["name"]=$username;
+        $_SESSION["password"]=$password;
+        
         $_SESSION["checkB"]=1;
         $_SESSION["checkA"]=0;
         $_SESSION["checkS"]=0;
         
+        $_SESSION["upS"]=0;
+
     }
     else
     {
      echo ("Error : Wrong Password or Username");
     }
-       $sql_query = mysqli_query($conn, "SELECT firstName from buyer WHERE username='$username'"); 
+   $sql_query = mysqli_query($conn, "SELECT firstName from buyer WHERE username='$username'"); 
    $row = mysqli_fetch_array($sql_query);
-
     $_SESSION["firstname"]=$row['firstName'];
+    
+    $sql_query = mysqli_query($conn, "SELECT lastName from buyer WHERE username='$username'"); 
+   $row = mysqli_fetch_array($sql_query);
+   $_SESSION["lastname"]=$row['lastName'];
+    
+    $sql_query = mysqli_query($conn, "SELECT adress from buyer WHERE username='$username'"); 
+   $row = mysqli_fetch_array($sql_query);
+   $_SESSION["adress"]=$row['adress'];
+    
+     $sql_query = mysqli_query($conn, "SELECT zipCode from buyer WHERE username='$username'"); 
+   $row = mysqli_fetch_array($sql_query);
+   $_SESSION["zipCode"]=$row['zipCode'];
+    
+     $sql_query = mysqli_query($conn, "SELECT country from buyer WHERE username='$username'"); 
+   $row = mysqli_fetch_array($sql_query);
+   $_SESSION["country"]=$row['country'];
+    
+      $sql_query = mysqli_query($conn, "SELECT city from buyer WHERE username='$username'"); 
+   $row = mysqli_fetch_array($sql_query);
+   $_SESSION["city"]=$row['city'];
+    
+     $sql_query = mysqli_query($conn, "SELECT phone from buyer WHERE username='$username'"); 
+   $row = mysqli_fetch_array($sql_query);
+   $_SESSION["phone"]=$row['phone'];
+    
+    
     header("location:youraccountB.php");
     mysqli_close($conn);
 
