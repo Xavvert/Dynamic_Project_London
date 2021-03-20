@@ -329,7 +329,7 @@ $("#auctionBox").click(function(){
             <form action="updateB.php" method="post">
               <h3>My personnal information - You can change your informations here :</h3>
                 <label>Email(username)</label>
-                <input type="email" name="username" value=<?php echo $_SESSION['name'] ?>>
+                <input type="email" name="username" value=<?php echo $_SESSION['username'] ?>>
                 <br>
                 <label>Password</label><input type="text" name="password" value=<?php echo $_SESSION['password'] ?>> 
                 <br>

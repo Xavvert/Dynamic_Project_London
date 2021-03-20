@@ -29,7 +29,7 @@ if(isset($validation)){
     if($rowCount > 0)
     {
         $_SESSION["authorize"]="yes";
-        $_SESSION["name"]=$username;
+        $_SESSION["username"]=$username;
         $_SESSION["password"]=$password;
         
         $_SESSION["checkB"]=1;

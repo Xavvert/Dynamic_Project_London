@@ -17,26 +17,21 @@ if(!$conn)
 }
 
 $currentUsername=$_SESSION["username"];
-
 @$username=$_POST['username'];
 @$password=$_POST['password'];
-@$lastname=$_POST['lastName'];
-@$firstname=$_POST['firstName'];
 @$validation=$_POST["save"];
 
 if(isset($validation)){
 
-     $sql_query = mysqli_query($conn, "UPDATE seller SET firstName= '$firstname', lastName= '$lastname', username= '$username', password= '$password' WHERE username='$currentUsername'");
+     $sql_query = mysqli_query($conn, "UPDATE admin SET username= '$username', password= '$password' WHERE username='$currentUsername'");
     
 if($sql_query)
 {
-    $_SESSION["upS"]=1;
+    $_SESSION["upA"]=1;
     $_SESSION["username"]=$username;
     $_SESSION["password"]=$password;
-    $_SESSION["firstname"]=$firstname;
-    $_SESSION["lastname"]=$lastname;
     
-    header("location:youraccountS.php");
+    header("location:youraccountA.php");
 }
     
     else

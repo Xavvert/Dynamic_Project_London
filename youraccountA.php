@@ -17,6 +17,11 @@ if(@$_SESSION["authorize"]!="yes"){
         header("location:youraccountB.php");
         exit();
     }
+
+if($_SESSION["upA"]==1)
+{
+    echo ("Informations changed");
+}
 ?>
 
 
@@ -297,8 +302,8 @@ $("#databaseBox").click(function(){
     
     <div class="corpus">
         <div class="accountHeader">
-            <img src="pictures/profilepictureB.png" name="profile picture" alt="/profile picture" style="width: 50px; height: 50px; margin-top: 10px; float: left; margin-left: 50px;">
-            <h2 style="margin-left: 200px;float: left;text-align: center;">Welcome <?php echo $_SESSION["name"]?></h2>
+           <!--<img src="pictures/profilepictureB.png" name="profile picture" alt="/profile picture" style="width: 50px; height: 50px; margin-top: 10px; float: left; margin-left: 50px;">-->
+            <h2 style="margin-left: 200px;float: left;text-align: center;">Welcome <?php echo $_SESSION["username"]?></h2>
               <h1> <button onclick="location.href='deconnexion.php'"> Logout </button></h1>
         </div>
 
@@ -332,22 +337,18 @@ $("#databaseBox").click(function(){
 
     <div class="settingsForm" id="settingsForm" style="display: none;">
             <!--écrire par dessus les infos pour update-->
-            <form action="registrationS.php" method="post" style="">
-                <h3>My personnal information</h3>
-                <label>Email</label>
-                <input type="email" name="username" value="DB mail">
-                <br>
-                <label>Password</label><input type="password" name="password" value="DB pw"> 
-                <br>
-                <label>First Name</label><input type="text" name="firstName" value="DB firstname">
-                <br>
-                <label>Last Name</label><input type="text" name="lastName" value="DB lastName">
-                <br>
-                <br>
-                <input type="submit" name="save" value="Save Changes">
-                <br>
-                <br>
-            </form>
+        <form action="updateA.php" method="post" style="">
+                    <h3>My personnal information - You can change your informations here :</h3>
+                    <label>Email(username)</label>
+                    <input type="email" name="username" value=<?php echo $_SESSION['username'] ?>>
+                    <br>
+                    <label>Password</label><input type="text" name="password" value=<?php echo $_SESSION['password'] ?>>
+                    <br>
+            
+                   <input type="submit" name="save" value="Save Changes">
+                    <br>
+                    <br>
+                </form>
     </div>
 
 <!--MY ITEMS-->

@@ -3,7 +3,7 @@ session_start();
 $server_name="localhost:3306";
 $username="root";
 $password="";
-$password="root";
+//$password="root";
 $database_name="cykel";
 
 
@@ -29,11 +29,14 @@ if(isset($validation)){
     if($rowCount > 0)
     {
         $_SESSION["authorize"]="yes";
-        $_SESSION["name"]=$username;
+        $_SESSION["username"]=$username;
+        $_SESSION["password"]=$password;
         
         $_SESSION["checkA"]=1;
         $_SESSION["checkB"]=0;
         $_SESSION["checkS"]=0;
+        
+        $_SESSION["upA"]=0;
         
         header("location:youraccountA.php");
         echo ("OK");

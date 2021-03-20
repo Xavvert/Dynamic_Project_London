@@ -16,6 +16,7 @@ if(!$conn)
     
 }
 
+$currentUsername=$_SESSION["username"];
 @$username=$_POST['username'];
 @$password=$_POST['password'];
 @$lastname=$_POST['lastName'];
@@ -29,7 +30,7 @@ if(!$conn)
 
 if(isset($validation)){
 
-     $sql_query = mysqli_query($conn, "UPDATE buyer SET firstName= '$firstname', lastName= '$lastname', adress= '$adress', city= '$city', zipCode= '$zipCode', country= '$country', phone= '$phone', username= '$username', password= '$password' WHERE username='$username'");
+     $sql_query = mysqli_query($conn, "UPDATE buyer SET firstName= '$firstname', lastName= '$lastname', adress= '$adress', city= '$city', zipCode= '$zipCode', country= '$country', phone= '$phone', username= '$username', password= '$password' WHERE username='$currenUsername'");
     
 if($sql_query)
 {
