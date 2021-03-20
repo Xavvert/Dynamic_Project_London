@@ -443,10 +443,11 @@ $("#databaseBox").click(function(){
                 <a href="signUpB.html"><input type="submit" name="add" value="Add Buyer"></a>
                 <h3>Add a Seller :</h3>
                 <a href="signUpS.html"><input type="submit" name="add" value="Add Seller"></a>
+        
         <form action="deleteUser.php" method="post" style="">
                 <h3>Delete a User :</h3>
                 <label>User's email: </label>
-                <input type="email" name="user">
+                <input type="email" name="username">
                 <input type="submit" name="delete" value="Delete User">
                 <br>
                 <br>
