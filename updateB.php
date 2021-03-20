@@ -30,7 +30,7 @@ $currentUsername=$_SESSION["username"];
 
 if(isset($validation)){
 
-     $sql_query = mysqli_query($conn, "UPDATE buyer SET firstName= '$firstname', lastName= '$lastname', adress= '$adress', city= '$city', zipCode= '$zipCode', country= '$country', phone= '$phone', username= '$username', password= '$password' WHERE username='$currenUsername'");
+     $sql_query = mysqli_query($conn, "UPDATE buyer SET firstName= '$firstname', lastName= '$lastname', adress= '$adress', city= '$city', zipCode= '$zipCode', country= '$country', phone= '$phone', username= '$username', password= '$password' WHERE username='$currentUsername'");
     
 if($sql_query)
 {
