@@ -16,6 +16,12 @@ if(!$conn)
     
 }
 
+if(@$_SESSION["checkA"]==1 || @$_SESSION["checkB"]==1 || @$_SESSION["checkS"]==1)
+{
+    header("location:youraccountA.php");
+    mysqli_close($conn);
+}
+
 @$username=$_POST['username'];
 @$password=$_POST['password'];
 @$validation=$_POST["validation"];

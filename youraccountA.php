@@ -18,10 +18,7 @@ if(@$_SESSION["authorize"]!="yes"){
         exit();
     }
 
-if($_SESSION["upA"]==1)
-{
-    echo ("Informations changed");
-}
+
 ?>
 
 
@@ -335,10 +332,17 @@ $("#databaseBox").click(function(){
 
 <!--MY INFORMATIONS-->
 
+                <?php if($_SESSION["upA"]==1)
+{
+    echo "<h1>Informations changed </h1>"; 
+}
+        ?>
     <div class="settingsForm" id="settingsForm" style="display: none;">
             <!--écrire par dessus les infos pour update-->
+
+        
         <form action="updateA.php" method="post" style="">
-                    <h3>My personnal information - You can change your informations here :</h3>
+                    <h3 >My personnal information - You can change your informations here :</h3>
                     <label>Email(username)</label>
                     <input type="email" name="username" value=<?php echo $_SESSION['username'] ?>>
                     <br>
