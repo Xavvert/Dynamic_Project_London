@@ -7,7 +7,6 @@ $password="";
 $database_name="cykel";
 
 
-
 $conn=mysqli_connect($server_name,$username,$password,$database_name);
 
 if(!$conn)

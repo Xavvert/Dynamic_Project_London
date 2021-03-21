@@ -1,8 +1,8 @@
 <?php 
-$dbHost     = "localhost";  
+$dbHost     = "localhost:3306";  
 $dbUsername = "root";  
 $dbPassword = "";  
-$dbName     = "myproject";  
+$dbName     = "cykel";  
   
 // Create database connection  
 $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);  
@@ -21,7 +21,7 @@ if(isset($_POST["submit"])){
         $fileType = pathinfo($fileName, PATHINFO_EXTENSION); 
          
         // Allow certain file formats 
-        $allowTypes = array('jpg','png','jpeg','gif'); 
+        $allowTypes = array('jpg','png','jpeg','gif','PNG'); 
         if(in_array($fileType, $allowTypes)){ 
             $image = $_FILES['image']['tmp_name']; 
             $imgContent = addslashes(file_get_contents($image)); 
