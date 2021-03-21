@@ -504,7 +504,7 @@ if(@$_SESSION["authorize"]!="yes"){
 
                     </tr>
 
-                   <?php
+<?php
 
 $server_name="localhost:3306";
 $username="root";

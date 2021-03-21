@@ -1,44 +1,55 @@
-<?php
+<?php 
 session_start();
-$server_name="localhost:3306";
-$username="root";
-$password="";
-/*$password="root";*/
-$database_name="cykel";
+$dbHost     = "localhost:3306";  
+$dbUsername = "root";  
+$dbPassword = "";  
+$dbName     = "cykel";  
+  
+// Create database connection  
+$db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);  
+  
+// Check connection  
+if ($db->connect_error) {  
+    die("Connection failed: " . $db->connect_error);  }
+ 
+// If file upload form is submitted 
+$status = $statusMsg = ''; 
+ @$username=$_SESSION["username"];
+if(isset($_POST["submit"])){ 
+    $status = 'error'; 
+    if(!empty($_FILES["image"]["name"])) { 
+        // Get file info 
+        $fileName = basename($_FILES["image"]["name"]); 
+        $fileType = pathinfo($fileName, PATHINFO_EXTENSION); 
+         
+        // Allow certain file formats 
+        $allowTypes = array('jpg','png','jpeg','gif'); 
+        if(in_array($fileType, $allowTypes)){ 
+            $image = $_FILES['image']['tmp_name']; 
+            $imgContent = addslashes(file_get_contents($image)); 
+         
+            // Insert image content into database 
+            $insert = $db->query("INSERT into images (image, uploaded, username) VALUES ('$imgContent', NOW(), '$username')");
+            $_SESSION["image"]=$imgContent;
+             
+            if($insert){ 
+                $status = 'success'; 
+                $statusMsg = "File uploaded successfully."; 
+            }else{ 
+                $statusMsg = "File upload failed, please try again."; 
+            }  
+        }else{ 
+            $statusMsg = 'Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload.'; 
+        } 
+    }else{ 
+        $statusMsg = 'Please select an image file to upload.'; 
+    } 
+} 
+ 
+// Display status message 
+echo $statusMsg; 
+$_SESSION["ifimS"]=1;
+header("location:youraccountS.php");
+mysqli_close($db);
 
-
-
-$conn=mysqli_connect($server_name,$username,$password,$database_name);
-
-if(!$conn)
-{
-    die("Connection Failed:".mysqli_connect_error());
-    
-}
-
-@$validation=$_POST["save"];
-
-if(isset($validation)){
-
-    @$user=$_SESSION["username"];
-    $name=$_FILES['myfile']['name'];
-    $type=$_FILES['myfile']['type'];
-    $image=file_get_contents($_FILES['myfile']['tmp_name']);
-
-$sql_query = mysqli_query($conn, "UPDATE seller SET picture = '$image' WHERE username='$username' VALUES ('$image')");
-    
-if($sql_query)
-{
-    $_SESSION["upS"]=1;
-    header("location:youraccountS.php");
-}
-    
-    else
-    {
-     echo ("no");
-    }
-    
-    mysqli_close($conn);
-
-}
 ?>

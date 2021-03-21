@@ -285,7 +285,7 @@ if($_SESSION["upS"]==1)
 
             <div class="accountHeader">
 
-                <?php echo '<img name="profile picture" alt="/profile picture" style="width: 50px; height: 50px; margin-top: 10px; float: left; margin-left: 50px;" src="data:image/jpeg;base64,'.base64_encode( $_SESSION['picture'] ).'"/>' ?>
+                <?php echo '<img name="profile picture" alt="/profile picture" style="width: 50px; height: 50px; margin-top: 10px; float: left; margin-left: 50px;" src="data:image/jpeg;base64,'.base64_encode( $_SESSION["image"] ).'"/>' ?>
 
                 <h2 style="margin-left: 200px;float: left;text-align: center;">Welcome <?php echo $_SESSION["firstname"]?></h2>
                 <h1> <button onclick="location.href='deconnexion.php'"> Logout </button></h1>
@@ -329,10 +329,11 @@ if($_SESSION["upS"]==1)
                     <br>
                 </form>
                 
-                <form action="updateSpictureProfile.php" method="post" enctype="multipart/form-data" style="">
-                    <h3>You can change your profile picture here :</h3>
-                    <label>Profile Picture</label><input type="file" name="myfile">
-                    <input type="submit" name="save" value="Change File">
+                <!-- if condition pour n'upload que la premiere fois -->
+                    <form action="updateSpictureProfile.php" method="post" enctype="multipart/form-data" style="">
+                    <h3>You can upload your profile picture here :</h3>
+                    <label>Profile Picture</label><input type="file" name="image">
+                    <input type="submit" name="submit" value="Upload">
                     <br>
                 </form>
             </div>
@@ -475,6 +476,9 @@ if($_SESSION["upS"]==1)
 
 
     </footer>
+  <?php  echo '<pre>';
+var_dump($_SESSION);
+echo '</pre>'; ?>
 </body>
 
 </html>

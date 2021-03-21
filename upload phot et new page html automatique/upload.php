@@ -21,13 +21,14 @@ if(isset($_POST["submit"])){
         $fileType = pathinfo($fileName, PATHINFO_EXTENSION); 
          
         // Allow certain file formats 
-        $allowTypes = array('jpg','png','jpeg','gif','PNG'); 
+        $allowTypes = array('jpg','png','jpeg','gif'); 
         if(in_array($fileType, $allowTypes)){ 
             $image = $_FILES['image']['tmp_name']; 
             $imgContent = addslashes(file_get_contents($image)); 
          
             // Insert image content into database 
-            $insert = $db->query("INSERT into images (image, uploaded) VALUES ('$imgContent', NOW())"); 
+            @$username='xav';
+            $insert = $db->query("INSERT into images (image, uploaded, username) VALUES ('$imgContent', NOW(), '$username')"); 
              
             if($insert){ 
                 $status = 'success'; 

@@ -58,9 +58,9 @@ if(isset($validation)){
    $row = mysqli_fetch_array($sql_query);
    $_SESSION["lastname"]=$row['lastName'];
     
-   $sql_query = mysqli_query($conn, "SELECT picture from seller WHERE username='$username'"); 
+   $sql_query = mysqli_query($conn, "SELECT image from images WHERE username='$username'"); 
    $row = mysqli_fetch_array($sql_query);
-   $_SESSION["picture"]=$row['picture'];
+   $_SESSION["image"]=$row['image'];
     
     header("location:youraccountS.php");
     
