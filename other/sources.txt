@@ -13,8 +13,9 @@ OTHER :
 https://css-tricks.com/using-css-cursors/
 https://www.w3schools.com/howto/howto_js_slideshow.asp
 https://www.w3schools.com/howto/howto_js_sidenav.asp
-https://www.smtpjs.com/
-
+https://www.smtpjs.com/ (mail)
+https://notificationsounds.com/sound-effects (sound effects)
+https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_audio_play (sound effects)
 DATABASE :
 
 https://stackoverflow.com/questions/26222549/php-mysql-check-if-username-and-password-are-in-the-database

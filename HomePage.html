@@ -245,11 +245,15 @@
 
 
 <body>
+    <audio id="myAudio">
+        <source src="audio/tweet-416.mp3" type="audio/mpeg">
+    </audio>
+
     <div id="layout">
         <!-- header -->
         <div id="header">
             <center>
-                <img id="logo" src="pictures/Cykel.png" alt="Cykel LOGO" onClick="location.href='HomePage.html'" style="width: 70px; height: 70px; margin-top: 10px; cursor:pointer; ">
+                <img id="logo" src="pictures/Cykel.png" alt="Cykel LOGO" style="width: 70px; height: 70px; margin-top: 10px; cursor:pointer;" onClick="location.href='HomePage.html'">
 
             </center>
 
@@ -417,16 +421,14 @@
 
 
     </footer>
-
 </body>
-    
+
 <script src="https://smtpjs.com/v3/smtp.js"></script>
 <script type="text/javascript">
-    
     function sendEmail() {
 
         var emailReceiver = document.getElementById("email").value;
-        
+
         Email.send({
                 Host: "smtp.gmail.com",
                 Username: "cykelweb@gmail.com",
@@ -443,6 +445,14 @@
     }
 </script>
 <script type="text/javascript">
+    
+    var audio = $("#myAudio")[0];
+    $("#logo").mouseenter(function() {
+        audio.play();
+    });
+
+
+
     function openNav() {
         document.getElementById("mySidenav").style.width = "250px";
     }
