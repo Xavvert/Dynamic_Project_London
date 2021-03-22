@@ -396,23 +396,24 @@ if($_SESSION["upS"]==1)
                 <!--add an item-->
                 <h2>ADD AN ITEM</h2>
 
-                <form action="addItem.php" method="post" style="">
+                <form action="addItemS.php" method="post" enctype="multipart/form-data" style="">
                     <h3>Item informations</h3>
-                    <label>Item : </label>
+                    <label>Name of the item : </label>
                     <input type="text" name="item" value="">
                     <br>
-                    <label>Price : </label><input type="text" name="price">
+                    <label>Price in £ : </label><input type="text" name="price">
                     <br>
                     <label>Description :</label><input type="text" name="description" value="">
                     <br>
                     <label>Category : </label>
                     <SELECT name="category">
-                        <option>Boardgames</option>
-                        <option>Cycle</option>
+                        <option>Playing Cards</option>
+                        <option>Classic Games</option>
+                        <option>Bicycles</option>
                     </SELECT>
                     <br>
                     <label>Photo :</label>
-                    <input type="file" id="myFile" name="photo" style="size: 20px;">
+                    <input type="file" id="myFile" name="image" style="size: 20px;">
                     <br>
                     <br>
                     <input type="submit" name="save" value="Add Item">
