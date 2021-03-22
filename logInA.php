@@ -38,6 +38,8 @@ if(isset($validation)){
         $_SESSION["authorize"]="yes";
         $_SESSION["username"]=$username;
         $_SESSION["password"]=$password;
+        $_SESSION["firstname"]=$firstname;
+
         
         $_SESSION["checkA"]=1;
         $_SESSION["checkB"]=0;
@@ -45,13 +47,22 @@ if(isset($validation)){
         
         $_SESSION["upA"]=0;
         
-        header("location:youraccountA.php");
-        echo ("OK");
     }
     else
     {
      echo ("Error : Wrong Password or Username");
     }
+
+    $sql_query = mysqli_query($conn, "SELECT firstname from seller WHERE username='$username'"); 
+   $row = mysqli_fetch_array($sql_query);
+   $_SESSION["firstname"]=$row['firstname'];
+    
+   $sql_query = mysqli_query($conn, "SELECT lastname from seller WHERE username='$username'"); 
+   $row = mysqli_fetch_array($sql_query);
+   $_SESSION["lastname"]=$row['lastname'];
+
+
+    header("location:youraccountA.php");
     mysqli_close($conn);
 
 }
