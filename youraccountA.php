@@ -98,6 +98,10 @@ if(@$_SESSION["authorize"]!="yes"){
             border-top-right-radius: 0.6em;
             border-top-left-radius: 0.6em;
         }
+        .accountHeader button {
+            font-size: 14px;
+            margin-left: 40px;
+            margin-top: 25px;
 
         .accountHeader button {
             font-size: 14px;
