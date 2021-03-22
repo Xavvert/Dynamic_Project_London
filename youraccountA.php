@@ -319,7 +319,7 @@ if(@$_SESSION["authorize"]!="yes"){
         <div class="corpus">
             <div class="accountHeader">
                 <!--<img src="pictures/profilepictureB.png" name="profile picture" alt="/profile picture" style="width: 50px; height: 50px; margin-top: 10px; float: left; margin-left: 50px;">-->
-                <h2 style="margin-left: 200px;float: left;text-align: center;">Welcome <?php echo $_SESSION["username"]?></h2>
+                <h2 style="margin-left: 200px;float: left;text-align: center;">Welcome <?php echo $_SESSION["firstname"]?></h2>
                 <h1> <button onclick="location.href='deconnexion.php'"> Logout </button></h1>
             </div>
 
