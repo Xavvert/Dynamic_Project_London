@@ -2,8 +2,7 @@
 session_start();
 $server_name="localhost:3306";
 $username="root";
-$password="";
-/*$password="root";*/
+$password="root";    
 $database_name="cykel";
 
 $conn=mysqli_connect($server_name,$username,$password,$database_name);

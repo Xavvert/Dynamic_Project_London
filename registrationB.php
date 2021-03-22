@@ -1,7 +1,6 @@
 <?php
 $server_name="localhost:3306";
 $username="root";
-/*$password="";*/
 $password="root";
 $database_name="cykel";
 

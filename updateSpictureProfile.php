@@ -2,7 +2,7 @@
 session_start();
 $dbHost     = "localhost:3306";  
 $dbUsername = "root";  
-$dbPassword = "";  
+$dbPassword = "root";  
 $dbName     = "cykel";  
   
 // Create database connection  
