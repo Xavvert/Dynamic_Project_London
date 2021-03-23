@@ -288,14 +288,21 @@ if(!$conn)
     die("Connection Failed:".mysqli_connect_error());
     
 }
-                           
+        
+     
+            
+                          
             $sql_query=mysqli_query($conn, "SELECT * FROM item WHERE category='Playing Cards'");
             while($row=mysqli_fetch_array($sql_query))
             {
+                @$currentUsername=$row['id_seller'];
+                $queryImg = mysqli_query($conn, "Select * from images WHERE username = '$currentUsername'");
+                $rowImg=mysqli_fetch_array($queryImg);
             ?>
-
+            
             <div class="item" onclick="location.href='<?php $row['name'] ?>'.html">
-                <img src="pictures/card1.png" style="height: 230px ;width: 150px; cursor: pointer;">
+                    <?php echo '<img name="profile picture" alt="/profile picture" style="width: 50px; height: 50px; margin-top: 10px; float: left; margin-left: 50px;" src="data:image/jpeg;base64,'.base64_encode( $rowImg['image'] ).'"/>' ?>
+              <!--  <img src="pictures/card1.png" style="height: 230px ;width: 150px; cursor: pointer;"> -->
                     <?php echo($row['name']) ?>
                     <p>
                         £<?php echo($row['price']) ?>
