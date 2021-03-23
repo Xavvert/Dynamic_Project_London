@@ -102,6 +102,67 @@ if($_SESSION["checkB"]!=1)
             transition: all 1s;
         }
     </style>
+    
+    
+    <style type="text/css" name="back button">
+    .back-zone {
+        width: 100%;
+        height: 50px;
+        background-color: #EEE8CD;
+        }
+    
+        .wrapper{
+          position: absolute;
+          top: 20%;
+          left: 10%;
+          transform: translate(-50%, -50%);
+            border-radius: 1em;
+        }
+
+        .wrapper a {
+          display: block;
+          width: 100px;
+          height: 40px;
+          line-height: 40px;
+          font-size: 18px;
+          font-family: sans-serif;
+          text-decoration: none;
+          color: #333;
+          border: 2px solid #333;
+          letter-spacing: 2px;
+          text-align: center;
+          position: relative;
+          transition: all .35s;
+            border-radius: 1em;
+        }
+
+        .wrapper a span{
+          position: relative;
+          z-index: 2;
+            border-radius: 1em;
+        }
+
+        .wrapper a:after{
+          position: absolute;
+          content: "";
+          top: 0;
+          left: 0;
+          width: 0;
+          height: 100%;
+          background: #ff003b;
+          transition: all .35s;
+            border-radius: 1em;
+        }
+
+        .wrapper a:hover{
+          color: black;
+        }
+
+        .wrapper a:hover:after{
+          width: 100%;
+        }
+
+    </style>
 
     <link rel='icon' href='Cykel.png' type='image/x-icon' />
 </head>
@@ -118,6 +179,8 @@ if($_SESSION["checkB"]!=1)
 
 </script>
 
+    <!--header-->
+    
 <body>
 <div id="layout">
 
@@ -152,6 +215,16 @@ if($_SESSION["checkB"]!=1)
         </div>
     </div>
 
+    <!--body-->
+    
+    <!--back button-->
+    <div class="back-zone">
+        <div class="wrapper">
+                <a href="categories.html"><span>Back</span></a>
+        </div>
+    </div>
+    
+    <!--items-->
     <div class="grid-container">
 <?php
 
