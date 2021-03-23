@@ -349,23 +349,23 @@ if($_SESSION["upS"]==1)
                 <form action="updateB.php" method="post">
                     <h3>My personnal information - You can change your informations here :</h3>
                     <label>Email(username)</label>
-                    <input type="email" name="username" value=<?php echo $_SESSION['username'] ?>>
+                    <input type="email" name="username" value='<?php echo $_SESSION['username'] ?>'>
                     <br>
-                    <label>Password</label><input type="text" name="password" value=<?php echo $_SESSION['password'] ?>>
+                    <label>Password</label><input type="text" name="password" value='<?php echo $_SESSION['password'] ?>'>
                     <br>
-                    <label>First Name</label><input type="text" name="firstName" value=<?php echo $_SESSION['firstname'] ?>>
+                    <label>First Name</label><input type="text" name="firstName" value='<?php echo $_SESSION['firstname'] ?>'>
                     <br>
-                    <label>Last Name</label><input type="text" name="lastName" value=<?php echo $_SESSION['lastname'] ?>>
+                    <label>Last Name</label><input type="text" name="lastName" value='<?php echo $_SESSION['lastname'] ?>'>
                     <br>
                     <label>Adress</label><input type="text" name="adress" value='<?php echo $_SESSION['adress'] ?>'>
                     <br>
-                    <label>City</label><input type="text" name="city" value=<?php echo $_SESSION['city'] ?>>
+                    <label>City</label><input type="text" name="city" value='<?php echo $_SESSION['city'] ?>'>
                     <br>
                     <label>Zip Code</label><input type="text" name="zipCode" value='<?php echo $_SESSION['zipCode'] ?>'>
                     <br>
-                    <label>Country</label><input type="text" name="country" value=<?php echo $_SESSION['country'] ?>>
+                    <label>Country</label><input type="text" name="country" value='<?php echo $_SESSION['country'] ?>'>
                     <br>
-                    <label>Phone Number</label><input type="text" name="phone" value=<?php echo $_SESSION['phone'] ?>>
+                    <label>Phone Number</label><input type="text" name="phone" value='<?php echo $_SESSION['phone'] ?>'>
                     <br>
                     <br>
                     <input type="submit" name="save" value="Save Changes">
@@ -378,15 +378,15 @@ if($_SESSION["upS"]==1)
 
             <div class="adressForm" id="adressForm" style="display: none;">
                 <!--écrire par dessus les infos pour update-->
-                <form action="blabla.php" method="post">
+                <form action="updateBadress.php" method="post">
                     <h3>My delivery Adress</h3>
-                    <label>Adress</label><input type="text" name="adress" value="DB adress">
+                    <label>Adress</label><input type="text" name="adress" value='<?php echo $_SESSION['adress'] ?>'>
                     <br>
-                    <label>City</label><input type="text" name="city" value="DB city">
+                    <label>City</label><input type="text" name="city" value='<?php echo $_SESSION['city'] ?>'>
                     <br>
-                    <label>Zip Code</label><input type="text" name="zipCode" value="DB zipCode">
+                    <label>Zip Code</label><input type="text" name="zipCode" value='<?php echo $_SESSION['zipCode'] ?>'>
                     <br>
-                    <label>Country</label><input type="text" name="country" value="DB country">
+                    <label>Country</label><input type="text" name="country" value='<?php echo $_SESSION['country'] ?>'>
                     <br>
                     <br>
                     <input type="submit" name="save" value="Save Changes">
