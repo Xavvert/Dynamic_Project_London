@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 23, 2021 at 10:20 AM
+-- Generation Time: Mar 23, 2021 at 10:46 AM
 -- Server version: 5.7.32
 -- PHP Version: 7.4.12
 
@@ -114,7 +114,12 @@ INSERT INTO `item` (`id`, `name`, `price`, `category`, `id_buyer`, `id_seller`, 
 (6, 'Hyper Neon', 14, 'Playing Cards', '', '', ''),
 (7, 'Soundboard Midnight V3', 10, 'Playing Cards', '', '', ''),
 (8, 'Mountain Bike', 500, 'Bike', '', '', ''),
-(9, 'Cards Test', 15, 'Playing Cards', '', '', '');
+(9, 'Cards Test', 15, 'Playing Cards', '', '', ''),
+(10, 'Female City Bike', 200, 'Bike', '', '', ''),
+(11, 'Race Sport Bike - Trek', 500, 'Bike', '', '', ''),
+(12, 'Male City Bike', 290, 'Bike', '', '', ''),
+(13, 'Mountain Bike - Trek', 380, 'Bike', '', '', ''),
+(14, 'Bike test', 400, 'Bike', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -226,7 +231,7 @@ ALTER TABLE `images`
 -- AUTO_INCREMENT for table `item`
 --
 ALTER TABLE `item`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `order`
