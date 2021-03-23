@@ -1,3 +1,21 @@
+<?php
+
+session_start();
+if(@$_SESSION["authorize"]!="yes"){
+    header("location:logInB.php");
+    exit();
+    
+}
+
+if($_SESSION["checkB"]!=1)
+{
+        header("location:logInB.php");
+        exit();
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -137,7 +155,37 @@
     </div>
 
     <div class="grid-container">
+<?php
 
+$server_name="localhost:3306";
+$username="root";
+$password="root";
+$database_name="cykel";
+
+
+$conn=mysqli_connect($server_name,$username,$password,$database_name);
+
+if(!$conn)
+{
+    die("Connection Failed:".mysqli_connect_error());
+    
+}
+                           
+            $sql_query=mysqli_query($conn, "SELECT * FROM item WHERE category='Bike'");
+            while($row=mysqli_fetch_array($sql_query))
+            {
+            ?>
+
+            <div class="item" onclick="location.href='<?php $row['name'] ?>'.html">
+                <img src="pictures/bike1.png" style="height: 176px; width: 266px; cursor: pointer;">
+                    <?php echo($row['name']) ?>
+                    <p>
+                        £<?php echo($row['price']) ?>
+                    </p>
+            </div>
+                    <?php } mysqli_close($conn); ?>
+
+<!--
         <div class="item" onClick="">
             <img src="pictures/bike1.png" style="height: 176px; width: 266px; float: left; cursor: pointer;">
             Female City Bike
@@ -170,7 +218,7 @@
             </p>
         </div>
 
-
+-->
  </div>
 
 
