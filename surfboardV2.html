@@ -66,13 +66,6 @@
             padding:160px;
         }
 
-        /*.item:hover {
-            background: whitesmoke;
-        }
-        .caption:hover {
-            background: whitesmoke;
-        }*/
-
         .article {
             float: left;
             text-align: center;
@@ -84,6 +77,61 @@
             transform: rotate(360deg);
             transition: all 1s;
         }
+    </style>
+    
+        <style type="text/css" name="back button">
+    
+        .wrapper{
+          position: absolute;
+          top: 17%;
+          left: 10%;
+          transform: translate(-50%, -50%);
+            border-radius: 1em;
+        }
+
+        .wrapper a {
+          display: block;
+          width: 100px;
+          height: 40px;
+          line-height: 40px;
+          font-size: 18px;
+          font-family: sans-serif;
+          text-decoration: none;
+          color: #333;
+          border: 2px solid #333;
+          letter-spacing: 2px;
+          text-align: center;
+          position: relative;
+          transition: all .35s;
+            border-radius: 1em;
+        }
+
+        .wrapper a span{
+          position: relative;
+          z-index: 2;
+            border-radius: 1em;
+        }
+
+        .wrapper a:after{
+          position: absolute;
+          content: "";
+          top: 0;
+          left: 0;
+          width: 0;
+          height: 100%;
+          background: black;
+          transition: all .35s;
+            border-radius: 1em;
+        }
+
+        .wrapper a:hover{
+          color: white;
+        }
+
+        .wrapper a:hover:after{
+          width: 100%;
+        }
+
     </style>
 
     <link rel='icon' href='Cykel.png' type='image/x-icon' />
@@ -190,10 +238,17 @@
         </div>
     </div>
 
+<!--body-->
+        <!--back button-->
+        <div class="wrapper">
+                <a href="cards.php"><span>Back</span></a>
+        </div>
+    
+<!--item-->
 <div class="package">
     
     <div class="item">
-        <button onclick="goBack()" style="float: left; margin-top: -70px; margin-left: -30px;">Go Back</button>
+<!--            <button onclick="goBack()" style="float: left; margin-top: -70px; margin-left: -30px;">Go Back</button>-->
         
         <div class="article">
             <img src="pictures/card1.png" alt="surfboardV2" style="width: 250px; height:350px; margin-top: 10px;">

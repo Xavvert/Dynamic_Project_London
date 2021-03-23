@@ -191,7 +191,7 @@ if($_SESSION["checkB"]!=1)
             padding-left: 50px;
             padding-right: 50px;
             padding-bottom: 150px;
-            padding-top: 100px;
+            padding-top: 50px;
             grid-template-columns: auto auto auto;
             grid-gap: 30px;
             vertical-align: middle;

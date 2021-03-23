@@ -105,12 +105,7 @@ if($_SESSION["checkB"]!=1)
     
     
     <style type="text/css" name="back button">
-    .back-zone {
-        width: 100%;
-        height: 50px;
-        background-color: #EEE8CD;
-        }
-    
+        
         .wrapper{
           position: absolute;
           top: 20%;
@@ -218,11 +213,9 @@ if($_SESSION["checkB"]!=1)
     <!--body-->
     
     <!--back button-->
-    <div class="back-zone">
         <div class="wrapper">
                 <a href="categories.html"><span>Back</span></a>
         </div>
-    </div>
     
     <!--items-->
     <div class="grid-container">
