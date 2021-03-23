@@ -56,6 +56,7 @@ $status = $statusMsg = '';
     
 $content = "<html><head></head><body>Welcome NOW : $name , $price , $category , $currentUsername</body></html>";
 $file = "newpage.html";
+    
 file_put_contents($file, $content);
     
  
