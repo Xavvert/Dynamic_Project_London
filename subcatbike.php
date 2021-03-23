@@ -75,8 +75,6 @@ if($_SESSION["checkB"]!=1)
             padding-top: 100px;
             grid-template-columns: auto auto;
             grid-gap: 30px;
-            border-top-size: 1em;
-            border-top-style: solid;
             vertical-align: middle;
         }
 
@@ -177,8 +175,9 @@ if(!$conn)
             ?>
 
             <div class="item" onclick="location.href='<?php $row['name'] ?>'.html">
-                <img src="pictures/bike1.png" style="height: 176px; width: 266px; cursor: pointer;">
-                    <?php echo($row['name']) ?>
+                <?php echo '<img name="profile picture" alt="/profile picture" style="height: 176px; width: 266px;margin-top: 10px; float: left; cursor: pointer;" src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"/>' ?>  
+                
+                <?php echo($row['name']) ?>
                     <p>
                         £<?php echo($row['price']) ?>
                     </p>

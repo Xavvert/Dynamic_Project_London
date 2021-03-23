@@ -194,8 +194,6 @@ if($_SESSION["checkB"]!=1)
             padding-top: 100px;
             grid-template-columns: auto auto auto;
             grid-gap: 30px;
-            border-top-size: 1em;
-            border-top-style: solid;
             vertical-align: middle;
         }
 
@@ -206,7 +204,6 @@ if($_SESSION["checkB"]!=1)
             height: 230px;
             border-radius: 1em;
             color: #0a255a;
-            cursor: pointer;
         }
 
         .item:hover {
@@ -297,7 +294,7 @@ if(!$conn)
             ?>
             
             <div class="item" onclick="location.href='<?=$row['name']?>.html'">
-                    <?php echo '<img name="profile picture" alt="/profile picture" style="height: 230px ;width: 150px;margin-top: 10px; float: left;" src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"/>' ?>
+                    <?php echo '<img name="profile picture" alt="/profile picture" style="height: 230px ;width: 150px;margin-top: 10px; float: left;cursor: pointer;" src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"/>' ?>
             
                     <?php echo($row['name']) ?>
                     <p>
