@@ -1,3 +1,20 @@
+<?php
+
+session_start();
+if(@$_SESSION["authorize"]!="yes"){
+    header("location:logInB.php");
+    exit();
+    
+}
+
+if($_SESSION["checkB"]!=1)
+{
+        header("location:logInB.php");
+        exit();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -255,13 +272,45 @@
 
 
     <div class="grid-container">
+
+<?php
+
+$server_name="localhost:3306";
+$username="root";
+$password="root";
+$database_name="cykel";
+
+
+$conn=mysqli_connect($server_name,$username,$password,$database_name);
+
+if(!$conn)
+{
+    die("Connection Failed:".mysqli_connect_error());
+    
+}
+                           
+            $sql_query=mysqli_query($conn, "SELECT * FROM item WHERE category='Playing cards'");
+            while($row=mysqli_fetch_array($sql_query))
+            {
+            ?>
+
+            <div class="item" onclick="location.href='<?php $row['name'] ?>'.html">
+                <img src="pictures/card1.png" style="height: 230px ;width: 150px; cursor: pointer;">
+                    <?php echo($row['name']) ?>
+                    <p>
+                        £<?php echo($row['price']) ?>
+                    </p>
+            </div>
+                    <?php } mysqli_close($conn); ?>
+<!--
         <div class="item" onclick="location.href='surfboardV2.html'">
             <img src="pictures/card1.png" style="height: 230px ;width: 150px; cursor: pointer;">
-            Surfboard V2
+            SnakersV3
             <p>
                 £14.00
             </p>
         </div>
+        
         <div class="item" onclick="location.href='snackersv3.html'">
             <img src="pictures/card2.png" style="height: 230px ;width: 150px; cursor: pointer;">
             SnakersV3
@@ -301,6 +350,7 @@
                 £10.00
             </p>
         </div>
+-->
 
     </div>
 
