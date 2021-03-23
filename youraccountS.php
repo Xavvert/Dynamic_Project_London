@@ -347,48 +347,42 @@ if($_SESSION["upS"]==1)
                 <table border="1" style="width: 800px; text-align: center; color: black; font-size: 17px;">
 
                     <tr>
-                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Order</th>
-                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Date</th>
-                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Item</th>
-                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Price</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">ID</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Name</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Price in £</th>
                         <th style="font-size: 20px;border: 1px solid black;text-align: center;">Category</th>
-                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Description</th>
-                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Status</th>
-                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Remove item</th>
                     </tr>
 
+                    <?php
+
+$server_name="localhost:3306";
+$username="root";
+$password="root";
+$database_name="cykel";
+
+
+$conn=mysqli_connect($server_name,$username,$password,$database_name);
+
+if(!$conn)
+{
+    die("Connection Failed:".mysqli_connect_error());
+    
+}
+                
+                @$currentUs=$_SESSION["username"];
+                           
+            $sql_query=mysqli_query($conn, "SELECT * FROM item WHERE id_seller='$currentUs'");
+            while($row=mysqli_fetch_array($sql_query))
+            {
+            ?>
                     <tr>
-                        <td>1</td>
-                        <td>20/12/2019</td>
-                        <td>Chess</td>
-                        <td>50£</td>
-                        <td>Boardgame</td>
-                        <td>Nice chessboard</td>
-                        <td>Sell</td>
-                        <td><button type="submit" value="Remove" id="removeitem">Remove Item</button></td>
+                        <td><?php echo($row['id']) ?></td>
+                        <td><?php echo($row['name']) ?></td>
+                        <td><?php echo($row['price']) ?></td>
+                        <td><?php echo($row['category']) ?></td>
                     </tr>
 
-                    <tr>
-                        <td>1</td>
-                        <td>20/12/2019</td>
-                        <td>Chess</td>
-                        <td>50£</td>
-                        <td>Boardgame</td>
-                        <td>Nice chessboard</td>
-                        <td>Available</td>
-                        <td><button type="submit" value="Remove" name="Remove" id="removeitem">Remove Item</button></td>
-                    </tr>
-
-                    <tr>
-                        <td>1</td>
-                        <td>20/12/2019</td>
-                        <td>Chess</td>
-                        <td>50£</td>
-                        <td>Boardgame</td>
-                        <td>Nice chessboard</td>
-                        <td>Bid</td>
-                        <td><button type="submit" value="Remove" id="removeitem">Remove Item</button></td>
-                    </tr>
+                    <?php } mysqli_close($conn); ?>
                 </table>
                 <br>
                 <br>
