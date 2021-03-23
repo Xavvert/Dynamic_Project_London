@@ -206,6 +206,7 @@ if($_SESSION["checkB"]!=1)
             height: 230px;
             border-radius: 1em;
             color: #0a255a;
+            cursor: pointer;
         }
 
         .item:hover {
@@ -300,7 +301,7 @@ if(!$conn)
                 $rowImg=mysqli_fetch_array($queryImg);
             ?>
             
-            <div class="item" onclick="location.href='<?php $row['name'] ?>'.html">
+            <div class="item" onclick="location.href='<?=$row['name']?>.html'">
                     <?php echo '<img name="profile picture" alt="/profile picture" style="width: 50px; height: 50px; margin-top: 10px; float: left; margin-left: 50px;" src="data:image/jpeg;base64,'.base64_encode( $rowImg['image'] ).'"/>' ?>
             
                 
