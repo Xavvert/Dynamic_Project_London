@@ -294,7 +294,8 @@ if(!$conn)
             {
             ?>
 
-            <div class="item" onclick="location.href='<?php $row['name'] ?>'.html">
+            <div class="item" onclick="location.href='<?=$row['name']?>.html'">
+                <?=$product['id']?>
                 <img src="pictures/card1.png" style="height: 230px ;width: 150px; cursor: pointer;">
                     <?php echo($row['name']) ?>
                     <p>
