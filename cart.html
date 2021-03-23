@@ -179,7 +179,7 @@
             text-align: center;
             padding-left: 500px;
         }
-        
+
         table, tr {
             padding: 20px;
             border-collapse: collapse;
@@ -262,6 +262,19 @@
         </div>
 
         <!-- body -->
+        <script type="text/javascript">
+        
+        /*function deleteRow(i) {
+            document.getElementById("c").deleteRow(i);
+        }*/
+
+        function deleteRow(r) {
+            var i = r.parentNode.parentNode.rowIndex;
+            document.getElementById("c").deleteRow(i);
+
+        }
+
+        </script>
 
         <div class="cartContainer">
             <br>
@@ -270,9 +283,9 @@
                     <img src="pictures/cart2.png" style="width: 50px; height: 50px; margin-top: 10px; float: left; margin-left: 50px;">
                     <h2 style="margin-left: 200px;float: left;text-align: center;">Shipping Cart</h2>
                 </div>
-
+<br>
                 <div class="cartShipping">
-                    <table class="c" border="1">
+                    <table class="c" id="c"border="1">
                         <thead>
                             <th colspan="2" style="text-align: center;">Product</th>
                             <th style="text-align: center;">Price</th>
@@ -281,7 +294,7 @@
                         </thead>
 
                         <tr>
-                            <td><a href="#" class="close"></a></td>
+                            <td><a href="#" class="close" onclick="deleteRow(this)"></a></td>
                             <td>une image + une description</td>
                             <td>20£</td>
                             <td>2</td>
@@ -289,7 +302,7 @@
                         </tr>
 
                         <tr>
-                            <td><a href="#" class="close"></a></td>
+                            <td><a href="#" class="close" onclick="deleteRow(this)"></a></td>
                             <td>une image + une description</td>
                             <td>20£</td>
                             <td>3</td>
@@ -297,7 +310,7 @@
                         </tr>
 
                         <tr>
-                            <td><a href="#" class="close"></a></td>
+                            <td><a href="#" class="close" onclick="deleteRow(this)"></a></td>
                             <td>une image + une description</td>
                             <td>20£</td>
                             <td>1</td>
@@ -305,7 +318,7 @@
                         </tr>
 
                         <tr>
-                            <td><a href="#" class="close"></a></td>
+                            <td><a href="#" class="close" onclick="deleteRow(this)"></a></td>
                             <td>une image + une description</td>
                             <td>20£</td>
                             <td>1</td>
@@ -313,7 +326,7 @@
                         </tr>
 
                         <tr>
-                            <td><a href="#" class="close"></a></td>
+                            <td><a href="#" class="close" onclick="deleteRow(this)"></a></td>
                             <td>une image + une description</td>
                             <td>20£</td>
                             <td>1</td>
