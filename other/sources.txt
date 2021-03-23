@@ -24,3 +24,6 @@ https://stackoverflow.com/questions/26222549/php-mysql-check-if-username-and-pas
 https://stackoverflow.com/questions/55601412/how-do-you-convert-a-mysqli-result-into-a-string
 https://stackoverflow.com/questions/20556773/php-display-image-blob-from-mysql
 https://stackoverflow.com/questions/11534333/how-to-display-all-table-row-contents-of-my-database-in-php
+
+CART:
+https://codeshack.io/shopping-cart-system-php-mysql/
