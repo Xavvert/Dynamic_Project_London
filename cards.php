@@ -289,7 +289,7 @@ if(!$conn)
     
 }
                            
-            $sql_query=mysqli_query($conn, "SELECT * FROM item WHERE category='Playing cards'");
+            $sql_query=mysqli_query($conn, "SELECT * FROM item WHERE category='Playing Cards'");
             while($row=mysqli_fetch_array($sql_query))
             {
             ?>
