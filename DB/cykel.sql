@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 22, 2021 at 07:32 PM
+-- Generation Time: Mar 23, 2021 at 10:20 AM
 -- Server version: 5.7.32
 -- PHP Version: 7.4.12
 
@@ -107,7 +107,14 @@ CREATE TABLE `item` (
 --
 
 INSERT INTO `item` (`id`, `name`, `price`, `category`, `id_buyer`, `id_seller`, `type`) VALUES
-(1, 'mountain bike', 500, '2', '', '', '');
+(2, 'Surfboard V2', 14, 'Playing Cards', '', '', ''),
+(3, 'Snakers V3', 12, 'Playing Cards', '', '', ''),
+(4, 'Play Dead V2', 12, 'Playing Cards', '', '', ''),
+(5, 'King Arthur Emerald Saga', 13, 'Playing Cards', '', '', ''),
+(6, 'Hyper Neon', 14, 'Playing Cards', '', '', ''),
+(7, 'Soundboard Midnight V3', 10, 'Playing Cards', '', '', ''),
+(8, 'Mountain Bike', 500, 'Bike', '', '', ''),
+(9, 'Cards Test', 15, 'Playing Cards', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -219,7 +226,7 @@ ALTER TABLE `images`
 -- AUTO_INCREMENT for table `item`
 --
 ALTER TABLE `item`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `order`
