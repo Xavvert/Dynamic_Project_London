@@ -48,16 +48,37 @@ $status = $statusMsg = '';
                 }else{ 
                     $statusMsg = 'Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload.'; 
                 } 
+    }
+     
+    $sql_query = " SELECT id from item WHERE name = '$name' ";
+    $row = mysqli_fetch_array($sql_query);
+    $_SESSION["id"]=$row['id'];
+    $temp=$row['id'];
     
-         
-            // Insert image content into database 
-       //$insert = $conn->query("INSERT into item (image, username) VALUES ('$imgContent', NOW(), '$currentUsername')");
-             
-            
-    } 
- 
     
-$content = "<html><head></head><body>Welcome NOW : Cards test 2 , 15 , Playing Cards , anthelme@london</body></html>";
+$content = "
+<html>
+<head>
+</head>
+<body>
+<h4>
+IDENTIFICATION NUMBER : $temp
+</h4>
+<h4>
+Item : $name
+</h4>
+<h4>
+Price : $price
+</h4>
+<h4>
+Category : $category
+</h4>
+<h4>
+id_seller : $currentUsername
+</h4>
+<button>BUY INSTANTLY</button>
+</body>
+</html>";
 $file = "test.html";
     
 file_put_contents($file, $content);
