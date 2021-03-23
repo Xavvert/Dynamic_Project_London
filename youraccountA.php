@@ -381,48 +381,47 @@ if(@$_SESSION["authorize"]!="yes"){
                 <table border="1" style="width: 800px; text-align: center; color: black; font-size: 17px;">
 
                     <tr>
-                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Order</th>
-                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Date</th>
-                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Item</th>
-                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Price</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">ID</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Name</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Price in £</th>
                         <th style="font-size: 20px;border: 1px solid black;text-align: center;">Category</th>
-                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Description</th>
-                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Status</th>
-                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Remove item</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Buyer's username</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Seller's username</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;"> Type status</th>
                     </tr>
 
+                    <?php
+
+$server_name="localhost:3306";
+$username="root";
+$password="root";
+$database_name="cykel";
+
+
+$conn=mysqli_connect($server_name,$username,$password,$database_name);
+
+if(!$conn)
+{
+    die("Connection Failed:".mysqli_connect_error());
+    
+}
+            @$currentUs=$_SESSION["username"];
+                           
+            $sql_query=mysqli_query($conn, "SELECT * FROM item");
+            while($row=mysqli_fetch_array($sql_query))
+            {
+            ?>
                     <tr>
-                        <td>1</td>
-                        <td>20/12/2019</td>
-                        <td>Chess</td>
-                        <td>50£</td>
-                        <td>Boardgame</td>
-                        <td>Nice chessboard</td>
-                        <td>Sell</td>
-                        <td><button type="submit" value="Remove" id="removeitem">Remove Item</button></td>
+                        <td><?php echo($row['id']) ?></td>
+                        <td><?php echo($row['name']) ?></td>
+                        <td><?php echo($row['price']) ?></td>
+                        <td><?php echo($row['category']) ?></td>
+                        <td><?php echo($row['id_buyer']) ?></td>
+                        <td><?php echo($row['id_seller']) ?></td>
+                        <td><?php echo($row['type']) ?></td>
                     </tr>
 
-                    <tr>
-                        <td>1</td>
-                        <td>20/12/2019</td>
-                        <td>Chess</td>
-                        <td>50£</td>
-                        <td>Boardgame</td>
-                        <td>Nice chessboard</td>
-                        <td>Available</td>
-                        <td><button type="submit" value="Remove" name="Remove" id="removeitem">Remove Item</button></td>
-                    </tr>
-
-                    <tr>
-                        <td>1</td>
-                        <td>20/12/2019</td>
-                        <td>Chess</td>
-                        <td>50£</td>
-                        <td>Boardgame</td>
-                        <td>Nice chessboard</td>
-                        <td>Bid</td>
-                        <td><button type="submit" value="Remove" id="removeitem">Remove Item</button></td>
-                    </tr>
+                    <?php } mysqli_close($conn); ?>
                 </table>
                 <br>
                 <br>
@@ -430,23 +429,24 @@ if(@$_SESSION["authorize"]!="yes"){
                 <!--add an item-->
                 <h2>ADD AN ITEM</h2>
 
-                <form action="addItem.php" method="post" style="">
+                <form action="addItemA.php" method="post" enctype="multipart/form-data" style="">
                     <h3>Item informations</h3>
-                    <label>Item : </label>
+                    <label>Name of the item : </label>
                     <input type="text" name="item" value="">
                     <br>
-                    <label>Price : </label><input type="text" name="price">
+                    <label>Price in £ : </label><input type="text" name="price">
                     <br>
                     <label>Description :</label><input type="text" name="description" value="">
                     <br>
                     <label>Category : </label>
                     <SELECT name="category">
-                        <option>Boardgames</option>
-                        <option>Cycle</option>
+                        <option>Playing Cards</option>
+                        <option>Classic Games</option>
+                        <option>Bicycles</option>
                     </SELECT>
                     <br>
                     <label>Photo :</label>
-                    <input type="file" id="myFile" name="photo" style="size: 20px;">
+                    <input type="file" id="myFile" name="image" style="size: 20px;">
                     <br>
                     <br>
                     <input type="submit" name="save" value="Add Item">
