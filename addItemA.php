@@ -20,11 +20,8 @@ if(isset($_POST['save']))
     $_SESSION['description']=$_POST['description'];
     $category=$_POST['category'];
     @$currentUsername=$_SESSION["username"];
-    
-    $sql_query = "INSERT INTO item (name, price, category, id_buyer, id_seller, type) VALUES ('$name','$price','$category',NULL,'$currentUsername',NULL)";
-    
 
-    // If file upload form is submitted 
+// If file upload form is submitted 
 $status = $statusMsg = ''; 
 
     $status = 'error'; 
@@ -37,20 +34,26 @@ $status = $statusMsg = '';
         $allowTypes = array('jpg','png','jpeg','gif'); 
         if(in_array($fileType, $allowTypes)){ 
             $image = $_FILES['image']['tmp_name']; 
-            $imgContent = addslashes(file_get_contents($image)); 
+            $imgContent = addslashes(file_get_contents($image));  
+
+//QUERY   
+    $sql_query = "INSERT INTO item (name, price, category, id_buyer, id_seller, type, image) VALUES ('$name','$price','$category',NULL,'$currentUsername',NULL, '$imgContent')";
+    
+        if($sql_query){ 
+                        $status = 'success'; 
+                        $statusMsg = "File uploaded successfully."; 
+                    }else{ 
+                        $statusMsg = "File upload failed, please try again."; 
+                    }  
+                }else{ 
+                    $statusMsg = 'Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload.'; 
+                } 
+    
          
             // Insert image content into database 
-            $insert = $conn->query("INSERT into images (image, uploaded, username) VALUES ('$imgContent', NOW(), '$currentUsername')");
+       //$insert = $conn->query("INSERT into item (image, username) VALUES ('$imgContent', NOW(), '$currentUsername')");
              
-            if($insert){ 
-                $status = 'success'; 
-                $statusMsg = "File uploaded successfully."; 
-            }else{ 
-                $statusMsg = "File upload failed, please try again."; 
-            }  
-        }else{ 
-            $statusMsg = 'Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload.'; 
-        } 
+            
     } 
  
     
