@@ -302,8 +302,11 @@ if(!$conn)
             
             <div class="item" onclick="location.href='<?php $row['name'] ?>'.html">
                     <?php echo '<img name="profile picture" alt="/profile picture" style="width: 50px; height: 50px; margin-top: 10px; float: left; margin-left: 50px;" src="data:image/jpeg;base64,'.base64_encode( $rowImg['image'] ).'"/>' ?>
-              <!--  <img src="pictures/card1.png" style="height: 230px ;width: 150px; cursor: pointer;"> -->
-                <?=$product['id']?>
+            
+                
+                  <?//=$product['id']?> 
+                
+                
                     <?php echo($row['name']) ?>
                     <p>
                         £<?php echo($row['price']) ?>
