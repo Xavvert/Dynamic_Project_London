@@ -11,6 +11,7 @@ CSS and style :
 https://css-tricks.com/using-css-cursors/
 https://www.w3schools.com/howto/howto_js_slideshow.asp
 https://www.w3schools.com/howto/howto_js_sidenav.asp
+https://webdeasy.de/en/top-css-buttons-en/
 
 OTHER :
 https://www.smtpjs.com/ (mail)
