@@ -57,8 +57,8 @@ $status = $statusMsg = '';
     } 
  
     
-$content = "<html><head></head><body>Welcome NOW : $name , $price , $category , $currentUsername</body></html>";
-$file = "newpage.html";
+$content = "<html><head></head><body>Welcome NOW : Cards test 2 , 15 , Playing Cards , anthelme@london</body></html>";
+$file = "test.html";
     
 file_put_contents($file, $content);
     
