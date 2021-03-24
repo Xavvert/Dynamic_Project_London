@@ -339,9 +339,10 @@ if($_SESSION["checkB"]!=1)
                         <th style="text-align: center;">Price</th>
                         <th style="text-align: center;">Category</th>
                     </thead>
+                  
                     <tbody>
                         
-                    <?php
+<?php
 
 $server_name="localhost:3306";
 $username="root";
@@ -373,53 +374,36 @@ if(!$conn)
                     <?php } mysqli_close($conn);?>
 
 
-                    
-
-                    
-
-<!--                        
-                        
-                        <tr>
-                            <td><a href="#" class="close" onclick="deleteRow(this)"></a></td>
-                            <td>une image + une description</td>
-                            <td>20£</td>
-                            <td>3</td>
-                            <td>60£</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="#" class="close" onclick="deleteRow(this)"></a></td>
-                            <td>une image + une description</td>
-                            <td>20£</td>
-                            <td>1</td>
-                            <td>20£</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="#" class="close" onclick="deleteRow(this)"></a></td>
-                            <td>une image + une description</td>
-                            <td>20£</td>
-                            <td>1</td>
-                            <td>20£</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="#" class="close" onclick="deleteRow(this)"></a></td>
-                            <td>une image + une description</td>
-                            <td>20£</td>
-                            <td>1</td>
-                            <td>20£</td>
-                        </tr>
--->
                     </tbody>
                 </table>
             </div>
             
-<input type="hidden" id="hiddencontainer" name="hiddencontainer"/>
-
             <div class="cartFooter" id="cartfooter">
-                <h5 style="padding-top: 10px; margin-left: 100px; color:red;">Items: <?php echo($_SESSION['sumItem'])?></h5>
-                <h3 style="margin-left: 100px; float: left; color:red;">Total : 40 + 60 + 20 + 20 + 20</h3>
+              
+<?php
+
+$server_name="localhost:3306";
+$username="root";
+$password="root";
+$database_name="cykel";
+
+
+
+$conn=mysqli_connect($server_name,$username,$password,$database_name);
+
+if(!$conn)
+{
+    die("Connection Failed:".mysqli_connect_error());
+    
+}
+            $currentUsername=$_SESSION['username'];
+            $sql_query=mysqli_query($conn, "SELECT SUM(price) FROM item WHERE id_buyer='$currentUsername'");
+                $row = mysqli_fetch_row($sql_query);
+                 mysqli_close($conn);
+            ?>
+
+                <h3 style="margin-left: 100px; float: left; color:red;">Total : <?php print_r ($row) 
+                    //echo ($row['SUM(price)'])?></h3>
                 <button class="myButton" type="submit"> ORDER</button>
             </div>
             
