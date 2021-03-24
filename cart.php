@@ -288,7 +288,8 @@ if($_SESSION["checkB"]!=1)
             document.getElementById("c").deleteRow(i);
             
             var x = document.getElementById("c").rows.length -1;
-            if (x ==0)
+           
+            if (x == 0)
                 {
                     $(document).ready(function() {
                     $(".c").toggle(500);
@@ -296,6 +297,7 @@ if($_SESSION["checkB"]!=1)
                     $("h1").toggle(500);
                     });
                 }
+                 window.location.href = "updateCartItem.php";
         }
         
         
@@ -336,7 +338,7 @@ if($_SESSION["checkB"]!=1)
                 <table class="c" id="c" border="1">
                     <thead>
                         <th colspan="2" style="text-align: center;">Product</th>
-                        <th style="text-align: center;">Price</th>
+                        <th style="text-align: center;">Price in £</th>
                         <th style="text-align: center;">Category</th>
                     </thead>
                   
@@ -366,10 +368,12 @@ if(!$conn)
             
             ?>
 <tr>
-    <td><a href="#" class="close" onclick="deleteRow(this)"></a></td>
+    <td><a href="updateCartItem.php" class="close"></a></td>
     <td><?php echo($row['name']) ?></td>
     <td><?php echo($row['price']) ?></td>
     <td><?php echo($row['category']) ?></td>
+    
+    
 </tr>
                     <?php } mysqli_close($conn);?>
 
@@ -398,12 +402,11 @@ if(!$conn)
 }
             $currentUsername=$_SESSION['username'];
             $sql_query=mysqli_query($conn, "SELECT SUM(price) FROM item WHERE id_buyer='$currentUsername'");
-                $row = mysqli_fetch_row($sql_query);
+                $result = mysqli_fetch_row($sql_query);
                  mysqli_close($conn);
             ?>
 
-                <h3 style="margin-left: 100px; float: left; color:red;">Total : <?php print_r ($row) 
-                    //echo ($row['SUM(price)'])?></h3>
+                <h3 style="margin-left: 100px; float: left; color:red;">Total : £ <?php echo ($result[0])?></h3>
                 <button class="myButton" type="submit"> ORDER</button>
             </div>
             
