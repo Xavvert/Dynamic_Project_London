@@ -295,7 +295,18 @@ if($_SESSION["checkB"]!=1)
         document.getElementById("mySidenav").style.width = "0";
     }
 
+    $(document).ready(function(){
+    $(".item").click(function() {
+        $(".item").toggle(500);
+            $(this).toggle(500);
+
+        });
+    });
+
+    
 </script>
+    
+     
 
 
 <body>
@@ -364,7 +375,8 @@ if(!$conn)
             
             ?>
 
-        <div class="item" onclick="location.href='<?=$row['name']?>.html'">
+        <div class="item" style="" >
+            
             <?php echo '<img name="profile picture" alt="/profile picture" style="height: 230px ;width: 150px;margin-top: 10px; float: left;cursor: pointer;" src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"/>' ?>
 
             <?php echo($row['name']) ?>
@@ -373,6 +385,8 @@ if(!$conn)
             </p>
         </div>
         <?php } mysqli_close($conn); ?>
+        
+        
 
         <div class="item" onclick="location.href='surfboardV2.html'">
             <img src="pictures/card1.png" style="height: 230px ;width: 150px; cursor: pointer;">
