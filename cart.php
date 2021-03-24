@@ -282,9 +282,11 @@ if($_SESSION["checkB"]!=1)
 
     <!-- body -->
     <script type="text/javascript">
+        
         function deleteRow(r) {
             var i = r.parentNode.parentNode.rowIndex;
             document.getElementById("c").deleteRow(i);
+            
             var x = document.getElementById("c").rows.length -1;
             if (x ==0)
                 {
@@ -293,8 +295,10 @@ if($_SESSION["checkB"]!=1)
                     $(".cartFooter").toggle(500);
                     $("h1").toggle(500);
                     });
-                    }
+                }
         }
+        
+        
 
         /*if (document.getElementById("#c").length <= 1) {
             alert('cart empty');
@@ -333,18 +337,48 @@ if($_SESSION["checkB"]!=1)
                     <thead>
                         <th colspan="2" style="text-align: center;">Product</th>
                         <th style="text-align: center;">Price</th>
-                        <th style="text-align: center;">Quantity</th>
-                        <th style="text-align: center;">Subtotal</th>
+                        <th style="text-align: center;">Category</th>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><a href="#" class="close" onclick="deleteRow(this)"></a></td>
-                            <td>une image + une description</td>
-                            <td>20£</td>
-                            <td>2</td>
-                            <td>40£</td>
-                        </tr>
+                        
+                    <?php
 
+$server_name="localhost:3306";
+$username="root";
+$password="root";
+$database_name="cykel";
+
+
+
+$conn=mysqli_connect($server_name,$username,$password,$database_name);
+
+if(!$conn)
+{
+    die("Connection Failed:".mysqli_connect_error());
+    
+}
+            $currentUsername=$_SESSION['username'];
+            $sql_query=mysqli_query($conn, "SELECT * FROM item WHERE id_buyer='$currentUsername'");
+                        
+            while($row=mysqli_fetch_array($sql_query))
+            {
+            
+            ?>
+<tr>
+    <td><a href="#" class="close" onclick="deleteRow(this)"></a></td>
+    <td><?php echo($row['name']) ?></td>
+    <td><?php echo($row['price']) ?></td>
+    <td><?php echo($row['category']) ?></td>
+</tr>
+                    <?php } mysqli_close($conn);?>
+
+
+                    
+
+                    
+
+<!--                        
+                        
                         <tr>
                             <td><a href="#" class="close" onclick="deleteRow(this)"></a></td>
                             <td>une image + une description</td>
@@ -376,15 +410,17 @@ if($_SESSION["checkB"]!=1)
                             <td>1</td>
                             <td>20£</td>
                         </tr>
+-->
                     </tbody>
                 </table>
             </div>
+            
+<input type="hidden" id="hiddencontainer" name="hiddencontainer"/>
 
             <div class="cartFooter" id="cartfooter">
-                <h5 style="padding-top: 10px; margin-left: 100px; color:red;">Items: 2 + 3 + 1 + 1 + 1</h5>
+                <h5 style="padding-top: 10px; margin-left: 100px; color:red;">Items: <?php echo($_SESSION['sumItem'])?></h5>
                 <h3 style="margin-left: 100px; float: left; color:red;">Total : 40 + 60 + 20 + 20 + 20</h3>
                 <button class="myButton" type="submit"> ORDER</button>
-
             </div>
             
             <h1 style="display: none; text-align:center; color: darkred;">Empty cart <br><br> <br></h1>
