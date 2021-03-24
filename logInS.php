@@ -183,7 +183,7 @@ if(isset($validation)){
                 <a href="buy.html">BUY</a>
                 <a href="sell.html">SELL</a>
                 <a href="youraccount.html">YOUR ACCOUNT</a>
-                <a href="cart.html">CART</a>
+                <a href="cart.php">CART</a>
                 <a href="admin.html">ADMIN</a>
             </div>
 
@@ -192,7 +192,7 @@ if(isset($validation)){
 
                 <img src="pictures/notif.png" onClick="location.href='youraccount2.html'" style="width: 20px; height: 20px; position: relative; top: -80px; left:590px; cursor:pointer;">
 
-                <img src="pictures/cart2.png" onClick="location.href='cart.html'" style="width: 20px; height: 20px; position: relative; top: -80px; left: 600px; cursor:pointer;">
+                <img src="pictures/cart2.png" onClick="location.href='cart.php'" style="width: 20px; height: 20px; position: relative; top: -80px; left: 600px; cursor:pointer;">
             </div>
 
         </div>

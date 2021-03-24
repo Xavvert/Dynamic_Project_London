@@ -1,3 +1,20 @@
+<?php
+
+session_start();
+if(@$_SESSION["authorize"]!="yes"){
+    header("location:logInB.php");
+    exit();
+    
+}
+
+if($_SESSION["checkB"]!=1)
+{
+        header("location:logInB.php");
+        exit();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -249,7 +266,7 @@
                 <a href="buy.html">BUY</a>
                 <a href="sell.html">SELL</a>
                 <a href="youraccount.html">YOUR ACCOUNT</a>
-                <a href="cart.html">CART</a>
+                <a href="cart.php">CART</a>
                 <a href="admin.html">ADMIN</a>
             </div>
 
@@ -258,7 +275,7 @@
 
                 <img src="pictures/notif.png" onClick="location.href='youraccount2.html'" style="width: 20px; height: 20px; position: relative; top: -80px; left:590px; cursor:pointer;">
 
-                <img src="pictures/cart2.png" onClick="location.href='cart.html'" style="width: 20px; height: 20px; position: relative; top: -80px; left: 600px; cursor:pointer;">
+                <img src="pictures/cart2.png" onClick="location.href='cart.php'" style="width: 20px; height: 20px; position: relative; top: -80px; left: 600px; cursor:pointer;">
             </div>
         </div>
     </div>
@@ -271,7 +288,6 @@
             var x = document.getElementById("c").rows.length -1;
             if (x ==0)
                 {
-                    alert("you empty your shipping cart");
                     $(document).ready(function() {
                     $(".c").toggle(500);
                     $(".cartFooter").toggle(500);
