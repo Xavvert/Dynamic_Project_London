@@ -299,7 +299,7 @@ if($_SESSION["checkB"]!=1)
     $(".item").click(function() {
         $(".item").toggle(500);
             $(this).toggle(500);
-
+        $(".caption").toggle(500);
         });
     });
 
@@ -383,11 +383,13 @@ if(!$conn)
             <p>
                 £<?php echo($row['price']) ?>
             </p>
+            <div class="caption" style="display:none;">   
+            <h1> TEST article mis en ligne</h1>
+            </div>
         </div>
+        
         <?php } mysqli_close($conn); ?>
         
-        
-
         <div class="item" onclick="location.href='surfboardV2.html'">
             <img src="pictures/card1.png" style="height: 230px ;width: 150px; cursor: pointer;">
             SnakersV3
