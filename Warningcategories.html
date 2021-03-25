@@ -1,30 +1,8 @@
-<?php
-session_start();
-$server_name="localhost:3306";
-$username="root";
-$password="root";
-$database_name="cykel";
-
-
-
-$conn=mysqli_connect($server_name,$username,$password,$database_name);
-
-if(!$conn)
-{
-    die("Connection Failed:".mysqli_connect_error());
-}
-
-mysqli_close($conn);
-
-
-?>
-   
- 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Cykel - Log In - Buyer</title>
+    <title>Cykel - Access denied - Cart</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="header&footer.css">
@@ -71,7 +49,7 @@ mysqli_close($conn);
 
         .co {
             width: 400px;
-            height: 270px;
+            height: 500px;
             background-color: #FEE6D4;
             border-radius: 1em;
             color: black;
@@ -121,6 +99,7 @@ mysqli_close($conn);
 
 <body>
     <div id="layout">
+
         <div id="header">
             <center>
                 <img id="logo" src="pictures/Cykel.png" alt="Cykel LOGO" onClick="location.href='HomePage.html'" style="width: 70px; height: 70px; margin-top: 10px; cursor:pointer; ">
@@ -150,22 +129,20 @@ mysqli_close($conn);
         </div>
     </div>
     <center>
-        <h1>THANK YOU FOR YOUR PURCHASE </h1>
-        <h2> An email of confirmation has been sent to <b><?php echo $_SESSION['username']?></b> to recap your order </h2>
-        </center>
-    
-<input type="submit" value="OK" name="submit" onclick="sendEmail();" id="submit">
+        <h1> 😵 Oups... You can't check the categories and differents products ! </h1>
+        <h3> Please log in with a buyer account to see to buy our fabulous items </h3>
 
+        <p> You can return on the <a href="HomePage.html"> Home Page</a></p>
+
+    </center>
 
 
 <!--footer-->
 
 <footer class="footer">
-
     <div class="container">
         <div class="row">
         <div class="col-sm-3">
-            <br>
             <h4 class="title">Cykel</h4>
             <p>Cykel market is an auction website similar to EBay created for the Dynamic Web Programming Project.</p>  
             <p style="color: #000058;">INSEEC U London - Y3</p>
@@ -179,7 +156,6 @@ mysqli_close($conn);
             </ul>
             </div>
         <div class="col-sm-3">
-            <br>
             <h4 class="title">Policy</h4>
             <span class="acount-icon">          
             <a href="privacypolicy.html"><i class="fa fa-user" aria-hidden="true"></i> Privacy Policy</a>
@@ -188,7 +164,6 @@ mysqli_close($conn);
           </span>
             </div>
         <div class="col-sm-3">
-            <br>
             <h4 class="title">Category</h4>
             <div class="category">
             <a href="subcatBike.html">All Bikes 🚲</a> 
@@ -196,7 +171,6 @@ mysqli_close($conn);
             </div>
             </div>
         <div class="col-sm-3">
-            <br>
             <h4 class="title">Payment Methods</h4>
             <p>This website accept this payment methods.</p>
             <ul class="payment">
@@ -212,36 +186,8 @@ mysqli_close($conn);
         
         <div class="row text-center" style="color: #000058;"> © 2021 Designed with by Xavier Dandigna & Anthelme Charvet.</div>
         </div>
-         <?php echo '<pre>';
-var_dump($_SESSION);
-echo '</pre>'; ?>
+        
         
     </footer>
 
-</body>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script type="text/javascript">
-        
-        var receiver = "<?php echo $_SESSION['username']; ?>";
-       
-    
-        function sendEmail() {
-
-        Email.send({
-                Host: "smtp.gmail.com",
-                Username: "cykelweb@gmail.com",
-                Password: "cykel123.",
-
-                From: "cykelweb@gmail.com",
-                To: receiver,
-            //a concatener
-                Subject: "Thanks for your purchase, purchase ID - ",
-                Body: "Welcome, thanks for subscribing to our newsletter :D. Welcome into the 🚴Cykel family🚴"
-            })
-            .then(function(message) {
-                alert("Thank you ! Welcome into the 🚴Cykel family🚴")
-            });
-    }
-</script>
-
-</html>
+</body></html>

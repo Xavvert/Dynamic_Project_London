@@ -1,3 +1,19 @@
+<?php
+
+session_start();
+if(@$_SESSION["authorize"]!="yes"){
+    header("location:logInB.php");
+    exit();
+    
+}
+
+if($_SESSION["checkB"]!=1)
+{
+        header("location:Warningcategories.html");
+        exit();
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">

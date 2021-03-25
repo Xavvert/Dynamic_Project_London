@@ -28,7 +28,7 @@ if(isset($_POST['save']))
     
 
     
-    $sql_query = "INSERT INTO checkout (packagename, firstName,lastName, adress, city, zipCode, country, phone, sent, id_buyer) VALUES ('$packagename','$firstName','$lastName','$adress','$city','$zipCode','$country','$phone','In Progress','$currentUsername')";
+    $sql_query = "INSERT INTO checkout (packagename, firstName,lastName, adress, city, zipCode, country, phone, sent, id_buyer) VALUES ('$packagename','$firstName','$lastName','$adress','$city','$zipCode','$country','$phone',NOW(),'$currentUsername')";
     
     if(mysqli_query($conn, $sql_query))
     {

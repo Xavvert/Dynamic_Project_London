@@ -13,13 +13,16 @@ if(!$conn)
     
 }
 
-echo ("itemName is ");
-echo ($itemName);
+$retrievedName = $_GET['cat'];
 
-     $itemName=$_GET['name'];
+echo $retrievedName;
+
+
+echo ($retrievedName);
+
     
 
-     $sql_query = mysqli_query($conn, "UPDATE item SET id_buyer= 'NULL' WHERE name='$itemName'");
+     $sql_query = mysqli_query($conn, "UPDATE item SET id_buyer= NULL WHERE name='$retrievedName'");
 
 
     
@@ -30,7 +33,7 @@ if($sql_query)
     
     else
     {
-     header("location:HomePage.html");
+    // header("location:HomePage.html");
     }
     
     mysqli_close($conn);

@@ -228,7 +228,7 @@ if($_SESSION["checkB"]!=1)
 
         .caption {
             float: right;
-            width: 850px;
+            width: 800px;
             height: auto;
             border-style: double;
 
@@ -240,8 +240,7 @@ if($_SESSION["checkB"]!=1)
         }
         
         .caption button {
-            margin-left: 400px;
-            margin: 100px;
+            margin: 80px;
         }
         
         .caption title {
