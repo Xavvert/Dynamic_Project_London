@@ -282,22 +282,20 @@ if($_SESSION["checkB"]!=1)
 
     <!-- body -->
     <script type="text/javascript">
-        
         function deleteRow(r) {
             var i = r.parentNode.parentNode.rowIndex;
             document.getElementById("c").deleteRow(i);
-            
-            var x = document.getElementById("c").rows.length -1;
-           
-            if (x == 0)
-                {
-                    $(document).ready(function() {
+
+            var x = document.getElementById("c").rows.length - 1;
+
+            if (x == 0) {
+                $(document).ready(function() {
                     $(".c").toggle(500);
                     $(".cartFooter").toggle(500);
                     $("h1").toggle(500);
-                    });
-                }
-                 window.location.href = "updateCartItem.php";
+                });
+            }
+            window.location.href = "updateCartItem.php";
         }
         
         /*$(document).ready(function() {
@@ -335,17 +333,17 @@ if($_SESSION["checkB"]!=1)
             <br>
 
             <div class="cartShipping">
-                
+
                 <table class="c" id="c" border="1">
                     <thead>
                         <th colspan="2" style="text-align: center;">Product</th>
                         <th style="text-align: center;">Price in £</th>
                         <th style="text-align: center;">Category</th>
                     </thead>
-                  
+
                     <tbody>
-                        
-<?php
+
+                        <?php
 
 $server_name="localhost:3306";
 $username="root";
@@ -379,13 +377,21 @@ if(!$conn)
                     <?php } mysqli_close($conn);?>
 
 
+                        </tr>
+                        <?php } mysqli_close($conn);
+                        echo '<pre>';
+var_dump($_SESSION);
+echo '</pre>';?>
+
+
+
                     </tbody>
                 </table>
             </div>
-            
+
             <div class="cartFooter" id="cartfooter">
-              
-<?php
+
+                <?php
 
 $server_name="localhost:3306";
 $username="root";
@@ -411,7 +417,7 @@ if(!$conn)
                 <h4 class="echo"></h4>
                 <button class="myButton" type="submit"> ORDER</button>
             </div>
-            
+
             <h1 style="display: none; text-align:center; color: darkred;">Empty cart <br><br> <br></h1>
         </div>
 
