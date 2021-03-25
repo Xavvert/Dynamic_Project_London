@@ -35,7 +35,6 @@ if(isset($validation)){
         $_SESSION["authorize"]="yes";
         $_SESSION["username"]=$username;
         $_SESSION["password"]=$password;
-        
         $_SESSION["checkB"]=1;
         $_SESSION["checkA"]=0;
         $_SESSION["checkS"]=0;
