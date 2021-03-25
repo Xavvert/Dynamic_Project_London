@@ -6,6 +6,7 @@ $password="root";
 $database_name="cykel";
 
 
+
 $conn=mysqli_connect($server_name,$username,$password,$database_name);
 
 if(!$conn)
@@ -14,22 +15,12 @@ if(!$conn)
     
 }
 
-$currentUsername=$_SESSION["username"];
-@$username=$_POST['username'];
-@$password=$_POST['password'];
-@$validation=$_POST["save"];
-
-if(isset($validation)){
-
-     $sql_query = mysqli_query($conn, "UPDATE admin SET username= '$username', password= '$password' WHERE username='$currentUsername'");
+     $itemName=$_SESSION['item'];
+     $sql_query = mysqli_query($conn, "UPDATE item SET id_buyer= 'NULL' WHERE name='$itemName'");
     
 if($sql_query)
 {
-    $_SESSION["upA"]=1;
-    $_SESSION["username"]=$username;
-    $_SESSION["password"]=$password;
-    
-    header("location:youraccountA.php");
+    header("location:cart.php");
 }
     
     else
@@ -38,6 +29,4 @@ if($sql_query)
     }
     
     mysqli_close($conn);
-
-}
 ?>

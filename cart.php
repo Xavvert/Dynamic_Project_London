@@ -299,27 +299,6 @@ if($_SESSION["checkB"]!=1)
                 }
                  window.location.href = "updateCartItem.php";
         }
-        
-        
-
-        /*if (document.getElementById("#c").length <= 1) {
-            alert('cart empty');
-        }*/
-
-        /*var rowsnb = $('#c').rows.length;
-        if (rowsnb ==0)
-            {
-                alert('empty');
-            }*/
-
-        /*if (!table.data().any()) {
-            alert('Empty table');
-        }*/
-        /*
-        var table = document.getElementById("c");
-        var tbodyRowCount = table.tBodies[0].rows.length;
-        alert("row :", tbodyRowCount);
-        */
 
     </script>
 
@@ -368,6 +347,7 @@ if(!$conn)
             
             ?>
 <tr>
+    <?php $_SESSION['item']=$row['name']?>
     <td><a href="updateCartItem.php" class="close"></a></td>
     <td><?php echo($row['name']) ?></td>
     <td><?php echo($row['price']) ?></td>
