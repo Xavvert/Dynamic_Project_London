@@ -214,6 +214,12 @@ if($_SESSION["checkB"]!=1)
         .item p {
             font-size: 16px;
             color: #335cae;
+            text-align: center;
+        }
+
+        .caption {
+            float: right;
+
         }
 
 
@@ -295,18 +301,17 @@ if($_SESSION["checkB"]!=1)
         document.getElementById("mySidenav").style.width = "0";
     }
 
-    $(document).ready(function(){
-    $(".item").click(function() {
-        $(".item").toggle(500);
+    $(document).ready(function() {
+        $(".item").click(function() {
+            $(".item").toggle(500);
             $(this).toggle(500);
-        $(".caption").toggle(500);
+            $(".caption").toggle(500);
         });
     });
 
-    
 </script>
-    
-     
+
+
 
 
 <body>
@@ -352,51 +357,55 @@ if($_SESSION["checkB"]!=1)
     <!--items-->
 
     <div class="grid-container">
-
-        <?php
-
+        
+        <!--dur-->
+        
+        <div class="item" onclick="location.href='surfboardV2.html'">
+            <img src="pictures/card7.png" style="height: 230px ;width: 150px; cursor: pointer;">
+            Atlantis TEST
+            <p>
+                £19.00
+            </p>
+        </div>
+        
+        <!--database item-->
+<?php
 $server_name="localhost:3306";
 $username="root";
 $password="root";
 $database_name="cykel";
-
-
 $conn=mysqli_connect($server_name,$username,$password,$database_name);
-
 if(!$conn)
 {
     die("Connection Failed:".mysqli_connect_error());
     
-}
-                   
-            $sql_query=mysqli_query($conn, "SELECT * FROM item WHERE category='Playing Cards'");
-            while($row=mysqli_fetch_array($sql_query))
-            {
-            
-            ?>
+}                   
+        $sql_query=mysqli_query($conn, "SELECT * FROM item WHERE category='Playing Cards'");
+        while($row=mysqli_fetch_array($sql_query))
+        {?>
+        
 
-        <div class="item" style="" >
-            
+        <div class="item" style="width:auto;">
+
             <?php echo '<img name="profile picture" alt="/profile picture" style="height: 230px ;width: 150px;margin-top: 10px; float: left;cursor: pointer;" src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"/>' ?>
 
             <?php echo($row['name']) ?>
             <p>
                 £<?php echo($row['price']) ?>
             </p>
-            <div class="caption" style="display:none;">   
-            <h5> TEST article mis en ligne</h5>
-            </div>
+
+        </div>
+
+<?php } ?>
+        
+        <div class="caption" style="display:none;">
+            <p> TEST article mis en ligne</p>
         </div>
         
-        <?php } mysqli_close($conn); ?>
+        <?php mysqli_close($conn); ?>
         
-        <div class="item" onclick="location.href='surfboardV2.html'">
-            <img src="pictures/card1.png" style="height: 230px ;width: 150px; cursor: pointer;">
-            SnakersV3
-            <p>
-                £14.00
-            </p>
-        </div>
+
+
         <!--
         <div class="item" onclick="location.href='snackersv3.html'">
             <img src="pictures/card2.png" style="height: 230px ;width: 150px; cursor: pointer;">
