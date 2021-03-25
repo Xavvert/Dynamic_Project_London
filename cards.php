@@ -269,13 +269,13 @@ if($_SESSION["checkB"]!=1)
             left: 0;
             width: 0;
             height: 100%;
-            background: #ff003b;
+            background: black;
             transition: all .35s;
             border-radius: 1em;
         }
 
         .wrapper a:hover {
-            color: black;
+            color: white;
         }
 
         .wrapper a:hover:after {
@@ -384,7 +384,7 @@ if(!$conn)
                 £<?php echo($row['price']) ?>
             </p>
             <div class="caption" style="display:none;">   
-            <h1> TEST article mis en ligne</h1>
+            <h5> TEST article mis en ligne</h5>
             </div>
         </div>
         
