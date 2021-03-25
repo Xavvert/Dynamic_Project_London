@@ -412,7 +412,7 @@ if(!$conn)
 
                 <h3 style="margin-left: 100px; float: left; color:red;">Total : £ <?php echo ($result[0])?></h3>
                 <h4 class="echo"></h4>
-                <button class="myButton" type="submit"> ORDER</button>
+                <button class="myButton" type="submit" onclick="location.href='checkout.php'"> Process to checkout </button>
             </div>
 
             <h1 style="display: none; text-align:center; color: darkred;">Empty cart <br><br> <br></h1>
