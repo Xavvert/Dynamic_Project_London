@@ -299,6 +299,28 @@ if($_SESSION["checkB"]!=1)
                 }
                  window.location.href = "updateCartItem.php";
         }
+        
+        /*$(document).ready(function() {
+        $(".close").click(function() {
+            var $value = $(this).closest("tr"); // Find the row
+            $('.echo').html($value);
+        });
+        });*/
+        
+        $(document).ready(function() {
+        $(".close").click(function () {
+            var row = $(this).attr('name');
+            $.ajax({
+                type: "GET",
+                url: 'updateCartItem.php',
+                data: {name: row},
+                success: function (result) {
+                    $('#row').remove();
+                }
+            });
+        });
+        };
+        
 
     </script>
 
@@ -348,13 +370,12 @@ if(!$conn)
             ?>
 <tr>
     <?php $_SESSION['item']=$row['name']?>
-    <td><a href="updateCartItem.php" class="close"></a></td>
+    <td><a href="" class="close"></a></td>
     <td><?php echo($row['name']) ?></td>
     <td><?php echo($row['price']) ?></td>
     <td><?php echo($row['category']) ?></td>
-    
-    
 </tr>
+                        
                     <?php } mysqli_close($conn);?>
 
 
@@ -387,6 +408,7 @@ if(!$conn)
             ?>
 
                 <h3 style="margin-left: 100px; float: left; color:red;">Total : £ <?php echo ($result[0])?></h3>
+                <h4 class="echo"></h4>
                 <button class="myButton" type="submit"> ORDER</button>
             </div>
             

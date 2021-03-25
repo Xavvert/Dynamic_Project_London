@@ -5,8 +5,6 @@ $username="root";
 $password="root";
 $database_name="cykel";
 
-
-
 $conn=mysqli_connect($server_name,$username,$password,$database_name);
 
 if(!$conn)
@@ -15,7 +13,8 @@ if(!$conn)
     
 }
 
-     $itemName=$_SESSION['item'];
+     $itemName=$_GET['name'];
+    
      $sql_query = mysqli_query($conn, "UPDATE item SET id_buyer= 'NULL' WHERE name='$itemName'");
     
 if($sql_query)
