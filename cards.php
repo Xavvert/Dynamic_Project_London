@@ -198,28 +198,56 @@ if($_SESSION["checkB"]!=1)
         }
 
         .item {
-            margin: 80px 150px;
-            text-align: center;
+            margin: 40px 150px;
             font-size: 20px;
-            height: 230px;
-            border-radius: 1em;
-            color: #0a255a;
+            width: auto;
+            height: 350px;
+            align-content: center;
         }
 
         .item:hover {
             transform: scale(1.2);
             /* (120% zoom)*/
         }
+        
+        .title {
+            
+            text-align: center;
+            font-size: 22px;
+            color: #0a255a;
+            clear: both;
+            
+        }
 
-        .item p {
-            font-size: 16px;
+        .price {
+            font-size: 18px;
             color: #335cae;
             text-align: center;
+            clear: both;
         }
 
         .caption {
             float: right;
+            width: 850px;
+            height: auto;
+            border-style: double;
 
+        }
+        
+        .caption p {
+            color: black;
+            font-size: 20px;
+        }
+        
+        .caption button {
+            margin-left: 400px;
+            margin: 100px;
+        }
+        
+        .caption title {
+            text-align: center;
+            font-size: 20px;
+            color: cadetblue;
         }
 
 
@@ -293,6 +321,59 @@ if($_SESSION["checkB"]!=1)
     <link rel='icon' href='pictures/Cykel.png' type='image/x-icon' />
 </head>
 <script type="text/javascript">
+    $(document).ready(function() {
+
+        $("#buy").click(function() {
+            $("#bid").show("slow");
+            $("#imm").show("slow");
+            $(this).hide("slow");
+            $("#offer").show("slow");
+
+        });
+
+    });
+
+    $(document).ready(function() {
+
+        $("#bid").click(function() {
+            $(this).hide("slow");
+            $("#imm").hide("slow");
+            $("#buy").hide("slow");
+            $("#offer").hide("slow");
+            $("#arBid").show("slow");
+        });
+
+    });
+
+    $(document).ready(function() {
+
+        $("#imm").click(function() {
+            $(this).hide("slow");
+            $("#bid").hide("slow");
+            $("#buy").hide("slow");
+            $("#offer").hide("slow");
+            $("#textImm").show("slow");
+
+        });
+
+    });
+
+    $(document).ready(function() {
+
+        $("#offer").click(function() {
+            $(this).hide("slow");
+            $("#imm").hide("slow");
+            $("#buy").hide("slow");
+            $("#bid").hide("slow");
+            $("#arOffer").show("slow");
+
+        });
+
+    });
+
+    
+    
+    
     function openNav() {
         document.getElementById("mySidenav").style.width = "250px";
     }
@@ -387,10 +468,11 @@ if(!$conn)
 
         <div class="item" style="width:auto;">
 
-            <?php echo '<img name="profile picture" alt="/profile picture" style="height: 230px ;width: 150px;margin-top: 10px; float: left;cursor: pointer;" src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"/>' ?>
-
-            <?php echo($row['name']) ?>
-            <p>
+            <?php echo '<img name="profile picture" alt="/profile picture" style="height: 230px ;width: 150px;margin-top: 10px;cursor: pointer;" src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"/>' ?>
+            <p class="title">
+                <?php echo($row['name']) ?>
+            </p>
+            <p class="price">
                 £<?php echo($row['price']) ?>
             </p>
 
@@ -399,8 +481,28 @@ if(!$conn)
 <?php } ?>
         
         <div class="caption" style="display:none;">
-            <p> TEST article mis en ligne</p>
+            <p class="title"> <br> <br>Cet article est mis en ligne par : <?php echo($row['id_seller']) ?></p>
+            
+            <button id="buy">BUY</button>
+            <button id="bid" style="display: none;">Bid</button>
+            <button id="imm" style="display: none;">Buy Immediately</button>
+            <button id="offer" style="display: none;">Best Offer</button>
+
+            <form id="arBid" action="bid.php" method="post" style="display: none;">
+                <label>Enter your max amount</label>
+                <br><input type="text" name="areaBid">
+                <input type="image" name="save" value="Submit" src="pictures/okOrange.jpg" style="width: 30px; height: 30px;">
+            </form>
+            
+            <p id="textImm" style="display: none; color: darksalmon;"> Item has been successfully added to the cart</p>
+            
+                <form id="arOffer" action="Offer.php" method="post" style="display: none;">
+                <label>Enter an amount</label>
+                <br><input type="text" name="areaBid">
+                <input type="image" name="save" value="Submit" src="pictures/okOrange.jpg" style="width: 30px; height: 30px;">
+            </form>
         </div>
+
         
         <?php mysqli_close($conn); ?>
         
