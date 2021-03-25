@@ -26,7 +26,13 @@ if(isset($_POST['save']))
     
   @$currentUsername=$_SESSION["username"];
     
-     $_SESSION["cpackagename"]=$packagename;
+
+    
+    $sql_query = "INSERT INTO checkout (packagename, firstName,lastName, adress, city, zipCode, country, phone, sent, id_buyer) VALUES ('$packagename','$firstName','$lastName','$adress','$city','$zipCode','$country','$phone','In Progress','$currentUsername')";
+    
+    if(mysqli_query($conn, $sql_query))
+    {
+         $_SESSION["cpackagename"]=$packagename;
          $_SESSION["cusername"]=$currentUsername;
          $_SESSION["cfirstname"]=$firstName;
          $_SESSION["clastname"]=$lastName;
@@ -35,20 +41,11 @@ if(isset($_POST['save']))
          $_SESSION["czipCode"]=$zipCode;
          $_SESSION["ccountry"]=$country;
          $_SESSION["cphone"]=$phone;
-    
-    $sql_query = "INSERT INTO checkout (packagename, firstName,lastName, adress, city, zipCode, country, phone, sent, id_buyer) VALUES ('$packagename','$firstName','$lastName','$adress','$city','$zipCode','$country','$phone',NULL,'$currentUsername')";
-    
-    if(mysqli_query($conn, $sql_query))
-    {
         
-        
-  $sql_query = mysqli_query($conn, "SELECT id from checkout WHERE packagename='$packagename'"); 
-   $row = mysqli_fetch_array($sql_query);
+    $sql_query = mysqli_query($conn, "SELECT id from checkout WHERE packagename='$packagename'"); 
+    $row = mysqli_fetch_array($sql_query);
     $_SESSION["cid"]=$row['id'];
-        
-        echo '<pre>';
-var_dump($_SESSION);
-echo '</pre>';
+
         
          
      header("location:payment.php");

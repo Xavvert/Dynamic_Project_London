@@ -212,7 +212,9 @@ mysqli_close($conn);
         
         <div class="row text-center" style="color: #000058;"> © 2021 Designed with by Xavier Dandigna & Anthelme Charvet.</div>
         </div>
-        
+         <?php echo '<pre>';
+var_dump($_SESSION);
+echo '</pre>'; ?>
         
     </footer>
 
@@ -234,7 +236,7 @@ mysqli_close($conn);
 
                 From: "cykelweb@gmail.com",
                 To: receiver,
-                Subject: "Thanks for your purchase, purchase ID - "+ idpackage ,
+                Subject: "Thanks for your purchase, purchase ID - ".idpackage ,
                 Body: "Welcome, thanks for subscribing to our newsletter :D. Welcome into the 🚴Cykel family🚴"
             })
             .then(function(message) {
