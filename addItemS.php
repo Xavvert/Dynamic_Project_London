@@ -56,7 +56,7 @@ $status = $statusMsg = '';
     $temp=$row['id'];
     
     
-$content = "
+/*$content = "
 <html>
 <head>
 </head>
@@ -81,7 +81,7 @@ id_seller : $currentUsername
 </html>";
 $file = "test.html";
     
-file_put_contents($file, $content);
+file_put_contents($file, $content);*/
     
  
     if(mysqli_query($conn, $sql_query))

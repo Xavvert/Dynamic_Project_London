@@ -237,6 +237,7 @@
             transform: rotate(360deg);
             transition: all 1.3s;
         }
+
     </style>
 
     <link rel='icon' href='pictures/Cykel.png' type='image/x-icon' />
@@ -246,6 +247,10 @@
 <body>
     <audio id="myAudio">
         <source src="audio/tweet-416.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="myAudio2">
+        <source src="audio/decay-475.mp3" type="audio/mpeg">
     </audio>
 
     <div id="layout">
@@ -285,9 +290,9 @@
     <div style="background-color: #EEE8CD;">
         <center>
             <br>
-            <h1 style="color: brown;">Welcome to Cykel</h1>
+            <h1 style="color: brown;"> 🚴‍♂️ Welcome to Cykel 🚴‍♂️ </h1>
         </center>
-        <h3>Here's our latest products</h3>
+        <h3> 🎲 Here's our latest products 🎲 </h3>
         <br>
         <br>
 
@@ -342,12 +347,15 @@
                 <p>Musicard</p>
             </div>
         </div>
-
     </div>
 
-    <div class="about"><i class="fa fa-user" aria-hidden="true"></i>
-        <h1>About Us</h1>
-        <p>Anthelme and Xavier are two students in engineering school. Both passionate about bikes and board games respectively, they decided to set up their auction site like eBay to meet a certain demand. Indeed, they started to work together since their second year of school and were able to find a coherence in their work which led them to realize many projects together. Solid tandem, they try as well as they can to create their own auction site with the aim of making known and transmitting their passion. They invite you to subscribe to their newsletter in order to avoid to miss anything of activity and their news feed.</p>
+    <div class="about">
+
+        <center>
+            <h1 style="color:dimgrey"> <text style="font-size:60%">🌟</text> About Us <text style="font-size:60%">🌟</text> </h1>
+        </center>
+
+        <p>Anthelme &amp; Xavier are two students in engineering school 🏫. Both are passionate about bikes 🚴🏽‍♂️ and boardgames 🎲 respectively, they decided to set up their auction site like <text style="color: red">e</text><text style="color: blue">B</text><text style="color: darkgoldenrod">a</text><text style="color: green">y</text> to meet a certain demand. Indeed, they started to work together since their second year of school and were able to find a coherence 🤝 in their works which led them to realize many projects together 👨‍💻 . Solid tandem, they try as well as they can to create their own auction site with the aim of making known and transmitting their passion 🚴🏽‍♀️ ❤️. They invite you to subscribe to their newsletter to avoid missing anything and <b style="color:firebrick">Stay Tuned</b> ! 🔊 </p>
 
 
         <h4><label for="NewsletterEmail">Sign up for our newsletter</label></h4>
@@ -414,7 +422,7 @@
             </div>
             <hr>
 
-            <div class="row text-center" style="color: #000058;"> © 2021 Designed with by Xavier Dandigna & Anthelme Charvet.</div>
+            <div class="row text-center" style="color: #000058;"> © 2021 Designed with by Xavier Dandigna &amp; Anthelme Charvet.</div>
         </div>
 
 
@@ -441,12 +449,18 @@
                 alert("Thank you ! Welcome into the 🚴Cykel family🚴")
             });
     }
+
 </script>
+
 <script type="text/javascript">
-    
     var audio = $("#myAudio")[0];
     $("#logo").mouseenter(function() {
         audio.play();
+    });
+
+    var audio2 = $("#myAudio2")[0];
+    $("#submit").mouseenter(function() {
+        audio2.play();
     });
 
 
@@ -481,4 +495,7 @@
         dots[slideIndex - 1].className += " active";
         setTimeout(showSlides, 2200); // Change image every 2.2 seconds
     }
-</script></html>
+
+</script>
+
+</html>

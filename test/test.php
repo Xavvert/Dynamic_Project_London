@@ -16,7 +16,7 @@ $shop = array(
      </tr>
      <?php foreach ($shop as $row) : ?>
      <tr>
-       <td><?php $temp=$row[0];?>
+       <td> <?php $temp=$row[0];?>
 <a href="Jewels.php?cat=<?php echo $temp?>"><?php echo $row[0]; ?></a></td>
 
        <td><?php echo $row[1]; ?></td>

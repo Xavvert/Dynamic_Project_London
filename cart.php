@@ -9,7 +9,7 @@ if(@$_SESSION["authorize"]!="yes"){
 
 if($_SESSION["checkB"]!=1)
 {
-        header("location:logInB.php");
+        header("location:Warningcart.html");
         exit();
 }
 
@@ -416,6 +416,7 @@ if(!$conn)
             </div>
 
             <h1 style="display: none; text-align:center; color: darkred;">Empty cart <br><br> <br></h1>
+              <h1 style= "display: none; text-align:center; color: darkred;">Have a look at our superb items <a href="categories.html"> here </a> ! <br><br> <br></h1>
         </div>
 
     </div>
