@@ -13,9 +13,15 @@ if(!$conn)
     
 }
 
+echo ("itemName is ");
+echo ($itemName);
+
      $itemName=$_GET['name'];
     
+
      $sql_query = mysqli_query($conn, "UPDATE item SET id_buyer= 'NULL' WHERE name='$itemName'");
+
+
     
 if($sql_query)
 {

@@ -248,6 +248,49 @@ if($_SESSION["checkB"]!=1)
 
 </script>
 
+         <script type="text/javascript">
+        function deleteRow(r) {
+            var i = r.parentNode.parentNode.rowIndex;
+            document.getElementById("c").deleteRow(i);
+
+            var x = document.getElementById("c").rows.length - 1;
+
+            if (x == 0) {
+                $(document).ready(function() {
+                    $(".c").toggle(500);
+                    $(".cartFooter").toggle(500);
+                    $("h1").toggle(500);
+                });
+            }
+            window.location.href = "updateCartItem.php";
+        }
+        
+        /*$(document).ready(function() {
+        $(".close").click(function() {
+            var $value = $(this).closest("tr"); // Find the row
+            $('.echo').html($value);
+        });
+        });*/
+        
+        $(document).ready(function() {
+        $(".close").click(function () {
+            var row = $(this).attr('name');
+            alert("row)");
+            echo row;
+            $.ajax({
+
+                type: "GET",
+                url: 'updateCartItem.php',
+                data: {name: row},
+                
+                success: function (result) {
+                    $('#row').remove();
+                }
+            });
+        });
+            
+        };
+    </script>
 
 <body>
     <div id="layout">
@@ -281,47 +324,7 @@ if($_SESSION["checkB"]!=1)
     </div>
 
     <!-- body -->
-    <script type="text/javascript">
-        function deleteRow(r) {
-            var i = r.parentNode.parentNode.rowIndex;
-            document.getElementById("c").deleteRow(i);
-
-            var x = document.getElementById("c").rows.length - 1;
-
-            if (x == 0) {
-                $(document).ready(function() {
-                    $(".c").toggle(500);
-                    $(".cartFooter").toggle(500);
-                    $("h1").toggle(500);
-                });
-            }
-            window.location.href = "updateCartItem.php";
-        }
-        
-        /*$(document).ready(function() {
-        $(".close").click(function() {
-            var $value = $(this).closest("tr"); // Find the row
-            $('.echo').html($value);
-        });
-        });*/
-        
-        $(document).ready(function() {
-        $(".close").click(function () {
-            var row = $(this).attr('name');
-            $.ajax({
-                type: "GET",
-                url: 'updateCartItem.php',
-                data: {name: row},
-                success: function (result) {
-                    $('#row').remove();
-                }
-            });
-        });
-        };
-        
-
-    </script>
-
+   
     <div class="cartContainer">
         <br>
         <div class="corpus">
@@ -368,21 +371,15 @@ if(!$conn)
             ?>
 <tr>
     <?php $_SESSION['item']=$row['name']?>
+    
     <td><a href="" class="close"></a></td>
+    
     <td><?php echo($row['name']) ?></td>
     <td><?php echo($row['price']) ?></td>
     <td><?php echo($row['category']) ?></td>
 </tr>
                         
                     <?php } mysqli_close($conn);?>
-
-
-                        </tr>
-                        <?php } mysqli_close($conn);
-                        echo '<pre>';
-var_dump($_SESSION);
-echo '</pre>';?>
-
 
 
                     </tbody>
@@ -478,5 +475,8 @@ if(!$conn)
     </footer>
 
 </body>
+    
+
+
 
 </html>
