@@ -1,4 +1,5 @@
 <?php
+session_start();
 $server_name="localhost:3306";
 $username="root";
 $password="root";
@@ -19,7 +20,6 @@ if(isset($_POST['save']))
     $num=$_POST['num'];
     $expiration=$_POST['expiration'];
     $crypto=$_POST['crypto'];
-    
     $currentUsername=$_SESSION["username"];
     
     $sql_query = "INSERT INTO payment (username, num, type, nameCard, expiration, crypto) VALUES ('$currentUsername', '$num','$type','$nameCard','$expiration','$crypto')";
@@ -42,5 +42,3 @@ if(isset($_POST['save']))
     
 }
 ?>
-
-r
