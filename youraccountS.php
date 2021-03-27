@@ -80,39 +80,60 @@ if($_SESSION["upS"]==1)
     </style>
 
     <style type="text/css">
-        .accountContainer {
-            width: 1000px;
+.accountContainer {
+            width: 1300px;
             height: auto;
             background-color: #E8DBCB;
             box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.10);
             border-radius: 10px;
-            margin: 80px auto;
+            margin: 150px auto;
         }
 
         .accountHeader {
-            width: 800px;
+            width: 1300px;
             height: 70px;
             position: relative;
             background-color: #99adc1;
             border-top-right-radius: 0.6em;
             border-top-left-radius: 0.6em;
+            padding-top: 2px;
         }
 
         .accountHeader button {
-            font-size: 14px;
-            margin-left: 40px;
-            margin-top: 25px;
+            position: absolute;
+            color:#0a255a;
+            font-size: 25px;
+            left: 1000px;
+            top: 20px;
 
+        }
+        
+        .accountHeader h2 {
+            color: #0a255a;
+        }
+        
+        mark {
+            margin: 0 -0.2em;
+            padding: 0.2em 0.5em;
+            border-radius: 0.8em 0.3em;
+            color: #0a255a;
+            background: transparent;
+            background-image: linear-gradient(
+            to right,
+            rgba(255, 225, 0, 0.4),
+            rgba(255, 225, 0, 0.7),
+            rgba(255, 225, 0, 0.4)
+            )
         }
 
         .corpus {
-            width: 900px;
+            width: 1300px;
             height: auto;
-            margin-left: 100px;
         }
 
         .box-container {
             display: grid;
+            margin-left: 200px;
             grid-template-columns: auto auto;
         }
 
@@ -131,6 +152,7 @@ if($_SESSION["upS"]==1)
 
         .settingsForm {
             vertical-align: middle;
+            margin-left: 300px;
         }
 
         .itemsForm {
@@ -287,7 +309,7 @@ if($_SESSION["upS"]==1)
 
                 <?php echo '<img name="profile picture" alt="/profile picture" style="width: 50px; height: 50px; margin-top: 10px; float: left; margin-left: 50px;" src="data:image/jpeg;base64,'.base64_encode( $_SESSION["image"] ).'"/>' ?>
 
-                <h2 style="margin-left: 200px;float: left;text-align: center;">Welcome <?php echo $_SESSION["firstname"]?></h2>
+                <h2 style="text-align: center;">Welcome <mark><?php echo $_SESSION["firstname"]?></mark></h2>
                 <h1> <button onclick="location.href='deconnexion.php'"> Logout </button></h1>
             </div>
 
@@ -336,7 +358,7 @@ if($_SESSION["upS"]==1)
 
             <!--MY ITEMS-->
 
-            <div class="items" id="itemsForm" style="display: none;">
+            <div class="items" id="itemsForm" style="display: none; margin-left:150px;">
 
                 <table border="1" style="width: 800px; text-align: center; color: black; font-size: 17px;">
 
