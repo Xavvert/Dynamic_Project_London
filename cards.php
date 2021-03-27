@@ -206,6 +206,8 @@ if($_SESSION["checkB"]!=1)
             width: 100%;
             height: 80px;
             border-bottom-style: double;
+            border-radius: 1em;
+            border-color: #0a255a;
             
             text-align: center;
             font-size: 42px;
@@ -222,7 +224,7 @@ if($_SESSION["checkB"]!=1)
 
         .imgItem {
             font-size: 35px;
-            color: #335cae;
+            color:#2f6627;
             text-align: center;
         }
         
@@ -231,16 +233,16 @@ if($_SESSION["checkB"]!=1)
         }*/
         
         .priceItem {
-            padding-top: 200px;
+            padding-top: 150px;
             width: 300px;
             font-size: 18px;
-            color: #335cae;
             text-align: center;
         }
 
         .caption {
             height: auto;
-            border-style: double;
+            border-style:double;
+            border-color: #0a255a;
         }
 
         .caption p {
@@ -254,13 +256,44 @@ if($_SESSION["checkB"]!=1)
             color: cadetblue;
         }
         
-        
-
-
         #logo:hover {
             transform: rotate(360deg);
             transition: all 1s;
         }
+    </style>
+    
+    
+    <style type="text/css" caption="buy button">
+
+.buyButton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #3dc21b;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #3dc21b;
+	box-shadow:inset 0px 1px 0px 0px #3dc21b;
+	background-color:#44c767;
+	-webkit-border-radius:42px;
+	-moz-border-radius:42px;
+	border-radius:42px;
+	border:3px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Verdana;
+	font-size:16px;
+	font-weight:bold;
+	padding:13px 33px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+	
+    &:hover {
+	background-color:#5cbf2a;
+    }
+    
+    &:active {
+	position:relative;
+	top:1px;
+}
+ }
+        
     </style>
 
     <style type="text/css" name="back button">
@@ -333,7 +366,6 @@ if($_SESSION["checkB"]!=1)
     $(document).ready(function() {
 
         $("#buy").click(function() {
-            $(this).hide("slow");
             $("#bid").show("slow");
             $("#imm").show("slow");
             $("#offer").show("slow");
@@ -481,15 +513,19 @@ if(!$conn)
                 
                 <div class="imgItem">
                     <?php echo '<img name="profile picture" alt="/profile picture" style="height: 380px ;width: 250px;cursor: pointer;" src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"/>' ?>
-                    
-                    <p>
+                    <br>
+                    <br>
+                    <p style="border-style:solid; border-color:#0a255a;">
                         £<?php echo($row['price']) ?>
                     </p>
                 </div>
                 
                 <div class="priceItem">
                     
-                    <button id="buy">BUY</button>
+                <a class="buyButton" id ="buy">BUY</a>
+                    <br>
+                    <br>
+                    <br>
                 <button id="bid" style="display: none;">Bid</button>
                 <button onclick="location.href='addToBasket.php?cat=<?php echo $tempname?>'" id="imm" style="display: none;">Buy Immediately</button>
                 <button id="offer" style="display: none;">Best Offer</button>
