@@ -119,8 +119,8 @@ if(isset($validation)){
 
         .co {
             width: 400px;
-            height: 270px;
-            background-color: #FEE6D4;
+            height: 300px;
+            background-color: #EEE8CD;
             border-radius: 1em;
             color: black;
             text-align: center;
@@ -128,20 +128,7 @@ if(isset($validation)){
             font-family: "Verdana";
 
         }
-
-        .newco {
-            width: 400px;
-            height: 300px;
-            margin-left: 850px;
-            background-color: #FEE6D4;
-            border-radius: 1em;
-            color: black;
-            text-align: center;
-            font-size: 20px;
-            font-family: "Verdana";
-
-        }
-
+        
         h5 {
             font-size: 30px;
         }
@@ -150,6 +137,43 @@ if(isset($validation)){
             transform: rotate(360deg);
             transition: all 1s;
         }
+    </style>
+
+    <style type="text/css" caption="form design">
+        * {
+            box-sizing: border-box;
+        }
+
+        
+        input[type=email],
+        input[type=password],
+        select,
+        textarea {
+            width: 200px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+
+        }
+
+        label {
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+        }
+
+        input[type=submit],[type=reset] {
+            background-color: whitesmoke;
+            padding: 12px 20px;
+            border: solid 0,1em;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
     </style>
 
 
@@ -205,16 +229,23 @@ if(isset($validation)){
         <div class="co">
 
             <form action="" method="post">
+                <br>
                 <label>Email(username)</label>
-                <br><input type="email" name="username">
                 <br>
-                <label>Password</label><br><input type="password" name="password">
+                <input type="email" name="username">
                 <br>
-                <input type="submit" name="validation" value="Submit">
+                <label>Password</label>
+                <br>
+                <input type="password" name="password">
+                <br>
+                <br>
+                <input type="submit" name="validation" value="Login">
+                <br>
             </form>
-
         </div>
     </center>
+    <br>
+    <br>
 
 <!--footer-->
 
