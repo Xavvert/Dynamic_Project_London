@@ -257,7 +257,7 @@ if($_SESSION["checkB"]!=1)
 
     </style>
 
-    <style type="text/css" name="back button">
+        <style type="text/css" name="back button">
         .back-zone {
             width: 100%;
             height: 50px;
@@ -294,6 +294,7 @@ if($_SESSION["checkB"]!=1)
             z-index: 2;
             border-radius: 1em;
         }
+        
 
         .wrapper a:after {
             position: absolute;
@@ -302,13 +303,16 @@ if($_SESSION["checkB"]!=1)
             left: 0;
             width: 0;
             height: 100%;
-            background: black;
+            background: #D8392F;
             transition: all .35s;
             border-radius: 1em;
         }
 
         .wrapper a:hover {
             color: white;
+            border: 2px solid white;
+            transform: rotate(360deg);
+            transition: all 1.4s;
         }
 
         .wrapper a:hover:after {
@@ -316,7 +320,7 @@ if($_SESSION["checkB"]!=1)
         }
 
     </style>
-
+    
     <link rel='icon' href='pictures/Cykel.png' type='image/x-icon' />
 </head>
 <script type="text/javascript">
@@ -432,10 +436,7 @@ if($_SESSION["checkB"]!=1)
     <!--back button-->
     <div class="back-zone">
         <div class="wrapper">
-<!--
-onclick="javascript:window.history.back(-1);return false;"
--->
-            <a href="subcatboard.html"><span>Back</span></a>
+            <a href="#" onclick="javascript:window.history.back(-1);return false;"><span>BACK</span></a>
         </div>
     </div>
 
@@ -469,13 +470,15 @@ if(!$conn)
         
         while($row=mysqli_fetch_array($sql_query))
         {
-            $seller=$row['id_seller'];
+            $tempseller=$row['id_seller'];
             $tempdesc=$row['description'];
+            $tempname=$row['name'];
         ?>
         
         <div class="item" style="width:auto;">
 
             <?php echo '<img name="profile picture" alt="/profile picture" style="height: 230px ;width: 150px;margin-top: 10px;cursor: pointer;" src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"/>' ?>
+            
             <p class="title">
                 <?php echo($row['name']) ?>
             </p>
@@ -488,7 +491,7 @@ if(!$conn)
 <?php } ?>
         
         <div class="caption" style="display:none;">
-            <p class="title"> <br> <br>Cet article est mis en ligne par : <?php echo $seller ?></p>
+            <p class="title"> <br> <br>Cet article est mis en ligne par : <?php echo $tempseller ?></p>
             
             <button id="buy">BUY</button>
             <button id="bid" style="display: none;">Bid</button>
