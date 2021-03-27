@@ -250,21 +250,26 @@ if($_SESSION["checkB"]!=1)
 
 <script type="text/javascript">
     
-    function deleteRow(r) {
+    /*function deleteRow(r) {
         var i = r.parentNode.parentNode.rowIndex;
-        document.getElementById("c").deleteRow(i);
+        document.getElementById("c").deleteRow(i); 
+    }*/
+    
+    window.onload = testCart;
 
-        var x = document.getElementById("c").rows.length - 1;
-
+    function testCart() { 
+    var x = document.getElementById("c").rows.length - 1;
         if (x == 0) {
             $(document).ready(function() {
                 $(".c").toggle(500);
                 $(".cartFooter").toggle(500);
                 $("h1").toggle(500);
+                $("h3").toggle(500);
             });
         }
     }
-
+    
+    
     /*$(document).ready(function() {
     $(".close").click(function() {
         var $value = $(this).closest("tr"); // Find the row
@@ -415,8 +420,8 @@ if(!$conn)
                 <button class="myButton" type="submit" onclick="location.href='checkout.php'"> Process to checkout </button>
             </div>
 
-            <h1 style="display: none; text-align:center; color: darkred;">Empty cart <br><br> <br></h1>
-            <h1 style="display: none; text-align:center; color: darkred;">Have a look at our superb items <a href="categories.html"> here </a> ! <br><br> <br></h1>
+            <h1 style="display: none; text-align:center; color: darkred;">...Empty cart... <br><br></h1>
+            <h3 style="display: none; text-align:center; color: darkred;">Have a look at our superb items <a href="categories.php"> here </a> ! <br><br> <br></h3>
         </div>
 
     </div>
