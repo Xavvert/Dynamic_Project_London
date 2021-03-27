@@ -22,23 +22,16 @@ if(isset($_POST['save']))
     $crypto=$_POST['crypto'];
     $currentUsername=$_SESSION["username"];
     
-    //check si il a deja une carte
-    $sql_query = "INSERT INTO payment (username, num, type, nameCard, expiration, crypto) VALUES ('$currentUsername', '$num','$type','$nameCard','$expiration','$crypto')";
-    
-    if(mysqli_query($conn, $sql_query))
-    {
+  
          $_SESSION["cnum"]= $num;
          $_SESSION["ctype"]=$type;
          $_SESSION["cnameCard"]=$nameCard;
          $_SESSION["cexpiration"]= $expiration;
          $_SESSION["ccrypto"]= $crypto;
              
-     header("location:FINAL.php");
-    }
-    else
-    {
-        echo ("ERROR");
-    }
+     header("location:Loading.php");
+    
+  
     mysqli_close($conn);
     
 }

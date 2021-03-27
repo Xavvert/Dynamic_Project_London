@@ -1,64 +1,6 @@
 <?php
 session_start();
-$server_name="localhost:3306";
-$username="root";
-$password="root";
-$database_name="cykel";
 
-
-
-$conn=mysqli_connect($server_name,$username,$password,$database_name);
-
-if(!$conn)
-{
-    die("Connection Failed:".mysqli_connect_error());
-    
-}
-
-@$username=$_POST['username'];
-@$password=$_POST['password'];
-@$validation=$_POST["validation"];
-
-if(isset($validation)){
-    
-    $sql_query = mysqli_query($conn, "Select * from seller WHERE username = '$username' AND password = '$password'");
-    $rowCount = mysqli_num_rows($sql_query);
-    
-
-    if($rowCount > 0)
-    {
-        $_SESSION["authorize"]="yes";
-        $_SESSION["username"]=$username;
-        $_SESSION["password"]=$password;
-        
-        $_SESSION["checkA"]=0;
-        $_SESSION["checkB"]=0;
-        $_SESSION["checkS"]=1;
-        
-        $_SESSION["upS"]=0;
-
-    }
-    else
-    {
-     echo ("Error : Wrong Password or Username");
-    }
-    
-   $sql_query = mysqli_query($conn, "SELECT firstName from seller WHERE username='$username'"); 
-   $row = mysqli_fetch_array($sql_query);
-   $_SESSION["firstname"]=$row['firstName'];
-    
-   $sql_query = mysqli_query($conn, "SELECT lastName from seller WHERE username='$username'"); 
-   $row = mysqli_fetch_array($sql_query);
-   $_SESSION["lastname"]=$row['lastName'];
-    
-   $sql_query = mysqli_query($conn, "SELECT image from images WHERE username='$username'"); 
-   $row = mysqli_fetch_array($sql_query);
-   $_SESSION["image"]=$row['image'];
-    
-    header("location:youraccountS.php");
-    
-       mysqli_close($conn);
-}
 ?>
    
  

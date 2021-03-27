@@ -24,11 +24,12 @@ if(isset($_POST['save']))
     $country=$_POST['country'];
     $phone=$_POST['phone'];
     
+  @$totalprice=$_SESSION["totalPrice"];
   @$currentUsername=$_SESSION["username"];
     
 
     
-    $sql_query = "INSERT INTO checkout (packagename, firstName,lastName, adress, city, zipCode, country, phone, sent, id_buyer) VALUES ('$packagename','$firstName','$lastName','$adress','$city','$zipCode','$country','$phone',NOW(),'$currentUsername')";
+    $sql_query = "INSERT INTO checkout (packagename, firstName,lastName, adress, city, zipCode, country, phone, sent, id_buyer, totalPrice) VALUES ('$packagename','$firstName','$lastName','$adress','$city','$zipCode','$country','$phone',NOW(),'$currentUsername',$totalprice)";
     
     if(mysqli_query($conn, $sql_query))
     {

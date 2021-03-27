@@ -412,6 +412,7 @@ if(!$conn)
             $currentUsername=$_SESSION['username'];
             $sql_query=mysqli_query($conn, "SELECT SUM(price) FROM item WHERE id_buyer='$currentUsername'");
                 $result = mysqli_fetch_row($sql_query);
+                $_SESSION['totalPrice']=$result[0];
                  mysqli_close($conn);
             ?>
 

@@ -150,13 +150,10 @@ mysqli_close($conn);
         </div>
     </div>
     <center>
-        <?php $_SESSION['username']="xavier.dandigna@gmail.com"; ?>
         <h1>THANK YOU FOR YOUR PURCHASE </h1>
         <h2> An email of confirmation has been sent to <b><?php echo $_SESSION['username']?></b> to recap your order </h2>
         </center>
     
-<input type="submit" value="OK" name="submit" onclick="sendEmail();" id="submit">
-
 
 
 <!--footer-->
@@ -222,43 +219,5 @@ echo '</pre>';
     </footer>
 
 </body>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script type="text/javascript">
-        
-        var receiver = "<?php echo $_SESSION['username']; ?>";
-        var fname = "<?php echo $_SESSION['firstname']; ?>";
-        var lname = "<?php echo $_SESSION['lastname']; ?>";
-        
-        var cpackagename = "<?php echo $_SESSION['cpackagename']; ?>";
-        var cfirstname = "<?php echo $_SESSION['cfirstname']; ?>";
-        var clastname = "<?php echo $_SESSION['clastname']; ?>";
-        var cadress = "<?php echo $_SESSION['cadress']; ?>";
-        var ccity = "<?php echo $_SESSION['ccity']; ?>";
-        var czipCode = "<?php echo $_SESSION['czipCode']; ?>";
-        var ccountry = "<?php echo $_SESSION['ccountry']; ?>";
-        var cphone = "<?php echo $_SESSION['cphone']; ?>";
-        var cnameCard = "<?php echo $_SESSION['cnameCard']; ?>";
-        var ctype = "<?php echo $_SESSION['ctype']; ?>";
-       
-    
-        function sendEmail() {
-
-        Email.send({
-                Host: "smtp.gmail.com",
-                Username: "cykelweb@gmail.com",
-                Password: "cykel123.",
-
-                From: "cykelweb@gmail.com",
-                To: receiver,
-            //a concatener
-                Subject: "Thank you "+ fname +" "+ lname+" for your purchase on Cykel 🚴",
-                Body: "Dear "+ fname+", Thank you for your purchase on Cykel! Here's your recap : "+ "Your order's name : "+cpackagename
-            +" First Name : "+ cfirstname+" Last Name : "+ clastname+" Adress : "+ cadress+" City : "+ ccity+" Zip Code : "+ czipCode+ " Country : "+ ccountry+ " Phone number : "+ cphone+". "+" You paid with a "+ ctype + " and the name associated with this card is : "+ cnameCard+"."+"Just as a reminder to our customers, we are not storing credit cards' informations to protect their data. You will receive your invoice directly in your package. Nowadays, shipping delivery may be impacted due to the COVID pandemic. Thanks for your comprehension. See you soon to Cykel. Kind Regards, The Cykel Team "
-            })
-            .then(function(message) {
-                alert("Thank you ! You have received an email as a confirmation of your order 🚴")
-            });
-    }
-</script>
-
+   
 </html>

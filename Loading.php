@@ -1,5 +1,20 @@
 <?php
 session_start();
+$server_name="localhost:3306";
+$username="root";
+$password="root";
+$database_name="cykel";
+
+
+
+$conn=mysqli_connect($server_name,$username,$password,$database_name);
+
+if(!$conn)
+{
+    die("Connection Failed:".mysqli_connect_error());
+}
+
+mysqli_close($conn);
 
 
 ?>
@@ -9,7 +24,7 @@ session_start();
 <html lang="en">
 
 <head>
-    <title>Cykel - Log In - Seller</title>
+    <title>Cykel - Log In - Buyer</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="header&footer.css">
@@ -56,7 +71,7 @@ session_start();
 
         .co {
             width: 400px;
-            height: 370px;
+            height: 270px;
             background-color: #FEE6D4;
             border-radius: 1em;
             color: black;
@@ -134,37 +149,12 @@ session_start();
 
         </div>
     </div>
-    <center>
-        <h1>Please enter all the informations for the delivery process about your credit card </h1>
-    </center>
-   <center>
-        <div class="co">
+    
+    
+<input type="submit" value="See the Recap of your order" name="submit" onclick="sendEmail();" id="submit">
 
-            <form action="tempPayment.php" method="post">
-                <label>Type of the Card</label>
-                    <SELECT name="type">
-                        <option>VISA</option>
-                        <option>MASTERCARD</option>
-                        <option>AMERICAN EXPRESS</option>
-                    </SELECT>
-                <label>Name on the card</label><br><input type="text" name="nameCard">
-                <br>
-                <label>Card Number</label><br><input type="text" name="num">
-                <br>
-                <label>Expiration</label><br><input type="text" name="expiration">
-                <br>
-               <label>CVV number</label><br><input type="text" name="crypto">
-                <br>
-                <input type="submit" name="save" value="Confirm and Pay">
-                
-                <label>(Cykel don't store the information of your credit card in their databases for security reasons)</label><br>
-            </form>
 
-        </div>
-    </center>
-   <?php echo '<pre>';
-var_dump($_SESSION);
-echo '</pre>'; ?>
+
 <!--footer-->
 
 <footer class="footer">
@@ -219,9 +209,54 @@ echo '</pre>'; ?>
         
         <div class="row text-center" style="color: #000058;"> © 2021 Designed with by Xavier Dandigna & Anthelme Charvet.</div>
         </div>
-        
+    
+         <?php echo '<pre>';
+var_dump($_SESSION);
+echo '</pre>'; 
+    ?>
         
     </footer>
+
 </body>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script type="text/javascript">
+        
+        var receiver = "<?php echo $_SESSION['username']; ?>";
+        var fname = "<?php echo $_SESSION['firstname']; ?>";
+        var lname = "<?php echo $_SESSION['lastname']; ?>";
+        
+        var cid = "<?php echo $_SESSION['cid']; ?>";
+        
+        var cpackagename = "<?php echo $_SESSION['cpackagename']; ?>";
+        var cfirstname = "<?php echo $_SESSION['cfirstname']; ?>";
+        var clastname = "<?php echo $_SESSION['clastname']; ?>";
+        var cadress = "<?php echo $_SESSION['cadress']; ?>";
+        var ccity = "<?php echo $_SESSION['ccity']; ?>";
+        var czipCode = "<?php echo $_SESSION['czipCode']; ?>";
+        var ccountry = "<?php echo $_SESSION['ccountry']; ?>";
+        var cphone = "<?php echo $_SESSION['cphone']; ?>";
+        var cnameCard = "<?php echo $_SESSION['cnameCard']; ?>";
+        var ctype = "<?php echo $_SESSION['ctype']; ?>";
+       
+    
+        function sendEmail() {
+
+        Email.send({
+                Host: "smtp.gmail.com",
+                Username: "cykelweb@gmail.com",
+                Password: "cykel123.",
+
+                From: "cykelweb@gmail.com",
+                To: receiver,
+            //a concatener
+                Subject: "Thank you "+ fname +" "+ lname+" for your purchase on Cykel 🚴 - Package's ID : "+cid,
+                Body: "Dear "+ fname+", Thank you for your purchase on Cykel! Here's your recap : "+ "Your order's name : "+cpackagename
+            +" First Name : "+ cfirstname+" Last Name : "+ clastname+" Adress : "+ cadress+" City : "+ ccity+" Zip Code : "+ czipCode+ " Country : "+ ccountry+ " Phone number : "+ cphone+". "+" You paid with a "+ ctype + " and the name associated with this card is : "+ cnameCard+"."+"Just as a reminder to our customers, we are not storing credit cards' informations to protect their data. You will receive your invoice directly in your package. Nowadays, shipping delivery may be impacted due to the COVID pandemic. Thanks for your comprehension. See you soon to Cykel. Kind Regards, The Cykel Team "
+            })
+            .then(function(message) {
+                 window.location = 'FINAL.php';
+            });
+    }
+</script>
 
 </html>
