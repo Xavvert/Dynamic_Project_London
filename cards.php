@@ -495,7 +495,7 @@ if(!$conn)
             
             <button id="buy">BUY</button>
             <button id="bid" style="display: none;">Bid</button>
-            <button id="imm" style="display: none;">Buy Immediately</button>
+            <button onclick="location.href='addToBasket.php?cat=<?php echo $tempname?>'" id="imm" style="display: none;">Buy Immediately</button>
             <button id="offer" style="display: none;">Best Offer</button>
 
             <form id="arBid" action="bid.php" method="post" style="display: none;">
