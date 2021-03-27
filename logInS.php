@@ -61,6 +61,10 @@ if(isset($validation)){
    $row = mysqli_fetch_array($sql_query);
    $_SESSION["image"]=$row['image'];
     
+   $sql_query = mysqli_query($conn, "SELECT * from imagesb WHERE username='$username'"); 
+   $row = mysqli_fetch_array($sql_query);
+   $_SESSION["imageB"]=$row['image'];
+    
     header("location:youraccountS.php");
     
        mysqli_close($conn);

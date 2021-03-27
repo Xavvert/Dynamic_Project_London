@@ -49,7 +49,7 @@
 
         .co {
             width: 400px;
-            height: 700px;
+            height: 800px;
             background-color: #EEE8CD;
             border-radius: 1em;
             color: black;
@@ -62,14 +62,15 @@
         h5 {
             font-size: 30px;
         }
+
         #logo:hover {
 
             transform: rotate(360deg);
             transition: all 1s;
         }
     </style>
-    
-          <style type="text/css" caption="form design">
+
+    <style type="text/css" caption="form design">
         * {
             box-sizing: border-box;
         }
@@ -92,10 +93,11 @@
             display: inline-block;
         }
 
-        input[type=submit],[type=reset] {
+        input[type=submit],
+        [type=reset] {
             background-color: whitesmoke;
             padding: 12px 20px;
-            border: solid 0,1em;
+            border: solid 0, 1em;
             border-radius: 4px;
             cursor: pointer;
         }
@@ -103,11 +105,10 @@
         input[type=submit]:hover {
             background-color: #45a049;
         }
-        
-          input[type=reset]:hover {
+
+        input[type=reset]:hover {
             background-color: #bfb700;
         }
-
     </style>
 
 
@@ -187,6 +188,11 @@
                 <input type="file" name="image" style="margin-left: 95px;">
                 <br>
                 <br>
+                <label>Background Picture</label>
+                <br>
+                <input type="file" name="imageB" style="margin-left: 95px;">
+                <br>
+                <br>
                 <input type="submit" name="save" value="Sign Up">
                 <br>
             </form>
@@ -196,59 +202,57 @@
     <br>
     <br>
 
-<!--footer-->
+    <!--footer-->
 
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-        <div class="col-sm-3">
-            <h4 class="title">Cykel</h4>
-            <p>Cykel market is an auction website similar to EBay created for the Dynamic Web Programming Project.</p>  
-            <p style="color: #000058;">INSEEC U London - Y3</p>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h4 class="title">Cykel</h4>
+                    <p>Cykel market is an auction website similar to EBay created for the Dynamic Web Programming Project.</p>
+                    <p style="color: #000058;">INSEEC U London - Y3</p>
 
-            <ul class="social-icon">
-            <a href="#" class="social"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-            <a href="#" class="social"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-            <a href="#" class="social"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-            <a href="#" class="social"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
-            <a href="#" class="social"><i class="fa fa-google" aria-hidden="true"></i></a>
-            </ul>
+                    <ul class="social-icon">
+                        <a href="#" class="social"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" class="social"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#" class="social"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" class="social"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                        <a href="#" class="social"><i class="fa fa-google" aria-hidden="true"></i></a>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h4 class="title">Policy</h4>
+                    <span class="acount-icon">
+                        <a href="privacypolicy.html"><i class="fa fa-user" aria-hidden="true"></i> Privacy Policy</a>
+                        <a href="termsofservice.html"><i class="fa fa-file" aria-hidden="true"></i> Terms Of Service</a>
+                        <a href="mailto: contact@cykel.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> Contact Us</a>
+                    </span>
+                </div>
+                <div class="col-sm-3">
+                    <h4 class="title">Category</h4>
+                    <div class="category">
+                        <a href="subcatBike.html">All Bikes 🚲</a>
+                        <a href="subcatboard.html">All Boardgames 🎲</a>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <h4 class="title">Payment Methods</h4>
+                    <p>This website accept this payment methods.</p>
+                    <ul class="payment">
+                        <li><a href="#"><i class="fa fa-cc-amex" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-cc-mastercard" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-paypal" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-cc-visa" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-apple" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
             </div>
-        <div class="col-sm-3">
-            <h4 class="title">Policy</h4>
-            <span class="acount-icon">          
-            <a href="privacypolicy.html"><i class="fa fa-user" aria-hidden="true"></i> Privacy Policy</a>
-            <a href="termsofservice.html"><i class="fa fa-file" aria-hidden="true"></i> Terms Of Service</a>
-            <a href = "mailto: contact@cykel.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> Contact Us</a>       
-          </span>
-            </div>
-        <div class="col-sm-3">
-            <h4 class="title">Category</h4>
-            <div class="category">
-            <a href="subcatBike.html">All Bikes 🚲</a> 
-            <a href="subcatboard.html">All Boardgames 🎲</a>         
-            </div>
-            </div>
-        <div class="col-sm-3">
-            <h4 class="title">Payment Methods</h4>
-            <p>This website accept this payment methods.</p>
-            <ul class="payment">
-            <li><a href="#"><i class="fa fa-cc-amex" aria-hidden="true"></i></a></li>
-            <li><a href="#"><i class="fa fa-cc-mastercard" aria-hidden="true"></i></a></li>            
-            <li><a href="#"><i class="fa fa-paypal" aria-hidden="true"></i></a></li>
-            <li><a href="#"><i class="fa fa-cc-visa" aria-hidden="true"></i></a></li>
-            <li><a href="#"><i class="fa fa-apple" aria-hidden="true"></i></a></li>
-            </ul>
-            </div>
+            <hr>
+
+            <div class="row text-center" style="color: #000058;"> © 2021 Designed with by Xavier Dandigna & Anthelme Charvet.</div>
         </div>
-        <hr>
-        
-        <div class="row text-center" style="color: #000058;"> © 2021 Designed with by Xavier Dandigna & Anthelme Charvet.</div>
-        </div>
-        
-        
+
+
     </footer>
 
-</body>
-
-</html>
+</body></html>

@@ -80,7 +80,7 @@ if($_SESSION["upS"]==1)
     </style>
 
     <style type="text/css">
-.accountContainer {
+        .accountContainer {
             width: 1300px;
             height: auto;
             background-color: #E8DBCB;
@@ -101,29 +101,27 @@ if($_SESSION["upS"]==1)
 
         .accountHeader button {
             position: absolute;
-            color:#0a255a;
+            color: #0a255a;
             font-size: 25px;
             left: 1000px;
             top: 20px;
 
         }
-        
+
         .accountHeader h2 {
             color: #0a255a;
         }
-        
+
         mark {
             margin: 0 -0.2em;
             padding: 0.2em 0.5em;
             border-radius: 0.8em 0.3em;
             color: #0a255a;
             background: transparent;
-            background-image: linear-gradient(
-            to right,
-            rgba(255, 225, 0, 0.4),
-            rgba(255, 225, 0, 0.7),
-            rgba(255, 225, 0, 0.4)
-            )
+            background-image: linear-gradient(to right,
+                    rgba(255, 225, 0, 0.4),
+                    rgba(255, 225, 0, 0.7),
+                    rgba(255, 225, 0, 0.4))
         }
 
         .corpus {
@@ -299,8 +297,11 @@ if($_SESSION["upS"]==1)
 
         </div>
     </div>
-
+    <center>
+        <?php echo '<img name="profile picture" alt="/profile picture" style="width: 93%; height: 80px; margin-top: 20px; float: left; margin-left: 50px;" src="data:image/jpeg;base64,'.base64_encode( $_SESSION["imageB"] ).'"/>' ?>
+    </center>
     <div class="accountContainer">
+
 
         <div class="corpus">
 
@@ -308,6 +309,8 @@ if($_SESSION["upS"]==1)
             <div class="accountHeader">
 
                 <?php echo '<img name="profile picture" alt="/profile picture" style="width: 50px; height: 50px; margin-top: 10px; float: left; margin-left: 50px;" src="data:image/jpeg;base64,'.base64_encode( $_SESSION["image"] ).'"/>' ?>
+
+
 
                 <h2 style="text-align: center;">Welcome <mark><?php echo $_SESSION["firstname"]?></mark></h2>
                 <h1> <button onclick="location.href='deconnexion.php'"> Logout </button></h1>
@@ -350,8 +353,8 @@ if($_SESSION["upS"]==1)
                     <br>
                     <br>
                 </form>
-                
-               
+
+
             </div>
 
 
@@ -487,7 +490,7 @@ if(!$conn)
 
 
     </footer>
-  <?php  echo '<pre>';
+    <?php  echo '<pre>';
 var_dump($_SESSION);
 echo '</pre>'; ?>
 </body>

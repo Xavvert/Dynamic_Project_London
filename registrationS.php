@@ -14,7 +14,7 @@ if(!$conn)
 
 $status = $statusMsg = ''; 
 if(isset($_POST['save']))
-{    $username=$_POST['username'];
+{   $username=$_POST['username'];
     $password=$_POST['password'];
     $firstName=$_POST['firstName'];
     $lastName=$_POST['lastName'];
@@ -46,6 +46,30 @@ if(isset($_POST['save']))
             $statusMsg = 'Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload.'; 
         } 
     
+  // Get file info 
+        $fileName = basename($_FILES["imageB"]["name"]); 
+        $fileType = pathinfo($fileName, PATHINFO_EXTENSION); 
+         
+        // Allow certain file formats 
+        $allowTypes = array('jpg','png','jpeg','gif'); 
+        if(in_array($fileType, $allowTypes))
+        { 
+            $image = $_FILES['imageB']['tmp_name']; 
+            $imgContent = addslashes(file_get_contents($image)); 
+         
+            // Insert image content into database 
+            $insert = $conn->query("INSERT into imagesb (image, uploaded, username) VALUES ('$imgContent', NOW(), '$username')");
+            $_SESSION["imageB"]=$imgContent;
+             
+            if($insert){ 
+                $status = 'success'; 
+                $statusMsg = "File uploaded successfully."; 
+            }else{ 
+                $statusMsg = "File upload failed, please try again."; 
+            }  
+        }else{ 
+            $statusMsg = 'Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload.'; 
+        } 
  
     
     if(mysqli_query($conn, $sql_query))
