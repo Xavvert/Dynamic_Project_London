@@ -329,13 +329,7 @@ if($_SESSION["upS"]==1)
                     <br>
                 </form>
                 
-                <!-- if condition pour n'upload que la premiere fois -->
-                    <form action="updateSpictureProfile.php" method="post" enctype="multipart/form-data" style="">
-                    <h3>You can upload your profile picture here :</h3>
-                    <label>Profile Picture</label><input type="file" name="image">
-                    <input type="submit" name="submit" value="Upload">
-                    <br>
-                </form>
+               
             </div>
 
 
