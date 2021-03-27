@@ -283,7 +283,7 @@ if($_SESSION["checkB"]!=1)
             color: white;
             border: 2px solid white;
             transform: rotate(360deg);
-            transition: all 1.4s;
+            transition: all 0.5s;
         }
 
         .wrapper a:hover:after {
