@@ -33,7 +33,7 @@ if($sql_query)
     
     else
     {
-    // header("location:HomePage.html");
+     header("location:HomePage.html");
     }
     
     mysqli_close($conn);

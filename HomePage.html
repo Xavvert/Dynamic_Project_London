@@ -14,7 +14,7 @@
 
     <style type="text/css">
         .sidenav {
-            height: 100%;
+            height: 55%;
             width: 0;
             position: fixed;
             z-index: 1;
@@ -22,10 +22,11 @@
             left: 0;
             background-color: #111;
             overflow-x: hidden;
-            transition: 0.5s;
+            transition: 0.8s;
             padding-top: 60px;
-            border-top-right-radius: 30px;
-            border-bottom-right-radius: 30px;
+            /*border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;*/
+            border-radius: 30px;
         }
 
         .sidenav a {
@@ -35,10 +36,12 @@
             color: #818181;
             display: block;
             transition: 0.3s;
+            /*border-top-style: double;*/
         }
 
         .sidenav a:hover {
             color: #f1f1f1;
+            border-color: beige;
         }
 
         .sidenav .closebtn {
@@ -47,6 +50,7 @@
             right: 25px;
             font-size: 36px;
             margin-left: 50px;
+            /*margin-top: -35px;*/
         }
 
         /* For the slideshow */
@@ -276,7 +280,7 @@
             </div>
 
             <div class="icon">
-                <img name="icon" src="pictures/profile.png" onClick="location.href='youraccountA.php'" style="width: 25px; height: 25px; position: relative; top: -80px; left:580px; cursor:pointer;">
+                <img name="icon" src="pictures/profile2.png" onClick="location.href='youraccountA.php'" style="width: 25px; height: 25px; position: relative; top: -80px; left:580px; cursor:pointer;">
 
                 <img src="pictures/notif.png" onClick="location.href='youraccount2.html'" style="width: 20px; height: 20px; position: relative; top: -80px; left:590px; cursor:pointer;">
 
@@ -332,17 +336,17 @@
         <br>
         <h3> Here's the popular items </h3>
         <div class="grid-container">
-            <div class="item" onclick="location.href='surfboardV2.html'">
+            <div class="item" onclick="location.href='cards.php'">
                 <img src="pictures/card1.png" style="height: 280px ;width: 200px; cursor: pointer;">
                 <p>Surfcard V2</p>
             </div>
 
-            <div class="item" onclick="location.href='subcatBike.html'">
+            <div class="item" onclick="location.href='subcatbike.php'">
                 <img src="pictures/bike3.png" style="height: 200px; width: 300px; cursor: pointer;">
                 <p>City Bike</p>
             </div>
 
-            <div class="item" onclick="location.href='subcatboard.html'">
+            <div class="item" onclick="location.href='cards.php'">
                 <img src="pictures/card6.png" style="height: 280px ;width: 200px; cursor: pointer;">
                 <p>Musicard</p>
             </div>

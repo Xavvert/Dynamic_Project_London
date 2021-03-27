@@ -386,6 +386,8 @@ if($_SESSION["checkB"]!=1)
             $(".item").toggle(500);
             $(this).toggle(500);
             $(".caption").toggle(500);
+            $(".description").toggle(500);
+            $(".back-zone").toggle(500);
         });
     });
 
@@ -430,6 +432,9 @@ if($_SESSION["checkB"]!=1)
     <!--back button-->
     <div class="back-zone">
         <div class="wrapper">
+<!--
+onclick="javascript:window.history.back(-1);return false;"
+-->
             <a href="subcatboard.html"><span>Back</span></a>
         </div>
     </div>
@@ -461,10 +466,13 @@ if(!$conn)
     
 }                   
         $sql_query=mysqli_query($conn, "SELECT * FROM item WHERE category='Playing Cards'");
-        while($row=mysqli_fetch_array($sql_query))
-        {?>
         
-
+        while($row=mysqli_fetch_array($sql_query))
+        {
+            $seller=$row['id_seller'];
+            $tempdesc=$row['description'];
+        ?>
+        
         <div class="item" style="width:auto;">
 
             <?php echo '<img name="profile picture" alt="/profile picture" style="height: 230px ;width: 150px;margin-top: 10px;cursor: pointer;" src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"/>' ?>
@@ -480,7 +488,7 @@ if(!$conn)
 <?php } ?>
         
         <div class="caption" style="display:none;">
-            <p class="title"> <br> <br>Cet article est mis en ligne par : <?php echo($row['id_seller']) ?></p>
+            <p class="title"> <br> <br>Cet article est mis en ligne par : <?php echo $seller ?></p>
             
             <button id="buy">BUY</button>
             <button id="bid" style="display: none;">Bid</button>
@@ -500,6 +508,10 @@ if(!$conn)
                 <br><input type="text" name="areaBid">
                 <input type="image" name="save" value="Submit" src="pictures/okOrange.jpg" style="width: 30px; height: 30px;">
             </form>
+            
+            <div class="description" style=" display:none; clear:both; text-align:center;">
+                <p><?php echo $tempdesc ?></p>
+            </div>
         </div>
 
         

@@ -178,9 +178,9 @@ if($_SESSION["checkB"]!=1)
             font-weight: bold;
             padding: 8px 15px;
             text-shadow: 0px 1px 0px #5b8a3c;
-            margin-left: 600px;
+            margin-left: 500px;
             float: left;
-            margin-top: -50px;
+            margin-top: -30px;
         }
 
         .myButton:hover {
@@ -249,6 +249,7 @@ if($_SESSION["checkB"]!=1)
 </script>
 
 <script type="text/javascript">
+    
     function deleteRow(r) {
         var i = r.parentNode.parentNode.rowIndex;
         document.getElementById("c").deleteRow(i);
