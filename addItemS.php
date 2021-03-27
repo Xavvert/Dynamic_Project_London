@@ -17,7 +17,7 @@ if(isset($_POST['save']))
 {
     $name=$_POST['item'];
     $price=$_POST['price'];
-    $_SESSION['description']=$_POST['description'];
+ $description=$_POST['description'];
     $category=$_POST['category'];
     @$currentUsername=$_SESSION["username"];
 
@@ -37,7 +37,7 @@ $status = $statusMsg = '';
             $imgContent = addslashes(file_get_contents($image));  
 
 //QUERY   
-    $sql_query = "INSERT INTO item (name, price, category, id_buyer, id_seller, type, image) VALUES ('$name','$price','$category',NULL,'$currentUsername',NULL, '$imgContent')";
+    $sql_query = mysqli_query($conn, "INSERT INTO item (name, price, category, id_buyer, id_seller, type, image, description) VALUES ('$name','$price','$category',NULL,'$currentUsername',NULL, '$imgContent', '$description')");
     
         if($sql_query){ 
                         $status = 'success'; 
@@ -50,38 +50,10 @@ $status = $statusMsg = '';
                 } 
     }
      
-    $sql_query = " SELECT id from item WHERE name = '$name' ";
+   /* $sql_query = " SELECT id from item WHERE name = '$name' ";
     $row = mysqli_fetch_array($sql_query);
     $_SESSION["id"]=$row['id'];
-    $temp=$row['id'];
-    
-    
-/*$content = "
-<html>
-<head>
-</head>
-<body>
-<h4>
-IDENTIFICATION NUMBER : $temp
-</h4>
-<h4>
-Item : $name
-</h4>
-<h4>
-Price : $price
-</h4>
-<h4>
-Category : $category
-</h4>
-<h4>
-id_seller : $currentUsername
-</h4>
-<button>BUY INSTANTLY</button>
-</body>
-</html>";
-$file = "test.html";
-    
-file_put_contents($file, $content);*/
+    $temp=$row['id'];*/
     
  
     if(mysqli_query($conn, $sql_query))

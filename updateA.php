@@ -13,21 +13,25 @@ if(!$conn)
     die("Connection Failed:".mysqli_connect_error());
     
 }
-
+ 
 $currentUsername=$_SESSION["username"];
 @$username=$_POST['username'];
 @$password=$_POST['password'];
+@$firstname=$_POST['firstname'];
+@$lastname=$_POST['lastname'];
 @$validation=$_POST["save"];
 
 if(isset($validation)){
 
-     $sql_query = mysqli_query($conn, "UPDATE admin SET username= '$username', password= '$password' WHERE username='$currentUsername'");
+     $sql_query = mysqli_query($conn, "UPDATE admin SET username= '$username', password= '$password', firstname= '$firstname', lastname= '$lastname',  WHERE username='$currentUsername'");
     
 if($sql_query)
 {
     $_SESSION["upA"]=1;
     $_SESSION["username"]=$username;
     $_SESSION["password"]=$password;
+    $_SESSION["firstname"]=$firstname;
+    $_SESSION["lastname"]=$lastname;
     
     header("location:youraccountA.php");
 }

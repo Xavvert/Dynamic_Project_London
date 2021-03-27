@@ -368,6 +368,12 @@ if(@$_SESSION["authorize"]!="yes"){
                     <label>Password</label><input type="text" name="password" value='<?php echo $_SESSION['password'] ?>'>
                     <br>
 
+                    <label>First Name</label><input type="text" name="firstname" value='<?php echo $_SESSION['firstname'] ?>'>
+                    <br>
+
+                    <label>Last Name</label><input type="text" name="lastname" value='<?php echo $_SESSION['lastname'] ?>'>
+                    <br>
+
                     <input type="submit" name="save" value="Save Changes">
                     <br>
                     <br>
@@ -445,10 +451,12 @@ if(!$conn)
                         <option>Bicycles</option>
                     </SELECT>
                     <br>
+                  
                     <label>Photo :</label>
                     <input type="file" id="myFile" name="image" style="size: 20px;">
                     <br>
                     <br>
+
                     <input type="submit" name="save" value="Add Item">
                     <br>
                     <br>
@@ -504,7 +512,7 @@ if(!$conn)
 
                     </tr>
 
-<?php
+                    <?php
 
 $server_name="localhost:3306";
 $username="root";
@@ -537,7 +545,7 @@ if(!$conn)
                     </tr>
 
                     <?php } mysqli_close($conn); ?>
-                
+
                 </table>
                 <br>
 
@@ -552,7 +560,7 @@ if(!$conn)
                         <th style="font-size: 20px;border: 1px solid black;text-align: center;">Username</th>
                         <th style="font-size: 20px;border: 1px solid black;text-align: center;">Password</th>
                     </tr>
-<?php
+                    <?php
 
 $server_name="localhost:3306";
 $username="root";
@@ -583,7 +591,7 @@ if(!$conn)
                 </table>
                 <br>
 
-                   <h4>Admin's database</h4>
+                <h4>Admin's database</h4>
 
                 <table border="1" style="width: 800px; text-align: center; color: black; font-size: 17px;">
 
@@ -591,7 +599,7 @@ if(!$conn)
                         <th style="font-size: 20px;border: 1px solid black;text-align: center;">Username</th>
                         <th style="font-size: 20px;border: 1px solid black;text-align: center;">Password</th>
                     </tr>
-<?php
+                    <?php
 
 $server_name="localhost:3306";
 $username="root";
@@ -619,7 +627,7 @@ if(!$conn)
                     <?php } mysqli_close($conn); ?>
                 </table>
                 <br>
-                
+
                 <br>
             </div>
 
