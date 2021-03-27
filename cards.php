@@ -206,9 +206,7 @@ if($_SESSION["checkB"]!=1)
             width: 100%;
             height: 80px;
             border-bottom-style: double;
-            border-radius: 1em;
             border-color: #0a255a;
-            
             text-align: center;
             font-size: 42px;
             color: #0a255a;
@@ -232,6 +230,15 @@ if($_SESSION["checkB"]!=1)
             transform: scale(1.1);
         }*/
         
+        .imgItem img:hover {
+            
+            box-shadow: 0px 0px 1500px #000000;
+            transition: all 800ms ease-in;
+            transform:translate(200%, 20%)scale(1.6);
+            background-color: whitesmoke;
+            
+        }
+        
         .priceItem {
             padding-top: 150px;
             width: 300px;
@@ -241,8 +248,9 @@ if($_SESSION["checkB"]!=1)
 
         .caption {
             height: auto;
-            border-style:double;
+            border-left-style:double;
             border-color: #0a255a;
+            padding-left: 80px;
         }
 
         .caption p {
@@ -250,10 +258,11 @@ if($_SESSION["checkB"]!=1)
             font-size: 20px;
         }
 
-        .caption title {
+        .caption h4 {
             text-align: center;
-            font-size: 20px;
+            font-size: 25px;
             color: cadetblue;
+            color: #0a255a;
         }
         
         #logo:hover {
@@ -266,12 +275,8 @@ if($_SESSION["checkB"]!=1)
     <style type="text/css" caption="buy button">
 
 .buyButton {
-	-moz-box-shadow:inset 0px 1px 0px 0px #3dc21b;
-	-webkit-box-shadow:inset 0px 1px 0px 0px #3dc21b;
 	box-shadow:inset 0px 1px 0px 0px #3dc21b;
 	background-color:#44c767;
-	-webkit-border-radius:42px;
-	-moz-border-radius:42px;
 	border-radius:42px;
 	border:3px solid #18ab29;
 	display:inline-block;
@@ -364,29 +369,20 @@ if($_SESSION["checkB"]!=1)
     
 <script type="text/javascript">
     $(document).ready(function() {
-
+        
         $("#buy").click(function() {
-            $("#bid").show("slow");
-            $("#imm").show("slow");
-            $("#offer").show("slow");
-
+            $("#bid").toggle("slow");
+            $("#imm").toggle("slow");
+            $("#offer").toggle("slow");
         });
-
-    });
-
-    $(document).ready(function() {
 
         $("#bid").click(function() {
-            $(this).hide("slow");
-            $("#imm").hide("slow");
-            $("#buy").hide("slow");
-            $("#offer").hide("slow");
-            $("#arBid").show("slow");
+            $("#buy").toggle("slow");
+            $("#bid").toggle("slow");
+            $("#imm").toggle("slow");
+            $("#offer").toggle("slow");
+            $("#arBid").toggle("slow");
         });
-
-    });
-
-    $(document).ready(function() {
 
         $("#imm").click(function() {
             $(this).hide("slow");
@@ -396,10 +392,6 @@ if($_SESSION["checkB"]!=1)
             $("#textImm").show("slow");
 
         });
-
-    });
-
-    $(document).ready(function() {
 
         $("#offer").click(function() {
             $(this).hide("slow");
@@ -505,7 +497,7 @@ if(!$conn)
         <div class="item">
             
             <div class="itemH">
-                    <p><?php echo($row['name']) ?></p>
+                    <?php echo($row['id'])." - ".($row['name']) ?>
             </div>
             
             
@@ -526,16 +518,19 @@ if(!$conn)
                     <br>
                     <br>
                     <br>
+            <!--buttons-->
                 <button id="bid" style="display: none;">Bid</button>
                 <button onclick="location.href='addToBasket.php?cat=<?php echo $tempname?>'" id="imm" style="display: none;">Buy Immediately</button>
                 <button id="offer" style="display: none;">Best Offer</button>
-
+            
+            <!--forms-->
                 <form id="arBid" action="bid.php" method="post" style="display: none;">
                     <label>Enter your max amount</label>
                     <br><input type="text" name="areaBid">
                     <input type="image" name="save" value="Submit" src="pictures/okOrange.jpg" style="width: 30px; height: 30px;">
                 </form>
-
+            
+            <!--input-->
                 <p id="textImm" style="display: none; color: darksalmon;"> Item has been successfully added to the cart</p>
 
                 <form id="arOffer" action="Offer.php" method="post" style="display: none;">
@@ -548,8 +543,11 @@ if(!$conn)
 
             <div class="caption">
                 
-                <p class="title"> <br> <br>Cet article est mis en ligne par : <?php echo $tempseller ?></p>
-
+                <h4> <br>This item was uploaded by 
+                    <br>
+                    <img src="pictures/profile.png" style="width:40px; height:40px;">
+                    <?php echo $tempseller ?></h4>
+                <br>
                 <div class="description" style="clear:both; text-align:center;">
                     <p><?php echo $tempdesc ?></p>
                 </div>

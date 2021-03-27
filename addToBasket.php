@@ -21,7 +21,7 @@ $retrievedName = $_GET['cat'];
     
 if($sql_query)
 {
-    header("location:cart.php");
+    header("location:cards.php");
 }
     
     else
