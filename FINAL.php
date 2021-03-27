@@ -223,6 +223,7 @@ echo '</pre>'; ?>
     <script type="text/javascript">
         
         var receiver = "<?php echo $_SESSION['username']; ?>";
+        var id = "<?php echo $_SESSION['cid']; ?>";
        
     
         function sendEmail() {
@@ -235,7 +236,7 @@ echo '</pre>'; ?>
                 From: "cykelweb@gmail.com",
                 To: receiver,
             //a concatener
-                Subject: "Thanks for your purchase, purchase ID - ",
+                Subject: "Thanks for your purchase, purchase ID - " + id,
                 Body: "Welcome, thanks for subscribing to our newsletter :D. Welcome into the 🚴Cykel family🚴"
             })
             .then(function(message) {

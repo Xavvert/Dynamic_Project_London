@@ -107,7 +107,13 @@ if($_SESSION["checkB"]!=1)
     </style>
 
 
-    <style type="text/css" name="back button">
+        <style type="text/css" name="back button">
+        .back-zone {
+            width: 100%;
+            height: 50px;
+            background-color: #EEE8CD;
+        }
+
         .wrapper {
             position: absolute;
             top: 20%;
@@ -138,6 +144,7 @@ if($_SESSION["checkB"]!=1)
             z-index: 2;
             border-radius: 1em;
         }
+        
 
         .wrapper a:after {
             position: absolute;
@@ -146,13 +153,16 @@ if($_SESSION["checkB"]!=1)
             left: 0;
             width: 0;
             height: 100%;
-            background: #ff003b;
+            background: #D8392F;
             transition: all .35s;
             border-radius: 1em;
         }
 
         .wrapper a:hover {
-            color: black;
+            color: white;
+            border: 2px solid white;
+            
+            transition: all 1.4s;
         }
 
         .wrapper a:hover:after {
@@ -216,7 +226,7 @@ if($_SESSION["checkB"]!=1)
 
     <!--back button-->
     <div class="wrapper">
-        <a href="categories.html"><span>Back</span></a>
+        <a href="categories.php"><span>BACK</span></a>
     </div>
 
     <!--items-->
@@ -236,13 +246,17 @@ if(!$conn)
     die("Connection Failed:".mysqli_connect_error());
     
 }
-                           
-            $sql_query=mysqli_query($conn, "SELECT * FROM item WHERE category='Bike'");
-            while($row=mysqli_fetch_array($sql_query))
-            {
-            ?>
+        $sql_query=mysqli_query($conn, "SELECT * FROM item WHERE category='Bike'");
+        
+        while($row=mysqli_fetch_array($sql_query))
+    {
+        $tempseller=$row['id_seller'];
+        $tempdesc=$row['description'];
+        $tempname=$row['name'];
+    ?>
 
         <div class="item" onclick="location.href='<?php $row['name'] ?>'.html">
+            
             <?php echo '<img name="profile picture" alt="/profile picture" style="height: 176px; width: 266px;margin-top: 10px; float: left; cursor: pointer;" src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"/>' ?>
 
             <?php echo($row['name']) ?>

@@ -192,72 +192,78 @@ if($_SESSION["checkB"]!=1)
             padding-right: 50px;
             padding-bottom: 150px;
             padding-top: 50px;
-            grid-template-columns: auto auto auto;
+            grid-template-columns: auto;
             grid-gap: 30px;
             vertical-align: middle;
         }
 
         .item {
-            margin: 40px 150px;
-            font-size: 20px;
             width: auto;
-            height: 350px;
-            align-content: center;
-        }
-
-        .item:hover {
-            transform: scale(1.2);
-            /* (120% zoom)*/
+            height: auto;
         }
         
-        .title {
+        .itemH {
+            width: 100%;
+            height: 80px;
+            border-bottom-style: double;
             
             text-align: center;
-            font-size: 22px;
+            font-size: 42px;
             color: #0a255a;
-            clear: both;
-            
+        }
+        
+        .contentItem {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-gap: 50px;
+            margin: 40px 30px;
+            font-size: 20px;
         }
 
-        .price {
+        .imgItem {
+            font-size: 35px;
+            color: #335cae;
+            text-align: center;
+        }
+        
+        /*.imgItem:hover {
+            transform: scale(1.1);
+        }*/
+        
+        .priceItem {
+            padding-top: 200px;
+            width: 300px;
             font-size: 18px;
             color: #335cae;
             text-align: center;
-            clear: both;
         }
 
         .caption {
-            float: right;
-            width: 800px;
             height: auto;
             border-style: double;
-
         }
-        
+
         .caption p {
             color: black;
             font-size: 20px;
         }
-        
-        .caption button {
-            margin: 80px;
-        }
-        
+
         .caption title {
             text-align: center;
             font-size: 20px;
             color: cadetblue;
         }
+        
+        
 
 
         #logo:hover {
             transform: rotate(360deg);
             transition: all 1s;
         }
-
     </style>
 
-        <style type="text/css" name="back button">
+    <style type="text/css" name="back button">
         .back-zone {
             width: 100%;
             height: 50px;
@@ -294,7 +300,7 @@ if($_SESSION["checkB"]!=1)
             z-index: 2;
             border-radius: 1em;
         }
-        
+
 
         .wrapper a:after {
             position: absolute;
@@ -318,18 +324,18 @@ if($_SESSION["checkB"]!=1)
         .wrapper a:hover:after {
             width: 100%;
         }
-
     </style>
-    
+
     <link rel='icon' href='pictures/Cykel.png' type='image/x-icon' />
 </head>
+    
 <script type="text/javascript">
     $(document).ready(function() {
 
         $("#buy").click(function() {
+            $(this).hide("slow");
             $("#bid").show("slow");
             $("#imm").show("slow");
-            $(this).hide("slow");
             $("#offer").show("slow");
 
         });
@@ -374,9 +380,6 @@ if($_SESSION["checkB"]!=1)
 
     });
 
-    
-    
-    
     function openNav() {
         document.getElementById("mySidenav").style.width = "250px";
     }
@@ -384,16 +387,6 @@ if($_SESSION["checkB"]!=1)
     function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
     }
-
-    $(document).ready(function() {
-        $(".item").click(function() {
-            $(".item").toggle(500);
-            $(this).toggle(500);
-            $(".caption").toggle(500);
-            $(".description").toggle(500);
-            $(".back-zone").toggle(500);
-        });
-    });
 
 </script>
 
@@ -443,9 +436,9 @@ if($_SESSION["checkB"]!=1)
     <!--items-->
 
     <div class="grid-container">
-        
+
         <!--dur-->
-        
+
         <div class="item" onclick="location.href='surfboardV2.html'">
             <img src="pictures/card7.png" style="height: 230px ;width: 150px; cursor: pointer;">
             Atlantis TEST
@@ -453,9 +446,11 @@ if($_SESSION["checkB"]!=1)
                 £19.00
             </p>
         </div>
+
+        
         
         <!--database item-->
-<?php
+        <?php
 $server_name="localhost:3306";
 $username="root";
 $password="root";
@@ -474,52 +469,65 @@ if(!$conn)
             $tempdesc=$row['description'];
             $tempname=$row['name'];
         ?>
-        
-        <div class="item" style="width:auto;">
 
-            <?php echo '<img name="profile picture" alt="/profile picture" style="height: 230px ;width: 150px;margin-top: 10px;cursor: pointer;" src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"/>' ?>
+        <div class="item">
             
-            <p class="title">
-                <?php echo($row['name']) ?>
-            </p>
-            <p class="price">
-                £<?php echo($row['price']) ?>
-            </p>
-
-        </div>
-
-<?php } ?>
-        
-        <div class="caption" style="display:none;">
-            <p class="title"> <br> <br>Cet article est mis en ligne par : <?php echo $tempseller ?></p>
-            
-            <button id="buy">BUY</button>
-            <button id="bid" style="display: none;">Bid</button>
-            <button onclick="location.href='addToBasket.php?cat=<?php echo $tempname?>'" id="imm" style="display: none;">Buy Immediately</button>
-            <button id="offer" style="display: none;">Best Offer</button>
-
-            <form id="arBid" action="bid.php" method="post" style="display: none;">
-                <label>Enter your max amount</label>
-                <br><input type="text" name="areaBid">
-                <input type="image" name="save" value="Submit" src="pictures/okOrange.jpg" style="width: 30px; height: 30px;">
-            </form>
-            
-            <p id="textImm" style="display: none; color: darksalmon;"> Item has been successfully added to the cart</p>
-            
-                <form id="arOffer" action="Offer.php" method="post" style="display: none;">
-                <label>Enter an amount</label>
-                <br><input type="text" name="areaBid">
-                <input type="image" name="save" value="Submit" src="pictures/okOrange.jpg" style="width: 30px; height: 30px;">
-            </form>
-            
-            <div class="description" style=" display:none; clear:both; text-align:center;">
-                <p><?php echo $tempdesc ?></p>
+            <div class="itemH">
+                    <p><?php echo($row['name']) ?></p>
             </div>
+            
+            
+            <div class="contentItem">
+                
+                <div class="imgItem">
+                    <?php echo '<img name="profile picture" alt="/profile picture" style="height: 380px ;width: 250px;cursor: pointer;" src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"/>' ?>
+                    
+                    <p>
+                        £<?php echo($row['price']) ?>
+                    </p>
+                </div>
+                
+                <div class="priceItem">
+                    
+                    <button id="buy">BUY</button>
+                <button id="bid" style="display: none;">Bid</button>
+                <button onclick="location.href='addToBasket.php?cat=<?php echo $tempname?>'" id="imm" style="display: none;">Buy Immediately</button>
+                <button id="offer" style="display: none;">Best Offer</button>
+
+                <form id="arBid" action="bid.php" method="post" style="display: none;">
+                    <label>Enter your max amount</label>
+                    <br><input type="text" name="areaBid">
+                    <input type="image" name="save" value="Submit" src="pictures/okOrange.jpg" style="width: 30px; height: 30px;">
+                </form>
+
+                <p id="textImm" style="display: none; color: darksalmon;"> Item has been successfully added to the cart</p>
+
+                <form id="arOffer" action="Offer.php" method="post" style="display: none;">
+                    <label>Enter an amount</label>
+                    <br><input type="text" name="areaBid">
+                    <input type="image" name="save" value="Submit" src="pictures/okOrange.jpg" style="width: 30px; height: 30px;">
+                </form>
+                    
+                </div>
+
+            <div class="caption">
+                
+                <p class="title"> <br> <br>Cet article est mis en ligne par : <?php echo $tempseller ?></p>
+
+                <div class="description" style="clear:both; text-align:center;">
+                    <p><?php echo $tempdesc ?></p>
+                </div>
+            </div>
+            
+            
+            </div>
+
         </div>
 
-        
+
+        <?php } ?>
         <?php mysqli_close($conn); ?>
-        
+
 
 
         <!--
