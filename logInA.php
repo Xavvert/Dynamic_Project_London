@@ -126,7 +126,6 @@ if(isset($validation)){
             text-align: center;
             font-size: 15x;
             font-family: "Verdana";
-
         }
         
         h5 {
@@ -221,10 +220,13 @@ if(isset($validation)){
 
         </div>
     </div>
+    <br>
+    <br>
     <center>
         <h1>Hello admin, Please enter all the informations for LOG IN </h1>
-
     </center>
+    <br>
+    <br>
     <center>
         <div class="co">
 
@@ -245,7 +247,8 @@ if(isset($validation)){
         </div>
     </center>
     <br>
-    <br>
+    <br>``
+<br>
 
 <!--footer-->
 

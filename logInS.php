@@ -221,6 +221,8 @@ if(isset($validation)){
 
         </div>
     </div>
+    <br>
+    <br>
     <center>
         <h1>Hello seller, Please enter all the informations for LOG IN </h1>
 
@@ -228,6 +230,7 @@ if(isset($validation)){
         <p> If you don't have any account, please register <a href="signUpS.html"> here</a></p>
 
     </center>
+    <br>
     <center>
         <div class="co">
 
@@ -247,6 +250,7 @@ if(isset($validation)){
             </form>
         </div>
     </center>
+    <br>
     <br>
     <br>
 
