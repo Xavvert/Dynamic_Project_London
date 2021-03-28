@@ -527,7 +527,6 @@ if(!$conn)
                     <input type="image" name="save" value="Submit" src="pictures/okOrange.jpg" style="width: 30px; height: 30px;">
                 </form>
 
-                <p class="textImm" style="display: none; color: darksalmon;"> Item has been successfully added to the cart</p>
 
                 <form class="arOffer" action="Offer.php" method="post" style="display: none;">
                     <label>Enter an amount</label>

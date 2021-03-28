@@ -16,9 +16,16 @@ if(!$conn)
 $retrievedName = $_GET['cat'];
 @$currentUsername=$_SESSION['username'];
 
- $sql_query = mysqli_query($conn, "Select id_buyer WHERE name= '$retrievedName' WHERE name='$retrievedName'");
+ $sql_query = mysqli_query($conn, "Select * from item WHERE name= '$retrievedName' AND id_buyer='$currentUsername'");
+ $rowCount = mysqli_num_rows($sql_query);
 
-     $sql_query = mysqli_query($conn, "UPDATE item SET id_buyer= '$currentUsername' WHERE name='$retrievedName'");
+    if($rowCount > 0)
+    {
+        header("location:Warningbasket.html");
+        mysqli_close($conn);
+    }
+else{
+    $sql_query = mysqli_query($conn, "UPDATE item SET id_buyer= '$currentUsername' WHERE name='$retrievedName'");
     
 if($sql_query)
 {
@@ -29,6 +36,10 @@ if($sql_query)
     {
      header("location:HomePage.html");
     }
-    
     mysqli_close($conn);
+    
+}
+
+     
+    
 ?>
