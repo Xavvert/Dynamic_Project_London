@@ -254,7 +254,7 @@ echo '</pre>';
             +" First Name : "+ cfirstname+" Last Name : "+ clastname+" Adress : "+ cadress+" City : "+ ccity+" Zip Code : "+ czipCode+ " Country : "+ ccountry+ " Phone number : "+ cphone+". "+" You paid with a "+ ctype + " and the name associated with this card is : "+ cnameCard+"."+"Just as a reminder to our customers, we are not storing credit cards' informations to protect their data. You will receive your invoice directly in your package. Nowadays, shipping delivery may be impacted due to the COVID pandemic. Thanks for your comprehension. See you soon to Cykel. Kind Regards, The Cykel Team "
             })
             .then(function(message) {
-                 window.location = 'FINAL.php';
+                 window.location = 'treatment.php';
             });
     }
 </script>
