@@ -12,6 +12,7 @@ https://css-tricks.com/using-css-cursors/
 https://www.w3schools.com/howto/howto_js_slideshow.asp
 https://www.w3schools.com/howto/howto_js_sidenav.asp
 https://webdeasy.de/en/top-css-buttons-en/
+https://flaviocopes.com/rotate-image/
 
 OTHER :
 https://www.smtpjs.com/ (mail)
