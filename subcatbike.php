@@ -15,12 +15,12 @@ if($_SESSION["checkB"]!=1)
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Cykel - Sub-Categories IT Equipment</title>
+
+    <title>Cykel - Bicycles</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="header&footer.css">
@@ -66,48 +66,241 @@ if($_SESSION["checkB"]!=1)
             margin-left: 50px;
         }
 
+        /* For the slideshow */
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+            margin: 0
+        }
+
+        .mySlides {
+            display: none
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        /* Slideshow container */
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Caption text */
+        .text {
+            color: dimgrey;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: -26px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active,
+        .dot:hover {
+            background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @-webkit-keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
         .grid-container {
             display: grid;
             background-color: #EEE8CD;
             padding-left: 50px;
             padding-right: 50px;
             padding-bottom: 150px;
-            padding-top: 100px;
-            grid-template-columns: auto auto;
+            padding-top: 50px;
+            grid-template-columns: auto;
             grid-gap: 30px;
             vertical-align: middle;
         }
 
         .item {
-            margin: 80px 150px;
-            width: 200px;
+            width: auto;
+            height: auto;
+        }
+        
+        .itemH {
+            width: 100%;
+            height: 80px;
+            border-bottom-style: double;
+            border-color: #0a255a;
+            
             text-align: center;
-            font-size: 20px;
-            height: 300px;
-            border-radius: 1em;
+            font-size: 42px;
             color: #0a255a;
         }
-
-        .item:hover {
-            transform: scale(1.2);
-            /* (120% zoom)*/
+        
+        .contentItem {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-gap: 50px;
+            margin: 40px 30px;
+            font-size: 20px;
         }
 
-        .item p {
-            font-size: 16px;
-            color: #335cae;
-            clear: both;
+        .imgItem {
+            font-size: 35px;
+            color:#2f6627;
+            text-align: center;
+        }
+        
+        /*.imgItem:hover {
+            transform: scale(1.1);
+        }*/
+        
+         .imgItem img:hover {
+            
+            box-shadow: 0px 0px 1500px #000000;
+            transition: all 800ms ease-in;
+            transform:translate(200%, 20%)scale(1.6);
+            background-color: whitesmoke;
+            
+        }
+        
+        .priceItem {
+            padding-top: 150px;
+            width: 300px;
+            font-size: 18px;
+            text-align: center;
         }
 
+        .caption {
+            height: auto;
+            border-left-style:double;
+            border-color: #0a255a;
+            padding-left: 80px;
+        }
+
+        .caption p {
+            color: black;
+            font-size: 20px;
+        }
+
+         .caption h4 {
+            text-align: center;
+            font-size: 25px;
+            color: #0a255a;
+        }
+        
         #logo:hover {
             transform: rotate(360deg);
             transition: all 1s;
         }
+    </style>
+    
+    
+    <style type="text/css" caption="buy button">
+        .buyButton {
+            box-shadow: inset 0px 1px 0px 0px #3dc21b;
+            background-color: #44c767;
+            border-radius: 42px;
+            border: 3px solid #18ab29;
+            display: inline-block;
+            cursor: pointer;
+            color: #ffffff;
+            font-family: Verdana;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 13px 33px;
+            text-decoration: none;
+            text-shadow: 0px 1px 0px #2f6627;
 
+            &:hover {
+                background-color: #5cbf2a;
+            }
+
+            &:active {
+                position: relative;
+                top: 1px;
+            }
+        }
+        
     </style>
 
-
-        <style type="text/css" name="back button">
+    <style type="text/css" name="back button">
         .back-zone {
             width: 100%;
             height: 50px;
@@ -144,7 +337,7 @@ if($_SESSION["checkB"]!=1)
             z-index: 2;
             border-radius: 1em;
         }
-        
+
 
         .wrapper a:after {
             position: absolute;
@@ -161,21 +354,55 @@ if($_SESSION["checkB"]!=1)
         .wrapper a:hover {
             color: white;
             border: 2px solid white;
-            
-            transition: all 1.4s;
+            transform: rotate(360deg);
+            transition: all 0.5s;
         }
 
         .wrapper a:hover:after {
             width: 100%;
         }
-
     </style>
 
-    <link rel='icon' href='Cykel.png' type='image/x-icon' />
+    <link rel='icon' href='pictures/Cykel.png' type='image/x-icon' />
 </head>
-
-
+    
 <script type="text/javascript">
+    
+    $(document).ready(function() {
+            
+        $(".buyButton").click(function() {
+            $(".bid").show("slow");
+            $(".imm").show("slow");
+            $(".offer").show("slow");
+        });
+    });
+
+    $(document).ready(function() {
+
+        $(".bid").click(function() {
+            $(".arBid").toggle("slow");
+        });
+
+    });
+
+    $(document).ready(function() {
+
+        $(".imm").click(function() {
+            $(".textImm").toggle("slow");
+
+        });
+
+    });
+
+    $(document).ready(function() {
+
+        $(".offer").click(function() {
+            $(".arOffer").toggle("slow");
+
+        });
+
+    });
+
     function openNav() {
         document.getElementById("mySidenav").style.width = "250px";
     }
@@ -186,18 +413,17 @@ if($_SESSION["checkB"]!=1)
 
 </script>
 
-<!--header-->
+
+
 
 <body>
     <div id="layout">
-
+        <!-- header -->
         <div id="header">
             <center>
                 <img id="logo" src="pictures/Cykel.png" alt="Cykel LOGO" onClick="location.href='HomePage.html'" style="width: 70px; height: 70px; margin-top: 10px; cursor:pointer; ">
 
             </center>
-
-            <!--  <img src="lateral_menu.png" style="width: 40px; height: 40px; position: relative; top: -60px; left: -600px"> -->
 
             <span style="font-size:30px;cursor:pointer; position: relative; top: -60px; left: -580px" onclick="openNav()">&#9776;</span>
 
@@ -218,88 +444,109 @@ if($_SESSION["checkB"]!=1)
 
                 <img src="pictures/cart2.png" onClick="location.href='cart.php'" style="width: 20px; height: 20px; position: relative; top: -80px; left: 600px; cursor:pointer;">
             </div>
-
         </div>
     </div>
 
-    <!--body-->
+    <!-- body -->
 
     <!--back button-->
-    <div class="wrapper">
-        <a href="categories.php"><span>BACK</span></a>
+    <div class="back-zone">
+        <div class="wrapper">
+            <a href="#" onclick="javascript:window.history.back(-1);return false;"><span>BACK</span></a>
+        </div>
     </div>
 
     <!--items-->
-    <div class="grid-container">
-        <?php
 
+    <div class="grid-container">
+
+    
+        
+        <!--database item-->
+        <?php
 $server_name="localhost:3306";
 $username="root";
 $password="root";
 $database_name="cykel";
-
-
 $conn=mysqli_connect($server_name,$username,$password,$database_name);
-
 if(!$conn)
 {
     die("Connection Failed:".mysqli_connect_error());
     
-}
-        $sql_query=mysqli_query($conn, "SELECT * FROM item WHERE category='Bike'");
+}                   
+        $sql_query=mysqli_query($conn, "SELECT * FROM item WHERE category='Bicycles'");
         
         while($row=mysqli_fetch_array($sql_query))
-    {
-        $tempseller=$row['id_seller'];
-        $tempdesc=$row['description'];
-        $tempname=$row['name'];
-    ?>
+        {
+            $tempseller=$row['id_seller'];
+            $tempdesc=$row['description'];
+            $tempname=$row['name'];
+        ?>
 
-        <div class="item" onclick="location.href='<?php $row['name'] ?>'.html">
+        <div class="item">
             
-            <?php echo '<img name="profile picture" alt="/profile picture" style="height: 176px; width: 266px;margin-top: 10px; float: left; cursor: pointer;" src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"/>' ?>
+            <div class="itemH">
+                    <?php echo($row['id'])." - ".($row['name']) ?>
+            </div>
+            
+            
+            <div class="contentItem">
+                
+                <div class="imgItem">
+                    <?php echo '<img name="profile picture" alt="/profile picture" style="height: 380px ;width: 250px;cursor: pointer;" src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"/>' ?>
+                    <br>
+                    <br>
+                    <p style="border-style:solid; border-color:#0a255a;">
+                        £<?php echo($row['price']) ?>
+                    </p>
+                </div>
+                
+                <div class="priceItem">
+                    
+                <a class="buyButton" id ="buy">BUY</a>
+                    <br>
+                    <br>
+                    <br>
+                <button class="bid" style="display: none;">Bid</button>
+                <button onclick="location.href='addToBasket.php?cat=<?php echo $tempname?>'" class="imm" style="display: none;">Buy Immediately</button>
+                <button class="offer" style="display: none;">Best Offer</button>
 
-            <?php echo($row['name']) ?>
-            <p>
-                £<?php echo($row['price']) ?>
-            </p>
+                <form class="arBid" action="bid.php" method="post" style="display: none;">
+                    <label>Enter your max amount</label>
+                    <br><input type="text" name="areaBid">
+                    <input type="image" name="save" value="Submit" src="pictures/okOrange.jpg" style="width: 30px; height: 30px;">
+                </form>
+
+
+                <form class="arOffer" action="Offer.php" method="post" style="display: none;">
+                    <label>Enter an amount</label>
+                    <br><input type="text" name="areaBid">
+                    <input type="image" name="save" value="Submit" src="pictures/okOrange.jpg" style="width: 30px; height: 30px;">
+                </form>
+                    
+                </div>
+
+            <div class="caption">
+                 <h4> <br>This item was uploaded by 
+                    <br>
+                    <img src="pictures/profile.png" style="width:40px; height:40px;">
+                    <?php echo $tempseller ?></h4>
+                <br>
+
+                <div class="description" style="clear:both; text-align:center;">
+                    <p><?php echo $tempdesc ?></p>
+                </div>
+            </div>
+            
+            
+            </div>
+
         </div>
-        <?php } mysqli_close($conn); ?>
 
-        <!--
-        <div class="item" onClick="">
-            <img src="pictures/bike1.png" style="height: 176px; width: 266px; float: left; cursor: pointer;">
-            Female City Bike
-            <p>
-                200£
-            </p>
-        </div>
 
-        <div class="item" onClick="">
-            <img src="pictures/bike2.png" style="height: 180px; width: 280px; float: left; cursor: pointer;">
-            Race Sport Bike - Trek
-            <p>
-                500£
-            </p>
-        </div>
+        <?php } ?>
+        <?php mysqli_close($conn); ?>
 
-        <div class="item" onClick="">
-            <img src="pictures/bike3.png" style="height: 200px; width: 300px; float: left; cursor: pointer;">
-            Male City Bike
-            <p>
-                290£
-            </p>
-        </div>
-
-        <div class="item" onClick="">
-            <img src="pictures/bike4.png" style="height: 200px; width: 280px; float: left; cursor: pointer;">
-            Mountain Bike - Trek
-            <p>
-                380£
-            </p>
-        </div>
-
--->
     </div>
 
 

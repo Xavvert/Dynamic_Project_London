@@ -460,17 +460,7 @@ if($_SESSION["checkB"]!=1)
 
     <div class="grid-container">
 
-        <!--dur-->
-
-        <div class="item" onclick="location.href='surfboardV2.html'">
-            <img src="pictures/card7.png" style="height: 230px ;width: 150px; cursor: pointer;">
-            Atlantis TEST
-            <p>
-                £19.00
-            </p>
-        </div>
-
-        
+    
         
         <!--database item-->
         <?php
@@ -556,50 +546,6 @@ if(!$conn)
 
         <?php } ?>
         <?php mysqli_close($conn); ?>
-
-
-
-        <!--
-        <div class="item" onclick="location.href='snackersv3.html'">
-            <img src="pictures/card2.png" style="height: 230px ;width: 150px; cursor: pointer;">
-            SnakersV3
-            <p>
-                £12.00
-            </p>
-        </div>
-
-        <div class="item" onclick="location.href='snackersv3.html'">
-            <img src="pictures/card3.png" style="height: 230px ;width: 150px; cursor: pointer;">
-            Play Dead V2
-            <p>
-                £12.00
-            </p>
-        </div>
-
-        <div class="item" onclick="location.href='snackersv3.html'">
-            <img src="pictures/card4.png" style="height: 230px ;width: 150px; cursor: pointer;">
-            King Arthur Emerald Saga
-            <p>
-                £13.00
-            </p>
-        </div>
-
-        <div class="item" onclick="location.href='snackersv3.html'">
-            <img src="pictures/card5.png" style="height: 230px ;width: 150px; cursor: pointer;">
-            Hyper Neon
-            <p>
-                £14.00
-            </p>
-        </div>
-
-        <div class="item" onclick="location.href='snackersv3.html'">
-            <img src="pictures/card6.png" style="height: 230px ;width: 150px; cursor: pointer;">
-            Soundboard V3 Midnight
-            <p>
-                £10.00
-            </p>
-        </div>
--->
 
     </div>
 
