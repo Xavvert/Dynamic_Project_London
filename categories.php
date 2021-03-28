@@ -390,16 +390,8 @@ if($_SESSION["checkB"]!=1)
             <button type="submit" name="validation"><i class="fa fa-search"></i></button>
             <label style="font-size:15px;"> (Name / ID / Seller's username) </label>
         </form>
-    </div>
-    
-    <div class="result">
-        <table border="1">
-            <tr>
-                <th>Name</th>
-                <th>ID</th>
-                <th>ID Seller</th>
-                <th>Category</th>
-            </tr>
+        
+        <table style="text-align:center; font-size:20px; margin-left:200px;">
 
 <?php
 $server_name="localhost:3306";
@@ -426,14 +418,12 @@ if(isset($validation)){
     while($row=mysqli_fetch_array($sql_query))
     {
 ?>
-        <tr>
-            <th><?php echo $row['name'];?></th>
+        <tr style="color:#ff5353;">
             <br>
-            <th><?php echo $row['id'];?></th>
-            <br>
-            <th><?php echo $row['id_seller'];?></th>
-            <br>
-            <th><?php echo $row['category'];?></th>
+            <th> <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Name : <?php echo $row['name'];?></th>
+            <th>/ ID :<?php echo $row['id'];?></th>
+            <th>/Seller's username :<?php echo $row['id_seller'];?></th>
+            <th>/Category :<?php echo $row['category'];?></th>
         </tr>
     <?php
             }
@@ -444,7 +434,8 @@ if(isset($validation)){
 ?>
     
         </table>
-    </div>
+        </div>
+
     
     <!-- body -->
 
