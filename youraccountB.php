@@ -349,7 +349,7 @@ if($_SESSION["upS"]==1)
 
                 <div class="box" id="ordersBox" style="margin-top: 50px;">
                     <img src="pictures/orders.png" alt="/orders logo" style="width: 60px; height: 80px;margin-top: 20px; margin-left: 10px;float: left;">
-                    <h4 style="float: left; color: black; margin-left: 70px; margin-top: 50px;">MY ORDERS</h4>
+                    <h4 style="float: left; color: black; margin-left: 70px; margin-top: 50px;">MY PAST ORDERS</h4>
                 </div>
 
                 <div class="box" id="adressBox" style="margin-top: 50px;">
@@ -413,8 +413,9 @@ if($_SESSION["upS"]==1)
 
             <!--MY ORDERS-->
 
+            
             <div class="orders" id="ordersForm" style="display: none; margin-left: 150px;">
-
+<h5> If you encountered any issues with one of your packages, you can contact us by email <a href="mailto: cykelweb@gmail.com"> here <i class="fa fa-envelope-o" aria-hidden="true"></i></a></h5>
                 <table border="1" style="width: 800px; text-align: center; color: black; font-size: 17px;">
 
                     <tr>
