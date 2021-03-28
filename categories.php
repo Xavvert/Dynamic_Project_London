@@ -42,6 +42,7 @@ if(isset($validation)){
              echo $row['name'];
              echo $row['id'];
              echo $row['id_seller'];
+             echo $row['category'];
             }
     }
     else
