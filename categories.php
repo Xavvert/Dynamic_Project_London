@@ -13,6 +13,45 @@ if($_SESSION["checkB"]!=1)
         exit();
 }
 
+$server_name="localhost:3306";
+$username="root";
+$password="root";
+$database_name="cykel";
+
+$conn=mysqli_connect($server_name,$username,$password,$database_name);
+
+if(!$conn)
+{
+    die("Connection Failed:".mysqli_connect_error());
+    
+}
+
+@$research=$_POST['research'];
+@$validation=$_POST["validation"];
+
+if(isset($validation)){
+    
+    $sql_query = mysqli_query($conn, "Select * from item WHERE name = '$research' OR id = '$research' OR id_seller = '$research'");
+    $rowCount = mysqli_num_rows($sql_query);
+   
+    if($rowCount > 0)
+    {
+        
+         while($row=mysqli_fetch_array($sql_query))
+            {
+             echo $row['name'];
+             echo $row['id'];
+             echo $row['id_seller'];
+            }
+    }
+    else
+    {
+     echo ("Error : didn't found any items");
+    }
+    
+    
+       mysqli_close($conn);
+}
 ?>
 
 <!DOCTYPE html>
@@ -340,6 +379,20 @@ if($_SESSION["checkB"]!=1)
         <div class="wrapper">
             <a href="HomePage.html"><span>HOME</span></a>
         </div>
+    <center>
+        <div class="co">
+
+            <form action="" method="post">
+                <br>
+                <label>Search an item by his name / id /seller's username </label>
+                <br>
+                <input type="text" name="research">
+                <br>
+                <input type="submit" name="validation" value="Search">
+                <br>
+            </form>
+        </div>
+    </center>
 
         <!-- body -->
 
