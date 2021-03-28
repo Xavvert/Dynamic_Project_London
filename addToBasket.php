@@ -14,8 +14,9 @@ if(!$conn)
 }
 
 $retrievedName = $_GET['cat'];
-
 @$currentUsername=$_SESSION['username'];
+
+ $sql_query = mysqli_query($conn, "Select id_buyer WHERE name= '$retrievedName' WHERE name='$retrievedName'");
 
      $sql_query = mysqli_query($conn, "UPDATE item SET id_buyer= '$currentUsername' WHERE name='$retrievedName'");
     

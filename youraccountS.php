@@ -298,7 +298,7 @@ if($_SESSION["upS"]==1)
         </div>
     </div>
     <center>
-        <?php echo '<img name="profile picture" alt="/profile picture" style="width: 93%; height: 80px; margin-top: 20px; float: left; margin-left: 50px;" src="data:image/jpeg;base64,'.base64_encode( $_SESSION["imageB"] ).'"/>' ?>
+        <?php echo '<img name="profile picture" alt="/profile picture" style="width: 93%; height: 120px; margin-top: 20px; float: left; margin-left: 50px;" src="data:image/jpeg;base64,'.base64_encode( $_SESSION["imageB"] ).'"/>' ?>
     </center>
     <div class="accountContainer">
 
@@ -307,7 +307,7 @@ if($_SESSION["upS"]==1)
 
             <div class="accountHeader">
 
-                <?php echo '<img name="profile picture" alt="/profile picture" style="width: 50px; height: 50px; margin-top: 10px; float: left; margin-left: 50px;" src="data:image/jpeg;base64,'.base64_encode( $_SESSION["image"] ).'"/>' ?>
+                <?php echo '<img name="profile picture" alt="/profile picture" style="width: 110px; height: 110px; margin-top: 10px; float: left; margin-left: 50px;" src="data:image/jpeg;base64,'.base64_encode( $_SESSION["image"] ).'"/>' ?>
 
 
 
@@ -489,9 +489,7 @@ if(!$conn)
 
 
     </footer>
-    <?php  echo '<pre>';
-var_dump($_SESSION);
-echo '</pre>'; ?>
+    
 </body>
 
 </html>

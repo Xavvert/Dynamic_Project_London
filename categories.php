@@ -385,8 +385,10 @@ if($_SESSION["checkB"]!=1)
     <div class="research">
         <form action="" method="post">
             <label>Find an item here : </label>
+            
             <input type="text" name="research" placeholder="Search...">
             <button type="submit" name="validation"><i class="fa fa-search"></i></button>
+            <label style="font-size:15px;"> (Name / ID / Seller's username) </label>
         </form>
     </div>
     
