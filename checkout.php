@@ -158,6 +158,7 @@ session_start();
                 <br>
                 <label>Phone Number</label><br><input type="text" name="phone" value='<?php echo $_SESSION['phone'] ?>'>
                 <br><br>
+                <input type="reset" name="save" value="Reset">
                 <input type="submit" name="save" value="I confirm my informations and process to payment">
                 <p style="font-size:10px;">By clicking on "I confirm my informations and process to payment", you are agree that all of your informations are correct and that you will be redirect on the payment interface. You won't be able to go back until the payment is finalized.</p>
             </form>
