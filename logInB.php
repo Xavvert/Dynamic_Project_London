@@ -154,7 +154,7 @@ if(isset($validation)){
         }
     </style>
     
-              <style type="text/css" caption="form design">
+<style type="text/css" caption="form design">
         * {
             box-sizing: border-box;
         }

@@ -52,28 +52,14 @@ session_start();
             font-size: 36px;
             margin-left: 50px;
         }
-
         .co {
-            width: 400px;
-            height: 500px;
-            background-color: #FEE6D4;
+            width: 800px;
+            height: 1000px;
+            background-color: #EEE8CD;
             border-radius: 1em;
             color: black;
             text-align: center;
             font-size: 15x;
-            font-family: "Verdana";
-
-        }
-
-        .newco {
-            width: 400px;
-            height: 300px;
-            margin-left: 850px;
-            background-color: #FEE6D4;
-            border-radius: 1em;
-            color: black;
-            text-align: center;
-            font-size: 20px;
             font-family: "Verdana";
 
         }
@@ -86,6 +72,47 @@ session_start();
             transform: rotate(360deg);
             transition: all 1s;
         }
+    </style>
+    
+      <style type="text/css" caption="form design">
+        * {
+            box-sizing: border-box;
+        }
+
+        input[type=text],
+        input[type=email],
+        input[type=password],
+        select,
+        textarea {
+            width: 200px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+
+        }
+
+        label {
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+        }
+
+        input[type=submit],[type=reset] {
+            background-color: whitesmoke;
+            padding: 12px 20px;
+            border: solid 0,1em;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+        
+          input[type=reset]:hover {
+            background-color: #bfb700;
+        }
+
     </style>
 
 
@@ -140,7 +167,8 @@ session_start();
         <div class="co">
 
             <form action="tempCheckout.php" method="post">
-                 <label>Name your command </label>
+                <br> 
+                <label>Name your command </label>
                 <br><input type="text" name="packagename">
                 <br>
                 <label>First name</label>
@@ -158,12 +186,17 @@ session_start();
                 <br>
                 <label>Phone Number</label><br><input type="text" name="phone" value='<?php echo $_SESSION['phone'] ?>'>
                 <br><br>
+                <input type="submit" name="save" value="I confirm my informations and process to payment *">
+                <br>
+                <br>
                 <input type="reset" name="save" value="Reset">
-                <input type="submit" name="save" value="I confirm my informations and process to payment">
-                <p style="font-size:10px;">By clicking on "I confirm my informations and process to payment", you are agree that all of your informations are correct and that you will be redirect on the payment interface. You won't be able to go back until the payment is finalized.</p>
+                <br>
+                <p style="font-size:12px; padding:35px;">* By clicking on <a href="privacypolicy.html" style="color:green;">"I confirm my informations and process to payment"</a>, you are agree that all of your informations are correct and that you will be redirect on the payment interface. You won't be able to go back until the payment is finalized.</p>
             </form>
 
         </div>
+       <br>
+       <br>
     </center>
 
 <!--footer-->
