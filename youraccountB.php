@@ -381,14 +381,6 @@ if($_SESSION["upS"]==1)
                     <br>
                     <label>Last Name</label><input type="text" name="lastName" value='<?php echo $_SESSION['lastname'] ?>'>
                     <br>
-                    <label>Adress</label><input type="text" name="adress" value='<?php echo $_SESSION['adress'] ?>'>
-                    <br>
-                    <label>City</label><input type="text" name="city" value='<?php echo $_SESSION['city'] ?>'>
-                    <br>
-                    <label>Zip Code</label><input type="text" name="zipCode" value='<?php echo $_SESSION['zipCode'] ?>'>
-                    <br>
-                    <label>Country</label><input type="text" name="country" value='<?php echo $_SESSION['country'] ?>'>
-                    <br>
                     <label>Phone Number</label><input type="text" name="phone" value='<?php echo $_SESSION['phone'] ?>'>
                     <br>
                     <br>
