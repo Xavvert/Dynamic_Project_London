@@ -412,11 +412,12 @@ if(!$conn)
             $currentUsername=$_SESSION['username'];
             $sql_query=mysqli_query($conn, "SELECT SUM(price) FROM item WHERE id_buyer='$currentUsername'");
                 $result = mysqli_fetch_row($sql_query);
-                $_SESSION['totalPrice']=$result[0];
+                $_SESSION['totalPrice']=$result[0]*0.8;
                  mysqli_close($conn);
             ?>
 
-                <h3 style="margin-left: 100px; float: left; color:red;">Total : £ <?php echo ($result[0])?></h3>
+                <h3 style="margin-left: 100px; float: left; color:red;">Total : £ <?php echo ($result[0]*0.8)?></h3>
+                <h3 style="">Special Event : -20% </h3>
                 <h4 class="echo"></h4>
                 <button class="myButton" type="submit" onclick="location.href='checkout.php'"> Process to checkout </button>
             </div>
