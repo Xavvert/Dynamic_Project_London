@@ -8,7 +8,7 @@ session_start();
 <html lang="en">
 
 <head>
-    <title>Cykel - Log In - Seller</title>
+    <title>Cykel - Checkout</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="header&footer.css">
@@ -91,7 +91,7 @@ session_start();
         .img {
             width: 100px;
             position: relative;
-            animation: mymove 5s infinite;
+            animation: mymove 10s infinite;
             margin-left: 330px;
         }
 

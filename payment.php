@@ -1,15 +1,14 @@
 <?php
 session_start();
 
-
 ?>
-   
- 
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Cykel - Log In - Seller</title>
+    <title>Cykel - Payment</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="header&footer.css">
@@ -55,37 +54,104 @@ session_start();
         }
 
         .co {
-            width: 400px;
-            height: 370px;
-            background-color: #FEE6D4;
+            width: 600px;
+            height: auto;
+            padding: 20px;
+            background-color: #EEE8CD;
             border-radius: 1em;
             color: black;
             text-align: center;
             font-size: 15x;
             font-family: "Verdana";
-
+            display: flex;
+            flex-direction: column;
         }
 
-        .newco {
-            width: 400px;
-            height: 300px;
-            margin-left: 850px;
-            background-color: #FEE6D4;
-            border-radius: 1em;
-            color: black;
-            text-align: center;
-            font-size: 20px;
-            font-family: "Verdana";
+        .row {
+            display: flex;
+            justify-content: center;
+        }
 
+        .column {
+            display: flex;
+            flex-direction: column;
+            padding: 1em;
         }
 
         h5 {
             font-size: 30px;
         }
-        #logo:hover {
 
+        h1 {
+            color: darkblue;
+            text-align: center;
+            padding-left: 250px;
+            padding-right: 250px;
+            padding-bottom: 20px;
+        }
+
+        .img {
+            width: 100px;
+            position: relative;
+            animation: mymove 10s infinite;
+            margin-left: 330px;
+        }
+
+        @keyframes mymove {
+            from {
+                left: 0px;
+            }
+
+            to {
+                left:700px;
+            }
+        }
+
+        #logo:hover {
             transform: rotate(360deg);
             transition: all 1s;
+        }
+    </style>
+
+    <style type="text/css" caption="form design">
+        * {
+            box-sizing: border-box;
+        }
+
+        input[type=text],
+        input[type=email],
+        input[type=password],
+        select,
+        textarea {
+            width: 200px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+            display: flex;
+        }
+
+        label {
+            padding: 12px 12px 12px 0;
+            display: flex;
+
+        }
+
+        input[type=submit],
+        [type=reset] {
+            background-color: whitesmoke;
+            padding: 12px 20px;
+            border: solid 0, 1em;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        input[type=reset]:hover {
+            background-color: #bfb700;
         }
     </style>
 
@@ -134,93 +200,100 @@ session_start();
 
         </div>
     </div>
+    
     <center>
         <h1>Please enter all the informations for the delivery process about your credit card </h1>
-    </center>
-   <center>
         <div class="co">
-
             <form action="tempPayment.php" method="post">
-                <label>Type of the Card</label>
+                <div class="row">
+                <div class="column">
+                    
+                    <label>Type of the Card</label>
                     <SELECT name="type">
                         <option>VISA</option>
                         <option>MASTERCARD</option>
                         <option>AMERICAN EXPRESS</option>
                     </SELECT>
-                <label>Name on the card</label><br><input type="text" name="nameCard">
+                <label>Name on the card</label><input type="text" name="nameCard" placeholder="...">
                 <br>
-                <label>Card Number</label><br><input type="text" name="num">
+                <label>Card Number</label><input type="text" name="num" placeholder="...">
                 <br>
-                <label>Expiration</label><br><input type="text" name="expiration">
+                    </div>
+                    <div class="column">
+                <label>Expiration</label><input type="text" name="expiration"placeholder=" __ / __ / ____">
                 <br>
-               <label>CVV number</label><br><input type="text" name="crypto">
+               <label>CVV number</label><input type="text" name="crypto"placeholder="_ _ _">
                 <br>
-                <input type="submit" name="save" value="Confirm and Pay">
+                <br>
+                    <input type="submit" name="save" value="Confirm and Pay *">
+                    </div>
+                </div>
+                <div class="row">
                 
-                <label>(Cykel don't store the information of your credit card in their databases for security reasons and to protect your private informations)</label><br>
+                    <p style="font-size:12px; padding:55px;">* Cykel don't store the information of your credit card in their databases for security reasons and to protect your private informations. More <a href="privacypolicy.html" style="color:green;">here</a></p>
+                </div>
             </form>
-
         </div>
     </center>
-   <?php echo '<pre>';
-var_dump($_SESSION);
-echo '</pre>'; ?>
-<!--footer-->
+    <br>
+    <br>
 
-<footer class="footer">
+    <!--footer-->
 
-    <div class="container">
-        <div class="row">
-        <div class="col-sm-3">
-            <br>
-            <h4 class="title">Cykel</h4>
-            <p>Cykel market is an auction website similar to EBay created for the Dynamic Web Programming Project.</p>  
-            <p style="color: #000058;">INSEEC U London - Y3</p>
+    <footer class="footer">
 
-            <ul class="social-icon">
-            <a href="#" class="social"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-            <a href="#" class="social"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-            <a href="#" class="social"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-            <a href="#" class="social"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
-            <a href="#" class="social"><i class="fa fa-google" aria-hidden="true"></i></a>
-            </ul>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <br>
+                    <h4 class="title">Cykel</h4>
+                    <p>Cykel market is an auction website similar to EBay created for the Dynamic Web Programming Project.</p>
+                    <p style="color: #000058;">INSEEC U London - Y3</p>
+
+                    <ul class="social-icon">
+                        <a href="#" class="social"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" class="social"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#" class="social"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" class="social"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                        <a href="#" class="social"><i class="fa fa-google" aria-hidden="true"></i></a>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <br>
+                    <h4 class="title">Policy</h4>
+                    <span class="acount-icon">
+                        <a href="privacypolicy.html"><i class="fa fa-user" aria-hidden="true"></i> Privacy Policy</a>
+                        <a href="termsofservice.html"><i class="fa fa-file" aria-hidden="true"></i> Terms Of Service</a>
+                        <a href="mailto: contact@cykel.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> Contact Us</a>
+                    </span>
+                </div>
+                <div class="col-sm-3">
+                    <br>
+                    <h4 class="title">Category</h4>
+                    <div class="category">
+                        <a href="subcatBike.html">All Bikes 🚲</a>
+                        <a href="subcatboard.html">All Boardgames 🎲</a>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <br>
+                    <h4 class="title">Payment Methods</h4>
+                    <p>This website accept this payment methods.</p>
+                    <ul class="payment">
+                        <li><a href="#"><i class="fa fa-cc-amex" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-cc-mastercard" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-paypal" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-cc-visa" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-apple" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
             </div>
-        <div class="col-sm-3">
-            <br>
-            <h4 class="title">Policy</h4>
-            <span class="acount-icon">          
-            <a href="privacypolicy.html"><i class="fa fa-user" aria-hidden="true"></i> Privacy Policy</a>
-            <a href="termsofservice.html"><i class="fa fa-file" aria-hidden="true"></i> Terms Of Service</a>
-            <a href = "mailto: contact@cykel.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> Contact Us</a>       
-          </span>
-            </div>
-        <div class="col-sm-3">
-            <br>
-            <h4 class="title">Category</h4>
-            <div class="category">
-            <a href="subcatBike.html">All Bikes 🚲</a> 
-            <a href="subcatboard.html">All Boardgames 🎲</a>         
-            </div>
-            </div>
-        <div class="col-sm-3">
-            <br>
-            <h4 class="title">Payment Methods</h4>
-            <p>This website accept this payment methods.</p>
-            <ul class="payment">
-            <li><a href="#"><i class="fa fa-cc-amex" aria-hidden="true"></i></a></li>
-            <li><a href="#"><i class="fa fa-cc-mastercard" aria-hidden="true"></i></a></li>            
-            <li><a href="#"><i class="fa fa-paypal" aria-hidden="true"></i></a></li>
-            <li><a href="#"><i class="fa fa-cc-visa" aria-hidden="true"></i></a></li>
-            <li><a href="#"><i class="fa fa-apple" aria-hidden="true"></i></a></li>
-            </ul>
-            </div>
+            <hr>
+
+            <div class="row text-center" style="color: #000058;"> © 2021 Designed with by Xavier Dandigna & Anthelme Charvet.</div>
         </div>
-        <hr>
-        
-        <div class="row text-center" style="color: #000058;"> © 2021 Designed with by Xavier Dandigna & Anthelme Charvet.</div>
-        </div>
-        
-        
+
+
     </footer>
 </body>
 
