@@ -29,7 +29,7 @@ else{
     
 if($sql_query)
 {
-    header("location:cards.php");
+    header("location:categories.php");
 }
     
     else
