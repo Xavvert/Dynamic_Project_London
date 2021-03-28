@@ -239,7 +239,43 @@ if(isset($validation)){
             transition: all 1s;
         }
 
+        .research {
+            background-color: #EEE8CD;
+            text-align: center;
+            box-sizing: border-box;
+            padding-top: 15px;
+        }
+        .research input[type=text] {
+            padding: 6px;
+            margin-top: 8px;
+            font-size: 17px;
+            border: none;
+        }
+
+        .research button {
+            padding: 8px 10px;
+            margin-top: 8px;
+            margin-right: 16px;
+            background: #ddd;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+        }
+        .research button:hover{
+            background-color: gray;
+            border: solid 0,2em;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        label {
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+            font-size: 24px;
+        }
+
         .grid-container {
+            margin-top: -30px;
             display: grid;
             background-color: #EEE8CD;
             padding-left: 200px;
@@ -267,7 +303,7 @@ if(isset($validation)){
             transition: all 1s;
         }
     </style>
-    
+
     <style type="text/css" name="back button">
         .back-zone {
             width: 100%;
@@ -305,7 +341,7 @@ if(isset($validation)){
             z-index: 2;
             border-radius: 1em;
         }
-        
+
 
         .wrapper a:after {
             position: absolute;
@@ -329,7 +365,6 @@ if(isset($validation)){
         .wrapper a:hover:after {
             width: 100%;
         }
-
     </style>
 
 
@@ -343,123 +378,115 @@ if(isset($validation)){
     function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
     }
-    </script>
+</script>
 
 <body>
-        <div id="layout">
-            <!-- header -->
-            <div id="header">
-                <center>
-                    <img id="logo" src="pictures/Cykel.png" alt="Cykel LOGO" onClick="location.href='HomePage.html'" style="width: 70px; height: 70px; margin-top: 10px; cursor:pointer; ">
+    <div id="layout">
+        <!-- header -->
+        <div id="header">
+            <center>
+                <img id="logo" src="pictures/Cykel.png" alt="Cykel LOGO" onClick="location.href='HomePage.html'" style="width: 70px; height: 70px; margin-top: 10px; cursor:pointer; ">
 
-                </center>
+            </center>
 
-                <span style="font-size:30px;cursor:pointer; position: relative; top: -60px; left: -580px" onclick="openNav()">&#9776;</span>
+            <span style="font-size:30px;cursor:pointer; position: relative; top: -60px; left: -580px" onclick="openNav()">&#9776;</span>
 
-                <div id="mySidenav" class="sidenav">
-                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                    <a href="categories.html">CATEGORIES</a>
-                    <a href="buy.html">BUY</a>
-                    <a href="sell.html">SELL</a>
-                    <a href="youraccount.html">YOUR ACCOUNT</a>
-                    <a href="cart.php">CART</a>
-                    <a href="admin.html">ADMIN</a>
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="categories.html">CATEGORIES</a>
+                <a href="buy.html">BUY</a>
+                <a href="sell.html">SELL</a>
+                <a href="youraccount.html">YOUR ACCOUNT</a>
+                <a href="cart.php">CART</a>
+                <a href="admin.html">ADMIN</a>
+            </div>
+
+            <div class="icon">
+                <img name="icon" src="pictures/profile.png" onClick="location.href='youraccount2.html'" style="width: 25px; height: 25px; position: relative; top: -80px; left:580px; cursor:pointer;">
+
+                <img src="pictures/notif.png" onClick="location.href='youraccount2.html'" style="width: 20px; height: 20px; position: relative; top: -80px; left:590px; cursor:pointer;">
+
+                <img src="pictures/cart2.png" onClick="location.href='cart.php'" style="width: 20px; height: 20px; position: relative; top: -80px; left: 600px; cursor:pointer;">
+            </div>
+        </div>
+    </div>
+
+    <!--back button-->
+    <div class="wrapper">
+        <a href="HomePage.html"><span>HOME</span></a>
+    </div>
+    <div class="research">
+        <form action="" method="post">
+            <label>Find an item here : </label>
+            <input type="text" name="research" placeholder="Search...">
+            <button type="submit" name="validation"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+    <!-- body -->
+
+    <div class="grid-container">
+
+        <div class="item" onClick="location.href='subcatboard.html'">
+            <img src="pictures/boardgames.png" style="height: 280px; width: 400px; float: left; cursor: pointer;">
+        </div>
+        <div class="item" onClick="location.href='subcatbike.php'">
+            <img src="pictures/bike.png" style="height: 280px; width: 350px; float: left; cursor: pointer;">
+        </div>
+    </div>
+
+
+
+    <!--footer-->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h4 class="title">Cykel</h4>
+                    <p>Cykel market is an auction website similar to EBay created for the Dynamic Web Programming Project.</p>
+                    <p style="color: #000058;">INSEEC U London - Y3</p>
+
+                    <ul class="social-icon">
+                        <a href="#" class="social"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" class="social"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#" class="social"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" class="social"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                        <a href="#" class="social"><i class="fa fa-google" aria-hidden="true"></i></a>
+                    </ul>
                 </div>
-
-                <div class="icon">
-                    <img name="icon" src="pictures/profile.png" onClick="location.href='youraccount2.html'" style="width: 25px; height: 25px; position: relative; top: -80px; left:580px; cursor:pointer;">
-
-                    <img src="pictures/notif.png" onClick="location.href='youraccount2.html'" style="width: 20px; height: 20px; position: relative; top: -80px; left:590px; cursor:pointer;">
-
-                    <img src="pictures/cart2.png" onClick="location.href='cart.php'" style="width: 20px; height: 20px; position: relative; top: -80px; left: 600px; cursor:pointer;">
+                <div class="col-sm-3">
+                    <h4 class="title">Policy</h4>
+                    <span class="acount-icon">
+                        <a href="privacypolicy.html"><i class="fa fa-user" aria-hidden="true"></i> Privacy Policy</a>
+                        <a href="termsofservice.html"><i class="fa fa-file" aria-hidden="true"></i> Terms Of Service</a>
+                        <a href="mailto: contact@cykel.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> Contact Us</a>
+                    </span>
+                </div>
+                <div class="col-sm-3">
+                    <h4 class="title">Category</h4>
+                    <div class="category">
+                        <a href="subcatBike.html">All Bikes 🚲</a>
+                        <a href="subcatboard.html">All Boardgames 🎲</a>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <h4 class="title">Payment Methods</h4>
+                    <p>This website accept this payment methods.</p>
+                    <ul class="payment">
+                        <li><a href="#"><i class="fa fa-cc-amex" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-cc-mastercard" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-paypal" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-cc-visa" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-apple" aria-hidden="true"></i></a></li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    
-        <!--back button-->
-        <div class="wrapper">
-            <a href="HomePage.html"><span>HOME</span></a>
-        </div>
-    <center>
-        <div class="co">
+            <hr>
 
-            <form action="" method="post">
-                <br>
-                <label>Search an item by his name / id /seller's username </label>
-                <br>
-                <input type="text" name="research">
-                <br>
-                <input type="submit" name="validation" value="Search">
-                <br>
-            </form>
-        </div>
-    </center>
-
-        <!-- body -->
-
-        <div class="grid-container">
-
-            <div class="item" onClick="location.href='subcatboard.html'">
-                <img src="pictures/boardgames.png" style="height: 280px; width: 400px; float: left; cursor: pointer;">
-            </div>
-            <div class="item" onClick="location.href='subcatbike.php'">
-                <img src="pictures/bike.png" style="height: 280px; width: 350px; float: left; cursor: pointer;">
-            </div>
+            <div class="row text-center" style="color: #000058;"> © 2021 Designed with by Xavier Dandigna & Anthelme Charvet.</div>
         </div>
 
 
-
-<!--footer-->
-
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-        <div class="col-sm-3">
-            <h4 class="title">Cykel</h4>
-            <p>Cykel market is an auction website similar to EBay created for the Dynamic Web Programming Project.</p>  
-            <p style="color: #000058;">INSEEC U London - Y3</p>
-
-            <ul class="social-icon">
-            <a href="#" class="social"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-            <a href="#" class="social"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-            <a href="#" class="social"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-            <a href="#" class="social"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
-            <a href="#" class="social"><i class="fa fa-google" aria-hidden="true"></i></a>
-            </ul>
-            </div>
-        <div class="col-sm-3">
-            <h4 class="title">Policy</h4>
-            <span class="acount-icon">          
-            <a href="privacypolicy.html"><i class="fa fa-user" aria-hidden="true"></i> Privacy Policy</a>
-            <a href="termsofservice.html"><i class="fa fa-file" aria-hidden="true"></i> Terms Of Service</a>
-            <a href = "mailto: contact@cykel.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> Contact Us</a>       
-          </span>
-            </div>
-        <div class="col-sm-3">
-            <h4 class="title">Category</h4>
-            <div class="category">
-            <a href="subcatBike.html">All Bikes 🚲</a> 
-            <a href="subcatboard.html">All Boardgames 🎲</a>         
-            </div>
-            </div>
-        <div class="col-sm-3">
-            <h4 class="title">Payment Methods</h4>
-            <p>This website accept this payment methods.</p>
-            <ul class="payment">
-            <li><a href="#"><i class="fa fa-cc-amex" aria-hidden="true"></i></a></li>
-            <li><a href="#"><i class="fa fa-cc-mastercard" aria-hidden="true"></i></a></li>            
-            <li><a href="#"><i class="fa fa-paypal" aria-hidden="true"></i></a></li>
-            <li><a href="#"><i class="fa fa-cc-visa" aria-hidden="true"></i></a></li>
-            <li><a href="#"><i class="fa fa-apple" aria-hidden="true"></i></a></li>
-            </ul>
-            </div>
-        </div>
-        <hr>
-        
-        <div class="row text-center" style="color: #000058;"> © 2021 Designed with by Xavier Dandigna & Anthelme Charvet.</div>
-        </div>
-        
-        
     </footer>
 
 </body>
