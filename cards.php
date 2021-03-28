@@ -206,7 +206,6 @@ if($_SESSION["checkB"]!=1)
             width: 100%;
             height: 80px;
             border-bottom-style: double;
-            border-radius: 1em;
             border-color: #0a255a;
             
             text-align: center;
@@ -232,6 +231,15 @@ if($_SESSION["checkB"]!=1)
             transform: scale(1.1);
         }*/
         
+         .imgItem img:hover {
+            
+            box-shadow: 0px 0px 1500px #000000;
+            transition: all 800ms ease-in;
+            transform:translate(200%, 20%)scale(1.6);
+            background-color: whitesmoke;
+            
+        }
+        
         .priceItem {
             padding-top: 150px;
             width: 300px;
@@ -241,8 +249,9 @@ if($_SESSION["checkB"]!=1)
 
         .caption {
             height: auto;
-            border-style:double;
+            border-left-style:double;
             border-color: #0a255a;
+            padding-left: 80px;
         }
 
         .caption p {
@@ -250,10 +259,10 @@ if($_SESSION["checkB"]!=1)
             font-size: 20px;
         }
 
-        .caption title {
+         .caption h4 {
             text-align: center;
-            font-size: 20px;
-            color: cadetblue;
+            font-size: 25px;
+            color: #0a255a;
         }
         
         #logo:hover {
@@ -363,7 +372,6 @@ if($_SESSION["checkB"]!=1)
     
 <script type="text/javascript">
     $(document).ready(function() {
-
         $("#buy").click(function() {
             $("#bid").show("slow");
             $("#imm").show("slow");
@@ -376,11 +384,7 @@ if($_SESSION["checkB"]!=1)
     $(document).ready(function() {
 
         $("#bid").click(function() {
-            $(this).hide("slow");
-            $("#imm").hide("slow");
-            $("#buy").hide("slow");
-            $("#offer").hide("slow");
-            $("#arBid").show("slow");
+            $("#arBid").toggle("slow");
         });
 
     });
@@ -388,11 +392,7 @@ if($_SESSION["checkB"]!=1)
     $(document).ready(function() {
 
         $("#imm").click(function() {
-            $(this).hide("slow");
-            $("#bid").hide("slow");
-            $("#buy").hide("slow");
-            $("#offer").hide("slow");
-            $("#textImm").show("slow");
+            $("#textImm").toggle("slow");
 
         });
 
@@ -401,11 +401,7 @@ if($_SESSION["checkB"]!=1)
     $(document).ready(function() {
 
         $("#offer").click(function() {
-            $(this).hide("slow");
-            $("#imm").hide("slow");
-            $("#buy").hide("slow");
-            $("#bid").hide("slow");
-            $("#arOffer").show("slow");
+            $("#arOffer").toggle("slow");
 
         });
 
@@ -504,7 +500,7 @@ if(!$conn)
         <div class="item">
             
             <div class="itemH">
-                    <p><?php echo($row['name']) ?></p>
+                    <?php echo($row['id'])." - ".($row['name']) ?>
             </div>
             
             
@@ -546,8 +542,11 @@ if(!$conn)
                 </div>
 
             <div class="caption">
-                
-                <p class="title"> <br> <br>Cet article est mis en ligne par : <?php echo $tempseller ?></p>
+                 <h4> <br>This item was uploaded by 
+                    <br>
+                    <img src="pictures/profile.png" style="width:40px; height:40px;">
+                    <?php echo $tempseller ?></h4>
+                <br>
 
                 <div class="description" style="clear:both; text-align:center;">
                     <p><?php echo $tempdesc ?></p>

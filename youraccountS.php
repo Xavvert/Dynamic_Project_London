@@ -302,7 +302,6 @@ if($_SESSION["upS"]==1)
     </center>
     <div class="accountContainer">
 
-
         <div class="corpus">
 
 
