@@ -274,12 +274,8 @@ if($_SESSION["checkB"]!=1)
     
     <style type="text/css" caption="buy button">
         .buyButton {
-            -moz-box-shadow: inset 0px 1px 0px 0px #3dc21b;
-            -webkit-box-shadow: inset 0px 1px 0px 0px #3dc21b;
             box-shadow: inset 0px 1px 0px 0px #3dc21b;
             background-color: #44c767;
-            -webkit-border-radius: 42px;
-            -moz-border-radius: 42px;
             border-radius: 42px;
             border: 3px solid #18ab29;
             display: inline-block;
@@ -371,11 +367,28 @@ if($_SESSION["checkB"]!=1)
 </head>
     
 <script type="text/javascript">
+    
     $(document).ready(function() {
-        $("#buy").click(function() {
-            $("#bid").show("slow");
-            $("#imm").show("slow");
-            $("#offer").show("slow");
+            
+        $(".buyButton").click(function() {
+            $(".bid").show("slow");
+            $(".imm").show("slow");
+            $(".offer").show("slow");
+        });
+    });
+
+    $(document).ready(function() {
+
+        $(".bid").click(function() {
+            $(".arBid").toggle("slow");
+        });
+
+    });
+
+    $(document).ready(function() {
+
+        $(".imm").click(function() {
+            $(".textImm").toggle("slow");
 
         });
 
@@ -383,25 +396,8 @@ if($_SESSION["checkB"]!=1)
 
     $(document).ready(function() {
 
-        $("#bid").click(function() {
-            $("#arBid").toggle("slow");
-        });
-
-    });
-
-    $(document).ready(function() {
-
-        $("#imm").click(function() {
-            $("#textImm").toggle("slow");
-
-        });
-
-    });
-
-    $(document).ready(function() {
-
-        $("#offer").click(function() {
-            $("#arOffer").toggle("slow");
+        $(".offer").click(function() {
+            $(".arOffer").toggle("slow");
 
         });
 
@@ -521,19 +517,19 @@ if(!$conn)
                     <br>
                     <br>
                     <br>
-                <button id="bid" style="display: none;">Bid</button>
-                <button onclick="location.href='addToBasket.php?cat=<?php echo $tempname?>'" id="imm" style="display: none;">Buy Immediately</button>
-                <button id="offer" style="display: none;">Best Offer</button>
+                <button class="bid" style="display: none;">Bid</button>
+                <button onclick="location.href='addToBasket.php?cat=<?php echo $tempname?>'" class="imm" style="display: none;">Buy Immediately</button>
+                <button class="offer" style="display: none;">Best Offer</button>
 
-                <form id="arBid" action="bid.php" method="post" style="display: none;">
+                <form class="arBid" action="bid.php" method="post" style="display: none;">
                     <label>Enter your max amount</label>
                     <br><input type="text" name="areaBid">
                     <input type="image" name="save" value="Submit" src="pictures/okOrange.jpg" style="width: 30px; height: 30px;">
                 </form>
 
-                <p id="textImm" style="display: none; color: darksalmon;"> Item has been successfully added to the cart</p>
+                <p class="textImm" style="display: none; color: darksalmon;"> Item has been successfully added to the cart</p>
 
-                <form id="arOffer" action="Offer.php" method="post" style="display: none;">
+                <form class="arOffer" action="Offer.php" method="post" style="display: none;">
                     <label>Enter an amount</label>
                     <br><input type="text" name="areaBid">
                     <input type="image" name="save" value="Submit" src="pictures/okOrange.jpg" style="width: 30px; height: 30px;">

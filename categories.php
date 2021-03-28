@@ -12,47 +12,6 @@ if($_SESSION["checkB"]!=1)
         header("location:Warningcategories.html");
         exit();
 }
-
-$server_name="localhost:3306";
-$username="root";
-$password="root";
-$database_name="cykel";
-
-$conn=mysqli_connect($server_name,$username,$password,$database_name);
-
-if(!$conn)
-{
-    die("Connection Failed:".mysqli_connect_error());
-    
-}
-
-@$research=$_POST['research'];
-@$validation=$_POST["validation"];
-
-if(isset($validation)){
-    
-    $sql_query = mysqli_query($conn, "Select * from item WHERE name = '$research' OR id = '$research' OR id_seller = '$research'");
-    $rowCount = mysqli_num_rows($sql_query);
-   
-    if($rowCount > 0)
-    {
-        
-         while($row=mysqli_fetch_array($sql_query))
-            {
-             echo $row['name'];
-             echo $row['id'];
-             echo $row['id_seller'];
-             echo $row['category'];
-            }
-    }
-    else
-    {
-     echo ("Error : didn't found any items");
-    }
-    
-    
-       mysqli_close($conn);
-}
 ?>
 
 <!DOCTYPE html>
@@ -273,6 +232,13 @@ if(isset($validation)){
             display: inline-block;
             font-size: 24px;
         }
+        
+        .result{
+            text-align: center;
+            font-size: 15px;
+            font-family: "verdana";
+            color: darkblue;
+        }
 
         .grid-container {
             margin-top: -30px;
@@ -415,6 +381,7 @@ if(isset($validation)){
     <div class="wrapper">
         <a href="HomePage.html"><span>HOME</span></a>
     </div>
+    
     <div class="research">
         <form action="" method="post">
             <label>Find an item here : </label>
@@ -422,6 +389,61 @@ if(isset($validation)){
             <button type="submit" name="validation"><i class="fa fa-search"></i></button>
         </form>
     </div>
+    
+    <div class="result">
+        <table border="1">
+            <tr>
+                <th>Name</th>
+                <th>ID</th>
+                <th>ID Seller</th>
+                <th>Category</th>
+            </tr>
+
+<?php
+$server_name="localhost:3306";
+$username="root";
+$password="root";
+$database_name="cykel";
+
+$conn=mysqli_connect($server_name,$username,$password,$database_name);
+
+if(!$conn)
+{
+    die("Connection Failed:".mysqli_connect_error());
+    
+}
+
+@$research=$_POST['research'];
+@$validation=$_POST["validation"];
+
+
+if(isset($validation)){
+    $sql_query = mysqli_query($conn, "Select * from item WHERE name = '$research' OR id = '$research' OR id_seller = '$research'");
+    $rowCount = mysqli_num_rows($sql_query);
+
+    while($row=mysqli_fetch_array($sql_query))
+    {
+?>
+        <tr>
+            <th><?php echo $row['name'];?></th>
+            <br>
+            <th><?php echo $row['id'];?></th>
+            <br>
+            <th><?php echo $row['id_seller'];?></th>
+            <br>
+            <th><?php echo $row['category'];?></th>
+        </tr>
+    <?php
+            }
+    }
+    
+    
+       mysqli_close($conn);
+?>
+    
+        </table>
+    </div>
+    
     <!-- body -->
 
     <div class="grid-container">
