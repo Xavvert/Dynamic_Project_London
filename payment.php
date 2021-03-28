@@ -157,7 +157,7 @@ session_start();
                 <br>
                 <input type="submit" name="save" value="Confirm and Pay">
                 
-                <label>(Cykel don't store the information of your credit card in their databases for security reasons)</label><br>
+                <label>(Cykel don't store the information of your credit card in their databases for security reasons and to protect your private informations)</label><br>
             </form>
 
         </div>

@@ -144,21 +144,22 @@ session_start();
                 <br><input type="text" name="packagename">
                 <br>
                 <label>First name</label>
-                <br><input type="text" name="firstname">
+                <br><input type="text" name="firstname" value='<?php echo $_SESSION['firstname'] ?>'>
                 <br>
-                <label>Last name</label><br><input type="text" name="lastname">
+                <label>Last name</label><br><input type="text" name="lastname" value='<?php echo $_SESSION['lastname'] ?>'>
                 <br>
-                <label>Adress</label><br><input type="text" name="adress">
+                <label>Adress</label><br><input type="text" name="adress" value='<?php echo $_SESSION['adress'] ?>'>
                 <br>
-               <label>City</label><br><input type="text" name="city">
+               <label>City</label><br><input type="text" name="city" value='<?php echo $_SESSION['city'] ?>'>
                 <br>
-                <label>Zip Code</label><br><input type="text" name="zipCode">
+                <label>Zip Code</label><br><input type="text" name="zipCode" value='<?php echo $_SESSION['zipCode'] ?>'>
                 <br>
-                <label>Country</label><br><input type="text" name="country">
+                <label>Country</label><br><input type="text" name="country" value='<?php echo $_SESSION['country'] ?>'>
                 <br>
-                <label>Phone Number</label><br><input type="text" name="phone">
-
-                <input type="submit" name="save" value="Process to payment">
+                <label>Phone Number</label><br><input type="text" name="phone" value='<?php echo $_SESSION['phone'] ?>'>
+                <br><br>
+                <input type="submit" name="save" value="I confirm my informations and process to payment">
+                <p style="font-size:10px;">By clicking on "I confirm my informations and process to payment", you are agree that all of your informations are correct and that you will be redirect on the payment interface. You won't be able to go back until the payment is finalized.</p>
             </form>
 
         </div>
