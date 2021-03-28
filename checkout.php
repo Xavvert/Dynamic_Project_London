@@ -165,10 +165,6 @@ session_start();
 
         </div>
     </center>
-    
-        <?php echo '<pre>';
-var_dump($_SESSION);
-echo '</pre>'; ?>
 
 <!--footer-->
 

@@ -418,12 +418,16 @@ if(isset($validation)){
     while($row=mysqli_fetch_array($sql_query))
     {
 ?>
-        <tr style="color:#ff5353;">
+        <tr>
             <br>
-            <th> <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Name : <?php echo $row['name'];?></th>
-            <th>/ ID :<?php echo $row['id'];?></th>
-            <th>/Seller's username :<?php echo $row['id_seller'];?></th>
-            <th>/Category :<?php echo $row['category'];?></th>
+            <th><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Name : &nbsp;</th>
+            <th style="color:#ff5353;"><?php echo $row['name'];?></th>
+            <th>&nbsp;/ ID :&nbsp;</th>
+            <th style="color:#ff5353;"><?php echo $row['id'];?></th>
+            <th>&nbsp;/ Seller's username :&nbsp;</th>
+            <th style="color:#ff5353;"><?php echo $row['id_seller'];?></th>
+            <th>&nbsp;/ Category :&nbsp;</th>
+            <th style="color:#ff5353;"><?php echo $row['category'];?></th>
         </tr>
     <?php
             }
