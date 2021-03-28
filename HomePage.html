@@ -240,15 +240,39 @@
             font-size: 20px;
             font-family: verdana;
         }
+        .triangle {
+            position: fixed;
+            left:1299px;
+            top: 55px;
+            font-size: 50px;
+            display: none;
+        }
         
         .notif {
             position:absolute;
             width: 300px;
-            height: 100px;
             background-color: black;
+            grid-template-rows: auto;
             color: white;
-            left:1020px;
-            top:80px;
+            left:1140px;
+            top:105px;
+            border-style:groove;
+            border-radius: 1em;
+            grid-gap: 30px;
+            display: none
+        }
+        
+        .boxnotif {
+            width: auto;
+            height: auto;
+            background-color: black;
+            padding: 20px;
+            border-radius: 1.5em;
+        }
+        
+        .boxnotif:hover {
+            background-color: grey;
+            border-radius: 1em;
         }
 
         #logo:hover {
@@ -260,6 +284,17 @@
 
     <link rel='icon' href='pictures/Cykel.png' type='image/x-icon' />
 </head>
+    
+<script type="text/javascript">
+    
+    $(document).ready(function() {
+            
+        $("#notif").click(function() {
+            $(".triangle").toggle("");
+            $(".notif").toggle("");
+        });
+    });
+</script>
 
 
 <body>
@@ -294,15 +329,32 @@
             </div>
 
             <div class="icon">
-                <img name="icon" src="pictures/profile2.png" onClick="location.href='youraccountA.php'" style="width: 25px; height: 25px; position: relative; top: -80px; left:580px; cursor:pointer;">
+                <img name="icon" src="pictures/profile2.png" onClick="location.href='youraccountA.php'" style="width: 28px; height: 28px; position: relative; top: -80px; left:580px; cursor:pointer;">
 
-                <img src="pictures/notif.png" onClick="location.href='youraccount2.html'" style="width: 20px; height: 20px; position: relative; top: -80px; left:590px; cursor:pointer;">
+                <img src="pictures/notif.png" id="notif" style="width: 25px; height: 25px; position: relative; top: -80px; left:590px; cursor:pointer;">
 
-                <img src="pictures/cart2.png" onClick="location.href='cart.php'" style="width: 20px; height: 20px; position: relative; top: -80px; left: 600px; cursor:pointer;">
+                <img src="pictures/cart2.png" onClick="location.href='cart.php'" style="width: 25px; height: 25px; position: relative; top: -80px; left: 600px; cursor:pointer;">
             </div>
+      <div class="triangle">
+            <i class="fa fa-caret-up fa-lg;" s></i>
         </div>
+        </div>
+            
+
+        
         <div class="notif">
-            <p>coucou</p>
+            <div class="boxnotif">
+                <p><u>Notification (1)</u></p>
+                You have no new notification
+            </div>
+            <div class="boxnotif">
+                <p><u>Notification (2)</u></p>
+                You have no new notification
+            </div>
+            <div class="boxnotif">
+                <p><u>Notification (3)</u></p>
+                You have no new notification
+            </div>
         </div>
     </div>
 
