@@ -433,7 +433,52 @@ if(!$conn)
                     <br>
                 </form>
                 <br>
+                  <h2>My Negotiations (Best Offer)</h2>
+                <table border="1" style="width: 800px; text-align: center; color: black; font-size: 17px;">
+
+                    <tr>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Name of the item</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Current Price</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">ID Seller</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Number of attempts (max 5)</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Status</th>
+                    </tr>
+
+             <?php
+
+$server_name="localhost:3306";
+$username="root";
+$password="root";
+$database_name="cykel";
+
+
+$conn=mysqli_connect($server_name,$username,$password,$database_name);
+
+if(!$conn)
+{
+    die("Connection Failed:".mysqli_connect_error());
+    
+}
+                    @$currentUsername=$_SESSION['username'];
+                           
+            $sql_query=mysqli_query($conn, "SELECT * FROM offer WHERE id_seller='$currentUsername'");
+            while($row=mysqli_fetch_array($sql_query))
+            {
+            ?>
+                    <tr>
+                        <td><?php echo($row['name']) ?></td>
+                        <td><?php echo($row['price']) ?></td>
+                        <td><?php echo($row['id_seller']) ?></td>
+                        <td><?php echo($row['attempt']) ?></td>
+                        <td><?php echo($row['status']) ?></td>
+                    </tr>
+
+                    <?php } mysqli_close($conn); ?>
+                </table>
+                <br>
+                <br>
             </div>
+            
         </div>
     </div>
 

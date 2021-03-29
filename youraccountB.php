@@ -71,7 +71,7 @@ if($_SESSION["upS"]==1)
         }
 
         #logo:hover {
-            
+
             transform: rotate(360deg);
             transition: all 1s;
         }
@@ -79,7 +79,7 @@ if($_SESSION["upS"]==1)
     </style>
 
     <style type="text/css">
-.accountContainer {
+        .accountContainer {
             width: 1300px;
             height: auto;
             background-color: #E8DBCB;
@@ -100,29 +100,27 @@ if($_SESSION["upS"]==1)
 
         .accountHeader button {
             position: absolute;
-            color:#0a255a;
+            color: #0a255a;
             font-size: 25px;
             left: 1000px;
             top: 20px;
 
         }
-        
+
         .accountHeader h2 {
             color: #0a255a;
         }
-        
+
         mark {
             margin: 0 -0.2em;
             padding: 0.2em 0.5em;
             border-radius: 0.8em 0.3em;
             color: #0a255a;
             background: transparent;
-            background-image: linear-gradient(
-            to right,
-            rgba(255, 225, 0, 0.4),
-            rgba(255, 225, 0, 0.7),
-            rgba(255, 225, 0, 0.4)
-            )
+            background-image: linear-gradient(to right,
+                    rgba(255, 225, 0, 0.4),
+                    rgba(255, 225, 0, 0.7),
+                    rgba(255, 225, 0, 0.4))
         }
 
         .corpus {
@@ -163,7 +161,7 @@ if($_SESSION["upS"]==1)
         .ordersForm {
             vertical-align: middle;
             display: grid;
-            
+
         }
 
         .auctionForm {
@@ -194,7 +192,7 @@ if($_SESSION["upS"]==1)
             background-color: #FBA00E;
             color: black;
         }
-        
+
         button:hover {
             background-color: #D8392F;
         }
@@ -335,7 +333,7 @@ if($_SESSION["upS"]==1)
 
         <div class="corpus">
             <div class="accountHeader">
-               
+
                 <h2 style="text-align: center;">Welcome <mark><?php echo $_SESSION["firstname"]?></mark></h2>
                 <h1> <button onclick="location.href='deconnexion.php'"> Logout </button></h1>
             </div>
@@ -413,9 +411,9 @@ if($_SESSION["upS"]==1)
 
             <!--MY ORDERS-->
 
-            
+
             <div class="orders" id="ordersForm" style="display: none; margin-left: 150px;">
-<h5> If you encountered any issues with one of your packages, you can contact us by email <a href="mailto: cykelweb@gmail.com"> here <i class="fa fa-envelope-o" aria-hidden="true"></i></a></h5>
+                <h5> If you encountered any issues with one of your packages, you can contact us by email <a href="mailto: cykelweb@gmail.com"> here <i class="fa fa-envelope-o" aria-hidden="true"></i></a></h5>
                 <table border="1" style="width: 800px; text-align: center; color: black; font-size: 17px;">
 
                     <tr>
@@ -424,10 +422,9 @@ if($_SESSION["upS"]==1)
                         <th style="font-size: 20px;border: 1px solid black;text-align: center;">Date</th>
                         <th style="font-size: 20px;border: 1px solid black;text-align: center;">Delivery Adress</th>
                         <th style="font-size: 20px;border: 1px solid black;text-align: center;">Price in £</th>
-                        
-                    </tr>
 
-                     <?php
+                    </tr>
+                    <?php
 
 $server_name="localhost:3306";
 $username="root";
@@ -468,42 +465,116 @@ if(!$conn)
 
             <div class="auctions" id="auctionsForm" style="display: none; margin-left: 150px;">
 
+                <h2>My Negotiations (Best Offer)</h2>
                 <table border="1" style="width: 800px; text-align: center; color: black; font-size: 17px;">
 
                     <tr>
-                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Order number</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Name of the item</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Current Price</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">ID Seller</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Number of attempts (max 5)</th>
                         <th style="font-size: 20px;border: 1px solid black;text-align: center;">Status</th>
-                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Price</th>
-                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Items</th>
-                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Informations</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Action</th>
                     </tr>
 
+                    <?php
+
+$server_name="localhost:3306";
+$username="root";
+$password="root";
+$database_name="cykel";
+
+
+$conn=mysqli_connect($server_name,$username,$password,$database_name);
+
+if(!$conn)
+{
+    die("Connection Failed:".mysqli_connect_error());
+    
+}
+                    @$currentUsername=$_SESSION['username'];
+                           
+            $sql_query=mysqli_query($conn, "SELECT * FROM offer WHERE id_buyer='$currentUsername'");
+            while($row=mysqli_fetch_array($sql_query))
+            {
+                
+            
+            $tempname=$row['name'];
+            ?>
                     <tr>
-                        <td>1</td>
-                        <td style="color: green;">WIN</td>
-                        <td>50£</td>
-                        <td>V2cards</td>
-                        <td>not register</td>
+                        <td><?php echo($row['name']) ?></td>
+                        <td><?php echo($row['price']) ?></td>
+                        <td><?php echo($row['id_seller']) ?></td>
+                        <td><?php echo($row['attempt']) ?></td>
+                        <td><?php echo($row['status']) ?></td>
+                        <td> <p> Price proposed £<?php echo($row['price']) ?> </p>
+                        <form action="Offer.php?cat=<?php echo $tempname?>" method="post">
+                            <br>
+                            <label>Price</label>
+                            <br>
+                            <input type="text" name="priceOffer">
+                            <br>
+
+                            <input type="submit" name="save" value="Submit">
+                        </form>
+                            <button onclick="location.href='BoffMovetoBasket.php?cat=<?php echo $tempname?>'"> I accept the price proposed</button></td>
+                     
                     </tr>
 
-                    <tr>
-                        <td>2</td>
-                        <td style="color: red;">LOST</td>
-                        <td>90£</td>
-                        <td>Monopoly Collector</td>
-                        <td>not register</td>
-                    </tr>
+                    <?php } mysqli_close($conn); ?>
+                </table>
+                <br>
+
+
+                <br>
+
+                <!-- -------------- -->
+
+                <h2>My BIDS </h2>
+                <table border="1" style="width: 800px; text-align: center; color: black; font-size: 17px;">
 
                     <tr>
-                        <td>3</td>
-                        <td style="color: red;">LOST</td>
-                        <td>150£</td>
-                        <td>Remote</td>
-                        <td>not register</td>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Name of the item</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Current Price</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">ID Seller</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Number of attempts (max 5)</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Status</th>
                     </tr>
+
+                    <?php
+
+$server_name="localhost:3306";
+$username="root";
+$password="root";
+$database_name="cykel";
+
+
+$conn=mysqli_connect($server_name,$username,$password,$database_name);
+
+if(!$conn)
+{
+    die("Connection Failed:".mysqli_connect_error());
+    
+}
+                    @$currentUsername=$_SESSION['username'];
+                           
+            $sql_query=mysqli_query($conn, "SELECT * FROM offer WHERE id_buyer='$currentUsername'");
+            while($row=mysqli_fetch_array($sql_query))
+            {
+            ?>
+                    <tr>
+                        <td><?php echo($row['name']) ?></td>
+                        <td><?php echo($row['price']) ?></td>
+                        <td><?php echo($row['id_seller']) ?></td>
+                        <td><?php echo($row['attempt']) ?></td>
+                        <td><?php echo($row['status']) ?></td>
+                    </tr>
+
+                    <?php } mysqli_close($conn); ?>
                 </table>
                 <br>
                 <br>
+
 
             </div>
         </div>

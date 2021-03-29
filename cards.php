@@ -523,9 +523,9 @@ if(!$conn)
                     </form>
 
 
-                    <form class="arOffer" action="Offer.php" method="post" style="display: none;">
+                    <form class="arOffer" action="Offer.php?cat=<?php echo $tempname?>" method="post" style="display: none;">
                         <label>Enter an amount</label>
-                        <br><input type="text" name="areaBid">
+                        <br><input type="text" name="priceOffer">
                         <input type="image" name="save" value="Submit" src="pictures/okOrange.jpg" style="width: 30px; height: 30px;">
                     </form>
 

@@ -1,77 +1,8 @@
-<?php
-session_start();
-$server_name="localhost:3306";
-$username="root";
-$password="root";
-$database_name="cykel";
-
-
-
-$conn=mysqli_connect($server_name,$username,$password,$database_name);
-
-if(!$conn)
-{
-    die("Connection Failed:".mysqli_connect_error());
-    
-}
-
-
-if(@$_SESSION["checkA"]==1 || @$_SESSION["checkB"]==1 || @$_SESSION["checkS"]==1)
-{
-    header("location:youraccountA.php");
-    mysqli_close($conn);
-}
-
-@$username=$_POST['username'];
-@$password=$_POST['password'];
-@$validation=$_POST["validation"];
-
-if(isset($validation)){
-    
-    $sql_query = mysqli_query($conn, "Select * from admin WHERE username = '$username' AND password = '$password'");
-    $rowCount = mysqli_num_rows($sql_query);
-    
-
-    if($rowCount > 0)
-    {
-        $_SESSION["authorize"]="yes";
-        $_SESSION["username"]=$username;
-        $_SESSION["password"]=$password;
-
-        
-        $_SESSION["checkA"]=1;
-        $_SESSION["checkB"]=0;
-        $_SESSION["checkS"]=0;
-        
-        $_SESSION["upA"]=0;
-        
-    }
-    else
-    {
-     echo ("Error : Wrong Password or Username");
-    }
-
-    $sql_query = mysqli_query($conn, "SELECT firstname from admin WHERE username='$username'"); 
-   $row = mysqli_fetch_array($sql_query);
-   $_SESSION["firstname"]=$row['firstname'];
-    
-   $sql_query = mysqli_query($conn, "SELECT lastname from admin WHERE username='$username'"); 
-   $row = mysqli_fetch_array($sql_query);
-   $_SESSION["lastname"]=$row['lastname'];
-
-
-    header("location:youraccountA.php");
-    mysqli_close($conn);
-
-}
-?>
-   
- 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Cykel - Log In - Admin</title>
+    <title>Cykel - Access denied</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="header&footer.css">
@@ -115,18 +46,13 @@ if(isset($validation)){
             font-size: 36px;
             margin-left: 50px;
         }
-
-        .co {
-            width: 400px;
-            height: 300px;
-            background-color: #EEE8CD;
-            border-radius: 1em;
-            color: black;
-            text-align: center;
-            font-size: 15x;
-            font-family: "Verdana";
-        }
         
+        .content {
+            background-color: whitesmoke;
+            text-align: center;
+            padding: 150px 300px;
+        }
+
         h5 {
             font-size: 30px;
         }
@@ -137,39 +63,66 @@ if(isset($validation)){
         }
     </style>
 
-    <style type="text/css" caption="form design">
-        * {
-            box-sizing: border-box;
-        }
-
-        
-        input[type=email],
-        input[type=password],
-        select,
-        textarea {
-            width: 200px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            resize: vertical;
-
-        }
-
-        label {
-            padding: 12px 12px 12px 0;
-            display: inline-block;
-        }
-
-        input[type=submit],[type=reset] {
+<style type="text/css" name="back button">
+        .back-zone {
+            width: 100%;
+            height: 50px;
             background-color: whitesmoke;
-            padding: 12px 20px;
-            border: solid 0,1em;
-            border-radius: 4px;
-            cursor: pointer;
         }
 
-        input[type=submit]:hover {
-            background-color: #45a049;
+        .wrapper {
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            transform: translate(-50%, -50%);
+            border-radius: 1em;
+        }
+
+        .wrapper a {
+            display: block;
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 18px;
+            font-family: sans-serif;
+            text-decoration: none;
+            color: #333;
+            border: 2px solid #333;
+            letter-spacing: 2px;
+            text-align: center;
+            position: relative;
+            transition: all .35s;
+            border-radius: 1em;
+        }
+
+        .wrapper a span {
+            position: relative;
+            z-index: 2;
+            border-radius: 1em;
+        }
+        
+
+        .wrapper a:after {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: #D8392F;
+            transition: all .35s;
+            border-radius: 1em;
+        }
+
+        .wrapper a:hover {
+            color: white;
+            border: 2px solid white;
+            transform: rotate(360deg);
+            transition: all 0.5s;
+        }
+
+        .wrapper a:hover:after {
+            width: 100%;
         }
 
     </style>
@@ -191,6 +144,7 @@ if(isset($validation)){
 
 <body>
     <div id="layout">
+
         <div id="header">
             <center>
                 <img id="logo" src="pictures/Cykel.png" alt="Cykel LOGO" onClick="location.href='HomePage.html'" style="width: 70px; height: 70px; margin-top: 10px; cursor:pointer; ">
@@ -219,44 +173,27 @@ if(isset($validation)){
 
         </div>
     </div>
-    <br>
-    <br>
-    <center>
-        <h1>Hello admin, Please enter all the informations for LOG IN </h1>
-    </center>
-    <br>
-    <br>
-    <center>
-        <div class="co">
 
-            <form action="" method="post">
-                <br>
-                <label>Email(username)</label>
-                <br>
-                <input type="email" name="username">
-                <br>
-                <label>Password</label>
-                <br>
-                <input type="password" name="password">
-                <br>
-                <br>
-                <input type="submit" name="validation" value="Login">
-                <br>
-            </form>
+    <!--back button-->
+    <div class="back-zone">
+        <div class="wrapper">
+            <a href="#" onclick="javascript:window.history.back(-1);return false;"><span>BACK</span></a>
         </div>
-    </center>
-    <br>
-    <br>``
-<br>
+    </div>
+    
+    <div class="content">
+        <h1> 😵 Oups... You can't do that ! </h1>
+        <h3> You've already accepted this transaction or you've reached the max number of attemptions  </h3>
+
+        <p> You can return on the <a href="HomePage.html"> Home Page</a></p>
+    </div>
 
 <!--footer-->
 
 <footer class="footer">
-
     <div class="container">
         <div class="row">
         <div class="col-sm-3">
-            <br>
             <h4 class="title">Cykel</h4>
             <p>Cykel market is an auction website similar to EBay created for the Dynamic Web Programming Project.</p>  
             <p style="color: #000058;">INSEEC U London - Y3</p>
@@ -270,7 +207,6 @@ if(isset($validation)){
             </ul>
             </div>
         <div class="col-sm-3">
-            <br>
             <h4 class="title">Policy</h4>
             <span class="acount-icon">          
             <a href="privacypolicy.html"><i class="fa fa-user" aria-hidden="true"></i> Privacy Policy</a>
@@ -279,7 +215,6 @@ if(isset($validation)){
           </span>
             </div>
         <div class="col-sm-3">
-            <br>
             <h4 class="title">Category</h4>
             <div class="category">
             <a href="subcatBike.html">All Bikes 🚲</a> 
@@ -287,7 +222,6 @@ if(isset($validation)){
             </div>
             </div>
         <div class="col-sm-3">
-            <br>
             <h4 class="title">Payment Methods</h4>
             <p>This website accept this payment methods.</p>
             <ul class="payment">
@@ -307,6 +241,4 @@ if(isset($validation)){
         
     </footer>
 
-</body>
-
-</html>
+</body></html>
