@@ -126,12 +126,25 @@ if($_SESSION["checkB"]!=1)
         }
 
         .cartFooter {
+            padding: 8px;
             width: 800px;
-            height: 100px;
+            height: 150px;
             position: relative;
             background-color: #f2eae0;
             border-radius: 0.6em;
             color: darkblue;
+            text-indent: 10px;
+        }
+
+        .cartFooter h5 {
+            font-size: 16px;
+            font-style:italic;
+            color: black;
+        }
+
+        .cartFooter p {
+            font-size: 20px;
+            font-weight: bold;
         }
     </style>
 
@@ -180,7 +193,7 @@ if($_SESSION["checkB"]!=1)
             text-shadow: 0px 1px 0px #5b8a3c;
             margin-left: 500px;
             float: left;
-            margin-top: -30px;
+            margin-top: -70px;
         }
 
         .myButton:hover {
@@ -387,6 +400,8 @@ if(!$conn)
                     </tbody>
                 </table>
             </div>
+            <br>
+            <br>
 
             <div class="cartFooter" id="cartfooter">
 
@@ -412,11 +427,14 @@ if(!$conn)
                 $_SESSION['totalPrice']=$result[0]*0.8;
                  mysqli_close($conn);
             ?>
-
-                <h3 style="margin-left: 100px; float: left; color:red;">Total : £ <?php echo ($result[0]*0.8)?></h3>
-                <h3 style="">Special Event : -20% </h3>
-                <h4 class="echo"></h4>
-                <button class="myButton" type="submit" onclick="location.href='checkout.php'"> Process to checkout </button>
+                <div>
+                    <p style="margin-left: 100px; float: left;">Subotal :</p>
+                    <p style="margin-right: 500px; float: right;color:red;">£ <?php echo ($result[0])?></p>
+                    <h5 style="margin-left: 100px;">Special Event : -20% </h5>
+                    <p style="margin-left: 100px; float: left;">Total :</p>
+                    <p style="margin-right: 500px; float: right;color:red;">£ <?php echo ($result[0]*0.8)?></p>
+                    <button class="myButton" type="submit" onclick="location.href='checkout.php'"> Process to checkout </button>
+                </div>
             </div>
 
             <h1 style="display: none; text-align:center; color: darkred;">...Empty cart... <br><br></h1>
