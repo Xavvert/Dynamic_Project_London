@@ -474,7 +474,7 @@ if(!$conn)
     die("Connection Failed:".mysqli_connect_error());
     
 }                   
-        $sql_query=mysqli_query($conn, "SELECT * FROM item WHERE category='Bicycles'");
+        $sql_query=mysqli_query($conn, "SELECT * FROM item WHERE category='Bicycles' AND id_buyer IS NULL ");
         
         while($row=mysqli_fetch_array($sql_query))
         {

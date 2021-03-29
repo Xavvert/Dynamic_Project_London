@@ -434,18 +434,21 @@ if(!$conn)
                     <br>
                 </form>
                 <br>
-                  <h2>My Negotiations (Best Offer)</h2>
+                  
+                <h2>My Negotiations (Best Offer)</h2>
                 <table border="1" style="width: 800px; text-align: center; color: black; font-size: 17px;">
 
                     <tr>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Transaction's ID</th>
                         <th style="font-size: 20px;border: 1px solid black;text-align: center;">Name of the item</th>
                         <th style="font-size: 20px;border: 1px solid black;text-align: center;">Current Price</th>
-                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">ID Seller</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">ID Buyer</th>
                         <th style="font-size: 20px;border: 1px solid black;text-align: center;">Number of attempts (max 5)</th>
                         <th style="font-size: 20px;border: 1px solid black;text-align: center;">Status</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Action</th>
                     </tr>
 
-             <?php
+                    <?php
 
 $server_name="localhost:3306";
 $username="root";
@@ -465,13 +468,29 @@ if(!$conn)
             $sql_query=mysqli_query($conn, "SELECT * FROM offer WHERE id_seller='$currentUsername'");
             while($row=mysqli_fetch_array($sql_query))
             {
+                
+            
+            $tempname=$row['name'];
             ?>
                     <tr>
+                        <td><?php echo($row['id']) ?></td>
                         <td><?php echo($row['name']) ?></td>
                         <td><?php echo($row['price']) ?></td>
-                        <td><?php echo($row['id_seller']) ?></td>
+                        <td><?php echo($row['id_buyer']) ?></td>
                         <td><?php echo($row['attempt']) ?></td>
                         <td><?php echo($row['status']) ?></td>
+                        <td> <p> Price proposed by the buyer £<?php echo($row['price']) ?> </p>
+                        <form action="OfferS.php?cat=<?php echo $tempname?>" method="post">
+                            <br>
+                            <label>Price</label>
+                            <br>
+                            <input type="text" name="priceOffer">
+                            <br>
+
+                            <input type="submit" name="save" value="Submit">
+                        </form>
+                            <button onclick="location.href='SoffMovetoBasket.php?cat=<?php echo $tempname?>'"> I accept the price proposed</button></td>
+                     
                     </tr>
 
                     <?php } mysqli_close($conn); ?>

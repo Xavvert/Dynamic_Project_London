@@ -16,6 +16,8 @@ if(!$conn)
 $retrievedName = $_GET['cat'];
 @$currentUsername=$_SESSION['username'];
 
+
+
  $sql_query = mysqli_query($conn, "Select * from offer WHERE name= '$retrievedName' AND id_buyer='$currentUsername' AND status='Finalized'");
  $rowCount = mysqli_num_rows($sql_query);
 
@@ -25,6 +27,15 @@ $retrievedName = $_GET['cat'];
         mysqli_close($conn);
     }
     
+$sql_query = mysqli_query($conn, "Select * from offer WHERE name= '$retrievedName' AND id_buyer='$currentUsername' AND hand='s'");
+ $rowCount = mysqli_num_rows($sql_query);
+
+    if($rowCount > 0)
+    {
+        header("location:Warningoffer.html");
+        mysqli_close($conn);
+    }
+
 
 
 

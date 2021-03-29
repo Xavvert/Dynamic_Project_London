@@ -474,6 +474,7 @@ if(!$conn)
                 <table border="1" style="width: 800px; text-align: center; color: black; font-size: 17px;">
 
                     <tr>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Transaction's ID</th>
                         <th style="font-size: 20px;border: 1px solid black;text-align: center;">Name of the item</th>
                         <th style="font-size: 20px;border: 1px solid black;text-align: center;">Current Price</th>
                         <th style="font-size: 20px;border: 1px solid black;text-align: center;">ID Seller</th>
@@ -507,12 +508,13 @@ if(!$conn)
             $tempname=$row['name'];
             ?>
                     <tr>
+                        <td><?php echo($row['id']) ?></td>
                         <td><?php echo($row['name']) ?></td>
                         <td><?php echo($row['price']) ?></td>
                         <td><?php echo($row['id_seller']) ?></td>
                         <td><?php echo($row['attempt']) ?></td>
                         <td><?php echo($row['status']) ?></td>
-                        <td> <p> Price proposed £<?php echo($row['price']) ?> </p>
+                        <td> <p> Price proposed buy the seller £<?php echo($row['price']) ?> </p>
                         <form action="Offer.php?cat=<?php echo $tempname?>" method="post">
                             <br>
                             <label>Price</label>

@@ -14,7 +14,7 @@ if(!$conn)
 }
 
     
- $retrievedName = $_GET['cat'];
+$retrievedName = $_GET['cat'];
 @$currentUsername=$_SESSION['username'];
 @$price=$_POST["priceOffer"];
     
@@ -24,6 +24,24 @@ if(!$conn)
     if($rowCount > 0)
     {
         header("location:Warningbasket.html");
+        mysqli_close($conn);
+    }
+
+ $sql_query = mysqli_query($conn, "Select * from offer WHERE name= '$retrievedName' AND id_buyer='$currentUsername' AND hand='s'");
+ $rowCount = mysqli_num_rows($sql_query);
+
+    if($rowCount > 0)
+    {
+        header("location:Warningoffer.html");
+        mysqli_close($conn);
+    }
+
+ $sql_query = mysqli_query($conn, "Select * from offer WHERE name= '$retrievedName' AND id_buyer='$currentUsername' AND attempt='5'");
+ $rowCount = mysqli_num_rows($sql_query);
+
+    if($rowCount > 0)
+    {
+        header("location:Warningoffer.html");
         mysqli_close($conn);
     }
     
@@ -40,8 +58,9 @@ if(!$conn)
         
          $sql_query = mysqli_query($conn, "UPDATE offer SET price= '$price' WHERE name='$retrievedName'");
          $sql_query = mysqli_query($conn, "UPDATE offer SET attempt= '$tempattempt' WHERE name='$retrievedName'");
+        $sql_query = mysqli_query($conn, "UPDATE offer SET hand='s' WHERE name='$retrievedName'");
     
-        header("location:categories.php");
+        header("location:youraccountA.php");
         mysqli_close($conn);
     }
     
@@ -51,7 +70,7 @@ else{
     $_SESSION["selleroffer"]=$row['id_seller'];
     $tempseller=$_SESSION["selleroffer"];
     
-    $sql_query = mysqli_query($conn, "INSERT INTO offer (name, id_buyer, id_seller, price, attempt, status) VALUES ('$retrievedName','$currentUsername','$tempseller','$price',1,'Negotiation in progress')");
+    $sql_query = mysqli_query($conn, "INSERT INTO offer (name, id_buyer, id_seller, price, attempt, status, hand) VALUES ('$retrievedName','$currentUsername','$tempseller','$price',1,'Negotiation in progress','s')");
     
     
 if($sql_query)
