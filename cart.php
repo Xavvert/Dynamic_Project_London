@@ -70,7 +70,6 @@ if($_SESSION["checkB"]!=1)
             transform: rotate(360deg);
             transition: all 1s;
         }
-
     </style>
 
     <style type="text/css">
@@ -97,6 +96,8 @@ if($_SESSION["checkB"]!=1)
             background-color: #f2eae0;
             border-top-right-radius: 0.6em;
             border-top-left-radius: 0.6em;
+            color: darkblue;
+            font-size: 50px;
         }
 
         .cartShipping {
@@ -130,8 +131,8 @@ if($_SESSION["checkB"]!=1)
             position: relative;
             background-color: #f2eae0;
             border-radius: 0.6em;
+            color: darkblue;
         }
-
     </style>
 
     <style type="text/css" caption="cross animation to delete an item">
@@ -152,7 +153,7 @@ if($_SESSION["checkB"]!=1)
             content: ' ';
             height: 20px;
             width: 2px;
-            background-color: #333;
+            background-color: red;
         }
 
         .close:before {
@@ -162,7 +163,6 @@ if($_SESSION["checkB"]!=1)
         .close:after {
             transform: rotate(-45deg);
         }
-
     </style>
 
     <style type="text/css" caption="button order ">
@@ -203,6 +203,7 @@ if($_SESSION["checkB"]!=1)
             border-collapse: collapse;
             border: none;
             table-layout: auto;
+            font-size: 20px;
         }
 
         tr:nth-child(even) {
@@ -218,8 +219,9 @@ if($_SESSION["checkB"]!=1)
         }
 
         th {
-            background-color: #FBA00E;
-            color: black;
+            background-color: darkblue;
+            color: white;
+            font-size: 20px;
         }
 
         button:hover {
@@ -231,7 +233,6 @@ if($_SESSION["checkB"]!=1)
             transform: rotate(360deg);
             transition: all 1s;
         }
-
     </style>
 
     <link rel='icon' href='pictures/Cykel.png' type='image/x-icon' />
@@ -245,20 +246,18 @@ if($_SESSION["checkB"]!=1)
     function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
     }
-
 </script>
 
 <script type="text/javascript">
-    
     /*function deleteRow(r) {
         var i = r.parentNode.parentNode.rowIndex;
         document.getElementById("c").deleteRow(i); 
     }*/
-    
+
     window.onload = testCart;
 
-    function testCart() { 
-    var x = document.getElementById("c").rows.length - 1;
+    function testCart() {
+        var x = document.getElementById("c").rows.length - 1;
         if (x == 0) {
             $(document).ready(function() {
                 $(".c").toggle(500);
@@ -268,8 +267,8 @@ if($_SESSION["checkB"]!=1)
             });
         }
     }
-    
-    
+
+
     /*$(document).ready(function() {
     $(".close").click(function() {
         var $value = $(this).closest("tr"); // Find the row
@@ -295,7 +294,6 @@ if($_SESSION["checkB"]!=1)
        });
            
        };*/
-
 </script>
 
 <body>
@@ -336,8 +334,8 @@ if($_SESSION["checkB"]!=1)
         <div class="corpus">
 
             <div class="cartHeader">
-                <img src="pictures/cart2.png" style="width: 50px; height: 50px; margin-top: 10px; float: left; margin-left: 50px;">
-                <h2 style="margin-left: 200px;float: left;text-align: center;">Shipping Cart</h2>
+                <i class="fa fa-cart-arrow-down" aria-hidden="true" style="float:left; margin-left:200px; margin-top:10px;"></i>
+                <h2 style="margin-left:70px;float: left;text-align: center;">Shipping Cart</h2>
             </div>
             <br>
 
@@ -349,7 +347,6 @@ if($_SESSION["checkB"]!=1)
                         <th style="text-align: center;">Price in £</th>
                         <th style="text-align: center;">Category</th>
                     </thead>
-
                     <tbody>
 
                         <?php
@@ -377,9 +374,9 @@ if(!$conn)
             ?>
                         <tr>
 
-                            <td><a href="updateCartItem.php?cat=<?php echo $temp?>" class="close"></a></td>
+                            <td><a href="updateCartItem.php?cat=<?php echo $temp?>" class="close" style="text-align:left;"></a></td>
 
-                            <td><?php echo($row['name']) ?></td>
+                            <td style="padding-right:60px"><?php echo($row['name']) ?></td>
                             <td><?php echo($row['price']) ?></td>
                             <td><?php echo($row['category']) ?></td>
                         </tr>
@@ -425,9 +422,10 @@ if(!$conn)
             <h1 style="display: none; text-align:center; color: darkred;">...Empty cart... <br><br></h1>
             <h3 style="display: none; text-align:center; color: darkred;">Have a look at our superb items <a href="categories.php"> here </a> ! <br><br> <br></h3>
         </div>
-
+        <br>
+        <br>
     </div>
-
+    <br>
 
     <!--footer-->
 
