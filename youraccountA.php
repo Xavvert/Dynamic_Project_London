@@ -100,17 +100,18 @@ if(@$_SESSION["authorize"]!="yes"){
             padding-top: 2px;
         }
 
-        .accountHeader button {
+        .accountHeader a {
             position: absolute;
             color:#0a255a;
             font-size: 25px;
-            left: 1000px;
-            top: 20px;
-
+            left: 1150px;
+            top: 10px;
+            padding: 8px;
         }
         
-        .accountHeader h2 {
-            color: #0a255a;
+        .accountHeader a:hover {
+            background-color: #b9c7d6;
+            border-radius: 0.2em;
         }
         
         mark {
@@ -345,7 +346,7 @@ if(@$_SESSION["authorize"]!="yes"){
             <div class="accountHeader">
                 <!--<img src="pictures/profilepictureB.png" name="profile picture" alt="/profile picture" style="width: 50px; height: 50px; margin-top: 10px; float: left; margin-left: 50px;">-->
                 <h2 style="text-align: center;">Welcome <mark><?php echo $_SESSION["firstname"]?></mark></h2>
-                <h1> <button onclick="location.href='deconnexion.php'"> Logout </button></h1>
+                <a href="deconnexion.php">Log Out <i class="fa fa-sign-out" aria-hidden="true"></i></a>
             </div>
 
             <div class="box-container">
