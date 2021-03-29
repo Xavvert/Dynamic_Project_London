@@ -214,13 +214,13 @@ session_start();
                         <option>MASTERCARD</option>
                         <option>AMERICAN EXPRESS</option>
                     </SELECT>
-                <label>Name on the card</label><input type="text" name="nameCard" placeholder="...">
+                <label>Name on the card</label><input type="text" name="nameCard" placeholder="..........">
                 <br>
-                <label>Card Number</label><input type="text" name="num" placeholder="...">
+                <label>Card Number</label><input type="text" name="num" placeholder="..........">
                 <br>
                     </div>
                     <div class="column">
-                <label>Expiration</label><input type="text" name="expiration"placeholder=" __ / __ / ____">
+                <label>Expiration</label><input type="text" name="expiration"placeholder=" _ _ / _ _">
                 <br>
                <label>CVV number</label><input type="text" name="crypto"placeholder="_ _ _">
                 <br>
