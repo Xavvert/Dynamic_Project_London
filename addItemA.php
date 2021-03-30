@@ -1,5 +1,7 @@
 <?php
+//session start to keep and modify all the session variables for the current user logged in
 session_start();
+//db connection
 $server_name="localhost:3306";
 $username="root";
 $password="root"; 
@@ -15,6 +17,7 @@ if(!$conn)
 
 if(isset($_POST['save']))
 {
+    //retrieving the form's data to store them in variable to run our functions in php
     $name=$_POST['item'];
     $price=$_POST['price'];
     $category=$_POST['category'];
@@ -36,8 +39,8 @@ if(isset($_POST['save']))
             $image = $_FILES['image']['tmp_name']; 
             $imgContent = addslashes(file_get_contents($image));  
 
-    //QUERY   
-    $sql_query = mysqli_query($conn, "INSERT INTO item (name, price, category, id_buyer, id_seller, type, image, description) VALUES ('$name','$price','$category',NULL,'$currentUsername',NULL, '$imgContent', '$description')");
+            //QUERY   
+            $sql_query = mysqli_query($conn, "INSERT INTO item (name, price, category, id_buyer, id_seller, type, image, description) VALUES ('$name','$price','$category',NULL,'$currentUsername',NULL, '$imgContent', '$description')");
     
         if($sql_query)
                     { 
@@ -51,6 +54,7 @@ if(isset($_POST['save']))
         }
     } 
  
+    //redirection to the current account
     if(mysqli_query($conn, $sql_query))
     {
     header("location:youraccountA.php");
