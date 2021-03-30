@@ -28,7 +28,17 @@ $retrievedName = $_GET['cat'];
     }
 
 $sql_query = mysqli_query($conn, "Select * from bid WHERE name= '$retrievedName' AND status='Finalized'");
- $row = mysqli_fetch_array($sql_query);
+ $rowCount = mysqli_num_rows($sql_query);
+
+    if($rowCount > 0)
+    {
+        header("location:Warningbid.html");
+        mysqli_close($conn);
+    }
+
+/*
+$sql_query = mysqli_query($conn, "Select * from bid WHERE name= '$retrievedName' AND status='Finalized'");
+$row = mysqli_fetch_array($sql_query);
 
 $END = $row['dateOff'];
 $Currentdate = date('Y-m-d');
@@ -37,22 +47,7 @@ if($Currentdate>$END){
      header("location:Warningover.html");
         mysqli_close($conn);
     
-}
-
-    if($rowCount > 0)
-    {
-        header("location:Warningbid.html");
-        mysqli_close($conn);
-    }
-
-$sql_query = mysqli_query($conn, "Select * from bid WHERE name= '$retrievedName'");
- $rowCount = mysqli_num_rows($sql_query);
-
-    if($rowCount > 0)
-    {
-        header("location:Warningbid.html");
-        mysqli_close($conn);
-    }
+}*/
 
  
     //si deja dans la bdd

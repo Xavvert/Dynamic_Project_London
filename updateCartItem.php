@@ -13,18 +13,30 @@ if(!$conn)
     
 }
 
+$retrievedName = $_GET['cat'];
+$currentUsername=$_SESSION["username"];
+
 $sql_query = mysqli_query($conn, "Select * from item WHERE name= '$retrievedName' AND id_buyer='$currentUsername' AND type='offer'");
- $rowCount = mysqli_num_rows($sql_query);
+$rowCount = mysqli_num_rows($sql_query);
 
     if($rowCount > 0)
     {
         header("location:Warningdelete.html");
         mysqli_close($conn);
     }
-$retrievedName = $_GET['cat'];
+
+$sql_query = mysqli_query($conn, "Select * from item WHERE name= '$retrievedName' AND id_buyer='$currentUsername' AND type='bid'");
+$rowCoun = mysqli_num_rows($sql_query);
+
+    if($rowCoun > 0)
+    {
+        header("location:Warningdelete.html");
+        mysqli_close($conn);
+    }
 
 
-     $sql_query = mysqli_query($conn, "UPDATE item SET id_buyer= NULL WHERE name='$retrievedName'");
+
+ $sql_query = mysqli_query($conn, "UPDATE item SET id_buyer= NULL WHERE name='$retrievedName'");
 
 
     
@@ -35,7 +47,7 @@ if($sql_query)
     
     else
     {
-     header("location:HomePage.html");
+     header("location:Warningdelete.html");
     }
     
     mysqli_close($conn);

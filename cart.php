@@ -388,7 +388,7 @@ if(!$conn)
                         <tr>
 
                             <td><a href="updateCartItem.php?cat=<?php echo $temp?>" class="close" style="text-align:left;"></a></td>
-
+                            
                             <td style="padding-right:60px"><?php echo($row['name']) ?></td>
                             <td><?php echo($row['price']) ?></td>
                             <td><?php echo($row['category']) ?></td>
