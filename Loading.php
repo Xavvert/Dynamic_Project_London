@@ -140,8 +140,8 @@ mysqli_close($conn);
                 To: "xavier.dandigna@gmail.com",
             
                 Subject: "Thank you "+ fname +" "+ lname+" for your purchase on Cykel 🚴 - Package's ID : "+cid,
-                Body: "Dear "+ fname+",<br> Thank you for your purchase on Cykel! <br> Here's your recap : "+ "Your order's name : "+cpackagename
-            +" <br> First Name : "+ cfirstname+" <br> Last Name : "+ clastname+" <br> Adress : "+ cadress+" <br> City : "+ ccity+" <br> Zip Code : "+ czipCode+ " <br> Country : "+ ccountry+ "<br> Phone number : "+ cphone+". "+" <br> You paid with a "+ ctype + " and the name associated with this card is : "+ cnameCard+"."+"<br>Just as a reminder to our customers, we are not storing credit cards' informations to protect their data. You will receive your invoice directly in your package.<br> Nowadays, shipping delivery may be impacted due to the COVID pandemic. Thanks for your comprehension. <br> See you soon to 🚴‍♂️ Cykel 🚴‍♂️. <br> Kind Regards, <br>The Cykel's Team "
+                Body: "Dear "+ fname+",<br> Thank you for your purchase on Cykel! <br> Here's your recap : <br><br> "+ "Your order's name : "+cpackagename
+            +" <br> First Name : "+ cfirstname+" <br> Last Name : "+ clastname+" <br> Adress : "+ cadress+" <br> City : "+ ccity+" <br> Zip Code : "+ czipCode+ " <br> Country : "+ ccountry+ "<br> Phone number : "+ cphone+". "+" <br> You paid with a "+ ctype + " and the name associated with this card is : "+ cnameCard+"."+"<br><br>Just as a reminder to our customers, we are not storing credit cards' informations to protect their data. You will receive your invoice directly in your package.<br> Nowadays, shipping delivery may be impacted due to the COVID pandemic. Thanks for your comprehension. <br><br> See you soon to 🚴‍♂️ Cykel 🚴‍♂️. <br> Kind Regards, <br>The Cykel's Team "
             })
             .then(function(message) {
                 window.location = 'treatment.php';
