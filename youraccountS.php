@@ -370,6 +370,7 @@ if($_SESSION["upS"]==1)
                         <th style="font-size: 20px;border: 1px solid black;text-align: center;">Name</th>
                         <th style="font-size: 20px;border: 1px solid black;text-align: center;">Price in £</th>
                         <th style="font-size: 20px;border: 1px solid black;text-align: center;">Category</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Action</th>
                     </tr>
 
                     <?php
@@ -393,12 +394,23 @@ if(!$conn)
             $sql_query=mysqli_query($conn, "SELECT * FROM item WHERE id_seller='$currentUs'");
             while($row=mysqli_fetch_array($sql_query))
             {
+                $tempname=$row['name'];
             ?>
                     <tr>
                         <td><?php echo($row['id']) ?></td>
                         <td><?php echo($row['name']) ?></td>
                         <td><?php echo($row['price']) ?></td>
                         <td><?php echo($row['category']) ?></td>
+                        <td> <p> You can put an item in the auction </p>
+                        <form action="placetoBid.php?cat=<?php echo $tempname?>" method="post">
+                            <br>
+                            <label>Choose an ending date</label>
+                            <br>
+                            <input type="date" name="dateoff">
+                            <br>
+                            <input type="submit" name="save" value="I place this item in auction">
+                        </form>
+                            
                     </tr>
 
                     <?php } mysqli_close($conn); ?>
@@ -497,6 +509,59 @@ if(!$conn)
                 </table>
                 <br>
                 <br>
+                <h2>My BIDS</h2>
+                <table border="1" style="width: 800px; text-align: center; color: black; font-size: 17px;">
+
+                    <tr>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Transaction's ID</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Beginning Date</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Ending Date</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Name of the item</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Current Price</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Current ID Buyer</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Status</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Action</th>
+                    </tr>
+
+                    <?php
+
+$server_name="localhost:3306";
+$username="root";
+$password="root";
+$database_name="cykel";
+
+
+$conn=mysqli_connect($server_name,$username,$password,$database_name);
+
+if(!$conn)
+{
+    die("Connection Failed:".mysqli_connect_error());
+    
+}
+                    @$currentUsername=$_SESSION['username'];
+                           
+            $sql_query=mysqli_query($conn, "SELECT * FROM bid WHERE id_seller='$currentUsername'");
+            while($row=mysqli_fetch_array($sql_query))
+            {
+                
+            $tempname=$row['name'];
+            ?>
+                    <tr>
+                        <td><?php echo($row['id']) ?></td>
+                        <td><?php echo($row['dateOn']) ?></td>
+                        <td><?php echo($row['dateOff']) ?></td>
+                        <td><?php echo($row['name']) ?></td>
+                        <td><?php echo($row['price']) ?></td>
+                        <td><?php echo($row['id_buyer']) ?></td>
+                        <td><?php echo($row['status']) ?></td>
+                        <td> <p> Max bid proposed £<?php echo($row['price']) ?> </p>
+                    
+                            <button onclick="location.href='stopBid.php?cat=<?php echo $tempname?>'"> Stop the auction </button></td>
+                     
+                    </tr>
+
+                    <?php } mysqli_close($conn); ?>
+                </table>
             </div>
             
         </div>

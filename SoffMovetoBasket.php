@@ -25,7 +25,7 @@ $retrievedName = $_GET['cat'];
         mysqli_close($conn);
     }
 
-$sql_query = mysqli_query($conn, "Select * from offer WHERE name= '$retrievedName' AND id_seller='$currentUsername' AND hand='h'");
+$sql_query = mysqli_query($conn, "Select * from offer WHERE name= '$retrievedName' AND id_seller='$currentUsername' AND hand='b'");
  $rowCount = mysqli_num_rows($sql_query);
 
     if($rowCount > 0)

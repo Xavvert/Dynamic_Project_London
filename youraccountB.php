@@ -503,8 +503,6 @@ if(!$conn)
             $sql_query=mysqli_query($conn, "SELECT * FROM offer WHERE id_buyer='$currentUsername'");
             while($row=mysqli_fetch_array($sql_query))
             {
-                
-            
             $tempname=$row['name'];
             ?>
                     <tr>
@@ -537,15 +535,19 @@ if(!$conn)
 
                 <!-- -------------- -->
 
-                <h2>My BIDS </h2>
+                 <h2>My BIDS</h2>
                 <table border="1" style="width: 800px; text-align: center; color: black; font-size: 17px;">
 
                     <tr>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Transaction's ID</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Beginning Date</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Ending Date</th>
                         <th style="font-size: 20px;border: 1px solid black;text-align: center;">Name of the item</th>
                         <th style="font-size: 20px;border: 1px solid black;text-align: center;">Current Price</th>
-                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">ID Seller</th>
-                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Number of attempts (max 5)</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Current ID Buyer</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">ID seller</th>
                         <th style="font-size: 20px;border: 1px solid black;text-align: center;">Status</th>
+                        <th style="font-size: 20px;border: 1px solid black;text-align: center;">Action</th>
                     </tr>
 
                     <?php
@@ -563,18 +565,33 @@ if(!$conn)
     die("Connection Failed:".mysqli_connect_error());
     
 }
-                    @$currentUsername=$_SESSION['username'];
-                           
-            $sql_query=mysqli_query($conn, "SELECT * FROM offer WHERE id_buyer='$currentUsername'");
+        @$currentUsername=$_SESSION['username'];
+                           //refaire la query
+            $sql_query=mysqli_query($conn, "SELECT * FROM bid WHERE status='In progress'");
+                    
             while($row=mysqli_fetch_array($sql_query))
             {
+                
+            $tempname=$row['name'];
             ?>
                     <tr>
+                        <td><?php echo($row['id']) ?></td>
+                        <td><?php echo($row['dateOn']) ?></td>
+                        <td><?php echo($row['dateOff']) ?></td>
                         <td><?php echo($row['name']) ?></td>
                         <td><?php echo($row['price']) ?></td>
+                        <td><?php echo($row['id_buyer']) ?></td>
                         <td><?php echo($row['id_seller']) ?></td>
-                        <td><?php echo($row['attempt']) ?></td>
                         <td><?php echo($row['status']) ?></td>
+                        <td> <p> Max bid proposed £<?php echo($row['price']) ?> </p>
+                            
+                            <form  action="bid.php?cat=<?php echo $tempname?>" method="post" >
+                        <label>Enter your max amount</label>
+                        <br><input type="text" name="priceOffer">
+                        <input type="image" name="save" value="Submit" src="pictures/okOrange.jpg" style="width: 30px; height: 30px;">
+                    </form>
+                    
+                     
                     </tr>
 
                     <?php } mysqli_close($conn); ?>
