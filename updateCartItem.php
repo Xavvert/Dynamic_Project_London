@@ -13,14 +13,16 @@ if(!$conn)
     
 }
 
+$sql_query = mysqli_query($conn, "Select * from item WHERE name= '$retrievedName' AND id_buyer='$currentUsername' AND type='offer'");
+ $rowCount = mysqli_num_rows($sql_query);
+
+    if($rowCount > 0)
+    {
+        header("location:Warningdelete.html");
+        mysqli_close($conn);
+    }
 $retrievedName = $_GET['cat'];
 
-echo $retrievedName;
-
-
-echo ($retrievedName);
-
-    
 
      $sql_query = mysqli_query($conn, "UPDATE item SET id_buyer= NULL WHERE name='$retrievedName'");
 

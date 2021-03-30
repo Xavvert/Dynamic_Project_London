@@ -46,6 +46,7 @@ $sql_query = mysqli_query($conn, "Select * from offer WHERE name= '$retrievedNam
 $row = mysqli_fetch_array($sql_query);
 $goodPrice=$row['price'];
 $goodBuyer=$row['id_buyer'];
+$sql_query = mysqli_query($conn, "UPDATE item SET type= 'offer' WHERE name='$retrievedName'");
 $sql_query = mysqli_query($conn, "UPDATE item SET price= '$goodPrice' WHERE name='$retrievedName'");
 $sql_query = mysqli_query($conn, "UPDATE item SET id_buyer= '$goodBuyer' WHERE name='$retrievedName'");
 
