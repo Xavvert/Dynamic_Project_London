@@ -19,6 +19,8 @@ if(isset($_POST['save']))
     $firstName=$_POST['firstName'];
     $lastName=$_POST['lastName'];
     
+ 
+ // inserting all the info retrieved in the form to the db, it creates a new row
     $sql_query = "INSERT INTO seller (firstName,lastName, username, password) VALUES ('$firstName','$lastName','$username','$password')";
     
       // Get file info 
@@ -46,7 +48,7 @@ if(isset($_POST['save']))
             $statusMsg = 'Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload.'; 
         } 
     
-  // Get file info 
+        // Get file info 
         $fileName = basename($_FILES["imageB"]["name"]); 
         $fileType = pathinfo($fileName, PATHINFO_EXTENSION); 
          

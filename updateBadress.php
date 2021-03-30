@@ -24,11 +24,13 @@ $currentUsername=$_SESSION["username"];
 @$validation=$_POST["save"];
 
 if(isset($validation)){
-
+//updating the correct info retrieved from the form
      $sql_query = mysqli_query($conn, "UPDATE buyer SET adress= '$adress', city= '$city', zipCode= '$zipCode', country= '$country' WHERE username='$currentUsername'");
     
 if($sql_query)
 {
+    
+    //and storing them again in session variable to fit and then have the correct display
     $_SESSION["upS"]=1;
    
     $_SESSION["city"]=$city;

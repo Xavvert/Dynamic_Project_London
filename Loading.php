@@ -109,6 +109,8 @@ mysqli_close($conn);
 <script src="https://smtpjs.com/v3/smtp.js"></script>
 
 <script type="text/javascript">
+    
+    // Storing all the data that we need to adapt automatically a mail when someone bought something
     var receiver = "<?php echo $_SESSION['username']; ?>";
     var fname = "<?php echo $_SESSION['firstname']; ?>";
     var lname = "<?php echo $_SESSION['lastname']; ?>";

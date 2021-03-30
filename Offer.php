@@ -17,6 +17,8 @@ if(!$conn)
 $retrievedName = $_GET['cat'];
 @$currentUsername=$_SESSION['username'];
 @$price=$_POST["priceOffer"];
+
+//if the product is bought it can't have his price changed later
     
  $sql_query = mysqli_query($conn, "Select * from item WHERE name= '$retrievedName' AND id_buyer='$currentUsername'");
  $rowCount = mysqli_num_rows($sql_query);
@@ -27,6 +29,8 @@ $retrievedName = $_GET['cat'];
         mysqli_close($conn);
     }
 
+
+// If it's not the turn of the buyer
  $sql_query = mysqli_query($conn, "Select * from offer WHERE name= '$retrievedName' AND id_buyer='$currentUsername' AND hand='s'");
  $rowCount = mysqli_num_rows($sql_query);
 
@@ -36,6 +40,7 @@ $retrievedName = $_GET['cat'];
         mysqli_close($conn);
     }
 
+// If the buyer reached out the max attempt of 5
  $sql_query = mysqli_query($conn, "Select * from offer WHERE name= '$retrievedName' AND id_buyer='$currentUsername' AND attempt='5'");
  $rowCount = mysqli_num_rows($sql_query);
 
@@ -45,12 +50,13 @@ $retrievedName = $_GET['cat'];
         mysqli_close($conn);
     }
     
-    //si deja dans la bdd
+    //If already in DB
      $sql_query = mysqli_query($conn, "Select * from offer WHERE name= '$retrievedName' AND id_buyer='$currentUsername'");
      $rowCount = mysqli_num_rows($sql_query);
 
     if($rowCount > 0)
     {
+        //then we set properly the DB with attempt+1 and the good price, we also set the hand to 's', meaning that it is the turn to seller to propose something
         $sql_query = mysqli_query($conn, "SELECT attempt from offer WHERE name= '$retrievedName'"); 
         $row = mysqli_fetch_array($sql_query);
         $_SESSION["attempt"]=$row['attempt'];
@@ -65,6 +71,7 @@ $retrievedName = $_GET['cat'];
     }
     
 else{
+    //if not already in DB -> meaning first time to bargaining with the seller, then we insert into the offer table all the data
     $sql_query = mysqli_query($conn, "SELECT id_seller from item WHERE name= '$retrievedName'"); 
     $row = mysqli_fetch_array($sql_query);
     $_SESSION["selleroffer"]=$row['id_seller'];

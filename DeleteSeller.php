@@ -18,6 +18,7 @@ if(!$conn)
 
 if(isset($validation)){
 
+     //deleting from the db the current seller
      $sql_query = mysqli_query($conn, "DELETE FROM seller WHERE username='$username'");
     
 if($sql_query)

@@ -25,6 +25,7 @@ if(isset($_POST['save']))
     $country=$_POST['country'];
     $phone=$_POST['phone'];
     
+    // inserting all the info retrieved in the form to the db, it creates a new row
     $sql_query = "INSERT INTO buyer (firstName,lastName, adress, city, zipCode, country, phone, username, password) VALUES ('$firstName','$lastName','$adress','$city','$zipCode','$country','$phone','$username','$password')";
     
     if(mysqli_query($conn, $sql_query))

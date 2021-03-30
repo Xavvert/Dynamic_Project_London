@@ -22,11 +22,15 @@ $currentUsername=$_SESSION["username"];
 @$validation=$_POST["save"];
 
 if(isset($validation)){
+    
+    //updating the correct info retrieved from the form
 
      $sql_query = mysqli_query($conn, "UPDATE admin SET username= '$username', password= '$password', firstname= '$firstname', lastname= '$lastname',  WHERE username='$currentUsername'");
     
 if($sql_query)
 {
+    
+    //and storing them again in session variable to fit and then have the correct display
     $_SESSION["upA"]=1;
     $_SESSION["username"]=$username;
     $_SESSION["password"]=$password;

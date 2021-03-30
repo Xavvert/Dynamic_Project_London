@@ -17,7 +17,7 @@ $retrievedName = $_GET['cat'];
 @$currentUsername=$_SESSION['username'];
 
 
-
+//if the offer is already finalized, then it can't be bought again
  $sql_query = mysqli_query($conn, "Select * from offer WHERE name= '$retrievedName' AND id_buyer='$currentUsername' AND status='Finalized'");
  $rowCount = mysqli_num_rows($sql_query);
 
@@ -27,6 +27,7 @@ $retrievedName = $_GET['cat'];
         mysqli_close($conn);
     }
     
+//if it is not the turn of the buyer to interact
 $sql_query = mysqli_query($conn, "Select * from offer WHERE name= '$retrievedName' AND id_buyer='$currentUsername' AND hand='s'");
  $rowCount = mysqli_num_rows($sql_query);
 
@@ -37,11 +38,12 @@ $sql_query = mysqli_query($conn, "Select * from offer WHERE name= '$retrievedNam
     }
 
 
-
-
+//if everythings ok
+//then we set the attempts to 5 and finalize the transaction
 $sql_query = mysqli_query($conn, "UPDATE offer SET attempt= 5 WHERE name= '$retrievedName' AND id_buyer='$currentUsername'");
 $sql_query = mysqli_query($conn, "UPDATE offer SET status= 'Finalized' WHERE name= '$retrievedName' AND id_buyer='$currentUsername'");
     
+//and we fill the db correctly with the good buyer and the good price
 $sql_query = mysqli_query($conn, "Select * from offer WHERE name= '$retrievedName' AND id_buyer='$currentUsername'");
 $row = mysqli_fetch_array($sql_query);
 $goodPrice=$row['price'];

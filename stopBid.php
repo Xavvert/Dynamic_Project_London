@@ -17,7 +17,7 @@ if(!$conn)
 $retrievedName = $_GET['cat'];
 @$currentUsername=$_SESSION['username'];
 
-    
+    // If the item's status is already finish then we can't again stop the bid
  $sql_query = mysqli_query($conn, "Select * from bid WHERE name= '$retrievedName' AND status='Finalized'");
  $rowCount = mysqli_num_rows($sql_query);
 
@@ -28,6 +28,7 @@ $retrievedName = $_GET['cat'];
     }
 
  
+// only for the admin, they can stop prematurely the bid, for the purpose of the presentation mainly... because we don't have the time to wait
     $sql_query = mysqli_query($conn, "UPDATE bid SET status= 'Finalized' WHERE name='$retrievedName'");
 
 $sql_query = mysqli_query($conn, "Select * from bid WHERE name= '$retrievedName'");

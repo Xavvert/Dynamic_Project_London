@@ -28,6 +28,7 @@ if(@$_SESSION["checkA"]==1 || @$_SESSION["checkB"]==1 || @$_SESSION["checkS"]==1
 
 if(isset($validation)){
     
+    //checking if the username and the password retrieved are checking nicely with the data stored in the DB
     $sql_query = mysqli_query($conn, "Select * from admin WHERE username = '$username' AND password = '$password'");
     $rowCount = mysqli_num_rows($sql_query);
     

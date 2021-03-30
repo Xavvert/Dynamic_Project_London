@@ -13,6 +13,7 @@ if(!$conn)
     
 }
 
+//that's here, after the mail has been sent, that we're deleting the item from the table definitively
      $currentUsername=$_SESSION["username"];
      $sql_query = mysqli_query($conn, "DELETE FROM item WHERE id_buyer='$currentUsername'");
     

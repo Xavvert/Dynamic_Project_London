@@ -15,6 +15,8 @@ if(!$conn)
 
 if(isset($_POST['save']))
 {
+    
+    //just saving what we get from the form into session variables to send the recap mail later
     $packagename=$_POST['packagename'];
     $firstName=$_POST['firstname'];
     $lastName=$_POST['lastname'];
@@ -26,10 +28,6 @@ if(isset($_POST['save']))
     
   @$totalprice=$_SESSION["totalPrice"];
   @$currentUsername=$_SESSION["username"];
-    
-
-    
-   
    
          $_SESSION["cpackagename"]=$packagename;
          $_SESSION["cusername"]=$currentUsername;

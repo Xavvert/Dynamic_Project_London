@@ -16,6 +16,8 @@ if(!$conn)
 $retrievedName = $_GET['cat'];
 $currentUsername=$_SESSION["username"];
 
+// can't delete an item bought through the best offer process, they have to buy it
+
 $sql_query = mysqli_query($conn, "Select * from item WHERE name= '$retrievedName' AND id_buyer='$currentUsername' AND type='offer'");
 $rowCount = mysqli_num_rows($sql_query);
 
@@ -25,6 +27,7 @@ $rowCount = mysqli_num_rows($sql_query);
         mysqli_close($conn);
     }
 
+// can't delete an item bought through the id process, they have to buy it
 $sql_query = mysqli_query($conn, "Select * from item WHERE name= '$retrievedName' AND id_buyer='$currentUsername' AND type='bid'");
 $rowCoun = mysqli_num_rows($sql_query);
 
@@ -34,7 +37,7 @@ $rowCoun = mysqli_num_rows($sql_query);
         mysqli_close($conn);
     }
 
-
+//otherwise, the buyer's username is NULL, so the item is now displayed into the right category again
 
  $sql_query = mysqli_query($conn, "UPDATE item SET id_buyer= NULL WHERE name='$retrievedName'");
 

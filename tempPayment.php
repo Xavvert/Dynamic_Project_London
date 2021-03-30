@@ -22,7 +22,7 @@ if(isset($_POST['save']))
     $crypto=$_POST['crypto'];
     $currentUsername=$_SESSION["username"];
     
-  
+  //just saving the card's client data into session variable and not store the data into tables to protect their private data
          $_SESSION["cnum"]= $num;
          $_SESSION["ctype"]=$type;
          $_SESSION["cnameCard"]=$nameCard;
@@ -40,6 +40,7 @@ if(isset($_POST['save']))
        $phone=$_SESSION["cphone"];
     
     
+    //saving the data into checkout for the transaction history
      $sql_query = "INSERT INTO checkout (packagename, firstName,lastName, adress, city, zipCode, country, phone, sent, id_buyer, totalPrice) VALUES ('$packagename','$firstName','$lastName','$adress','$city','$zipCode','$country','$phone',NOW(),'$currentUsername',$totalprice)";
     
      $sql_query = mysqli_query($conn, "SELECT id from checkout WHERE packagename='$packagename'"); 

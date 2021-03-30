@@ -25,10 +25,12 @@ $currentUsername=$_SESSION["username"];
 
 if(isset($validation)){
 
+       //updating the correct info retrieved from the form
      $sql_query = mysqli_query($conn, "UPDATE seller SET firstName= '$firstname', lastName= '$lastname', username= '$username', password= '$password' WHERE username='$currentUsername'");
     
 if($sql_query)
 {
+    //and storing them again in session variable to fit and then have the correct display
     $_SESSION["upS"]=1;
     $_SESSION["username"]=$username;
     $_SESSION["password"]=$password;
