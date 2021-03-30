@@ -15,7 +15,6 @@ if($_SESSION["checkB"]!=1)
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 
