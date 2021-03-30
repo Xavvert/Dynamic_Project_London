@@ -34,7 +34,7 @@ $retrievedName = $_GET['cat'];
     $_SESSION["selleroffer"]=$row['id_seller'];
     $tempseller=$_SESSION["selleroffer"];
     
-    $sql_query = mysqli_query($conn, "INSERT INTO bid (name, id_seller, id_buyer,dateOn,dateOff, price, previousPrice, nextPrice, status) VALUES ('$retrievedName','$currentUsername',NULL,NOW(),'$dateoff',0,0,0,'In progress')");
+    $sql_query = mysqli_query($conn, "INSERT INTO bid (name, id_seller, id_buyer,dateOn,dateOff, price, nextPrice, status) VALUES ('$retrievedName','$currentUsername',NULL,NOW(),'$dateoff',0,0,'In progress')");
     
     
 if($sql_query)

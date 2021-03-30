@@ -556,7 +556,7 @@ if(!$conn)
                         <td><?php echo($row['status']) ?></td>
                         <td> <p> Max bid proposed £<?php echo($row['price']) ?> </p>
                     
-                            <button onclick="location.href='stopBid.php?cat=<?php echo $tempname?>'"> Stop the auction </button></td>
+                            <button onclick="location.href='HomePage.html'"> In this version, only an administrator can stop prematurely an auction </button></td>
                      
                     </tr>
 
