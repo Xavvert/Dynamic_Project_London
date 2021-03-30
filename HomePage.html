@@ -6,11 +6,14 @@
     <title>Cykel - Homepage</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="header&footer.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="header&footer.css">
+    <script type="text/javascript" src="sidenav.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script type="text/javascript" src="sendEmail.js"></script>
 
     <style type="text/css">
         .sidenav {
@@ -154,16 +157,6 @@
             animation-duration: 1.5s;
         }
 
-        @-webkit-keyframes fade {
-            from {
-                opacity: .4
-            }
-
-            to {
-                opacity: 1
-            }
-        }
-
         @keyframes fade {
             from {
                 opacity: .4
@@ -171,16 +164,6 @@
 
             to {
                 opacity: 1
-            }
-        }
-
-        /* On smaller screens, decrease text size */
-        @media only screen and (max-width: 300px) {
-
-            .prev,
-            .next,
-            .text {
-                font-size: 11px
             }
         }
 
@@ -273,7 +256,7 @@
             background-color: dimgrey;
             border-radius: 1em;
         }
-
+        
         #logo:hover {
             transform: rotate(360deg);
             transition: all 1.3s;
@@ -283,18 +266,6 @@
 
     <link rel='icon' href='pictures/Cykel.png' type='image/x-icon' />
 </head>
-    
-<script type="text/javascript">
-    
-    $(document).ready(function() {
-            
-        $("#notif").click(function() {
-            $(".triangle").toggle("");
-            $(".notif").toggle("");
-        });
-    });
-</script>
-
 
 <body>
     <audio id="myAudio">
@@ -484,7 +455,7 @@
                     <br>
                     <h4 class="title">Category</h4>
                     <div class="category">
-                        <a href="subcatBike.html">All Bikes 🚲</a>
+                        <a href="subcatbike.php">All Bicycles 🚲</a>
                         <a href="subcatboard.html">All Boardgames 🎲</a>
                     </div>
                 </div>
@@ -509,31 +480,16 @@
 
     </footer>
 </body>
-
-<script src="https://smtpjs.com/v3/smtp.js"></script>
-<script type="text/javascript">
-    function sendEmail() {
-
-        var emailReceiver = document.getElementById("email").value;
-
-        Email.send({
-                Host: "smtp.gmail.com",
-                Username: "cykelweb@gmail.com",
-                Password: "cykel123.",
-
-                From: "cykelweb@gmail.com",
-                To: emailReceiver,
-                Subject: "Thank you - 🚴 - You have subscribed to our newsletter",
-                Body: "Welcome into the Cykel's family 🚴 , <br> Many thanks for subscribing to our newsletter 😃. <br> You will receive each month a recap of our best products, special discounts, special events for our members and the latest news about the Cykel's sphere 🗺️. <br> Stay Tuned ! <br> Warmly, <br> The Cykel's team."
-            })
-            .then(function(message) {
-                alert("Thank you ! Welcome into the 🚴Cykel family🚴")
-            });
-    }
-
-</script>
-
-<script type="text/javascript">
+    <script type="text/javascript">
+    
+    $(document).ready(function() {
+            
+        $("#notif").click(function() {
+            $(".triangle").toggle("");
+            $(".notif").toggle("");
+        });
+    });
+    
     var audio = $("#myAudio")[0];
     $("#logo").mouseenter(function() {
         audio.play();
@@ -543,40 +499,7 @@
     $("#submit").mouseenter(function() {
         audio2.play();
     });
-
-
-
-    function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
-    }
-
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-    }
-
-
-    var slideIndex = 0;
-    showSlides();
-
-    function showSlides() {
-        var i;
-        var slides = document.getElementsByClassName("mySlides");
-        var dots = document.getElementsByClassName("dot");
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) {
-            slideIndex = 1
-        }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
-        setTimeout(showSlides, 2200); // Change image every 2.2 seconds
-    }
-
+    
 </script>
 
 </html>

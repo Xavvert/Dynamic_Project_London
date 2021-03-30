@@ -15,18 +15,35 @@
 		  transform: scale(1.5); /* (150% zoom)*/
 		}
 
-		/*#footer{
-			background-color: whitesmoke;
-			position: relative;
-			width:100%;
-			height: 80px;
-			color: #330000;
-			clear: both;
-			bottom:0;
-			left: 0;
-			right: 0;
-			font-family: "Verdana";
-		}*/
+/*NOTIF*/
+
+        .notif {
+            position:absolute;
+            width: 300px;
+            background-color: black;
+            grid-template-rows: auto;
+            color: white;
+            left:1040px;
+            top:105px;
+            border-style:groove;
+            border-radius: 1em;
+            grid-gap: 30px;
+            display: none
+        }
+        
+        .boxnotif {
+            width: auto;
+            height: auto;
+            background-color: black;
+            padding: 20px;
+            border-radius: 1.5em;
+            color:chocolate;
+        }
+        
+        .boxnotif:hover {
+            background-color: dimgrey;
+            border-radius: 1em;
+        }
 
 /*FOOTER*/
 		.footer {

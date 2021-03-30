@@ -71,6 +71,71 @@
             transition: all 1s;
         }
     </style>
+    
+    <style type="text/css" name="back button">
+        .back-zone {
+            width: 100%;
+            height: 50px;
+            background-color: whitesmoke;
+        }
+
+        .wrapper {
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            transform: translate(-50%, -50%);
+            border-radius: 1em;
+        }
+
+        .wrapper a {
+            display: block;
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 18px;
+            font-family: sans-serif;
+            text-decoration: none;
+            color: #333;
+            border: 2px solid #333;
+            letter-spacing: 2px;
+            text-align: center;
+            position: relative;
+            transition: all .35s;
+            border-radius: 1em;
+        }
+
+        .wrapper a span {
+            position: relative;
+            z-index: 2;
+            border-radius: 1em;
+        }
+        
+
+        .wrapper a:after {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: #D8392F;
+            transition: all .35s;
+            border-radius: 1em;
+        }
+
+        .wrapper a:hover {
+            color: white;
+            border: 2px solid white;
+            transform: rotate(360deg);
+            transition: all 0.5s;
+        }
+
+        .wrapper a:hover:after {
+            width: 100%;
+        }
+
+    </style>
+
 
 
     <link rel='icon' href='pictures/Cykel.png' type='image/x-icon' />
@@ -120,6 +185,12 @@
     </div>
 
 <!--content-->
+        <!--back button-->
+    <div class="back-zone">
+        <div class="wrapper">
+            <a href="#" onclick="javascript:window.history.back(-1);return false;"><span>BACK</span></a>
+        </div>
+    </div>
 
     <div class="text">
         <center>

@@ -46,17 +46,20 @@
             font-size: 36px;
             margin-left: 50px;
         }
+
         .text {
             padding: 50px;
             background-color: whitesmoke;
             font-family: Verdana;
         }
+
         .text p {
             font-size: 18px;
             margin-left: 300px;
             margin-right: 300px;
             text-align: justify;
         }
+
         .text h3 {
             margin-left: 300px;
             color: black;
@@ -65,12 +68,77 @@
         h5 {
             font-size: 30px;
         }
+
         #logo:hover {
 
             transform: rotate(360deg);
             transition: all 1s;
         }
     </style>
+
+    <style type="text/css" name="back button">
+        .back-zone {
+            width: 100%;
+            height: 50px;
+            background-color: whitesmoke;
+        }
+
+        .wrapper {
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            transform: translate(-50%, -50%);
+            border-radius: 1em;
+        }
+
+        .wrapper a {
+            display: block;
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 18px;
+            font-family: sans-serif;
+            text-decoration: none;
+            color: #333;
+            border: 2px solid #333;
+            letter-spacing: 2px;
+            text-align: center;
+            position: relative;
+            transition: all .35s;
+            border-radius: 1em;
+        }
+
+        .wrapper a span {
+            position: relative;
+            z-index: 2;
+            border-radius: 1em;
+        }
+
+
+        .wrapper a:after {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: #D8392F;
+            transition: all .35s;
+            border-radius: 1em;
+        }
+
+        .wrapper a:hover {
+            color: white;
+            border: 2px solid white;
+            transform: rotate(360deg);
+            transition: all 0.5s;
+        }
+
+        .wrapper a:hover:after {
+            width: 100%;
+        }
+    </style>
+
 
 
     <link rel='icon' href='pictures/Cykel.png' type='image/x-icon' />
@@ -119,11 +187,18 @@
         </div>
     </div>
 
-<!--content-->
+    <!--back button-->
+    <div class="back-zone">
+        <div class="wrapper">
+            <a href="#" onclick="javascript:window.history.back(-1);return false;"><span>BACK</span></a>
+        </div>
+    </div>
+
+    <!--content-->
 
     <div class="text">
         <center>
-        <h1 style="color: black;"> Privacy Policy</h1>
+            <h1 style="color: black;"> Privacy Policy</h1>
         </center>
         <br>
         <br>
@@ -174,61 +249,62 @@
             We reserve the right to modify this privacy policy at any time, so please review it frequently. Changes and clarifications will take effect immediately upon their posting on the website. If we make material changes to this policy, we will notify you here that it has been updated, so that you are aware of what information we collect, how we use it, and under what circumstances, if any, we use and/or disclose it. If our store is acquired or merged with another company, your information may be transferred to the new owners so that we may continue to sell products to you.
         </p>
         <br>
-        
+
     </div>
 
-<!--footer-->
+    <!--footer-->
 
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-        <div class="col-sm-3">
-            <h4 class="title">Cykel</h4>
-            <p>Cykel market is an auction website similar to EBay created for the Dynamic Web Programming Project.</p>  
-            <p style="color: #000058;">INSEEC U London - Y3</p>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h4 class="title">Cykel</h4>
+                    <p>Cykel market is an auction website similar to EBay created for the Dynamic Web Programming Project.</p>
+                    <p style="color: #000058;">INSEEC U London - Y3</p>
 
-            <ul class="social-icon">
-            <a href="#" class="social"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-            <a href="#" class="social"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-            <a href="#" class="social"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-            <a href="#" class="social"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
-            <a href="#" class="social"><i class="fa fa-google" aria-hidden="true"></i></a>
-            </ul>
+                    <ul class="social-icon">
+                        <a href="#" class="social"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" class="social"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#" class="social"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" class="social"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                        <a href="#" class="social"><i class="fa fa-google" aria-hidden="true"></i></a>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h4 class="title">Policy</h4>
+                    <span class="acount-icon">
+                        <a href="privacypolicy.html"><i class="fa fa-user" aria-hidden="true"></i> Privacy Policy</a>
+                        <a href="termsofservice.html"><i class="fa fa-file" aria-hidden="true"></i> Terms Of Service</a>
+                        <a href="mailto: contact@cykel.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> Contact Us</a>
+                    </span>
+                </div>
+                <div class="col-sm-3">
+                    <h4 class="title">Category</h4>
+                    <div class="category">
+                        <a href="subcatBike.html">All Bikes 🚲</a>
+                        <a href="subcatboard.html">All Boardgames 🎲</a>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <h4 class="title">Payment Methods</h4>
+                    <p>This website accept this payment methods.</p>
+                    <ul class="payment">
+                        <li><a href="#"><i class="fa fa-cc-amex" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-cc-mastercard" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-paypal" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-cc-visa" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-apple" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
             </div>
-        <div class="col-sm-3">
-            <h4 class="title">Policy</h4>
-            <span class="acount-icon">          
-            <a href="privacypolicy.html"><i class="fa fa-user" aria-hidden="true"></i> Privacy Policy</a>
-            <a href="termsofservice.html"><i class="fa fa-file" aria-hidden="true"></i> Terms Of Service</a>
-            <a href = "mailto: contact@cykel.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> Contact Us</a>       
-          </span>
-            </div>
-        <div class="col-sm-3">
-            <h4 class="title">Category</h4>
-            <div class="category">
-            <a href="subcatBike.html">All Bikes 🚲</a> 
-            <a href="subcatboard.html">All Boardgames 🎲</a>         
-            </div>
-            </div>
-        <div class="col-sm-3">
-            <h4 class="title">Payment Methods</h4>
-            <p>This website accept this payment methods.</p>
-            <ul class="payment">
-            <li><a href="#"><i class="fa fa-cc-amex" aria-hidden="true"></i></a></li>
-            <li><a href="#"><i class="fa fa-cc-mastercard" aria-hidden="true"></i></a></li>            
-            <li><a href="#"><i class="fa fa-paypal" aria-hidden="true"></i></a></li>
-            <li><a href="#"><i class="fa fa-cc-visa" aria-hidden="true"></i></a></li>
-            <li><a href="#"><i class="fa fa-apple" aria-hidden="true"></i></a></li>
-            </ul>
-            </div>
+            <hr>
+
+            <div class="row text-center" style="color: #000058;"> © 2021 Designed with by Xavier Dandigna & Anthelme Charvet.</div>
         </div>
-        <hr>
-        
-        <div class="row text-center" style="color: #000058;"> © 2021 Designed with by Xavier Dandigna & Anthelme Charvet.</div>
-        </div>
-        
-        
+
+
     </footer>
 
 </body>
+
 </html>

@@ -350,7 +350,7 @@ if(@$_SESSION["authorize"]!="yes"){
 
         <div class="corpus">
             <div class="accountHeader">
-                <!--<img src="pictures/profilepictureB.png" name="profile picture" alt="/profile picture" style="width: 50px; height: 50px; margin-top: 10px; float: left; margin-left: 50px;">-->
+                <img src="pictures/admin.png" name="profile picture" alt="/profile picture" style="width: 50px; height: 50px; margin-top: 10px; float: left; margin-left: 50px;">
                 <h2 style="text-align: center;">Welcome <mark><?php echo $_SESSION["firstname"]?></mark></h2>
                 <a href="deconnexion.php">Log Out <i class="fa fa-sign-out" aria-hidden="true"></i></a>
             </div>
