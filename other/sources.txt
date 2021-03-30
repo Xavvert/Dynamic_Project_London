@@ -18,6 +18,7 @@ OTHER :
 https://www.smtpjs.com/ (mail)
 https://notificationsounds.com/sound-effects (sound effects)
 https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_audio_play (sound effects)
+https://www.youtubetrimmer.com/?
 
 
 DATABASE :
