@@ -407,7 +407,7 @@ if(!$conn)
                 <br>
 
                 <!--add an item-->
-                <h2>ADD AN ITEM</h2>
+                <h2><i class="fa fa-plus-circle" aria-hidden="true" style="color:#4CAF50;"></i> <u>ADD AN ITEM</u></h2>
 
                 <form action="addItemS.php" method="post" enctype="multipart/form-data" style="">
                     <h3>Item informations</h3>

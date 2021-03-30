@@ -77,7 +77,6 @@ if(@$_SESSION["authorize"]!="yes"){
             transform: rotate(360deg);
             transition: all 1s;
         }
-
     </style>
 
     <style type="text/css">
@@ -102,30 +101,28 @@ if(@$_SESSION["authorize"]!="yes"){
 
         .accountHeader a {
             position: absolute;
-            color:#0a255a;
+            color: #0a255a;
             font-size: 25px;
             left: 1150px;
             top: 10px;
             padding: 8px;
         }
-        
+
         .accountHeader a:hover {
             background-color: #b9c7d6;
             border-radius: 0.2em;
         }
-        
+
         mark {
             margin: 0 -0.2em;
             padding: 0.2em 0.5em;
             border-radius: 0.8em 0.3em;
             color: #0a255a;
             background: transparent;
-            background-image: linear-gradient(
-            to right,
-            rgba(255, 225, 0, 0.4),
-            rgba(255, 225, 0, 0.7),
-            rgba(255, 225, 0, 0.4)
-            )
+            background-image: linear-gradient(to right,
+                    rgba(255, 225, 0, 0.4),
+                    rgba(255, 225, 0, 0.7),
+                    rgba(255, 225, 0, 0.4))
         }
 
         .corpus {
@@ -163,8 +160,19 @@ if(@$_SESSION["authorize"]!="yes"){
         }
 
         .userForm {
-            vertical-align: middle;
-            margin-left: 300px;
+            margin-left: 200px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            padding: 1em;
         }
 
         .databaseForm {
@@ -206,7 +214,6 @@ if(@$_SESSION["authorize"]!="yes"){
             transform: rotate(360deg);
             transition: all 1s;
         }
-
     </style>
 
     <style type="text/css" caption="form design">
@@ -236,11 +243,12 @@ if(@$_SESSION["authorize"]!="yes"){
         input[type=submit] {
             background-color: #4CAF50;
             color: white;
-            padding: 12px 20px;
+            padding: 12px 12px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            margin-left: 200px;
+            /*margin-left: 200px;*/
+            margin-top: 10px;
         }
 
         input[type=submit]:hover {
@@ -255,7 +263,6 @@ if(@$_SESSION["authorize"]!="yes"){
         input[name=delete]:hover {
             background-color: red;
         }
-
     </style>
 
     <link rel='icon' href='Cykel.png' type='image/x-icon' />
@@ -304,7 +311,6 @@ if(@$_SESSION["authorize"]!="yes"){
 
 
     });
-
 </script>
 <link rel='icon' href='pictures/Cykel.png' type='image/x-icon' />
 
@@ -400,7 +406,7 @@ if(@$_SESSION["authorize"]!="yes"){
                     <label>Last Name</label><input type="text" name="lastname" value='<?php echo $_SESSION['lastname'] ?>'>
                     <br>
 
-                    <input type="submit" name="save" value="Save Changes">
+                    <input type="submit" name="save" value="Save Changes" style="margin-left:300px;">
                     <br>
                     <br>
                 </form>
@@ -459,7 +465,7 @@ if(!$conn)
                 <br>
 
                 <!--add an item-->
-                <h2>ADD AN ITEM</h2>
+                <h2><i class="fa fa-plus-circle" aria-hidden="true" style="color:#4CAF50;"></i> <u>ADD AN ITEM</u></h2>
 
                 <form action="addItemA.php" method="post" enctype="multipart/form-data" style="">
                     <h3>Item informations</h3>
@@ -477,7 +483,7 @@ if(!$conn)
                         <option>Bicycles</option>
                     </SELECT>
                     <br>
-                  
+
                     <label>Photo :</label>
                     <input type="file" id="myFile" name="image" style="size: 20px;">
                     <br>
@@ -491,30 +497,45 @@ if(!$conn)
             </div>
 
 
-    <!--MANAGE USERS-->
+            <!--MANAGE USERS-->
             <div class="userForm" id="userForm" style="display: none;">
-                <h3>Add a Buyer :</h3>
-                <a href="signUpB.html"><input type="submit" name="add" value="Add Buyer"></a>
-                <h3>Add a Seller :</h3>
-                <a href="signUpS.html"><input type="submit" name="add" value="Add Seller"></a>
 
-                <form action="deleteBuyer.php" method="post" style="">
-                    <h3>Delete a Buyer :</h3>
-                    <label>Buyer's email: </label>
-                    <input type="email" name="username">
-                    <input type="submit" name="delete" value="Delete Buyer">
-                    <br>
-                    <br>
-                </form>
-
-                <form action="deleteSeller.php" method="post" style="">
-                    <h3>Delete a Seller :</h3>
-                    <label>Seller's email: </label>
-                    <input type="email" name="username">
-                    <input type="submit" name="delete" value="Delete Seller">
-                    <br>
-                    <br>
-                </form>
+                <div class="row">
+                    <div class="column">
+                        <h3><i class="fa fa-user-plus" aria-hidden="true" style="color:#4CAF50;"></i> Add a Buyer :</h3>
+                        <br>
+                        <h3><i class="fa fa-user-plus" aria-hidden="true" style="color:#4CAF50;"></i> Add a Seller :</h3>
+                    </div>
+                    <div class="column">
+                        <a href="signUpB.html"><input type="submit" name="add" value="Add Buyer"></a>
+                        <br>
+                        <a href="signUpS.html"><input type="submit" name="add" value="Add Seller"></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <form action="deleteBuyer.php" method="post" style="width:700px;">
+                            <h3><i class="fa fa-user-times" aria-hidden="true" style="color:#D8392F;"></i> Delete a Buyer :</h3>
+                            <label>Buyer's email: </label>
+                            <input type="email" name="username">
+                            <br>
+                            <input type="submit" name="delete" value="Delete Buyer">
+                            <br>
+                            <br>
+                        </form>
+                    </div>
+                    <div class="column">
+                        <form action="deleteSeller.php" method="post" style="width:700px;margin-left:-300px;">
+                            <h3><i class="fa fa-user-times" aria-hidden="true" style="color:#D8392F;"></i> Delete a Seller :</h3>
+                            <label>Seller's email: </label>
+                            <input type="email" name="username">
+                            <br>
+                            <input type="submit" name="delete" value="Delete Seller">
+                            <br>
+                            <br>
+                        </form>
+                    </div>
+                </div>
             </div>
 
 
