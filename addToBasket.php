@@ -19,7 +19,7 @@ $retrievedName = $_GET['cat'];
  $sql_query = mysqli_query($conn, "Select * from item WHERE name= '$retrievedName' AND id_buyer='$currentUsername'");
  $rowCount = mysqli_num_rows($sql_query);
 
-    if($rowCount > 0)
+if($rowCount > 0)
     {
         header("location:Warningbasket.html");
         mysqli_close($conn);
@@ -31,7 +31,6 @@ if($sql_query)
 {
     header("location:categories.php");
 }
-    
     else
     {
      header("location:HomePage.html");
@@ -39,7 +38,4 @@ if($sql_query)
     mysqli_close($conn);
     
 }
-
-     
-    
 ?>

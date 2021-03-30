@@ -17,12 +17,12 @@ if(isset($_POST['save']))
 {
     $name=$_POST['item'];
     $price=$_POST['price'];
- $description=$_POST['description'];
+    $description=$_POST['description'];
     $category=$_POST['category'];
     @$currentUsername=$_SESSION["username"];
 
-// If file upload form is submitted 
-$status = $statusMsg = ''; 
+    // If file upload form is submitted 
+    $status = $statusMsg = ''; 
 
     $status = 'error'; 
     if(!empty($_FILES["image"]["name"])) { 
@@ -36,10 +36,11 @@ $status = $statusMsg = '';
             $image = $_FILES['image']['tmp_name']; 
             $imgContent = addslashes(file_get_contents($image));  
 
-//QUERY   
+    //QUERY   
     $sql_query = mysqli_query($conn, "INSERT INTO item (name, price, category, id_buyer, id_seller, type, image, description) VALUES ('$name','$price','$category',NULL,'$currentUsername',NULL, '$imgContent', '$description')");
     
-        if($sql_query){ 
+        if($sql_query)
+                    { 
                         $status = 'success'; 
                         $statusMsg = "File uploaded successfully."; 
                     }else{ 
@@ -50,12 +51,6 @@ $status = $statusMsg = '';
                 } 
     }
      
-   /* $sql_query = " SELECT id from item WHERE name = '$name' ";
-    $row = mysqli_fetch_array($sql_query);
-    $_SESSION["id"]=$row['id'];
-    $temp=$row['id'];*/
-    
- 
     if(mysqli_query($conn, $sql_query))
     {
     header("location:youraccountS.php");
@@ -65,14 +60,6 @@ $status = $statusMsg = '';
         echo $statusMsg; 
         echo ("ERROR");
     }
- 
-    
-    mysqli_close($conn);
-    
+    mysqli_close($conn); 
 }
-
 ?>
-
- 
-
-

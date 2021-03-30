@@ -13,7 +13,6 @@ if(!$conn)
     
 }
 
-    
 $retrievedName = $_GET['cat'];
 @$currentUsername=$_SESSION['username'];
 @$price=$_POST["priceOffer"];
@@ -28,27 +27,13 @@ $retrievedName = $_GET['cat'];
     }
 
 $sql_query = mysqli_query($conn, "Select * from bid WHERE name= '$retrievedName' AND status='Finalized'");
- $rowCount = mysqli_num_rows($sql_query);
+$rowCount = mysqli_num_rows($sql_query);
 
     if($rowCount > 0)
     {
         header("location:Warningbid.html");
         mysqli_close($conn);
     }
-
-/*
-$sql_query = mysqli_query($conn, "Select * from bid WHERE name= '$retrievedName' AND status='Finalized'");
-$row = mysqli_fetch_array($sql_query);
-
-$END = $row['dateOff'];
-$Currentdate = date('Y-m-d');
-
-if($Currentdate>$END){
-     header("location:Warningover.html");
-        mysqli_close($conn);
-    
-}*/
-
  
     //si deja dans la bdd
     $sql_query = mysqli_query($conn, "SELECT * from bid WHERE name= '$retrievedName'"); 
@@ -70,10 +55,7 @@ if($price>$currentPrice){
     if($price>$topPrice){
          $sql_query = mysqli_query($conn, "UPDATE bid SET nextPrice= '$price' WHERE name='$retrievedName'");
          $nowPrice=$topPrice+1;
-      /*  if($nowPrice==0)
-        {
-            $nowPrice=1;
-        }*/
+      
      $sql_query = mysqli_query($conn, "UPDATE bid SET price= '$nowPrice' WHERE name='$retrievedName'");
     $sql_query = mysqli_query($conn, "UPDATE bid SET id_buyer= '$currentUsername' WHERE name='$retrievedName'");
          header("location:youraccountA.php");
@@ -91,10 +73,4 @@ if($price>$currentPrice){
 }
  header("location:youraccountA.php");
         mysqli_close($conn);
-    
-
-
-
-     
-    
 ?>

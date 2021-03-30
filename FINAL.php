@@ -210,11 +210,6 @@ mysqli_close($conn);
         
         <div class="row text-center" style="color: #000058;"> © 2021 Designed with by Xavier Dandigna & Anthelme Charvet.</div>
         </div>
-    
-         <?php echo '<pre>';
-var_dump($_SESSION);
-echo '</pre>'; 
-    ?>
         
     </footer>
 
