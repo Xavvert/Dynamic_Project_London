@@ -18,7 +18,8 @@ OTHER :
 https://www.smtpjs.com/ (mail)
 https://notificationsounds.com/sound-effects (sound effects)
 https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_audio_play (sound effects)
-https://www.youtubetrimmer.com/?
+https://www.youtubetrimmer.com/? (video cut)
+Mrs. PARANJAPE's mails about the images insertion and the issue of retrieving the current image into a while loop within a mixed code of PHP and html
 
 
 DATABASE :
@@ -30,3 +31,4 @@ https://stackoverflow.com/questions/11534333/how-to-display-all-table-row-conten
 
 CART:
 https://codeshack.io/shopping-cart-system-php-mysql/
+

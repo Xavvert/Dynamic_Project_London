@@ -61,9 +61,11 @@ if(isset($_POST['save']))
     }
     else
     {
+        //if there is a problem
         echo $statusMsg; 
         echo ("ERROR");
     }
+    //Here we are closing the connection
     mysqli_close($conn);   
 }
 ?>
