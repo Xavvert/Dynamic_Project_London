@@ -435,7 +435,7 @@ if(!$conn)
             <div class="contentItem">
                 
                 <div class="imgItem">
-                    <?php echo '<img name="profile picture" alt="/profile picture" style="height: 380px ;width: 250px;cursor: pointer;" src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"/>' ?>
+                    <?php echo '<img name="profile picture" alt="/profile picture" style="height: 300px ;width: 320px;cursor: pointer;" src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"/>' ?>
                     <br>
                     <br>
                     <p style="border-style:solid; border-color:#0a255a;">

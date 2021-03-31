@@ -322,14 +322,18 @@ if($_SESSION["checkB"]!=1)
         });
     });
 
-    var audio = $("#myAudio")[0];
-    $("#buy").mouseenter(function() {
-        audio.play();
+      var audio2 = $("#myAudio2")[0];
+    $("#imm").mouseenter(function() {
+        audio2.play();
     });
 </script>
 
 <audio id="myAudio">
     <source src="audio/all-cards-on-table-348.mp3" type="audio/mpeg">
+</audio>
+    
+    <audio id="myAudio2">
+    <source src="audio/insight-578.mp3" type="audio/mpeg">
 </audio>
 
 <body>
@@ -445,7 +449,7 @@ if(!$conn)
                     <br>
                     <br>
                     <button class="bid" style="display: none;">Bid</button>
-                    <button onclick="location.href='addToBasket.php?cat=<?php echo $tempname?>'" class="imm" style="display: none;">Buy Immediately</button>
+                    <button onclick="location.href='addToBasket.php?cat=<?php echo $tempname?>'" id="imm" class="imm" style="display: none;">Buy Immediately</button>
                     <button class="offer" style="display: none;">Best Offer</button>
 
                     <form class="arBid" action="bid.php?cat=<?php echo $tempname?>" method="post" style="display: none;">
