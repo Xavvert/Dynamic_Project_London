@@ -15,18 +15,13 @@ if(!$conn)
 
 @$id=$_POST['id'];
 @$validation=$_POST["save"];
+$currentUsername=$_SESSION["username"];
 
 if(isset($validation)){
 
     //deleting from the db the current item
-     $sql_query = mysqli_query($conn, "DELETE FROM item WHERE id='$id'");
-    $rowCount = mysqli_num_rows($sql_query);
-
-    if($rowCount==0)
-    {
-        header("location:WarningdeleteA.html");
-        mysqli_close($conn);
-    }
+     $sql_query = mysqli_query($conn, "DELETE FROM item WHERE id='$id' AND id_seller='$currentUsername'");
+   
     
 if($sql_query)
 {

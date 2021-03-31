@@ -441,6 +441,28 @@ if(!$conn)
                     <br>
                 </form>
                 <br>
+                
+                  <h2><i class="fa fa-plus-circle" aria-hidden="true" style="color:#4CAF50;"></i> <u>DELETE AN ITEM</u></h2>
+
+                <form action="deleteItemSn.php" method="post" style="">
+                    <h3>You can delete one of your item by the ID or the name associated</h3>
+                    <br>
+                    <label>Name of the item : </label>
+                    <input type="text" name="name" value="">
+                    <br>
+                    <input type="submit" name="save" value="Delete the item">
+                    <br>
+                </form>
+                <br>
+                
+                 <form action="deleteItemSi.php" method="post" style="">
+                
+                    <label>ID of the item : </label>
+                    <input type="text" name="id" value="">
+                    <br>
+                    <input type="submit" name="save" value="Delete the item">
+                    <br>
+                </form>
                   
                 <h2>My Negotiations (Best Offer)</h2>
                 <table border="1" style="width: 800px; text-align: center; color: black; font-size: 17px;">
