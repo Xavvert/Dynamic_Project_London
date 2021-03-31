@@ -1,7 +1,6 @@
 /*HEADER*/		
 		#layout {
-            border-style: outset;
-            border-style: bold;
+            border-bottom: outset;
         }
 
         #header {
