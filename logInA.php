@@ -51,7 +51,7 @@ if(isset($validation)){
     }
     else
     {
-     $_SESSION["wrong"]=1;
+   
     }
 
     $sql_query = mysqli_query($conn, "SELECT firstname from admin WHERE username='$username'"); 
@@ -313,11 +313,7 @@ if(isset($validation)){
             </form>
         </div>
         
-<?php  if(  $_SESSION["wrong"]==1 ) ?>
-{
-    <p>Incorrect password or username</p>
-    
-}
+
     </center>
     <br>
     <br>
