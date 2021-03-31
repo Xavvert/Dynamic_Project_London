@@ -47,7 +47,7 @@ if(isset($validation)){
     }
     else
     {
-     echo ("Error : Wrong Password or Username");
+      $_SESSION["wrong"]=1;
     }
     
    $sql_query = mysqli_query($conn, "SELECT firstName from seller WHERE username='$username'"); 

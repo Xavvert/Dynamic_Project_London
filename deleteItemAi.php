@@ -20,9 +20,9 @@ if(isset($validation)){
 
     //deleting from the db the current item
      $sql_query = mysqli_query($conn, "DELETE FROM item WHERE id='$id'");
-    $rowCount = mysqli_num_rows($sql_query);
+     $rowCount = mysqli_num_rows($sql_query);
 
-    if($rowCount==0)
+    if($rowCount == 0)
     {
         header("location:WarningdeleteA.html");
         mysqli_close($conn);

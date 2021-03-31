@@ -22,6 +22,8 @@ if(@$_SESSION["checkA"]==1 || @$_SESSION["checkB"]==1 || @$_SESSION["checkS"]==1
     mysqli_close($conn);
 }
 
+
+
 @$username=$_POST['username'];
 @$password=$_POST['password'];
 @$validation=$_POST["validation"];
@@ -49,7 +51,7 @@ if(isset($validation)){
     }
     else
     {
-     echo ("Error : Wrong Password or Username");
+     $_SESSION["wrong"]=1;
     }
 
     $sql_query = mysqli_query($conn, "SELECT firstname from admin WHERE username='$username'"); 
@@ -291,7 +293,10 @@ if(isset($validation)){
     <br>
     <br>
     <center>
+     
         <div class="co">
+            
+
             <form action="" method="post">
                 <br>
                 <label>Email(username)</label>
@@ -307,6 +312,12 @@ if(isset($validation)){
                 <br>
             </form>
         </div>
+        
+<?php  if(  $_SESSION["wrong"]==1 ) ?>
+{
+    <p>Incorrect password or username</p>
+    
+}
     </center>
     <br>
     <br>
