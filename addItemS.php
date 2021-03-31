@@ -1,5 +1,7 @@
 <?php
+//session start to keep and modify all the session variables for the current user logged in
 session_start();
+//db connection
 $server_name="localhost:3306";
 $username="root";
 $password="root";
@@ -15,6 +17,7 @@ if(!$conn)
 
 if(isset($_POST['save']))
 {
+    //retrieving the form's data to store them in variable to run our functions in php
     $name=$_POST['item'];
     $price=$_POST['price'];
     $description=$_POST['description'];
@@ -51,15 +54,10 @@ if(isset($_POST['save']))
                 } 
     }
      
-    if(mysqli_query($conn, $sql_query))
-    {
+   //redirection to the current account
     header("location:youraccountS.php");
-    }
-    else
-    {
-        echo $statusMsg; 
-        echo ("ERROR");
-    }
-    mysqli_close($conn); 
+    
+     //Here, we are closing the connection
+    mysqli_close($conn);   
 }
 ?>

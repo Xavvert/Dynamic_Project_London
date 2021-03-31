@@ -121,7 +121,7 @@ if($_SESSION["checkB"]!=1)
             
             box-shadow: 0px 0px 1500px #000000;
             transition: all 800ms ease-in;
-            transform:translate(200%, 20%)scale(1.6);
+            transform:translate(150%, 20%)scale(1.6);
             background-color: whitesmoke;
             
         }
@@ -431,7 +431,7 @@ if(!$conn)
             <div class="contentItem">
                 
                 <div class="imgItem">
-                    <?php echo '<img name="profile picture" alt="/profile picture" style="height: 320px ;width: 400px;cursor: pointer;" src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"/>' ?>
+                    <?php echo '<img name="profile picture" alt="/profile picture" style="height: 310px ;width: 360px;cursor: pointer;" src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"/>' ?>
                     <br>
                     <br>
                     <p style="border-style:solid; border-color:#0a255a;">

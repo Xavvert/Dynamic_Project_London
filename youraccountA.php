@@ -382,12 +382,7 @@ if(@$_SESSION["authorize"]!="yes"){
             <!--display none-->
 
             <!--MY INFORMATIONS-->
-
-            <?php if($_SESSION["upA"]==1)
-{
-    echo "<h1>Informations changed </h1>"; 
-}
-        ?>
+        
             <div class="settingsForm" id="settingsForm" style="display: none;">
                 <!--écrire par dessus les infos pour update-->
 
@@ -464,36 +459,28 @@ if(!$conn)
                 <br>
                 <br>
 
-                <!--add an item-->
-                <h2><i class="fa fa-plus-circle" aria-hidden="true" style="color:#4CAF50;"></i> <u>ADD AN ITEM</u></h2>
+                <!--delete an item-->
+                <h2><i class="fa fa-plus-circle" aria-hidden="true" style="color:#4CAF50;"></i> <u>DELETE AN ITEM</u></h2>
 
-                <form action="addItemA.php" method="post" enctype="multipart/form-data" style="">
-                    <h3>Item informations</h3>
+                <form action="deleteItemAn.php" method="post" style="">
+                    <h3>You can delete an item by the ID or the name associated</h3>
+                    <br>
                     <label>Name of the item : </label>
-                    <input type="text" name="item" value="">
+                    <input type="text" name="name" value="">
                     <br>
-                    <label>Price in £ : </label><input type="text" name="price">
-                    <br>
-                    <label>Description :</label><input type="text" name="description" value="">
-                    <br>
-                    <label>Category : </label>
-                    <SELECT name="category">
-                        <option>Playing Cards</option>
-                        <option>Classic Games</option>
-                        <option>Bicycles</option>
-                    </SELECT>
-                    <br>
-
-                    <label>Photo :</label>
-                    <input type="file" id="myFile" name="image" style="size: 20px;">
-                    <br>
-                    <br>
-
-                    <input type="submit" name="save" value="Add Item">
-                    <br>
+                    <input type="submit" name="save" value="Delete the item">
                     <br>
                 </form>
                 <br>
+                
+                 <form action="deleteItemAi.php" method="post" style="">
+                
+                    <label>ID of the item : </label>
+                    <input type="text" name="id" value="">
+                    <br>
+                    <input type="submit" name="save" value="Delete the item">
+                    <br>
+                </form>
                 
                  <h2>BIDS section</h2>
                 <table border="1" style="width: 800px; text-align: center; color: black; font-size: 17px;">

@@ -13,11 +13,6 @@ if($_SESSION["checkS"]!=1)
     exit();
 }
 
-if($_SESSION["upS"]==1)
-{
-    echo ("Informations changed");
-}
-
 ?>
 
 
