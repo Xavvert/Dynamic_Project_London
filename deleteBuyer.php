@@ -22,9 +22,7 @@ if(isset($validation)){
      $sql_query = mysqli_query($conn, "DELETE FROM buyer WHERE username='$username'");
     
 if($sql_query)
-{
-    $_SESSION["upA"]=1;
-   
+{   
     header("location:youraccountA.php");
 }
     

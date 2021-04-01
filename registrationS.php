@@ -76,7 +76,7 @@ if(isset($_POST['save']))
     
     if(mysqli_query($conn, $sql_query))
     {
-        echo ("OK");
+        
         header("location:HomePage.html");
     }
     else

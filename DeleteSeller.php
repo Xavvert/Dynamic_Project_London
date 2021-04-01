@@ -23,7 +23,6 @@ if(isset($validation)){
     
 if($sql_query)
 {
-    $_SESSION["upA"]=1;
    
     header("location:youraccountA.php");
 }

@@ -453,14 +453,14 @@ if(!$conn)
                 <button onclick="location.href='addToBasket.php?cat=<?php echo $tempname?>'" class="imm" style="display: none;">Buy Immediately</button>
                 <button class="offer" style="display: none;">Best Offer</button>
 
-                <form class="arBid" action="bid.php" method="post" style="display: none;">
+                <form class="arBid" action="bid.php?cat=<?php echo $tempname?>" method="post" style="display: none;">
                     <label>Enter your max amount</label>
                     <br><input type="text" name="priceOffer">
                     <input type="image" name="save" value="Submit" src="pictures/okOrange.png" style="width: 30px; height: 30px;">
                 </form>
 
 
-                <form class="arOffer" action="Offer.php" method="post" style="display: none;">
+                <form class="arOffer" action="Offer.php?cat=<?php echo $tempname?>" method="post" style="display: none;">
                     <label>Enter an amount</label>
                     <br><input type="text" name="priceOffer">
                     <input type="image" name="save" value="Submit" src="pictures/okOrange.png" style="width: 30px; height: 30px;">

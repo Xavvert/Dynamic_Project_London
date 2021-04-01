@@ -18,8 +18,8 @@ if(!$conn)
 
 if(isset($validation)){
 
-    //deleting from the db the current item
-     $sql_query = mysqli_query($conn, "DELETE FROM item WHERE name='$name'");
+    
+     $sql_query = mysqli_query($conn, "Select * FROM item WHERE name='$name'");
      $rowCount = mysqli_num_rows($sql_query);
 
     if($rowCount == 0)
@@ -27,6 +27,9 @@ if(isset($validation)){
         header("location:WarningdeleteA.html");
         mysqli_close($conn);
     }
+    //deleting from the db the current item
+     $sql_query = mysqli_query($conn, "DELETE FROM item WHERE name='$name'");
+     $rowCount = mysqli_num_rows($sql_query);
     
      $sql_query = mysqli_query($conn, "DELETE FROM bid WHERE name='$name'");
     $sql_query = mysqli_query($conn, "DELETE FROM offer WHERE name='$name'");

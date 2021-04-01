@@ -19,6 +19,14 @@ $currentUsername=$_SESSION["username"];
 
 if(isset($validation)){
 
+      $sql_query = mysqli_query($conn, "Select * FROM item WHERE name='$name'");
+     $rowCount = mysqli_num_rows($sql_query);
+
+    if($rowCount == 0)
+    {
+        header("location:WarningdeleteA.html");
+        mysqli_close($conn);
+    }
     //deleting from the db the current item
      $sql_query = mysqli_query($conn, "DELETE FROM item WHERE name='$name' AND id_seller='$currentUsername'");
          $sql_query = mysqli_query($conn, "DELETE FROM bid WHERE name='$name'");

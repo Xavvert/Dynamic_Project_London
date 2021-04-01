@@ -26,8 +26,8 @@ if(isset($_POST['save']))
     $country=$_POST['country'];
     $phone=$_POST['phone'];
     
-  @$totalprice=$_SESSION["totalPrice"];
-  @$currentUsername=$_SESSION["username"];
+    @$totalprice=$_SESSION["totalPrice"];
+    @$currentUsername=$_SESSION["username"];
    
          $_SESSION["cpackagename"]=$packagename;
          $_SESSION["cusername"]=$currentUsername;
@@ -38,11 +38,8 @@ if(isset($_POST['save']))
          $_SESSION["czipCode"]=$zipCode;
          $_SESSION["ccountry"]=$country;
          $_SESSION["cphone"]=$phone;
-        
-   
-
-        
-         
+         $_SESSION["ctotalprice"]=$totalprice;
+                 
      header("location:payment.php");
     
    
