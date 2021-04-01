@@ -137,7 +137,7 @@ mysqli_close($conn);
                 Password: "cykel123.",
 
                 From: "cykelweb@gmail.com",
-                To: "xavier.dandigna@gmail.com",
+                To: receiver,
             
                 Subject: "Thank you "+ fname +" "+ lname+" for your purchase on Cykel 🚴 - Package's ID : "+cid,
                 Body: "Dear "+ fname+",<br> Thank you for your purchase on Cykel! <br> Here's your recap : <br><br> "+ "Your order's name : "+cpackagename

@@ -20,7 +20,7 @@ if($_SESSION["checkB"]!=1)
 
 <head>
     <title>Cykel - Your Account</title>
-     <meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -77,7 +77,6 @@ if($_SESSION["checkB"]!=1)
             transform: rotate(360deg);
             transition: all 1s;
         }
-
     </style>
 
     <style type="text/css">
@@ -108,12 +107,12 @@ if($_SESSION["checkB"]!=1)
             top: 10px;
             padding: 8px;
         }
-        
+
         .accountHeader a:hover {
             background-color: #b9c7d6;
             border-radius: 0.2em;
         }
-        
+
         .accountHeader h2 {
             color: #0a255a;
         }
@@ -180,7 +179,7 @@ if($_SESSION["checkB"]!=1)
             padding: 20px;
             border-collapse: collapse;
             border: none;
-            table-layout: auto;
+            table-layout:auto;
         }
 
         tr:nth-child(even) {
@@ -193,13 +192,14 @@ if($_SESSION["checkB"]!=1)
 
         td {
             padding: 10px;
+            width: 200px;
         }
 
         th {
             background-color: #FBA00E;
             color: black;
         }
-        
+
         button:hover {
             background-color: #D8392F;
         }
@@ -244,7 +244,6 @@ if($_SESSION["checkB"]!=1)
             transform: rotate(360deg);
             transition: all 1.3s;
         }
-
     </style>
 
     <style type="text/css" caption="form design">
@@ -284,7 +283,6 @@ if($_SESSION["checkB"]!=1)
         input[type=submit]:hover {
             background-color: #45a049;
         }
-
     </style>
 
     <link rel='icon' href='Cykel.png' type='image/x-icon' />
@@ -335,7 +333,6 @@ if($_SESSION["checkB"]!=1)
 
         });
     });
-
 </script>
 <link rel='icon' href='pictures/Cykel.png' type='image/x-icon' />
 
@@ -575,18 +572,20 @@ if(!$conn)
                         <td><?php echo($row['id_seller']) ?></td>
                         <td><?php echo($row['attempt']) ?></td>
                         <td><?php echo($row['status']) ?></td>
-                        <td> <p> Price proposed buy the seller £<?php echo($row['price']) ?> </p>
-                        <form action="Offer.php?cat=<?php echo $tempname?>" method="post">
-                            <br>
-                            <label>Price</label>
-                            <br>
-                            <input type="text" name="priceOffer">
-                            <br>
+                        <td style="float:left;">
+                            <p> Price proposed buy the seller £<?php echo($row['price']) ?> </p>
+                            <form action="Offer.php?cat=<?php echo $tempname?>" method="post">
+                                <br>
+                                <label>Price</label>
+                                <br>
+                                <input type="text" name="priceOffer">
+                                <br>
 
-                            <input type="submit" name="save" value="Submit">
-                        </form>
-                            <button onclick="location.href='BoffMovetoBasket.php?cat=<?php echo $tempname?>'"> I accept the price proposed</button></td>
-                     
+                                <input type="submit" name="save" value="Submit">
+                            </form>
+                            <button onclick="location.href='BoffMovetoBasket.php?cat=<?php echo $tempname?>'"> I accept the price proposed</button>
+                        </td>
+
                     </tr>
 
                     <?php } mysqli_close($conn); ?>
@@ -598,8 +597,8 @@ if(!$conn)
 
                 <!-- -------------- -->
 
-                 <h2>My BIDS</h2>
-                <table border="1" style="width: 800px; text-align: center; color: black; font-size: 17px;">
+                <h2>My BIDS</h2>
+                <table border="1" style=" text-align: center; margin-left:-150px;color: black; font-size: 17px;">
 
                     <tr>
                         <th style="font-size: 20px;border: 1px solid black;text-align: center;">Transaction's ID</th>
@@ -646,26 +645,26 @@ if(!$conn)
                         <td><?php echo($row['id_buyer']) ?></td>
                         <td><?php echo($row['id_seller']) ?></td>
                         <td><?php echo($row['status']) ?></td>
-                        <td> <p> Max bid proposed £<?php echo($row['price']) ?> </p>
-                            
-                            <form  action="bid.php?cat=<?php echo $tempname?>" method="post" >
-                        <label>Enter your max amount</label>
-                        <br><input type="text" name="priceOffer">
-                        <input type="image" name="save" value="Submit" src="pictures/okOrange.jpg" style="width: 30px; height: 30px;">
-                    </form>
-                    
-                     
+                        <td style="float:left;">
+                            <p> Max bid proposed £<?php echo($row['price']) ?> </p>
+
+                            <form action="bid.php?cat=<?php echo $tempname?>" method="post">
+                                <label>Enter your max amount</label>
+                                <br><input type="text" name="priceOffer" style="position : absolute; float:left;width:70px;"><br>
+                                <input type="image" name="save" value="Submit" src="pictures/okOrange.png" style="width: 30px; height: 30px; margin-right:130px; clear:both;">
+                            </form>
+                        </td>
+
                     </tr>
 
                     <?php } mysqli_close($conn); ?>
                 </table>
                 <br>
                 <br>
-
-
             </div>
         </div>
     </div>
+    
 
     <!--footer-->
 
@@ -724,4 +723,5 @@ if(!$conn)
         <script type="text/javascript" src="animation.js"></script>
     </footer>
 </body>
+
 </html>

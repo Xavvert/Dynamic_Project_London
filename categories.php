@@ -347,7 +347,7 @@ if(!$conn)
 
 
 if(isset($validation)){
-    $sql_query = mysqli_query($conn, "Select * from item WHERE name = '$research' OR id = '$research' OR id_seller = '$research'");
+    $sql_query = mysqli_query($conn, "Select * from item WHERE name = '$research' OR id = '$research' OR id_seller = '$research'" );
     $rowCount = mysqli_num_rows($sql_query);
 
     while($row=mysqli_fetch_array($sql_query))
