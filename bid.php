@@ -49,8 +49,16 @@ $currentPrice=$row['price'];
 
 $sql_query = mysqli_query($conn, "SELECT * from bid WHERE name= '$retrievedName'"); 
      $row = mysqli_fetch_array($sql_query);
-$lowerPrice=$row['previousPrice'];
+$date1=$row['dateOff'];
 
+$date2=date('Y-m-d');
+
+if ($date2 > $date1)
+{
+        $sql_query = mysqli_query($conn, "UPDATE bid SET status= 'Finalized' WHERE name='$retrievedName'");
+        header("location:Warningover.html");
+        mysqli_close($conn);
+}
 
 //if there is a better price to propose
 if($price>$currentPrice){

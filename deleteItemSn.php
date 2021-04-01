@@ -21,6 +21,8 @@ if(isset($validation)){
 
     //deleting from the db the current item
      $sql_query = mysqli_query($conn, "DELETE FROM item WHERE name='$name' AND id_seller='$currentUsername'");
+         $sql_query = mysqli_query($conn, "DELETE FROM bid WHERE name='$name'");
+    $sql_query = mysqli_query($conn, "DELETE FROM offer WHERE name='$name'");
    
 if($sql_query)
 {

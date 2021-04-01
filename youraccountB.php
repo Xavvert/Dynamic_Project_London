@@ -629,7 +629,7 @@ if(!$conn)
     
 }
         @$currentUsername=$_SESSION['username'];
-                           //refaire la query
+                        
             $sql_query=mysqli_query($conn, "SELECT * FROM bid WHERE status='In progress'");
                     
             while($row=mysqli_fetch_array($sql_query))

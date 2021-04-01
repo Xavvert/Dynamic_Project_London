@@ -28,6 +28,9 @@ if(isset($validation)){
         mysqli_close($conn);
     }
     
+     $sql_query = mysqli_query($conn, "DELETE FROM bid WHERE name='$name'");
+    $sql_query = mysqli_query($conn, "DELETE FROM offer WHERE name='$name'");
+    
 if($sql_query)
 {
       
