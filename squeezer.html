@@ -14,9 +14,9 @@
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script type="text/javascript" src="sendEmail.js"></script>
 
-    
+
     <style type="text/css">
-               .sidenav {
+        .sidenav {
             height: 55%;
             width: 0;
             position: fixed;
@@ -55,17 +55,21 @@
             font-size: 36px;
             margin-left: 80px;
         }
+
         .text {
-            padding: 50px;
+            padding: 150px;
+            justify-content: center;
             background-color: whitesmoke;
             font-family: Verdana;
         }
+
         .text p {
             font-size: 30px;
-            margin-left: 300px;
-            margin-right: 300px;
-            text-align: center;
+            margin-left: 200px;
+            margin-right: 200px;
+            text-align: justify;
         }
+
         .text h3 {
             margin-left: 300px;
             color: black;
@@ -74,8 +78,8 @@
         h5 {
             font-size: 30px;
         }
-        
-         .triangle {
+
+        .triangle {
             position: absolute;
             left: 1298px;
             top: 55px;
@@ -116,8 +120,8 @@
             transition: all 1.3s;
         }
     </style>
-    
-<style type="text/css" name="back button">
+
+    <style type="text/css" name="back button">
         .back-zone {
             width: 100%;
             height: 50px;
@@ -154,7 +158,7 @@
             z-index: 2;
             border-radius: 1em;
         }
-        
+
 
         .wrapper a:after {
             position: absolute;
@@ -178,14 +182,13 @@
         .wrapper a:hover:after {
             width: 100%;
         }
-
     </style>
 
     <link rel='icon' href='pictures/Cykel.png' type='image/x-icon' />
 </head>
 
-    
-    <script type="text/javascript">
+
+<script type="text/javascript">
     function sendEmail() {
 
         var emailReceiver = document.getElementById("email").value;
@@ -205,8 +208,15 @@
             });
     }
 </script>
+
+
 <body>
-     <!-- header -->
+    <audio id="myAudio">
+        <source src="audio/all-cards-on-table-348.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="layout">
+        <!-- header -->
         <div id="header">
             <center>
                 <img id="logo" src="pictures/Cykel.png" alt="Cykel LOGO" style="width: 70px; height: 70px; margin-top: 10px; cursor:pointer;" onClick="location.href='HomePage.html'">
@@ -256,47 +266,49 @@
                 <p style="color: white;">You have no new notification</p>
             </div>
         </div>
-    
+    </div>
+
     <!--body-->
-        
+
     <!--back button-->
-        <div class="wrapper">
-                <a href="HomePage.html"><span>BACK</span></a>
-        </div>
-    
+    <div class="wrapper">
+        <a href="HomePage.html"><span>BACK</span></a>
+    </div>
+
     <!--content-->
 
     <div class="text">
-        <center>
-        <h1 style="color: black;"> Welcome into a new place, we are revisiting your vision of summer with new 🍊 Squeezer 🍊 deck </h1>
+        <h1 style="color: black; text-align: center;"> Welcome into a new place, we are revisiting your vision of summer with new 🍊 Squeezer 🍊 deck </h1>
         <br>
-            <img src="pictures/sq11.PNG" style="height: 300px; width: auto;">
-            <br>
-            <br>
+        <img src="pictures/sq11.PNG" style="height: 300px; width: auto; margin-left: 460px;">
+        <br>
+        <br>
         <p>
             It is time to rediscover our passion for cards with Squeezers V3 Grapefruit edition! We are SQUEEZING this deck in right before summer ends. Printed by USPCC on Premium CRUSHED stock, this deck is ready for long walks on the beach right out of the box! As we did for Peelers V3, we wanted to throw in a metallic blue on the box and in the courts of our Squeezers V3!
         </p>
         <br>
-    
-        </center>
-        <span>
-        <img  src="pictures/sq1.PNG" style="height: 300px; width: auto">
-        <img  src="pictures/sq2.PNG" style="height: 300px; width: auto">
-            <img  src="pictures/sq3.PNG" style="height: 300px; width: auto">
-            <img  src="pictures/sq4.PNG" style="height: 300px; width: auto">
-            <img  src="pictures/sq5.PNG" style="height: 300px; width: auto">
-            <img  src="pictures/sq6.PNG" style="height: 300px; width: auto">
-            <img  src="pictures/sq7.PNG" style="height: 300px; width: auto">
-            <img  src="pictures/sq8.PNG" style="height: 300px; width: auto">
-            <img  src="pictures/sq9.PNG" style="height: 300px; width: auto">
-            <img  src="pictures/sq10.PNG" style="height: 300px; width: auto">
+        <center>
+            <span>
+                <img src="pictures/sq1.PNG" style="height: 300px; width: auto">
+                <img src="pictures/sq2.PNG" style="height: 300px; width: auto">
+                <img src="pictures/sq3.PNG" style="height: 300px; width: auto">
+                <img src="pictures/sq4.PNG" style="height: 300px; width: auto">
+                <img src="pictures/sq5.PNG" style="height: 300px; width: auto">
+                <img src="pictures/sq6.PNG" style="height: 300px; width: auto">
+                <img src="pictures/sq7.PNG" style="height: 300px; width: auto">
+                <img src="pictures/sq8.PNG" style="height: 300px; width: auto">
+                <img src="pictures/sq9.PNG" style="height: 300px; width: auto">
+                <img src="pictures/sq10.PNG" style="height: 300px; width: auto">
             </span>
-         <p>
-            Coming soon... on CYKEL
-        </p>
+            <br>
+            <br>
+            <p style="text-align:center;">
+                Coming soon... on CYKEL
+            </p>
+        </center>
     </div>
-    
-    
+
+
 
     <!--footer-->
 
