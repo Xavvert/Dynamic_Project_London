@@ -121,7 +121,7 @@ if($_SESSION["checkB"]!=1)
             
             box-shadow: 0px 0px 1500px #000000;
             transition: all 800ms ease-in;
-            transform:translate(200%, 20%)scale(1.6);
+            transform:translate(150%, 20%)scale(1.6);
             background-color: whitesmoke;
             
         }
