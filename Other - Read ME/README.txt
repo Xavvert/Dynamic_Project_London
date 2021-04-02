@@ -13,4 +13,4 @@ The .DS_STORE file is only here to adapt the proper running of the code on MAC O
 Our sources are mentionned into the sources.txt file
 
 To run the project, please import the database with the images to phpmyadmin (you might change some settings in php my admin to allow the insertion of more than 15MB at once)
-Then launch wampserver and the project with HomePage.html and enjoy :)
+Then launch wampserver and the project with HomePage.html, and enjoy :D
