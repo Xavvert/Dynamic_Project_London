@@ -72,7 +72,6 @@ if($_SESSION["checkS"]!=1)
             font-size: 36px;
             margin-left: 80px;
         }
-
     </style>
 
     <style type="text/css">
@@ -97,18 +96,18 @@ if($_SESSION["checkS"]!=1)
 
         .accountHeader a {
             position: absolute;
-            color:#0a255a;
+            color: #0a255a;
             font-size: 25px;
             left: 1150px;
             top: 10px;
             padding: 8px;
         }
-        
+
         .accountHeader a:hover {
             background-color: #b9c7d6;
             border-radius: 0.2em;
         }
-        
+
         mark {
             margin: 0 -0.2em;
             padding: 0.2em 0.5em;
@@ -184,6 +183,9 @@ if($_SESSION["checkS"]!=1)
         button:hover {
             background-color: #ff5353;
         }
+        table button:hover {
+            background: #45a049;
+        }
 
         .triangle {
             position: absolute;
@@ -225,7 +227,6 @@ if($_SESSION["checkS"]!=1)
             transform: rotate(360deg);
             transition: all 1.3s;
         }
-
     </style>
 
     <style type="text/css" caption="form design">
@@ -244,8 +245,19 @@ if($_SESSION["checkS"]!=1)
             border-radius: 4px;
             resize: vertical;
             float: right;
+            margin-right: 600px;
+        }
+        
+        /*.settingsForm input[type=email]{
+            width:300px;
+            float: right;
             margin-right: 500px;
         }
+        .settingsForm input[type=text]{
+            width:300px;
+            float: right;
+            margin-right: 500px;
+        }*/
 
         label {
             padding: 12px 12px 12px 0;
@@ -265,7 +277,6 @@ if($_SESSION["checkS"]!=1)
         input[type=submit]:hover {
             background-color: #45a049;
         }
-
     </style>
 
     <link rel='icon' href='Cykel.png' type='image/x-icon' />
@@ -274,7 +285,6 @@ if($_SESSION["checkS"]!=1)
 <script src="http://code.jquery.com/jquery-2.2.3.min.js"></script>
 
 <script type="text/javascript">
-
     $(document).ready(function() {
 
         $("#settingsBox").click(function() {
@@ -287,7 +297,6 @@ if($_SESSION["checkS"]!=1)
             $("#settingsBox").toggle(500);
         });
     });
-
 </script>
 <link rel='icon' href='pictures/Cykel.png' type='image/x-icon' />
 
@@ -348,8 +357,8 @@ if($_SESSION["checkS"]!=1)
             </div>
         </div>
     </div>
-        
-        
+
+
     <center>
         <?php echo '<img name="profile picture" alt="/profile picture" style="width: 93%; height: 120px; margin-top: 20px; float: left; margin-left: 50px;" src="data:image/jpeg;base64,'.base64_encode( $_SESSION["imageB"] ).'"/>' ?>
     </center>
@@ -453,16 +462,17 @@ if(!$conn)
                         <td><?php echo($row['name']) ?></td>
                         <td><?php echo($row['price']) ?></td>
                         <td><?php echo($row['category']) ?></td>
-                        <td> <p> You can put an item in the auction </p>
-                        <form action="placetoBid.php?cat=<?php echo $tempname?>" method="post">
-                            <br>
-                            <label>Choose an ending date</label>
-                            <br>
-                            <input type="date" name="dateoff">
-                            <br>
-                            <input type="submit" name="save" value="I place this item in auction">
-                        </form>
-                            
+                        <td>
+                            <p> You can put an item in the auction </p>
+                            <form action="placetoBid.php?cat=<?php echo $tempname?>" method="post">
+                                <br>
+                                <label>Choose an ending date</label>
+                                <br>
+                                <input type="date" name="dateoff">
+                                <br>
+                                <input type="submit" name="save" value="I place this item in auction">
+                            </form>
+
                     </tr>
 
                     <?php } mysqli_close($conn); ?>
@@ -498,23 +508,23 @@ if(!$conn)
                     <br>
                 </form>
                 <br>
-                
-                  <h2><i class="fa fa-minus-circle" aria-hidden="true" style="color:red;"></i> <u>DELETE AN ITEM</u></h2>
+
+                <h2><i class="fa fa-minus-circle" aria-hidden="true" style="color:red;"></i> <u>DELETE AN ITEM</u></h2>
 
                 <form action="deleteItemSn.php" method="post" style="">
                     <h3>You can delete one of your item by the name associated</h3>
                     <br>
                     <label>Name of the item : </label>
-                    <input type="text" name="name" value="" >
+                    <input type="text" name="name" value="">
                     <br>
                     <input type="submit" name="save" value="Delete the item" style="background-color:red;">
                     <br>
                 </form>
                 <br>
-                
-                  
+
+
                 <h2>My Negotiations (Best Offer)</h2>
-                <table border="1" style="width: 800px; text-align: center; color: black; font-size: 17px;">
+                <table border="1" style="margin-left:-150px; text-align: center; color: black; font-size: 17px;">
 
                     <tr>
                         <th style="font-size: 20px;border: 1px solid black;text-align: center;">Transaction's ID</th>
@@ -557,18 +567,21 @@ if(!$conn)
                         <td><?php echo($row['id_buyer']) ?></td>
                         <td><?php echo($row['attempt']) ?></td>
                         <td><?php echo($row['status']) ?></td>
-                        <td> <p> Price proposed by the buyer £<?php echo($row['price']) ?> </p>
-                        <form action="OfferS.php?cat=<?php echo $tempname?>" method="post">
-                            <br>
-                            <label>Price</label>
-                            <br>
-                            <input type="text" name="priceOffer">
-                            <br>
+                        <td>
+                            <p> Price proposed by the buyer £<?php echo($row['price']) ?> </p>
+                            <form action="OfferS.php?cat=<?php echo $tempname?>" method="post">
+                                <label>Price</label>
+                                <br>
+                                <input type="text" name="priceOffer" style="float:left;margin-right:-550px;">
+                                <br>
+                                <br>
+                                <!--<input type="submit" name="save" value="Submit">-->
+                                <button type="submit">Submit</button>
+                                <br>
+                            </form>
+                            <button onclick="location.href='SoffMovetoBasket.php?cat=<?php echo $tempname?>'"> I accept the price proposed</button>
+                        </td>
 
-                            <input type="submit" name="save" value="Submit">
-                        </form>
-                            <button onclick="location.href='SoffMovetoBasket.php?cat=<?php echo $tempname?>'"> I accept the price proposed</button></td>
-                     
                     </tr>
 
                     <?php } mysqli_close($conn); ?>
@@ -620,16 +633,18 @@ if(!$conn)
                         <td><?php echo($row['price']) ?></td>
                         <td><?php echo($row['id_buyer']) ?></td>
                         <td><?php echo($row['status']) ?></td>
-                        <td> <p> Max bid proposed £<?php echo($row['price']) ?> </p>
-                    
-                            <button onclick="location.href='HomePage.html'"> In this version, only an administrator can stop prematurely an auction </button></td>
-                     
+                        <td>
+                            <p> <b>Max bid proposed £<?php echo($row['price']) ?> </b></p>
+
+                            <button> In this version, only an administrator can stop prematurely an auction </button>
+                        </td>
+
                     </tr>
 
                     <?php } mysqli_close($conn); ?>
                 </table>
             </div>
-            
+
         </div>
     </div>
 
@@ -690,4 +705,5 @@ if(!$conn)
         <script type="text/javascript" src="animation.js"></script>
     </footer>
 </body>
+
 </html>

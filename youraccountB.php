@@ -536,7 +536,7 @@ if(!$conn)
             <div class="auctions" id="auctionsForm" style="display: none; margin-left: 150px;">
 
                 <h2>My Negotiations (Best Offer)</h2>
-                <table border="1" style="width: 800px; text-align: center; color: black; font-size: 17px;">
+                <table border="1" style="text-align: center; color: black; font-size: 17px;">
 
                     <tr>
                         <th style="font-size: 20px;border: 1px solid black;text-align: center;">Transaction's ID</th>
