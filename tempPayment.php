@@ -42,7 +42,7 @@ if(isset($_POST['save']))
     
     
     //saving the data into checkout for the transaction history
-     $sql_query = "INSERT INTO checkout (packagename, firstName,lastName, adress, city, zipCode, country, phone, sent, id_buyer, totalPrice) VALUES ('$packagename','$firstName','$lastName','$adress','$city','$zipCode','$country','$phone',NOW(),'$currentUsername','$totalprice')";
+     $sql_query = mysqli_query($conn, "INSERT INTO checkout (packagename, firstName,lastName, adress, city, zipCode, country, phone, sent, id_buyer, totalPrice) VALUES ('$packagename','$firstName','$lastName','$adress','$city','$zipCode','$country','$phone',NOW(),'$currentUsername','$totalprice')");
     
     
      $sql_query = mysqli_query($conn, "SELECT id from checkout WHERE packagename='$packagename'"); 
