@@ -203,6 +203,10 @@ if($_SESSION["checkB"]!=1)
         button:hover {
             background-color: #D8392F;
         }
+        
+        table button:hover {
+            background: #45a049;
+        }
 
         .triangle {
             position: absolute;
@@ -283,6 +287,7 @@ if($_SESSION["checkB"]!=1)
         input[type=submit]:hover {
             background-color: #45a049;
         }
+        
     </style>
 
     <link rel='icon' href='Cykel.png' type='image/x-icon' />
@@ -578,11 +583,13 @@ if(!$conn)
                                 <br>
                                 <label>Price</label>
                                 <br>
-                                <input type="text" name="priceOffer">
+                                <input type="text" name="priceOffer" style="position : absolute; float:left;width:100px;">
                                 <br>
-
-                                <input type="submit" name="save" value="Submit">
+                                <br>
+                                <!--<input type="submit" name="save" value="Submit">-->
+                                <button type="submit"> Submit</button>
                             </form>
+                            <br>
                             <button onclick="location.href='BoffMovetoBasket.php?cat=<?php echo $tempname?>'"> I accept the price proposed</button>
                         </td>
 
