@@ -2,7 +2,7 @@
 
 Made and Designed by CHARVET Anthelme & DANDIGNA Xavier - Spring 2020/2021 INSEEC U London Y3 ECE PARIS
 
-Please note, about the commentaries, that the header and the footer commentaries are just explained through the HomePage.html page.
+Please note, about the commentaries, that the header, the footer and basic features in common with other html pages are just explained through the HomePage.html page.
 
 Moreover, the commentaries for the database's connection are only explained in the addItemS.php file.
 
