@@ -314,11 +314,12 @@
             transition: all 1.3s;
         }
     </style>
-
+<!-- For the icon of the website -->
     <link rel='icon' href='pictures/Cykel.png' type='image/x-icon' />
 </head>
 
 <body>
+    <!-- storing an audio into a specific variable, we're calling those variables later in javascript -->
     <audio id="myAudio">
         <source src="audio/all-cards-on-table-348.mp3" type="audio/mpeg">
     </audio>
@@ -331,10 +332,11 @@
         <!-- header -->
         <div id="header">
             <center>
+                <!-- The main logo -->
                 <img id="logo" src="pictures/Cykel.png" alt="Cykel LOGO" style="width: 70px; height: 70px; margin-top: 10px; cursor:pointer;" onClick="location.href='HomePage.html'">
 
             </center>
-
+<!-- Lateral menu-->
             <span style="font-size:30px;cursor:pointer; position: relative; top: -60px; left: -580px" onclick="openNav()">&#9776;</span>
 
             <div id="mySidenav" class="sidenav">
@@ -348,7 +350,7 @@
                 <a href="logInS.php">SELLER</a>
                 <a href="logInA.php">ADMIN</a>
             </div>
-
+<!-- Display of the icons on the top right corner-->
             <div class="icon">
                 <img name="icon" src="pictures/profile2.png" onClick="location.href='youraccountA.php'" style="width: 28px; height: 28px; position: relative; top: -80px; left:580px; cursor:pointer;">
 
@@ -356,13 +358,14 @@
 
                 <img src="pictures/cart2.png" onClick="location.href='cart.php'" style="width: 25px; height: 25px; position: relative; top: -80px; left: 600px; cursor:pointer;">
             </div>
+            <!-- Triangle that point on the bell icon -->
             <div class="triangle">
                 <i class="fa fa-caret-up fa-lg;" s></i>
             </div>
         </div>
 
 
-
+<!-- Elements inside the bell notification -->
         <div class="notif">
             <div class="boxnotif">
                 <p><u>Notification (1)</u></p>
@@ -382,7 +385,7 @@
 
     <!-- body -->
 
-
+    <!-- Main titles -->
     <div style="background-color: #EEE8CD;">
         <center>
             <br>
@@ -393,7 +396,7 @@
         <br>
 
         <center>
-            <!-- For the slideshow -->
+            <!-- For the automatic slideshow -->
             <div class="slideshow-container">
                 <div class="mySlides fade">
                     <div class="numbertext">1 / 3</div>
@@ -416,6 +419,7 @@
             </div>
             <br>
 
+            <!-- For the tiny dots -->
             <div style="text-align:center">
                 <span class="dot" onclick="currentSlide(1)"></span>
                 <span class="dot" onclick="currentSlide(2)"></span>
@@ -426,6 +430,8 @@
 
         <br>
         <br>
+        
+        <!-- Display -->
         <h3> Here's the popular items </h3>
         <div class="grid-container">
             <div class="item" onclick="location.href='cards.php'">
@@ -447,6 +453,7 @@
         <style>
         </style>
 
+        <!-- For the video content -->
         <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
 
         <div class="videoContent">
@@ -455,6 +462,7 @@
 
             <img onclick="location.href='squeezer.html'" src="pictures/squeezersv3.webp" style="height: 300px ;width: 200px; cursor: pointer; float: left;">
 
+                <!-- The video is played for a certain duration -->
             <iframe width="560" height="315" src="https://www.youtube.com/embed/JBrMUEFBbTw?start=154&amp;end=164" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             
                 </span>
@@ -462,6 +470,7 @@
 
     </div>
 
+    <!-- For the about section that explaining our approach on this project-->
     <div class="about">
 
         <center>
@@ -471,6 +480,7 @@
         <p>Anthelme &amp; Xavier are two students in engineering school 🏫. Both are passionate about bikes 🚴🏽‍♂️ and boardgames 🎲 respectively, they decided to set up their auction site like <text style="color: red">e</text><text style="color: blue">B</text><text style="color: darkgoldenrod">a</text><text style="color: green">y</text> to meet a certain demand. Indeed, they started to work together since their second year of school and were able to find a coherence 🤝 in their works which led them to realize many projects together 👨‍💻 . Solid tandem, they try as well as they can to create their own auction site with the aim of making known and transmitting their passion 🚴🏽‍♀️ ❤️. They invite you to subscribe to their newsletter to avoid missing anything and <b style="color:firebrick">Stay Tuned</b> ! 🔊 </p>
 
 
+        <!-- You will receive an email of confirmation after sgigning up on our newsletter -->
         <h4><label for="NewsletterEmail">Sign up for our newsletter</label></h4>
 
         <input type="email" value placeholder="My email address" name="email" id="email">
@@ -495,6 +505,7 @@
                     <p>Cykel market is an auction website similar to EBay created for the Dynamic Web Programming Project.</p>
                     <p style="color: #000058;">INSEEC U London - Y3</p>
 
+                    <!-- For the social networks-->
                     <ul class="social-icon">
                         <a href="#" class="social"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                         <a href="#" class="social"><i class="fa fa-twitter" aria-hidden="true"></i></a>
@@ -505,6 +516,7 @@
                 </div>
                 <div class="col-sm-3">
                     <br>
+                    <!-- For the policy content-->
                     <h4 class="title">Policy</h4>
                     <span class="acount-icon">
                         <a href="privacypolicy.html"><i class="fa fa-user" aria-hidden="true"></i> Privacy Policy</a>
@@ -514,6 +526,7 @@
                 </div>
                 <div class="col-sm-3">
                     <br>
+                    <!-- To go direclty on the categories-->
                     <h4 class="title">Category</h4>
                     <div class="category">
                         <a href="subcatbike.php">All Bicycles 🚲</a>
@@ -522,6 +535,7 @@
                 </div>
                 <div class="col-sm-3">
                     <br>
+                    <!-- Differents accepted methods-->
                     <h4 class="title">Payment Methods</h4>
                     <p>This website accept this payment methods.</p>
                     <ul class="payment">
@@ -534,9 +548,10 @@
                 </div>
             </div>
             <hr>
-
+<!-- The authors and copyright-->
             <div class="row text-center" style="color: #000058;"> © 2021 Designed with by Xavier Dandigna &amp; Anthelme Charvet.</div>
         </div>
+        
         <script type="text/javascript" src="animation.js"></script>
     </footer>
 </body>
