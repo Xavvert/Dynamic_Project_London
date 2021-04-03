@@ -91,18 +91,18 @@ if($_SESSION["checkB"]!=1)
             width: auto;
             height: auto;
         }
-        
+
         .itemH {
             width: 100%;
             height: 80px;
             border-bottom-style: double;
             border-color: #0a255a;
-            
+
             text-align: center;
             font-size: 42px;
             color: #0a255a;
         }
-        
+
         .contentItem {
             display: grid;
             grid-template-columns: auto auto auto;
@@ -113,19 +113,19 @@ if($_SESSION["checkB"]!=1)
 
         .imgItem {
             font-size: 35px;
-            color:#2f6627;
+            color: #2f6627;
             text-align: center;
         }
-        
-         .imgItem img:hover {
-            
+
+        .imgItem img:hover {
+
             box-shadow: 0px 0px 1500px #000000;
             transition: all 800ms ease-in;
-            transform:translate(150%, 20%)scale(1.6);
+            transform: translate(150%, 20%)scale(1.6);
             background-color: whitesmoke;
-            
+
         }
-        
+
         .priceItem {
             padding-top: 150px;
             width: 300px;
@@ -135,7 +135,7 @@ if($_SESSION["checkB"]!=1)
 
         .caption {
             height: auto;
-            border-left-style:double;
+            border-left-style: double;
             border-color: #0a255a;
             padding-left: 80px;
         }
@@ -145,12 +145,12 @@ if($_SESSION["checkB"]!=1)
             font-size: 20px;
         }
 
-         .caption h4 {
+        .caption h4 {
             text-align: center;
             font-size: 25px;
             color: #0a255a;
         }
-        
+
         .triangle {
             position: absolute;
             left: 1298px;
@@ -191,9 +191,10 @@ if($_SESSION["checkB"]!=1)
             transform: rotate(360deg);
             transition: all 1.3s;
         }
+
     </style>
-    
-    
+
+
     <style type="text/css" caption="buy button">
         .buyButton {
             box-shadow: inset 0px 1px 0px 0px #3dc21b;
@@ -219,7 +220,7 @@ if($_SESSION["checkB"]!=1)
                 top: 1px;
             }
         }
-        
+
     </style>
 
     <style type="text/css" name="back button">
@@ -283,15 +284,15 @@ if($_SESSION["checkB"]!=1)
         .wrapper a:hover:after {
             width: 100%;
         }
+
     </style>
 
     <link rel='icon' href='pictures/Cykel.png' type='image/x-icon' />
 </head>
-    
+
 <script type="text/javascript">
-    
     $(document).ready(function() {
-            
+
         $(".buyButton").click(function() {
             $(".bid").show("slow");
             $(".imm").show("slow");
@@ -331,7 +332,7 @@ if($_SESSION["checkB"]!=1)
 
 
 <body>
-    
+
     <audio id="myAudio">
         <source src="audio/all-cards-on-table-348.mp3" type="audio/mpeg">
     </audio>
@@ -402,8 +403,8 @@ if($_SESSION["checkB"]!=1)
 
     <div class="grid-container">
 
-    
-        
+
+
         <!--database item-->
         <?php
 $server_name="localhost:3306";
@@ -426,14 +427,14 @@ if(!$conn)
         ?>
 
         <div class="item">
-            
+
             <div class="itemH">
-                    <?php echo($row['id'])." - ".($row['name']) ?>
+                <?php echo($row['id'])." - ".($row['name']) ?>
             </div>
-            
-            
+
+
             <div class="contentItem">
-                
+
                 <div class="imgItem">
                     <?php echo '<img name="profile picture" alt="/profile picture" style="height: 300px ;width: 320px;cursor: pointer;" src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"/>' ?>
                     <br>
@@ -442,45 +443,46 @@ if(!$conn)
                         £<?php echo($row['price']) ?>
                     </p>
                 </div>
-                
+
                 <div class="priceItem">
-                    
-                <a class="buyButton" id ="buy">BUY</a>
+
+                    <a class="buyButton" id="buy">BUY</a>
                     <br>
                     <br>
                     <br>
-                <button class="bid" style="display: none;">Bid</button>
-                <button onclick="location.href='addToBasket.php?cat=<?php echo $tempname?>'" class="imm" style="display: none;">Buy Immediately</button>
-                <button class="offer" style="display: none;">Best Offer</button>
+                    <button class="bid" style="display: none;">Bid</button>
+                    <button onclick="location.href='addToBasket.php?cat=<?php echo $tempname?>'" class="imm" style="display: none;">Buy Immediately</button>
+                    <button class="offer" style="display: none;">Best Offer</button>
 
-                <form class="arBid" action="bid.php?cat=<?php echo $tempname?>" method="post" style="display: none;">
-                    <label>Enter your max amount</label>
-                    <br><input type="text" name="priceOffer">
-                    <input type="image" name="save" value="Submit" src="pictures/okOrange.png" style="width: 30px; height: 30px;">
-                </form>
+                    <form class="arBid" action="bid.php?cat=<?php echo $tempname?>" method="post" style="display: none;">
+                        <label>Enter your max amount</label>
+                        <br><input type="text" name="priceOffer">
+                        <input type="image" name="save" value="Submit" src="pictures/okOrange.png" style="width: 30px; height: 30px;">
+                    </form>
 
 
-                <form class="arOffer" action="Offer.php?cat=<?php echo $tempname?>" method="post" style="display: none;">
-                    <label>Enter an amount</label>
-                    <br><input type="text" name="priceOffer">
-                    <input type="image" name="save" value="Submit" src="pictures/okOrange.png" style="width: 30px; height: 30px;">
-                </form>
-                    
+                    <form class="arOffer" action="Offer.php?cat=<?php echo $tempname?>" method="post" style="display: none;">
+                        <label>Enter an amount</label>
+                        <br><input type="text" name="priceOffer">
+                        <input type="image" name="save" value="Submit" src="pictures/okOrange.png" style="width: 30px; height: 30px;">
+                    </form>
+
                 </div>
 
-            <div class="caption">
-                 <h4> <br>This item was uploaded by 
+                <div class="caption">
+                    <h4> <br>This item was uploaded by
+                        <br>
+                        <img src="pictures/profile.png" style="width:40px; height:40px;">
+                        <?php echo $tempseller ?>
+                    </h4>
                     <br>
-                    <img src="pictures/profile.png" style="width:40px; height:40px;">
-                    <?php echo $tempseller ?></h4>
-                <br>
 
-                <div class="description" style="clear:both; text-align:center;">
-                    <p><?php echo $tempdesc ?></p>
+                    <div class="description" style="clear:both; text-align:center;">
+                        <p><?php echo $tempdesc ?></p>
+                    </div>
                 </div>
-            </div>
-            
-            
+
+
             </div>
 
         </div>

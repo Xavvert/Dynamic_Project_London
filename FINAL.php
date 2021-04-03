@@ -34,7 +34,7 @@ mysqli_close($conn);
     <script type="text/javascript" src="sidenav.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script type="text/javascript" src="sendEmail.js"></script>
-    
+
     <style type="text/css">
         .sidenav {
             height: 55%;
@@ -79,15 +79,16 @@ mysqli_close($conn);
         h5 {
             font-size: 30px;
         }
-        
+
         .tu {
             width: 100%;
             height: 300px;
             align-content: center;
             justify-content: center;
             padding: 200px 300px;
-            
+
         }
+
         .triangle {
             position: absolute;
             left: 1298px;
@@ -128,6 +129,7 @@ mysqli_close($conn);
             transform: rotate(360deg);
             transition: all 1.3s;
         }
+
     </style>
 
 
@@ -191,27 +193,27 @@ mysqli_close($conn);
             </div>
         </div>
     </div>
-    
+
     <center>
-        
+
         <div class="tu">
-        
-        <h1>THANK YOU FOR YOUR PURCHASE </h1>
+
+            <h1>THANK YOU FOR YOUR PURCHASE </h1>
             <br>
             <h5><i class="fa fa-telegram" aria-hidden="true" style="color:green; font-size:40px;"></i></h5>
-        <h2> An email of confirmation has been sent to <b><?php echo $_SESSION['username']?></b> to recap your order </h2>
-         </div>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-     </center>
-    
+            <h2> An email of confirmation has been sent to <b><?php echo $_SESSION['username']?></b> to recap your order </h2>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </center>
+
 
 
     <!--footer-->

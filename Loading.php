@@ -78,8 +78,7 @@ mysqli_close($conn);
             }
         }
 
-        .rotate {
-        }
+        .rotate {}
 
         .rotate-active {
             animation: rotation 3s infinite linear;
@@ -94,6 +93,7 @@ mysqli_close($conn);
                 transform: rotate(359deg);
             }
         }
+
     </style>
 </head>
 
@@ -104,12 +104,12 @@ mysqli_close($conn);
             $('.rotate').toggleClass('rotate-active');
         });
     });
+
 </script>
 
 <script src="https://smtpjs.com/v3/smtp.js"></script>
 
 <script type="text/javascript">
-    
     // Storing all the data that we need to adapt automatically a mail when someone bought something
     var receiver = "<?php echo $_SESSION['username']; ?>";
     var fname = "<?php echo $_SESSION['firstname']; ?>";
@@ -138,15 +138,16 @@ mysqli_close($conn);
 
                 From: "cykelweb@gmail.com",
                 To: receiver,
-            
-                Subject: "Thank you "+ fname +" "+ lname+" for your purchase on Cykel 🚴 - Package's ID : "+cid,
-                Body: "Dear "+ fname+",<br> Thank you for your purchase on Cykel! <br> Here's your recap : <br><br> "+ "Your order's name : "+cpackagename
-            +" <br> First Name : "+ cfirstname+" <br> Last Name : "+ clastname+" <br> Adress : "+ cadress+" <br> City : "+ ccity+" <br> Zip Code : "+ czipCode+ " <br> Country : "+ ccountry+ "<br> Phone number : "+ cphone+". "+" <br> You paid with a "+ ctype + " and the name associated with this card is : "+ cnameCard+"."+"<br><br>Just as a reminder to our customers, we are not storing credit cards' informations to protect their data. You will receive your invoice directly in your package.<br> Nowadays, shipping delivery may be impacted due to the COVID pandemic. Thanks for your comprehension. <br><br> See you soon to 🚴‍♂️ Cykel 🚴‍♂️. <br> Kind Regards, <br>The Cykel's Team "
+
+                Subject: "Thank you " + fname + " " + lname + " for your purchase on Cykel 🚴 - Package's ID : " + cid,
+                Body: "Dear " + fname + ",<br> Thank you for your purchase on Cykel! <br> Here's your recap : <br><br> " + "Your order's name : " + cpackagename +
+                    " <br> First Name : " + cfirstname + " <br> Last Name : " + clastname + " <br> Adress : " + cadress + " <br> City : " + ccity + " <br> Zip Code : " + czipCode + " <br> Country : " + ccountry + "<br> Phone number : " + cphone + ". " + " <br> You paid with a " + ctype + " and the name associated with this card is : " + cnameCard + "." + "<br><br>Just as a reminder to our customers, we are not storing credit cards' informations to protect their data. You will receive your invoice directly in your package.<br> Nowadays, shipping delivery may be impacted due to the COVID pandemic. Thanks for your comprehension. <br><br> See you soon to 🚴‍♂️ Cykel 🚴‍♂️. <br> Kind Regards, <br>The Cykel's Team "
             })
             .then(function(message) {
                 window.location = 'treatment.php';
             });
     }
+
 </script>
 
 <script type="text/javascript">
@@ -169,6 +170,7 @@ mysqli_close($conn);
             }
         }
     }
+
 </script>
 
 <body>

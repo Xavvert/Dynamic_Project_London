@@ -31,7 +31,6 @@ if($_SESSION["checkB"]!=1)
     <script type="text/javascript" src="sendEmail.js"></script>
 
     <style type="text/css">
-
         .sidenav {
 
 
@@ -121,6 +120,7 @@ if($_SESSION["checkB"]!=1)
             box-sizing: border-box;
             padding-top: 15px;
         }
+
         .research input[type=text] {
             padding: 6px;
             margin-top: 8px;
@@ -137,20 +137,21 @@ if($_SESSION["checkB"]!=1)
             border: none;
             cursor: pointer;
         }
-        .research button:hover{
+
+        .research button:hover {
             background-color: gray;
-            border: solid 0,2em;
+            border: solid 0, 2em;
             border-radius: 4px;
             cursor: pointer;
         }
-        
+
         label {
             padding: 12px 12px 12px 0;
             display: inline-block;
             font-size: 24px;
         }
-        
-        .result{
+
+        .result {
             text-align: center;
             font-size: 15px;
             font-family: "verdana";
@@ -185,6 +186,7 @@ if($_SESSION["checkB"]!=1)
             transform: rotate(360deg);
             transition: all 1s;
         }
+
     </style>
 
     <style type="text/css" name="back button">
@@ -248,6 +250,7 @@ if($_SESSION["checkB"]!=1)
         .wrapper a:hover:after {
             width: 100%;
         }
+
     </style>
 
 
@@ -316,19 +319,19 @@ if($_SESSION["checkB"]!=1)
     <div class="wrapper">
         <a href="HomePage.html"><span>HOME</span></a>
     </div>
-    
+
     <div class="research">
         <form action="" method="post">
             <label>Find an item here : </label>
-            
+
             <input type="text" name="research" placeholder="Search...">
             <button type="submit" name="validation"><i class="fa fa-search"></i></button>
             <label style="font-size:15px;"> (Name / ID / Seller's username) </label>
         </form>
-        
+
         <table style="text-align:center; font-size:20px; margin-left:200px;">
 
-<?php
+            <?php
 $server_name="localhost:3306";
 $username="root";
 $password="root";
@@ -353,29 +356,29 @@ if(isset($validation)){
     while($row=mysqli_fetch_array($sql_query))
     {
 ?>
-        <tr>
-            <br>
-            <th><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Name : &nbsp;</th>
-            <th style="color:#ff5353;"><?php echo $row['name'];?></th>
-            <th>&nbsp;/ ID :&nbsp;</th>
-            <th style="color:#ff5353;"><?php echo $row['id'];?></th>
-            <th>&nbsp;/ Seller's username :&nbsp;</th>
-            <th style="color:#ff5353;"><?php echo $row['id_seller'];?></th>
-            <th>&nbsp;/ Category :&nbsp;</th>
-            <th style="color:#ff5353;"><?php echo $row['category'];?></th>
-        </tr>
-    <?php
+            <tr>
+                <br>
+                <th><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Name : &nbsp;</th>
+                <th style="color:#ff5353;"><?php echo $row['name'];?></th>
+                <th>&nbsp;/ ID :&nbsp;</th>
+                <th style="color:#ff5353;"><?php echo $row['id'];?></th>
+                <th>&nbsp;/ Seller's username :&nbsp;</th>
+                <th style="color:#ff5353;"><?php echo $row['id_seller'];?></th>
+                <th>&nbsp;/ Category :&nbsp;</th>
+                <th style="color:#ff5353;"><?php echo $row['category'];?></th>
+            </tr>
+            <?php
             }
     }
     
     
        mysqli_close($conn);
 ?>
-    
-        </table>
-        </div>
 
-    
+        </table>
+    </div>
+
+
     <!-- body -->
 
     <div class="grid-container">

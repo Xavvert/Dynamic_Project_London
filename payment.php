@@ -18,8 +18,8 @@ session_start();
     <script type="text/javascript" src="sidenav.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script type="text/javascript" src="sendEmail.js"></script>
-    
-        
+
+
     <style type="text/css">
         .sidenav {
             height: 55%;
@@ -111,10 +111,10 @@ session_start();
             }
 
             to {
-                left:700px;
+                left: 700px;
             }
         }
-        
+
         .triangle {
             position: absolute;
             left: 1298px;
@@ -155,6 +155,7 @@ session_start();
             transform: rotate(360deg);
             transition: all 1.3s;
         }
+
     </style>
 
     <style type="text/css" caption="form design">
@@ -197,6 +198,7 @@ session_start();
         input[type=reset]:hover {
             background-color: #bfb700;
         }
+
     </style>
 
 
@@ -261,36 +263,36 @@ session_start();
             </div>
         </div>
     </div>
-    
+
     <center>
         <h1>Please enter all the informations for the delivery process about your credit card </h1>
         <div class="co">
             <form action="tempPayment.php" method="post">
                 <div class="row">
-                <div class="column">
-                    
-                    <label>Type of the Card</label>
-                    <SELECT name="type">
-                        <option>VISA</option>
-                        <option>MASTERCARD</option>
-                        <option>AMERICAN EXPRESS</option>
-                    </SELECT>
-                <label>Name on the card</label><input type="text" name="nameCard" placeholder="..........">
-                <br>
-                <label>Card Number</label><input type="text" name="num" placeholder="..........">
-                <br>
+                    <div class="column">
+
+                        <label>Type of the Card</label>
+                        <SELECT name="type">
+                            <option>VISA</option>
+                            <option>MASTERCARD</option>
+                            <option>AMERICAN EXPRESS</option>
+                        </SELECT>
+                        <label>Name on the card</label><input type="text" name="nameCard" placeholder="..........">
+                        <br>
+                        <label>Card Number</label><input type="text" name="num" placeholder="..........">
+                        <br>
                     </div>
                     <div class="column">
-                <label>Expiration</label><input type="text" name="expiration"placeholder=" _ _ / _ _">
-                <br>
-               <label>CVV number</label><input type="text" name="crypto"placeholder="_ _ _">
-                <br>
-                <br>
-                    <input type="submit" name="save" value="Confirm and Pay *">
+                        <label>Expiration</label><input type="text" name="expiration" placeholder=" _ _ / _ _">
+                        <br>
+                        <label>CVV number</label><input type="text" name="crypto" placeholder="_ _ _">
+                        <br>
+                        <br>
+                        <input type="submit" name="save" value="Confirm and Pay *">
                     </div>
                 </div>
                 <div class="row">
-                
+
                     <p style="font-size:12px; padding:55px;">* Cykel don't store the information of your credit card in their databases for security reasons and to protect your private informations. More <a href="privacypolicy.html" style="color:green;">here</a></p>
                 </div>
             </form>
@@ -356,4 +358,5 @@ session_start();
         <script type="text/javascript" src="animation.js"></script>
     </footer>
 </body>
+
 </html>

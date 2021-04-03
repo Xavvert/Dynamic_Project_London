@@ -18,9 +18,9 @@ session_start();
     <script type="text/javascript" src="sidenav.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script type="text/javascript" src="sendEmail.js"></script>
-    
+
     <style type="text/css">
-              .sidenav {
+        .sidenav {
 
 
             height: 55%;
@@ -110,11 +110,11 @@ session_start();
             }
 
             to {
-                left:700px;
+                left: 700px;
             }
         }
 
-       .triangle {
+        .triangle {
             position: absolute;
             left: 1298px;
             top: 55px;
@@ -154,6 +154,7 @@ session_start();
             transform: rotate(360deg);
             transition: all 1.3s;
         }
+
     </style>
 
     <style type="text/css" caption="form design">
@@ -196,6 +197,7 @@ session_start();
         input[type=reset]:hover {
             background-color: #bfb700;
         }
+
     </style>
 
 
@@ -203,7 +205,7 @@ session_start();
 </head>
 
 <body>
-    
+
     <audio id="myAudio">
         <source src="audio/all-cards-on-table-348.mp3" type="audio/mpeg">
     </audio>
@@ -260,14 +262,14 @@ session_start();
             </div>
         </div>
     </div>
-    
-    
+
+
     <center>
         <h1>Please enter all the informations for the delivery process </h1>
     </center>
-    
+
     <img src="pictures/delivery.png" class="img">
-    
+
     <div class="co">
         <form action="tempCheckout.php" method="post">
             <br>

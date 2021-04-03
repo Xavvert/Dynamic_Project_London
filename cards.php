@@ -192,6 +192,7 @@ if($_SESSION["checkB"]!=1)
             transform: rotate(360deg);
             transition: all 1.3s;
         }
+
     </style>
 
 
@@ -220,6 +221,7 @@ if($_SESSION["checkB"]!=1)
                 top: 1px;
             }
         }
+
     </style>
 
     <style type="text/css" name="back button">
@@ -283,6 +285,7 @@ if($_SESSION["checkB"]!=1)
         .wrapper a:hover:after {
             width: 100%;
         }
+
     </style>
 
     <link rel='icon' href='pictures/Cykel.png' type='image/x-icon' />
@@ -322,17 +325,18 @@ if($_SESSION["checkB"]!=1)
         });
     });
 
-      var audio2 = $("#myAudio2")[0];
+    var audio2 = $("#myAudio2")[0];
     $("#imm").mouseenter(function() {
         audio2.play();
     });
+
 </script>
 
 <audio id="myAudio">
     <source src="audio/all-cards-on-table-348.mp3" type="audio/mpeg">
 </audio>
-    
-    <audio id="myAudio2">
+
+<audio id="myAudio2">
     <source src="audio/insight-578.mp3" type="audio/mpeg">
 </audio>
 

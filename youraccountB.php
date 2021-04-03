@@ -77,6 +77,7 @@ if($_SESSION["checkB"]!=1)
             transform: rotate(360deg);
             transition: all 1s;
         }
+
     </style>
 
     <style type="text/css">
@@ -179,7 +180,7 @@ if($_SESSION["checkB"]!=1)
             padding: 20px;
             border-collapse: collapse;
             border: none;
-            table-layout:auto;
+            table-layout: auto;
         }
 
         tr:nth-child(even) {
@@ -203,7 +204,7 @@ if($_SESSION["checkB"]!=1)
         button:hover {
             background-color: #D8392F;
         }
-        
+
         table button:hover {
             background: #45a049;
         }
@@ -248,6 +249,7 @@ if($_SESSION["checkB"]!=1)
             transform: rotate(360deg);
             transition: all 1.3s;
         }
+
     </style>
 
     <style type="text/css" caption="form design">
@@ -287,7 +289,7 @@ if($_SESSION["checkB"]!=1)
         input[type=submit]:hover {
             background-color: #45a049;
         }
-        
+
     </style>
 
     <link rel='icon' href='Cykel.png' type='image/x-icon' />
@@ -338,6 +340,7 @@ if($_SESSION["checkB"]!=1)
 
         });
     });
+
 </script>
 <link rel='icon' href='pictures/Cykel.png' type='image/x-icon' />
 
@@ -671,7 +674,7 @@ if(!$conn)
             </div>
         </div>
     </div>
-    
+
 
     <!--footer-->
 

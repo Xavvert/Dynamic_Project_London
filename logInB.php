@@ -82,7 +82,7 @@ if(isset($validation)){
 
 }
 ?>
- 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -98,9 +98,9 @@ if(isset($validation)){
     <script type="text/javascript" src="sidenav.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script type="text/javascript" src="sendEmail.js"></script>
-    
+
     <style type="text/css">
-                .sidenav {
+        .sidenav {
 
 
             height: 55%;
@@ -157,6 +157,7 @@ if(isset($validation)){
         h5 {
             font-size: 30px;
         }
+
         .triangle {
             position: absolute;
             left: 1298px;
@@ -197,14 +198,15 @@ if(isset($validation)){
             transform: rotate(360deg);
             transition: all 1.3s;
         }
+
     </style>
-    
-<style type="text/css" caption="form design">
+
+    <style type="text/css" caption="form design">
         * {
             box-sizing: border-box;
         }
 
-        
+
         input[type=email],
         input[type=password],
         select,
@@ -222,10 +224,11 @@ if(isset($validation)){
             display: inline-block;
         }
 
-        input[type=submit],[type=reset] {
+        input[type=submit],
+        [type=reset] {
             background-color: whitesmoke;
             padding: 12px 20px;
-            border: solid 0,1em;
+            border: solid 0, 1em;
             border-radius: 4px;
             cursor: pointer;
         }
@@ -301,7 +304,7 @@ if(isset($validation)){
             </div>
         </div>
     </div>
-    
+
     <br>
     <br>
     <center>
@@ -390,4 +393,5 @@ if(isset($validation)){
         <script type="text/javascript" src="animation.js"></script>
     </footer>
 </body>
+
 </html>

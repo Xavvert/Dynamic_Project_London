@@ -32,7 +32,7 @@ if($_SESSION["checkB"]!=1)
     <script type="text/javascript" src="sendEmail.js"></script>
 
     <style type="text/css">
-         .sidenav {
+        .sidenav {
 
 
             height: 55%;
@@ -73,12 +73,13 @@ if($_SESSION["checkB"]!=1)
             font-size: 36px;
             margin-left: 80px;
         }
-        
+
         #logo:hover {
 
             transform: rotate(360deg);
             transition: all 1s;
         }
+
     </style>
 
     <style type="text/css">
@@ -147,7 +148,7 @@ if($_SESSION["checkB"]!=1)
 
         .cartFooter h5 {
             font-size: 16px;
-            font-style:italic;
+            font-style: italic;
             color: black;
         }
 
@@ -155,6 +156,7 @@ if($_SESSION["checkB"]!=1)
             font-size: 20px;
             font-weight: bold;
         }
+
     </style>
 
     <style type="text/css" caption="cross animation to delete an item">
@@ -185,6 +187,7 @@ if($_SESSION["checkB"]!=1)
         .close:after {
             transform: rotate(-45deg);
         }
+
     </style>
 
     <style type="text/css" caption="button order ">
@@ -249,7 +252,7 @@ if($_SESSION["checkB"]!=1)
         button:hover {
             background-color: #ff5353;
         }
-        
+
         .triangle {
             position: absolute;
             left: 1298px;
@@ -290,7 +293,7 @@ if($_SESSION["checkB"]!=1)
             transform: rotate(360deg);
             transition: all 1.3s;
         }
-        
+
     </style>
     </style>
 
@@ -305,6 +308,7 @@ if($_SESSION["checkB"]!=1)
     function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
     }
+
 </script>
 
 <script type="text/javascript">
@@ -353,6 +357,7 @@ if($_SESSION["checkB"]!=1)
        });
            
        };*/
+
 </script>
 
 <body>
@@ -461,7 +466,7 @@ if(!$conn)
                         <tr>
 
                             <td><a href="updateCartItem.php?cat=<?php echo $temp?>" class="close" style="text-align:left;"></a></td>
-                            
+
                             <td style="padding-right:60px"><?php echo($row['name']) ?></td>
                             <td><?php echo($row['price']) ?></td>
                             <td><?php echo($row['category']) ?></td>
