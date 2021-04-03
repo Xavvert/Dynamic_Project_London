@@ -16,9 +16,8 @@
     <script type="text/javascript" src="sendEmail.js"></script>
 
     <style type="text/css">
+        /*lateral menu*/
         .sidenav {
-
-
             height: 55%;
             width: 0;
             position: fixed;
@@ -49,6 +48,7 @@
             border-color: beige;
         }
 
+        /*close button of lateral menu*/
         .sidenav .closebtn {
 
             position: absolute;
@@ -151,7 +151,7 @@
 
         /* Fading animation */
         .fade {
-            
+
             animation-name: fade;
             animation-duration: 1.5s;
         }
@@ -165,6 +165,8 @@
                 opacity: 1
             }
         }
+
+        /*grid container of items*/
 
         .grid-container {
             display: grid;
@@ -203,6 +205,8 @@
         * {
             box-sizing: border-box;
         }
+
+        /*class of squeezer box with video*/
 
         .videoContent {
             font-family: 'Cinzel', serif;
@@ -256,6 +260,7 @@
             background: #819cd2;
         }
 
+        /*class of about us section */
         .about {
             float: left;
             width: 100%;
@@ -273,6 +278,7 @@
             font-family: verdana;
         }
 
+        /*notification box and animation*/
         .triangle {
             position: absolute;
             left: 1298px;
@@ -309,6 +315,7 @@
             border-radius: 1em;
         }
 
+        /*logo animation*/
         #logo:hover {
             transform: rotate(360deg);
             transition: all 1.3s;
@@ -329,6 +336,7 @@
     </audio>
 
     <div id="layout">
+
         <!-- header -->
         <div id="header">
             <center>
@@ -340,9 +348,7 @@
             <span style="font-size:30px;cursor:pointer; position: relative; top: -60px; left: -580px" onclick="openNav()">&#9776;</span>
 
             <div id="mySidenav" class="sidenav">
-
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-
                 <a href="categories.php">CATEGORIES</a>
                 <a href="cart.php">CART</a>
                 <a href="youraccountA.php">YOUR ACCOUNT</a>
@@ -365,7 +371,7 @@
         </div>
 
 
-<!-- Elements inside the bell notification -->
+
         <div class="notif">
             <div class="boxnotif">
                 <p><u>Notification (1)</u></p>
@@ -382,6 +388,8 @@
             </div>
         </div>
     </div>
+
+    <!--end of header-->
 
     <!-- body -->
 
@@ -458,9 +466,9 @@
 
         <div class="videoContent">
             <span class="noselect">
-            <h3 style="margin-top:-10px; font-weight:bolder;">🍊 Let's discover the new Squeezers deck! 🍊</h3>
+                <h3 style="margin-top:-10px; font-weight:bolder;">🍊 Let's discover the new Squeezers deck! 🍊</h3>
 
-            <img onclick="location.href='squeezer.html'" src="pictures/squeezersv3.webp" style="height: 300px ;width: 200px; cursor: pointer; float: left;">
+                <img onclick="location.href='squeezer.html'" src="pictures/squeezersv3.webp" style="height: 300px ;width: 200px; cursor: pointer; float: left;">
 
                 <!-- The video is played for a certain duration -->
             <iframe width="560" height="315" src="https://www.youtube.com/embed/JBrMUEFBbTw?start=154&amp;end=164" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
